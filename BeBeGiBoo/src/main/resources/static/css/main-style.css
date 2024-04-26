@@ -1,0 +1,131 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&display=swap');
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*border: 1px black solid;*/
+}
+
+
+
+main {
+    height: 800px;
+}
+
+
+
+
+
+
+
+/****************** 헤더부분 *********************/
+
+.header-main {
+    background-color: white;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo {
+    width: 45px;
+    margin: 0 15px;
+}
+
+.header-main span:nth-child(2) {
+    font-family: "Edu TAS Beginner";
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.header-main span:nth-child(3) {
+    flex-basis: 80%;
+}
+
+.header-main span:nth-child(4) {
+    font-family: 'Pretendard-Regular';
+    text-align: end;
+    width: 200px;
+    margin: 0 10px;
+    font-size: 15px;
+}
+
+.header-main span:nth-child(5){                                      
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/************************푸터부분*****************/
+
+
+.footer-main {
+    border-top: 1px rgb(85, 85, 85) solid;
+    height: 250px;
+    display: flex;
+}
+
+#logo {
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo img {
+    height: 110px;
+    margin-bottom: 13px;
+}
+
+#title {
+    font-family: "Edu TAS Beginner";
+    font-size: 40px;
+    font-weight: 600;
+}
+
+
+
+
+
+#text {
+    flex-basis: 85%;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#text > div:first-child {
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px;
+    margin-left: 0;
+}
+
+#text > div > span {
+    margin-right: 70px;
+}
+
+
+#text > div:last-child {
+    font-family: 'Pretendard-Regular';
+    font-weight: lighter;
+    line-height: 30px;
+}

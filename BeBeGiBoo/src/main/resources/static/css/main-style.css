@@ -18,8 +18,55 @@
 
 
 main {
-    height: 800px;
+    display: flex;
+    flex-direction: column;
 }
+
+#main-banner {
+    height: 600px;
+    background-image: url("../images/main-banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#stick {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#stick > span {
+    color: rgb(85, 85, 85);
+}
+
+.middle-banner {
+    height: 180px;
+    background-color: rgb(229, 235, 245);
+}
+
+#pregnent {
+    height: 800px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+#pregnent > div {
+    height: 650px;
+    width: 1000px;
+    background-image: url("../images/pregnant.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#confirm-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 
 

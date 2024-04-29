@@ -22,11 +22,29 @@ main {
     flex-direction: column;
 }
 
+.button {
+    font-family: 'Pretendard-Regular';
+    background-color: rgba(0,0,0,0);
+    border: 2px white solid;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+
 #main-banner {
     height: 600px;
-    background-image: url("../images/main-banner.jpg");
+    background-image: url("../images/main-banner.PNG");
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+#main-banner-donate {
+    height: 30px;
+    width: 100px;
+    margin: 10px;
 }
 
 #stick {

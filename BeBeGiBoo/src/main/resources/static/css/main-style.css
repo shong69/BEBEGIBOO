@@ -44,7 +44,7 @@ a {
 
 .slider {
     margin-top: 55px;
-    width: 1857px;
+    width: 100%;
     height: 600px;
     overflow: hidden;
 }
@@ -81,7 +81,7 @@ a {
 }
 
 #who-logo {
-    height: 200px;
+    height: 230px;
     margin-right: 50px;
 }
 
@@ -96,12 +96,12 @@ a {
     font-family: 'Pretendard-Regular';
     font-weight: bold;
     font-weight: 600;
-    font-size: 50px;
+    font-size: 60px;
     margin-bottom: 30px;
 }
 
 #who-content {
-    height: 300px;
+    height: 500px;
 }
 
 #confirm {
@@ -130,11 +130,69 @@ a {
     color: white;
 }
 
+
+
+
+.wrap {
+    display: flex; 
+    flex-direction: column;
+    overflow: hidden;
+    height: 400px;
+}
+.wrap .rolling-list ul {
+    padding : 0px;
+    display: flex;
+    flex-direction: column;
+}
+.wrap .rolling-list ul li { 
+    box-sizing: border-box; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    flex-shrink: 0; 
+}
+
+.rolling-list.original {
+    animation: rollingleft1 90s linear infinite;
+}
+.rolling-list.clone {
+    animation: rollingleft2 90s linear infinite;
+}
+
+@keyframes rollingleft1 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-100%); }
+    50.01% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes rollingleft2 {
+    0% { transition: translateY(0); }
+    100% { transform: translateY(-200%); }
+}
+
+
+
+
+.abi {
+    animation: abi 7s infinite;
+}
+
+@keyframes abi {
+    50% {background-position: right;}
+}
+
+
+
+
+
+
 #howtodonate {
-    height: 300px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: end;
+    margin-bottom: 80px;
 }
 
 #container {
@@ -142,7 +200,19 @@ a {
     justify-content: center;
     align-items: center;
     margin: 50px;
+    margin-top: 0;
     margin-bottom: 150px;
+}
+
+.showBox {
+    opacity: 0;
+    transform: translateY(10%);
+    transition: all 0.5s ease-in-out;
+}
+
+.showBox.on {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #donate-box {
@@ -160,7 +230,7 @@ a {
     height: 250px;
     margin: 35px;
     border-radius: 10px;
-    background-color:white;
+    background-color: #fff4e4;
     box-shadow: 10px 10px 5px rgb(121, 121, 121);
     transition-duration: 0.3s;
     display: flex;
@@ -171,7 +241,7 @@ a {
 }
 
 .donate-container:hover {
-    background-color: rgb(229, 235, 245);
+    background-color: #ffe297;
 }
 
 .title {
@@ -201,6 +271,7 @@ a {
     justify-content: center;
     align-items: center;
     margin: 200px 0;
+    margin-bottom: 50px;
 }
 
 .botton-button {
@@ -376,7 +447,7 @@ a {
 #text > div:first-child {
     font-family: 'Pretendard-Regular';
     font-weight: bold;
-    font-size: 20px;
+    font-size: 17px;
     margin: 20px;
     margin-left: 0;
 }
@@ -391,6 +462,7 @@ a {
 
 #text > div:last-child {
     font-family: 'Pretendard-Regular';
+    font-size: 12px;
     font-weight: lighter;
-    line-height: 30px;
+    line-height: 25px;
 }

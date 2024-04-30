@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bebegiboo.project.member.model.service.MemberService;
+import com.bebegiboo.project.Member.model.service.MemberService;
 
 @Controller
 @RequestMapping("member")
 public class MemberController {
 	
 	@Autowired
-	private com.bebegiboo.project.Member.model.service.MemberService service; 
+	private MemberService service; 
 	
 	@GetMapping("signup")
 	public String signup() {

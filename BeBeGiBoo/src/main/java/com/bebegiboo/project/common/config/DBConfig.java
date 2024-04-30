@@ -22,6 +22,7 @@ import com.zaxxer.hikari.HikariDataSource;
 public class DBConfig {
 	
 	// application scope 객체 
+	@Autowired
 	private ApplicationContext applicationContext; 
 	
 	

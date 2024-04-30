@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login Page</title>
+    <title>login</title>
+    <link rel="stylesheet" href="/BeBeGiBoo/src/main/resources/static/css/member/login_inquiry/login.css">
 </head>
 <body>
     <main>
-        <div class="doc-title">
-            <a href="#"><!--메인 주소-->
-                <img><!--텍스트 로고를 글자로 집어넣을지/이미지로 넣을지 정하기(타 사이트 경우 svg파일로 넣고있음)-->
+        <div id="font-logo-area">
+            <a href="#" id="font-logo">
+                <img  src="/BeBeGiBoo/src/main/resources/static/images/font-logo.png" alt="font-logo">
             </a>
-            BEBEGIBOO home
         </div>
 
         <div>
-            <h4>로그인</h4>
+            <h4 id = "legend-name">로그인</h4>
         </div>
         <div>
             <form>
                 <fieldset>
-                    <section>
+                    <section id = "login-input">
                         아이디 
                         <input type="text" id="login-id">
                         비밀번호
                         <input type="password" id="login-pw">
                     </section>
                     <label>
-                        <input type="checkbox" name="saveId"> 아이디 기억하기
+                        <input type="checkbox" name="saveId" id = "saveId"> 아이디 기억하기
                     </label>
     
                     <section>

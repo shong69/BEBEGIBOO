@@ -1,4 +1,4 @@
-package com.bebegiboo.project.Member.model.dto;
+package com.bebegiboo.project.member.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,6 +19,7 @@ public class Member {
 
 	private int memberNo; 
 	private String memberId; 
+	private String memberPw;
 	private String memberName; 
 	private String memberBirth; 
 	private String email; 

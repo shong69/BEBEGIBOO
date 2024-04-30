@@ -6,7 +6,7 @@
     <title>회원가입</title>
 
     <th:block th:replace="~{common/common}"></th:block>
-    <link rel="stylesheet" href="/src/main/resources/static/css/member/signup/signup.css">
+    <link rel="stylesheet" href="/css/member/signup/signup.css">
 </head>
 <body>
 
@@ -15,84 +15,84 @@
             
             <th:block th:replace="~{common/header}"></th:block>
 
-                <form action="member/signup" method="POST" name="signUpForm" id="signUpForm">
+                <form action="member/signupForm" method="POST" name="signUpForm" id="signUpForm">
 
 
                     <table class="signUp-info">
                         <tr class="memberId">
-                            <td>아이디</td>
-                            <td><input type="text" name="memberId" id="memberId"
+                            <td class="sectionName">아이디</td>
+                            <td><input type="text" name="memberId" id="memberId" class="signUp-input"
                                     placeholder="아이디" maxlength="10" autocomplete="off"> </td>
                             <td><button id="checkDuplicateBtn" type="button">중복확인</button></td>                                  
                         </tr>
                         <tr>
-                            <td></td>
+                            <td class="sectionName"></td>
                             <td><span class="signUp-message" id="idMessage">영어, 숫자, 특수문자(-,_) 6~10글자 이내로 입력해주세요.</span></td>
                         </tr>
                         <tr>
-                            <td>비밀번호</td>
-                            <td><input type="password" name="memberPw" id="memberPw"
+                            <td class="sectionName">비밀번호</td>
+                            <td><input type="password" name="memberPw" id="memberPw" class="signUp-input"
                                                 placeholder="비밀번호" maxlength="12"></td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td><input type="password" name="memberPwConfirm" id="memberPwConfirm"
+                            <td class="sectionName"></td>
+                            <td><input type="password" name="memberPwConfirm" id="memberPwConfirm" class="signUp-input"
                                                     placeholder="비밀번호 확인" maxlength="12"></td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td class="sectionName"></td>
                             <td><span class="signUp-message" id="pwMessage">영어, 숫자, 특수문자(-,_)8~12글자 이내로 입력해주세요.</span></td>
                         </tr>
 
                         <tr>
-                            <td>이름</td>
+                            <td class="sectionName">이름</td>
                             <td>
-                                <input type="text" name="memberName" id="memberName"
+                                <input type="text" name="memberName" id="memberName" class="signUp-input"
                                                     placeholder="이름" maxlength="15">
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td class="sectionName"></td>
                             <td> <span class="signUp-message" id="nameMessage">한글, 영어로만 입력 가능합니다.</span></td>
                         </tr>
                         <tr>
-                            <td>생년월일</td>
+                            <td class="sectionName">생년월일</td>
                             <td>
-                                <input type="text" name="memberBirth" id="memberBirth"
+                                <input type="text" name="memberBirth" id="memberBirth" class="signUp-input"
                                                 placeholder="생년월일" maxlength="8">       
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td class="sectionName"></td>
                             <td> <span class="signUp-message" id="birthMessage">생년월일 8자리 '-' 없이 입력해주세요</span></td>
                         </tr>
                         <tr>
-                            <td>핸드폰번호</td>
-                            <td><input type="text" name="phone" id="phone"
+                            <td class="sectionName">핸드폰번호</td>
+                            <td><input type="text" name="phone" id="phone" class="signUp-input"
                                     placeholder="핸드폰번호" maxlength="11">
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td class="sectionName"></td>
                             <td><span class="signUp-message" id="phoneMessage">핸드폰번호만 입력해주세요</span></td>
                         </tr>
                     </table>    
 
                     <table class="signUp-email">
                         <tr>
-                            <td>이메일</td>
-                            <td> <input type="text" name="memberEmail" id="memberEmail"
+                            <td class="sectionName">이메일</td>
+                            <td> <input type="text" name="email" id="email" class="signUp-input"
                                                 placeholder="이메일" maxlength="30"></td>
                             <td><button id="emailcheckBtn">인증메일</button></td>                    
                         </tr>
                         <tr>
-                            <td></td>
+                            <td class="sectionName"></td>
                             <td><span class="signUp-message" id="emailMessage">메일을 받을 수 있는 이메일을 입력해주세요.</span></td>
                         </tr>
                         <tr>
-                            <td>인증번호</td>
+                            <td class="sectionName">인증번호</td>
                             <td>
-                                <input type="text" name="authKey" id="authKey" placeholder="인증번호 입력"
+                                <input type="text" name="authKey" id="authKey" placeholder="인증번호 입력" class="signUp-input"
                                                         maxlength="6" autocomplete="off">
                             </td>
                             <td><button id="checkAuthKeyBtn">인증하기</button></td>
@@ -101,21 +101,22 @@
 
                     <table class="signUp-address">
                         <tr>
-                            <td>우편번호</td>
-                            <td>
-                                <input type="text" name="memberAddress" placeholder="우편번호"
+                            <td id="postcodeSection">우편번호
+                           
+                                <input type="text" name="address" placeholder="우편번호" 
                                                                  maxlength="6" id="postcode">
                             </td>
                             <td><button type="button" id="searchAddress">검색</button></td>
                         </tr>
+                       
                         <tr>
                             <td>
-                                <input type="text" name="memberAddress" placeholder="도로명/지번주소" id="address">
+                                <input type="text" name="address" placeholder="도로명/지번주소" id="mainAddress">
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <input type="text" name="memberAddress" placeholder="상세주소" id="detailAddress">
+                                <input type="text" name="address" placeholder="상세주소" id="detailAddress">
                             </td>
                         </tr>
                     </table>

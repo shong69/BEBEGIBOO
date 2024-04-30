@@ -12,4 +12,5 @@ public class PageController {
 	public String info() {
 		return "page/info/page-info";
 	}
+	
 }

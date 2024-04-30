@@ -1,15 +1,15 @@
-package com.bebegiboo.project.login.controller;
+package com.bebegiboo.project.page.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("login")
-public class LoginController {
+@RequestMapping("page")
+public class PageController {
 
-	@GetMapping("")
-	public String login() {
-		return "member/login/login";
+	@GetMapping("info")
+	public String info() {
+		return "page/info/page-info";
 	}
 }

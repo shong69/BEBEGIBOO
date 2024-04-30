@@ -41,7 +41,10 @@ public class DBConfig {
 		DataSource dataSource = new HikariDataSource(config);
 		return dataSource;
 	}
+	
 	/////////////////   Mybatis 설정    /////////////////////
+	
+	// 다시 받아보자 // 
 	
 	@Bean
 	public SqlSessionFactory sessionFactory(DataSource datasource) throws Exception {
@@ -51,7 +54,7 @@ public class DBConfig {
 		sessionFactoryBean.setDataSource(datasource);
 		
 		//mapper.xml(SQL) 파일이 모이는 경로 지정
-		// -> Mybartis 코드 수행 시 mapper.xml을 읽을 수 있음
+		// -> Mybatis 코드 수행 시 mapper.xml을 읽을 수 있음
 		// sessionFactoryBean.setMapperLocations("현재프로젝트.자원.어떤파일");
 		
 		sessionFactoryBean.setMapperLocations(
@@ -64,7 +67,7 @@ public class DBConfig {
 		// setTypeAliasesPackage("패키지") 이용시
 		//클래스 파일명이 별칭으로 등록
 		
-		//ex)edu.kh.todo.model.dto.Todo 	--> Todo(별칭 등록)
+		//별칭 지정 
 		sessionFactoryBean.setTypeAliasesPackage("com.bebegiboo.project");
 		
 		// 마이바티스 설정 파일 경로 지정

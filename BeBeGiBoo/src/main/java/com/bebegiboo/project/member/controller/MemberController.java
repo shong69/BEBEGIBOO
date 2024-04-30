@@ -16,6 +16,7 @@ import com.bebegiboo.project.member.model.service.MemberService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 
+
 @Controller
 @RequestMapping("member")
 public class MemberController {
@@ -23,6 +24,9 @@ public class MemberController {
 	@Autowired
 	private MemberService service; 
 	
+	/** 회원가입 화면 이동 
+	 * @return
+	 */
 	@GetMapping("signup")
 	public String signup() {
 		
@@ -30,12 +34,25 @@ public class MemberController {
 		
 	}
 	
+	/** 로그인 화면 이동 
+	 * @return
+	 */
+	@GetMapping("login")
+	public String login() {
+		
+		return "/member/login/login"; 
+		
+	}
 	
+	
+	/** 아이디 중복 검사 
+	 * @param memberId
+	 * @return
+	 */
 	@ResponseBody
 	@GetMapping("checkId")
-	public int checkId( @RequestParam("memberId") String memberId) {
-		
-		return service.checkId(memberId); 
+	public int checkId(@RequestParam("memberId") String memberId) {
+	    return service.checkId(memberId);
 	}
 	
 	@GetMapping("login")
@@ -88,4 +105,15 @@ public class MemberController {
 		return path;
 	}
 
+	
+	@ResponseBody
+	@GetMapping("checkEmail")
+	public int checkEmail(@RequestParam("email") String email) {
+		return service.checkEmail(email); 
+	}
+	
+	
+	
+	
+	
 }

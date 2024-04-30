@@ -22,6 +22,7 @@ import com.zaxxer.hikari.HikariDataSource;
 public class DBConfig {
 	
 	// application scope 객체 
+	@Autowired
 	private ApplicationContext applicationContext; 
 	
 	
@@ -43,7 +44,7 @@ public class DBConfig {
 	/////////////////   Mybatis 설정    /////////////////////
 	
 	@Bean
-	public SqlSessionFactory sessionFactory(DataSource datasource) throws Exception{
+	public SqlSessionFactory sessionFactory(DataSource datasource) throws Exception {
 		
 		SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
 		

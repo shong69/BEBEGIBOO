@@ -1,49 +1,70 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-    <link rel="stylesheet" href="/BeBeGiBoo/src/main/resources/static/css/member/login_inquiry/login.css">
+    <link rel="stylesheet" href="/css/member/login_inquiry/login.css">
+
 </head>
 <body>
     <main>
         <div id="font-logo-area">
             <a href="#" id="font-logo">
-                <img  src="/BeBeGiBoo/src/main/resources/static/images/font-logo.png" alt="font-logo">
+                <img src="/images/font-logo.png" alt="font-logo">
             </a>
         </div>
 
         <div>
-            <h4 id = "legend-name">로그인</h4>
+            <span class="text">로그인</span>
         </div>
         <div>
             <form>
-                <fieldset>
-                    <section id = "login-input">
-                        아이디 
-                        <input type="text" id="login-id">
-                        비밀번호
-                        <input type="password" id="login-pw">
-                    </section>
-                    <label>
-                        <input type="checkbox" name="saveId" id = "saveId"> 아이디 기억하기
-                    </label>
-    
-                    <section>
-                        <button>로그인</button>
-                    </section>
-                </fieldset>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="text input">아이디</td>
+                            <td>
+                                <input type="text input" class="loginInput">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text input">비밀번호</td>
+                            <td>
+                                <input type="password" class="loginInput">
+                            </td>
+                        </tr>
+                    </tbody>
 
+                </table>
+                <label id="saveIdArea" class="s-text">
+                    <input type="checkbox" name="saveId" id = "saveId" > 
+                    <span>아이디 기억하기</span>
+                </label>
+
+                <section id="loginBtnArea">
+                    <button id="loginBtn" class="text">로그인</button>
+                </section>
+
+<<<<<<< HEAD
                 <article class="signup-find-area">
                     <a href="/member/signup">회원가입</a>
                     <span>|</span>
                     <a href="#">아이디 찾기</a>
                     <a href="#">비밀번호 찾기</a>"
                 </article>
+=======
+>>>>>>> a3b5034b9f45e11a327fd8d6cf287b38a93f57a5
             </form>
+            <article class="signup-find-area">
+                <a href="#" class="s-text">회원가입</a>
+                <span class="divider">|</span>
+                <a href="#" class="s-text">아이디 찾기</a>
+                <span class="divider">|</span>
+                <a href="#" class="s-text">비밀번호 찾기</a>
+            </article>
         </div>
     </main>
-    <th:block th:replace="~{common/footer}"></th:block>
+
 </body>
 </html>

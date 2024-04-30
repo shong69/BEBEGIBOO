@@ -253,6 +253,7 @@ a {
 #logo {
     width: 45px;
     margin: 0 15px;
+    cursor: pointer;
 }
 
 .header-main span:nth-child(2) {

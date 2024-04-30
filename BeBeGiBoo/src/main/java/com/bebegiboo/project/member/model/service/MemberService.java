@@ -1,4 +1,4 @@
-package com.bebegiboo.project.member.model.service;
+package com.bebegiboo.project.Member.model.service;
 
 public interface MemberService {
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login Page</title>
+</head>
+<body>
+    <main>
+        <div class="doc-title">
+            <a href="#"><!--메인 주소-->
+                <img><!--텍스트 로고를 글자로 집어넣을지/이미지로 넣을지 정하기(타 사이트 경우 svg파일로 넣고있음)-->
+            </a>
+            BEBEGIBOO home
+        </div>
+
+        <div>
+            <h4>로그인</h4>
+        </div>
+        <div>
+            <form>
+                <fieldset>
+                    <section>
+                        아이디 
+                        <input type="text" id="login-id">
+                        비밀번호
+                        <input type="password" id="login-pw">
+                    </section>
+                    <label>
+                        <input type="checkbox" name="saveId"> 아이디 기억하기
+                    </label>
+    
+                    <section>
+                        <button>로그인</button>
+                    </section>
+                </fieldset>
+
+                <article class="signup-find-area">
+                    <a href="#">회원가입</a>
+                    <span>|</span>
+                    <a href="#">아이디 찾기</a>
+                    <a href="#">비밀번호 찾기</a>"
+                </article>
+            </form>
+        </div>
+    </main>
+    <th:block th:replace="~{common/footer}"></th:block>
+</body>
+</html>

@@ -18,12 +18,213 @@
 
 
 main {
-    height: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    font-family: 'Pretendard-Regular';
+    background-color: rgba(0,0,0,0);
+    border: 2px white solid;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.text {
+    font-family: 'Pretendard-Regular';
+    font-size: 20px;
+}
+
+.slider {
+    margin-top: 55px;
+    width: 1857px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+#main-banner-donate {
+    position: absolute;
+    top: 600px;
+    left: 1700px;
+    height: 30px;
+    width: 100px;
+}
+
+#who-container {
+    margin-top: 100px;
+    display: flex;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+#who-logo {
+    height: 200px;
+    margin-right: 50px;
+}
+
+#who-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#who-title {
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;
+    font-weight: 600;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+#who-content {
+    height: 300px;
+}
+
+#confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    width: 600px;
+    border: 1px rgb(134, 134, 134) solid;
+}
+
+#confirm-button {
+    color: rgb(14, 20, 78);
+    border-color: rgb(14, 20, 78);
+    font-size: 15px;
+    height: 40px;
+    width: 160px;
+    margin: 60px;
+    transition-duration: 0.4s;
+}
+
+#confirm-button:hover {
+    background-color: rgb(14, 20, 78);
+    color: white;
+}
+
+#howtodonate {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    margin-bottom: 150px;
+}
+
+#donate-box {
+    width: 1600px;
+    height: 400px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.donate-container {
+    width: 250px;
+    height: 250px;
+    margin: 35px;
+    border-radius: 10px;
+    background-color:white;
+    box-shadow: 10px 10px 5px rgb(121, 121, 121);
+    transition-duration: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.donate-container:hover {
+    background-color: rgb(229, 235, 245);
+}
+
+.title {
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+
+#img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ex-img {
+    width: 1200px;
 }
 
 
 
 
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 200px 0;
+}
+
+.botton-button {
+    border-radius: 50px;
+    font-size: 20px;
+    color: black;
+    height: 80px;
+    width: 400px;
+    background-color: rgb(229, 235, 245);
+    margin-top: 30px;
+    transition-duration: 0.5s;
+}
+
+.botton-button:hover {
+    background-color: white;
+    border: 4px rgb(229, 235, 245) solid;
+}
+
+
+#top-button {
+    left: 96%;
+    top: 88%;
+    position: fixed;
+    font-size: 30px;
+    text-align: center;
+    height: 35px;
+    width: 35px;
+    background-color: white;
+    box-shadow: 5px 5px 5px gray;
+    cursor: pointer;
+    border-radius: 50%;
+}
 
 
 
@@ -35,6 +236,9 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    position:fixed;
+    top: 0;
+    width: 100%;
 }
 
 #logo {
@@ -66,6 +270,8 @@ main {
     justify-content: center;
     align-items: center;
 }
+
+
 
 
 
@@ -119,7 +325,10 @@ main {
     margin-left: 0;
 }
 
-#text > div > span {
+#text > div > span > a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
     margin-right: 70px;
 }
 

@@ -1,4 +1,4 @@
-package com.bebegiboo.project.member.model.dto;
+package com.bebegiboo.project.Member.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

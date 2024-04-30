@@ -3,13 +3,15 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentIndex = 0;
     const slideCount = slider.children.length;
     const slideWidth = 1857;
-    const slideInterval = 4000;
+    const slideInterval = 3500;
 
     setInterval(function() {
         currentIndex = (currentIndex + 1) % slideCount;
         slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }, slideInterval);
 });
+
+
 
 
 document.querySelector("#top-button").addEventListener("click", () => {

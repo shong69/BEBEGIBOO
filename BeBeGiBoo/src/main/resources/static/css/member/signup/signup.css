@@ -5,79 +5,32 @@
   font-style: normal;
 }
 
+* {
+  font-family: 'Pretendard-Regular';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* 폼 전체 */
 .signUp-content{
+    margin-top: 300px;
+    margin-bottom: 150px;
     display: flex;
     justify-content: center;
     height: auto;
 }
 
-
-.signUp-info button{
-  width: 80px;
-  height: 30px;
-  font-weight: bold;
-  color: #6987C9;
-  background-color: white;
-  border: 1.5px solid #6987C9;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-left: 20px;
-}
-
-
-/*
-
-
-
-.signUp-input{
-  width: 500px;
-  height: 50px;
-
-  margin-bottom: 1px;
-
-  display: flex;
-  align-items: center;
-}
-
-.signUp-input > input{
-  height: 55%;
-  width: 55%;
-
-  font-size: 16px;
-  font-weight: bold;
-
-  border : 1.2px solid #AFAFAF;
-  outline: none;
-}
-
-
-  
+/* 첫번째 폼 */
 .signUp-info{
   box-sizing: border-box;
   padding: 30px;
   background: #FFFFFF;
   border: 2px solid #AFAFAF;
-  display: flex;
-  flex-direction: column;
   width: 800px;
-
-  display: flex;
-
 }
 
-.signUp-info input {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.signUp-info label {
-  align-self: flex-start; 
-}
-
-
+/* 이메일 폼 */
 .signUp-email{
   margin-top: 80px;
   box-sizing: border-box;
@@ -87,27 +40,48 @@
   width: 800px;
 }
 
+/* 주소 폼 */
 .signUp-address{
+  width: 800px;
   margin-top: 80px;
   box-sizing: border-box;
   padding: 30px;
   background: #FFFFFF;
   border: 2px solid #AFAFAF;
-  width: 800px;
 }
 
+/* input */
+.signUp-input {
+  width: 300px;
+  height: 25px;
 
-span.required{
+  margin-bottom: 7px;
 
-  display: block;
-  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
 
+  border : 1px solid #AFAFAF;
+  outline: none;
 }
 
+/* 폼 내 버튼 */
+.signUp-content button{
+  width: 80px;
+  height: 30px;
+  font-weight: bold;
+  color: #6987C9;
+  background-color: white;
+  border: 1.5px solid #6987C9;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
+/*회원가입 버튼*/
 #signUpBtn{
 
-  margin-top: 80px;
+  margin-top: 150px;
+  margin-left: 180px;
+
   width: 450px;
   height: 60px;
 
@@ -115,36 +89,49 @@ span.required{
   background-color: #E5EDF8;
 
   border: none;
+  border-radius: 0%;
 
 }
 
 
-*/
-
-
-
-
-
-
-/*
-#signUpForm > label {
-    display: block;
-    margin-top: 40px;
-    font-size: 18px;
+/* 아이디/비밀번호/등 이름용 클래스*/
+.sectionName {
+  width: 200px;
 }
 
+/* 우편번호 input */
+#postcode {
+  width: 150px;
+  height: 25px;
 
+  margin-bottom: 7px;
 
-#checkDuplicateBtn{
-    margin-left: 100px;
+  font-size: 14px;
+  font-weight: bold;
+
+  border : 1px solid #AFAFAF;
+  outline: none;
 }
 
-.required{
-  color: red;
-  padding: 0 5px;
+/* 주소, 상세주소 input */
+#mainAddress, #detailAddress{
+  width: 380px;
+  height: 25px;
+
+  margin-left: 155px;
+  margin-bottom: 7px;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  border : 1px solid #AFAFAF;
+  outline: none;
 }
 
-*/
+#postcode {
+  margin-left: 96px;
+}
+
 
 
 

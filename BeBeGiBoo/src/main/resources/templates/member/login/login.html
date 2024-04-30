@@ -10,28 +10,39 @@
 <body>
     <main>
         <div id="font-logo-area">
-            <a href="#" id="font-logo">
+            <a href="/" id="font-logo">
                 <img src="/images/font-logo.png" alt="font-logo">
             </a>
         </div>
 
         <div>
-            <span class="text">로그인</span>
+            <span class="l-text">로그인</span>
         </div>
         <div>
-            <form>
+            <form action="/member/login" method="POST" id="loginForm">
                 <table>
                     <tbody>
                         <tr>
                             <td class="text input">아이디</td>
                             <td>
-                                <input type="text input" class="loginInput">
+                                <input type="text" class="loginInput" id ="loginId">
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td id = "idMessage"class="s-text error" style="visibility: hidden;">
+                                아이디를 입력해주세요
+                            </td>
+                        </tr>
+                        <tr class="e-text">
+                            <td class="text input">비밀번호</td>
+                            <td>
+                                <input type="password" class="loginInput" id="loginPw">
                             </td>
                         </tr>
                         <tr>
-                            <td class="text input">비밀번호</td>
-                            <td>
-                                <input type="password" class="loginInput">
+                            <td id="pwMessage"class="s-text error" style="visibility: hidden;">
+                                비밀번호를 입력해주세요
                             </td>
                         </tr>
                     </tbody>
@@ -46,23 +57,17 @@
                     <button id="loginBtn" class="text">로그인</button>
                 </section>
 
-
-                <article class="signup-find-area">
-                    <a href="/member/signup">회원가입</a>
-                    <span>|</span>
-                    <a href="#">아이디 찾기</a>
-                    <a href="#">비밀번호 찾기</a>"
-                </article>
             </form>
             <article class="signup-find-area">
-                <a href="#" class="s-text">회원가입</a>
+                <a href="/member/signup" class="s-text">회원가입</a>
                 <span class="divider">|</span>
-                <a href="#" class="s-text">아이디 찾기</a>
+                <a href="/member/idInquiry" class="s-text">아이디 찾기</a>
                 <span class="divider">|</span>
-                <a href="#" class="s-text">비밀번호 찾기</a>
+                <a href="/member/pwInquiry" class="s-text">비밀번호 찾기</a>
             </article>
         </div>
     </main>
 
+    <script src="/js/member/login.js"></script>
 </body>
 </html>

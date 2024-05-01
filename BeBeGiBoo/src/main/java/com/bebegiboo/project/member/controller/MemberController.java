@@ -33,14 +33,6 @@ public class MemberController {
 	private MemberService service; 
 	
 
-	/** 회원가입 화면 이동 
-	 * @return
-	 */
-	@GetMapping("signup")
-	public String signup() {
-		
-		return "/member/signup/signup"; 
-
 	
 	/** 회원가입 화면 이동 
 	 * @return
@@ -52,17 +44,7 @@ public class MemberController {
 		return "/member/signup/signupMain"; 
 	}
 	
-	
 
-	
-	/** 아이디 중복 검사 
-	 * @param memberId
-	 * @return
-	 */
-	@ResponseBody
-	@GetMapping("checkId")
-	public int checkId(@RequestParam("memberId") String memberId) {
-	    return service.checkId(memberId);
 
 	/** 회원가입 약관 동의 화면 이동 
 	 * @return
@@ -80,6 +62,31 @@ public class MemberController {
 	@GetMapping("signup/signupForm")
 	public String signupForm() {
 		return "/member/signup/signupForm"; 
+	}
+	
+
+	@PostMapping("signup/signupForm")
+	public String signup(	Member inputMember, 
+							@RequestParam("address") String[] memberAddress, 
+							RedirectAttributes ra	) {
+		
+		int result = service.signup(inputMember, memberAddress); 
+		
+		String path = null; 
+		String message = null;
+		
+		if(result > 0) {
+			message = inputMember.getMemberName()+"님의 가입을 환영합니다 :)"; 
+			path = "/"; 
+		} else {
+			message = "회원가입 실패.."; 
+			path = "signup/signupForm"; 
+		}
+		
+		ra.addFlashAttribute("message", message); 
+		
+		return "redirect:" + path; 
+		
 	}
 	
 

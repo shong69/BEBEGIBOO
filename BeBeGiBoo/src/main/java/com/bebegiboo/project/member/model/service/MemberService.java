@@ -25,9 +25,12 @@ public interface MemberService {
 	Member login(Member inputMember);
 
 
-<<<<<<< HEAD
-=======
+	/** 회원가입 
+	 * @param inputMember
+	 * @param memberAddress
+	 * @return 
+	 */
+	int signup(Member inputMember, String[] memberAddress);
 
 
->>>>>>> 8499ac8346881c57c5fc24202c518b40c22edc46
 }

@@ -11,7 +11,7 @@ const email =  document.querySelector("#email");
 var checkedList = document.querySelectorAll("input[name='check']");
 console.log(checkedList);
 for(var i=0; i<checkedList.length; i++){
-    console.log(checkedList[i].property); //<input type="radio" id="phoneNum" name = "check">
+    console.log(checkedList[i]); //<input type="radio" id="phoneNum" name = "check">
     checkedList[i].addEventListener("change",e=>{
         /*
         if(checkedList[i].checked){

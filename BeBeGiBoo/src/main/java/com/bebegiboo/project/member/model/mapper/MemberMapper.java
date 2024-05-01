@@ -25,4 +25,5 @@ public interface MemberMapper {
 	 */
 	Member login(String memberId);
 
+
 }

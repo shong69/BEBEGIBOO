@@ -18,22 +18,16 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Service
 public class MemberServiceImpl implements MemberService {
+
+	private final MemberMapper mapper;
 	
-	
-	private final MemberMapper mapper; 
-	
+	private final BCryptPasswordEncoder bcrypt;
 	
 
 
 	/**
 	 * 아이디 중복 체크 
 	 */
-
-	private final MemberMapper mapper;
-	
-	private final BCryptPasswordEncoder bcrypt;
-
-  
 	@Override
 	public int checkId(String memberId) {
 		
@@ -67,5 +61,9 @@ public class MemberServiceImpl implements MemberService {
 		loginMember.setMemberPw(null);
 		return loginMember;
 	}
+
+
+
+
 
 }

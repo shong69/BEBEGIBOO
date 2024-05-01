@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.bebegiboo.project.member.model.mapper.MemberMapper">
 
+	<!-- 아이디 중복 검사 -->
 	<select id="checkId" resultType="_int">
 		SELECT COUNT(*)
 		FROM "MEMBER"
@@ -17,6 +18,7 @@
 		AND EMAIL = #{email}
 	</select>
  
+ 	<!-- 로그인 -->
 	<select id="login">
 		SELECT MEMBER_NO,MEMBER_ID, MEMBER_PW, MEMBER_NAME, MEMBER_BIRTH, EMAIL, PHONE, ADDRESS,
 		ENROLL_DATE, AUTHORITY
@@ -24,4 +26,7 @@
 		WHERE MEMBER_ID = #{memberId}
 		AND MEMBER_DEL_FL='N'
 	</select>
+	
+	
+	
 </mapper>

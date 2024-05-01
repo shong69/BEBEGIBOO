@@ -11,6 +11,7 @@ const checkObj = {
     "phone" : false, 
     "email" : false, 
     "authKey" : false,
+    "authKey" : false,
     "address" : false
 }; 
 
@@ -23,6 +24,7 @@ const idMessage = document.querySelector("#idMessage");
 // 입력하지 않은 경우 
 memberId.addEventListener("input", (e) => {
 
+    if(memberId.value.length === 0) {
     if(memberId.value.length === 0) {
         idMessage.innerText = "아이디를 입력해주세요"
         idMessage.classList.add("error"); 
@@ -50,7 +52,21 @@ memberId.addEventListener("input", (e) => {
     fetch("/member/checkId?memberId=" + inputId)
     .then(resp => resp.text())
     .then(result => {
+    const inputId = e.target.value;   
+    console.log(inputId); 
 
+    // 유효한 경우 중복 검사 
+    fetch("/member/checkId?memberId=" + inputId)
+    .then(resp => resp.text())
+    .then(result => {
+
+    if(result == 1) {
+        idMessage.innerText = "이미 사용중인 아이디입니다."; 
+        idMessage.classList.add("error"); 
+        idMessage.classList.remove("confirm"); 
+        checkObj.memberId = false; 
+        return; 
+    }
     if(result == 1) {
         idMessage.innerText = "이미 사용중인 아이디입니다."; 
         idMessage.classList.add("error"); 
@@ -65,6 +81,13 @@ memberId.addEventListener("input", (e) => {
     checkObj.memberId = true; 
 
     }); 
+    idMessage.innerText = "사용 가능한 아이디입니다~!!"; 
+    idMessage.classList.add("confirm"); 
+    idMessage.classList.remove("error"); 
+    checkObj.memberId = true; 
+
+    }); 
+
 
 
 }); 
@@ -339,9 +362,7 @@ let min = initMin;
 let sec = initSec;
 
 // 인증메일 버튼 클릭시 
-sendEmailBtn.addEventListener("click", e => {
-
-    e.preventDefault(); 
+sendEmailBtn.addEventListener("click", () => {
 
     checkObj.authKey = false; 
     authKeyMessage.innerText = ""; 
@@ -358,7 +379,7 @@ sendEmailBtn.addEventListener("click", e => {
     clearInterval(authTimer); 
 
     // 메일 보내기 
-    fetch("/email/signup", {
+    fetch("email/signup", {
         method : "POST", 
         headers : {"Content-Type" : "application/json"},
         body : email.value
@@ -366,9 +387,9 @@ sendEmailBtn.addEventListener("click", e => {
     .then( resp => resp.text() )
     .then( result => {
         if(result == 1) {
-            alert("인증 번호 발송 성공"); 
+            emailMessage.innerText("인증 번호 발송 성공"); 
         } else {
-            alert("인증 번호 발송 실패"); 
+            emailMessage.innerText("인증 번호 발송 실패"); 
         }
     }); 
 
@@ -447,35 +468,6 @@ checkAuthKeyBtn.addEventListener("click", () => {
 
 
 
-/* 다음 주소 API 활용 */
-
-function DaumPostCode() {
-    new daum.Postcode({
-        oncomplete: function(data) {
-            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-            // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-            var addr = ''; // 주소 변수
-            var extraAddr = ''; // 참고항목 변수
-
-            //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                addr = data.roadAddress;
-            } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                addr = data.jibunAddress;
-            }
-            // 우편번호와 주소 정보를 해당 필드에 넣는다.
-            document.getElementById('postcode').value = data.zonecode;
-            document.getElementById("mainAddress").value = addr;
-            // 커서를 상세주소 필드로 이동한다.
-            document.getElementById("detailAddress").focus();
-        }
-    }).open();
-}
-
-// 주소 검색 버튼 클릭 시 
-document.querySelector("#searchAddress").addEventListener("click", DaumPostCode);
 
 
 

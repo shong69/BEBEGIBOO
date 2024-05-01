@@ -10,6 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+	font-family: 'Pretendard-Regular';
     /*border: 1px black solid;*/
 }
 .l-text{
@@ -19,7 +20,7 @@
 }
 .text {
     font-family: 'Pretendard-Regular';
-    font-size: 15px;
+    font-size: 17px;
 	margin : 0 10px;
 }
 .s-text {
@@ -66,71 +67,59 @@ form {
 	height : 500px;
 	display: flex;
 	flex-direction: column;
-
+	justify-content: center;
 	align-items: center;
 	border: 1px solid #858585;
 	margin-bottom: 20px;
+
+}
+.nameInput {
+
+	margin-right: auto;
 }
 
-table {
-	margin-top: 140px;
+ul {
+	list-style-type: none;
 }
-tbody {
-	height: 80px;
+li:nth-child(1),
+li:nth-child(3),
+li:nth-child(5){
+	margin-bottom: 35px
+}
+li:nth-child(2),
+li:nth-child(4) {
+	margin-bottom: 20px;
+}
+
+input[name="memberName"] {
+	height : 25px;
+	width : 270px;
+}
+
+#inputArea {
 	display : flex;
-	flex-direction: column;
 	justify-content: space-between;
 }
-tr {
-	display: flex;
-	justify-content: space-between;
-}
-tbody tr:nth-child(2),
-tbody tr:nth-child(4) {
 
-	display:flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	margin-bottom: 10px;
+#phoneNum,
+#email {
+	margin-left: -17px;
 }
 
 .input {
-	width : 70px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.loginInput{
-	width: 270px;
+	margin-left: 12px;
+	width : 350px;
 	height: 25px;
-
+	font-size: 11px;
+	padding:10px;
+	margin-bottom: 20px;
 }
 
-.error {
-	color : red;
-}
-
-#saveIdArea{
-	width: 200px;
-	margin:0 0 100px 20px;
-
-	display: flex;
-}
-#saveId {
-	margin-right: 5px;
-}
-#loginBtn{
+#findtBtn{
 	width: 400px;
 	height: 80px;
 	background-color: #DCEBFF;
 	border: 2px solid #DCEBFF;
 	border-radius: 20px;
-}
-#loginBtn:hover{
-	cursor : pointer;
-	background-color : white;
-	transition-duration : 0.5s;
 
 }
-
-

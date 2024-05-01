@@ -10,28 +10,59 @@ import com.bebegiboo.project.member.model.dto.Member;
 import com.bebegiboo.project.member.model.mapper.MemberMapper;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 
 
+<<<<<<< HEAD
+@Slf4j
+=======
 
+>>>>>>> 8499ac8346881c57c5fc24202c518b40c22edc46
 @Transactional
 @RequiredArgsConstructor
 @Service
 public class MemberServiceImpl implements MemberService {
+	
+
+
+
+	/**
+	 * 아이디 중복 체크 
+	 */
 
 	private final MemberMapper mapper;
 	
 	private final BCryptPasswordEncoder bcrypt;
+<<<<<<< HEAD
+
+  
+=======
 	
 
 
 	/**
 	 * 아이디 중복 체크 
 	 */
+>>>>>>> 8499ac8346881c57c5fc24202c518b40c22edc46
 	@Override
 	public int checkId(String memberId) {
 		
 		return mapper.checkId(memberId);
+<<<<<<< HEAD
+=======
+	}
+
+
+
+	/**
+	 * 이메일 중복 체크 
+	 */
+	@Override
+	public int checkEmail(String email) {
+		
+		return mapper.checkEmail(email);
+>>>>>>> 8499ac8346881c57c5fc24202c518b40c22edc46
 	}
 
 
@@ -45,18 +76,23 @@ public class MemberServiceImpl implements MemberService {
 		return mapper.checkEmail(email);
 	}
 
+	
+	
+	
 	//회원 로그인
 	@Override
 	public Member login(Member inputMember) {
-		
+		log.debug("pw : "+bcrypt.encode("1q2w3e4r"));
 		Member loginMember = mapper.login(inputMember.getMemberId());
 		
 		if(loginMember == null) {
 			return null;
 		}
 		if(!bcrypt.matches(inputMember.getMemberPw(), loginMember.getMemberPw())) {
+			log.debug("pw틀림");
 			return null;
 		}
+		
 		
 		loginMember.setMemberPw(null);
 		return loginMember;

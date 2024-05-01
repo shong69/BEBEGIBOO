@@ -24,10 +24,4 @@ public interface MemberService {
 	 */
 	Member login(Member inputMember);
 
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 8499ac8346881c57c5fc24202c518b40c22edc46
 }

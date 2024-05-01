@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -41,7 +40,7 @@ public class MemberController {
 		
 		return "/member/signup/signup"; 
 
-	
+	}
 	/** 회원가입 화면 이동 
 	 * @return
 	 */
@@ -63,6 +62,7 @@ public class MemberController {
 	@GetMapping("checkId")
 	public int checkId(@RequestParam("memberId") String memberId) {
 	    return service.checkId(memberId);
+	}
 
 	/** 회원가입 약관 동의 화면 이동 
 	 * @return
@@ -95,15 +95,6 @@ public class MemberController {
 	}
 	
 	
-	/** 아이디 중복 검사 
-	 * @param memberId
-	 * @return
-	 */
-	@ResponseBody
-	@GetMapping("checkId")
-	public int checkId(@RequestParam("memberId") String memberId) {
-	    return service.checkId(memberId);
-	}
 	
 	
 	/**로그인

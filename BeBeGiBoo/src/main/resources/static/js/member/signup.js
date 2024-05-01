@@ -2,6 +2,7 @@
 
 
 const checkObj = {
+    "authority" : false,
     "memberId" : false, 
     "memberPw" : false, 
     "memberPwConfirm" : false, 
@@ -9,6 +10,7 @@ const checkObj = {
     "memberBirth" : false, 
     "phone" : false, 
     "email" : false, 
+    "authKey" : false,
     "authKey" : false,
     "address" : false
 }; 
@@ -22,6 +24,7 @@ const idMessage = document.querySelector("#idMessage");
 // 입력하지 않은 경우 
 memberId.addEventListener("input", (e) => {
 
+    if(memberId.value.length === 0) {
     if(memberId.value.length === 0) {
         idMessage.innerText = "아이디를 입력해주세요"
         idMessage.classList.add("error"); 
@@ -49,7 +52,21 @@ memberId.addEventListener("input", (e) => {
     fetch("/member/checkId?memberId=" + inputId)
     .then(resp => resp.text())
     .then(result => {
+    const inputId = e.target.value;   
+    console.log(inputId); 
 
+    // 유효한 경우 중복 검사 
+    fetch("/member/checkId?memberId=" + inputId)
+    .then(resp => resp.text())
+    .then(result => {
+
+    if(result == 1) {
+        idMessage.innerText = "이미 사용중인 아이디입니다."; 
+        idMessage.classList.add("error"); 
+        idMessage.classList.remove("confirm"); 
+        checkObj.memberId = false; 
+        return; 
+    }
     if(result == 1) {
         idMessage.innerText = "이미 사용중인 아이디입니다."; 
         idMessage.classList.add("error"); 
@@ -64,6 +81,13 @@ memberId.addEventListener("input", (e) => {
     checkObj.memberId = true; 
 
     }); 
+    idMessage.innerText = "사용 가능한 아이디입니다~!!"; 
+    idMessage.classList.add("confirm"); 
+    idMessage.classList.remove("error"); 
+    checkObj.memberId = true; 
+
+    }); 
+
 
 
 }); 

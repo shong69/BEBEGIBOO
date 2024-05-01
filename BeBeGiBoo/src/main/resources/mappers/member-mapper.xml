@@ -18,6 +18,16 @@
 	</select>
  
  	<!-- 로그인 -->
+	
+	<!-- 이메일 중복 검사 -->
+	<select id="checkEmail" resultType="_int">
+		SELECT COUNT(*)
+		FROM "MEMBER"
+		WHERE MEMBER_DEL_FL ='N'
+		AND EMAIL = #{email}
+	</select>
+ 
+ 	<!-- 로그인 -->
 	<select id="login">
 		SELECT MEMBER_NO,MEMBER_ID, MEMBER_PW, MEMBER_NAME, MEMBER_BIRTH, EMAIL, PHONE, ADDRESS,
 		ENROLL_DATE, AUTHORITY
@@ -25,4 +35,7 @@
 		WHERE MEMBER_ID = #{memberId}
 		AND MEMBER_DEL_FL='N'
 	</select>
+	
+	
+	
 </mapper>

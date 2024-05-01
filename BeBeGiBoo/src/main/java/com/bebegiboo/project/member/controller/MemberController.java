@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bebegiboo.project.member.model.dto.Member;
@@ -15,7 +16,11 @@ import com.bebegiboo.project.member.model.service.MemberService;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 
+
+@SessionAttributes({"loginMember"})
+@Slf4j
 @Controller
 @RequestMapping("member")
 public class MemberController {
@@ -23,6 +28,9 @@ public class MemberController {
 	@Autowired
 	private MemberService service; 
 	
+	/** 회원가입 화면 이동 
+	 * @return
+	 */
 	@GetMapping("signup")
 	public String signup() {
 		
@@ -31,11 +39,15 @@ public class MemberController {
 	}
 	
 	
+	
+	/** 아이디 중복 검사 
+	 * @param memberId
+	 * @return
+	 */
 	@ResponseBody
 	@GetMapping("checkId")
-	public int checkId( @RequestParam("memberId") String memberId) {
-		
-		return service.checkId(memberId); 
+	public int checkId(@RequestParam("memberId") String memberId) {
+	    return service.checkId(memberId);
 	}
 	
 	@GetMapping("login")
@@ -45,24 +57,36 @@ public class MemberController {
 	}
 	
 	
+	/**로그인
+	 * @param inputMember
+	 * @param ra
+	 * @param model
+	 * @param saveId
+	 * @param resp
+	 * @return
+	 */
 	@PostMapping("login")
 	public String login(Member inputMember,
 						RedirectAttributes ra,
 						Model model,
-						@RequestParam(value="name", required=false) String saveId,
+						@RequestParam(value="saveId", required=false) String saveId,
 						HttpServletResponse resp
 						) {
 		
-		
+
 		Member loginMember = service.login(inputMember);
 		String message=null;
 		String path= null;
+		
+		log.debug("loginMember:"+loginMember);
 		if(loginMember == null) {
 			
 			message="아이디 또는 비밀번호가 일치하지 않습니다";
-			path ="/member/login/login";
-		}else {
+			path ="redirect:/member/login";
+		}
+		if(loginMember != null){
 			
+			log.debug("test" + loginMember.getMemberId());
 			model.addAttribute("loginMember", loginMember);
 			
 			//쿠키 만들기
@@ -79,13 +103,31 @@ public class MemberController {
 			
 			resp.addCookie(cookie);
 			
-			ra.addFlashAttribute("message", message);
-			
 			path ="redirect:/";
 			
 		}
 		
+		ra.addFlashAttribute("message", message);
 		return path;
 	}
 
+	
+	@ResponseBody
+	@GetMapping("checkEmail")
+	public int checkEmail(@RequestParam("email") String email) {
+		return service.checkEmail(email); 
+	}
+	
+	
+	@GetMapping("inquiry/idInquiry")
+	public String idInquiry() {
+		return "member/inquiry/idInquiry";
+	}
+	
+	@GetMapping("inquiry/pwInquiry")
+	public String pwInquiry() {
+		return "member/inquiry/pwInquiry";
+	}
+	
+	
 }

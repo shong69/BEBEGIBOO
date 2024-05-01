@@ -22,8 +22,12 @@ import jakarta.servlet.http.HttpServletResponse;
 @RequestMapping("member")
 public class MemberController {
 	
+	
+	
 	@Autowired
 	private MemberService service; 
+	
+
 	
 	/** 회원가입 화면 이동 
 	 * @return
@@ -34,6 +38,16 @@ public class MemberController {
 		return "/member/signup/signupMain"; 
 	}
 	
+	
+	/** 회원가입 약관 동의 화면 이동 
+	 * @return
+	 */
+	@GetMapping("signup/signupTerm")
+	public String signupTerm() {
+		return "/member/signup/signupTerm"; 
+	}
+	
+	
 	/** 회원가입 폼 화면 이동 
 	 * @return
 	 */
@@ -41,9 +55,6 @@ public class MemberController {
 	public String signupForm() {
 		return "/member/signup/signupForm"; 
 	}
-	
-	
-
 	
 
 	
@@ -113,6 +124,10 @@ public class MemberController {
 	}
 
 	
+	/** 이메일 중복 검사 
+	 * @param email
+	 * @return 
+	 */
 	@ResponseBody
 	@GetMapping("checkEmail")
 	public int checkEmail(@RequestParam("email") String email) {

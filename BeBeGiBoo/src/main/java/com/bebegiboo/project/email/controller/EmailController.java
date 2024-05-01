@@ -24,8 +24,13 @@ public class EmailController {
 		
 		String authKey = service.sendEmail("signup", email);
 		
-		return 0; 
-		
+		if(authKey != null) { // 인증번호가 반환되서 돌아옴
+			// == 이메일 보내기 성공
+			return 1;
+		}
+
+		// 이메일 보내기 실패
+		return 0;
 	}
 	
 	

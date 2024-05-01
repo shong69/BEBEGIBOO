@@ -1,42 +1,6 @@
 /* 회원 가입 유효성 검사 */
 
 
-/* 체크박스 하나만 선택하기 */
-
-const checkboxes = document.querySelectorAll('.selectOne');
-
-checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        checkboxes.forEach(cb => {
-            if (cb !== this) {
-                cb.checked = false;
-            }
-        });
-    });
-}); 
-
-
-/* 제출하기 버튼 클릭시 이동 */ 
-const signUpBtn = document.getElementById('signUpBtn');
-const donatorCheckbox = document.getElementById('donator');
-const acceptorCheckbox = document.getElementById('acceptor');
-
-document.getElementById('submitBtn').addEventListener('click', e => {
-
-    e.preventDefault(); 
-
-    // 기부자/피기부자 선택시 이동 
-    if (donatorCheckbox.checked || acceptorCheckbox.checked) {
-
-        location.href = "/member/signup/signupForm";
-    
-    } else {
-        alert('기부자 또는 피기부자 중 최소 한 가지를 선택해야 합니다.');
-    }
-   
-});
-
-
 const checkObj = {
     "authority" : false,
     "memberId" : false, 
@@ -375,7 +339,9 @@ let min = initMin;
 let sec = initSec;
 
 // 인증메일 버튼 클릭시 
-sendEmailBtn.addEventListener("click", () => {
+sendEmailBtn.addEventListener("click", e => {
+
+    e.preventDefault(); 
 
     checkObj.authKey = false; 
     authKeyMessage.innerText = ""; 
@@ -392,7 +358,7 @@ sendEmailBtn.addEventListener("click", () => {
     clearInterval(authTimer); 
 
     // 메일 보내기 
-    fetch("email/signup", {
+    fetch("/email/signup", {
         method : "POST", 
         headers : {"Content-Type" : "application/json"},
         body : email.value
@@ -400,9 +366,9 @@ sendEmailBtn.addEventListener("click", () => {
     .then( resp => resp.text() )
     .then( result => {
         if(result == 1) {
-            emailMessage.innerText("인증 번호 발송 성공"); 
+            alert("인증 번호 발송 성공"); 
         } else {
-            emailMessage.innerText("인증 번호 발송 실패"); 
+            alert("인증 번호 발송 실패"); 
         }
     }); 
 
@@ -483,7 +449,7 @@ checkAuthKeyBtn.addEventListener("click", () => {
 
 /* 다음 주소 API 활용 */
 
-function  execDaumPostCode() {
+function DaumPostCode() {
     new daum.Postcode({
         oncomplete: function(data) {
             // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
@@ -509,7 +475,7 @@ function  execDaumPostCode() {
 }
 
 // 주소 검색 버튼 클릭 시 
-document.querySelector("#searchAddress").addEventListener("click", execDaumPostCode);
+document.querySelector("#searchAddress").addEventListener("click", DaumPostCode);
 
 
 

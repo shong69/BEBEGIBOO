@@ -409,7 +409,7 @@ a {
 
 .footer-main {
     border-top: 1px rgb(85, 85, 85) solid;
-    height: 250px;
+    height: 200px;
     display: flex;
 }
 
@@ -422,13 +422,13 @@ a {
 }
 
 #logo img {
-    height: 110px;
+    height: 100px;
     margin-bottom: 13px;
 }
 
 #title {
     font-family: "Edu TAS Beginner";
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 600;
 }
 

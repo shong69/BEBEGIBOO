@@ -44,6 +44,7 @@ public class MemberController {
 		return "/member/signup/signupMain"; 
 	}
 	
+
 	
 
 	/** 아이디 중복 검사 
@@ -55,6 +56,7 @@ public class MemberController {
 	public int checkId(@RequestParam("memberId") String memberId) {
 	    return service.checkId(memberId);
 	}
+
 
 	/** 회원가입 약관 동의 화면 이동 
 	 * @return

@@ -1,15 +1,57 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const slider = document.querySelector('.slides');
-    let currentIndex = 0;
-    const slideCount = slider.children.length;
-    const slideWidth = window.innerWidth;
-    const slideInterval = 3500;
-
-    setInterval(function() {
-        currentIndex = (currentIndex + 1) % slideCount;
-        slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-    }, slideInterval);
-});
+document.addEventListener("DOMContentLoaded", function () {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.4
+    };
+  
+    // IMAGE ANIMATION
+  
+    let revealCallback = (entries) => {
+      entries.forEach((entry) => {
+        let container = entry.target;
+  
+        if (entry.isIntersecting) {
+          container.classList.add("animating");
+          return;
+        }
+  
+        if (entry.boundingClientRect.top > 0) {
+          container.classList.remove("animating");
+        }
+      });
+    };
+  
+    let revealObserver = new IntersectionObserver(revealCallback, options);
+  
+    document.querySelectorAll(".reveal").forEach((reveal) => {
+      revealObserver.observe(reveal);
+    });
+  
+    // TEXT ANIMATION
+  
+    let fadeupCallback = (entries) => {
+      entries.forEach((entry) => {
+        let container = entry.target;
+        container.classList.add("not-fading-up");
+  
+        if (entry.isIntersecting) {
+          container.classList.add("fading-up");
+          return;
+        }
+  
+        if (entry.boundingClientRect.top > 0) {
+          container.classList.remove("fading-up");
+        }
+      });
+    };
+  
+    let fadeupObserver = new IntersectionObserver(fadeupCallback, options);
+  
+    document.querySelectorAll(".fadeup").forEach((fadeup) => {
+      fadeupObserver.observe(fadeup);
+    });
+  });
 
 
 
@@ -62,23 +104,6 @@ const showTit = x => {
 window.addEventListener("scroll", () => {
     for (let x of showBox) showTit(x);
 });
-
-
-
- let roller = document.querySelector('.rolling-list');
- roller.id = 'roller1';
-
- let clone = roller.cloneNode(true)
-
- clone.id = 'roller2';
- document.querySelector('.wrap').appendChild(clone);
-
- document.querySelector('#roller1').style.left = '0px';
- document.querySelector('#roller2').style.left = document.querySelector('.rolling-list ul').offsetWidth + 'px';
-
-
- roller.classList.add('original');
- clone.classList.add('clone');
 
 
 

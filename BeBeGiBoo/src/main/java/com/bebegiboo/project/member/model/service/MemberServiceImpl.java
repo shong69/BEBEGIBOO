@@ -25,7 +25,10 @@ public class MemberServiceImpl implements MemberService {
 	private final MemberMapper mapper;
 	
 	private final BCryptPasswordEncoder bcrypt;
+<<<<<<< HEAD
+=======
 
+>>>>>>> e4086725923af581f7e4934090a7a7d15d3c2807
 
 
 	/**
@@ -36,6 +39,9 @@ public class MemberServiceImpl implements MemberService {
 	public int checkId(String memberId) {
 		
 		return mapper.checkId(memberId);
+<<<<<<< HEAD
+
+
 	}
 
 
@@ -47,7 +53,11 @@ public class MemberServiceImpl implements MemberService {
 	public int checkEmail(String email) {
 		
 		return mapper.checkEmail(email);
+
+=======
+>>>>>>> e4086725923af581f7e4934090a7a7d15d3c2807
 	}
+
 
 	
 	
@@ -69,6 +79,29 @@ public class MemberServiceImpl implements MemberService {
 		
 		loginMember.setMemberPw(null);
 		return loginMember;
+	}
+
+
+
+	/**
+	 * 회원 가입 
+	 */
+	@Override
+	public int signup(Member inputMember, String[] memberAddress) {
+		
+		// 주소 입력된 경우 
+		if( !inputMember.getAddress().equals(",,") ) {
+			String address = String.join("^^^", memberAddress);
+			inputMember.setAddress(address);
+		} else {
+			inputMember.setAddress(null);
+		}
+		
+		// 비밀번호 암호화한 걸 inputMember에 세팅 
+		String encPw = bcrypt.encode(inputMember.getMemberPw()); 
+		inputMember.setMemberPw(encPw);
+		
+		return mapper.signup(inputMember);
 	}
 
 

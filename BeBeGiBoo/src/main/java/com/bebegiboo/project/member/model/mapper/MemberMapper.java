@@ -25,4 +25,11 @@ public interface MemberMapper {
 	 */
 	Member login(String memberId);
 
+	/** 회원 가입 
+	 * @param inputMember
+	 * @return
+	 */
+	int signup(Member inputMember);
+
+
 }

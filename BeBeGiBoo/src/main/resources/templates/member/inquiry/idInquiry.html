@@ -30,23 +30,26 @@
 					<li>
 						<input type="radio" id="phoneNum" name = "check"> 휴대폰번호로 찾기
 					</li>
-					<li id="phoneNumArea" style="display:none;">
-						<input type="tel"  class="input"  placeholder="'-'를 포함해서 입력해주세요">					</li>
+					<li>
+						<input id = "phoneArea" type="tel"  class="input"  placeholder="'-'를 포함해서 입력해주세요" style="display:none;">
+					</li>
 					<li> 
 						<input type="radio" id="email" name="check"> 이메일로 찾기
 					</li>
-					<li id="emailArea" style="display:none;">
-						<input type="email" id="email" class="input"  placeholder="이메일 주소를 입력해주세요">
+					<li>
+						<input id = "emailArea" type="email" class="input"  placeholder="이메일 주소를 입력해주세요" style="display:none;">
 					</li>
 				</ul>
 
 				<section>
-					<button id="findtBtn" class="text">아이디 찾기</button>
+					<button id="findBtn" class="text">아이디 찾기</button>
 				</section>
 			</form>
 
             <article class="signup-find-area">
-                <a href="/member/signup" class="s-text">회원가입</a>
+				<a href="/member/signup/signupMain" class="s-text">회원가입</a>
+                <span class="divider">|</span>
+                <a href="/member/login" class="s-text">로그인</a>
                 <span class="divider">|</span>
                 <a href="/member/inquiry/pwInquiry" class="s-text">비밀번호 찾기</a>
             </article>

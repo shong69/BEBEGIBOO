@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -33,7 +32,19 @@ public class MemberController {
 	private MemberService service; 
 	
 
+<<<<<<< HEAD
 	
+=======
+	/** 회원가입 화면 이동 
+	 * @return
+	 */
+	@GetMapping("signup")
+	public String signup() {
+		
+		return "/member/signup/signup"; 
+
+	}
+>>>>>>> e4086725923af581f7e4934090a7a7d15d3c2807
 	/** 회원가입 화면 이동 
 	 * @return
 	 */
@@ -45,6 +56,19 @@ public class MemberController {
 	}
 	
 
+<<<<<<< HEAD
+=======
+	
+	/** 아이디 중복 검사 
+	 * @param memberId
+	 * @return
+	 */
+	@ResponseBody
+	@GetMapping("checkId")
+	public int checkId(@RequestParam("memberId") String memberId) {
+	    return service.checkId(memberId);
+	}
+>>>>>>> e4086725923af581f7e4934090a7a7d15d3c2807
 
 	/** 회원가입 약관 동의 화면 이동 
 	 * @return
@@ -102,15 +126,6 @@ public class MemberController {
 	}
 	
 	
-	/** 아이디 중복 검사 
-	 * @param memberId
-	 * @return
-	 */
-	@ResponseBody
-	@GetMapping("checkId")
-	public int checkId(@RequestParam("memberId") String memberId) {
-	    return service.checkId(memberId);
-	}
 	
 	
 	/**로그인

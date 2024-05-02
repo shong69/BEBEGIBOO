@@ -25,6 +25,10 @@ public class MemberServiceImpl implements MemberService {
 	private final MemberMapper mapper;
 	
 	private final BCryptPasswordEncoder bcrypt;
+<<<<<<< HEAD
+=======
+
+>>>>>>> e4086725923af581f7e4934090a7a7d15d3c2807
 
 
 	/**
@@ -35,6 +39,7 @@ public class MemberServiceImpl implements MemberService {
 	public int checkId(String memberId) {
 		
 		return mapper.checkId(memberId);
+<<<<<<< HEAD
 
 
 	}
@@ -49,6 +54,8 @@ public class MemberServiceImpl implements MemberService {
 		
 		return mapper.checkEmail(email);
 
+=======
+>>>>>>> e4086725923af581f7e4934090a7a7d15d3c2807
 	}
 
 

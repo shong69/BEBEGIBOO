@@ -14,55 +14,28 @@ import lombok.extern.slf4j.Slf4j;
 
 
 
-<<<<<<< HEAD
-@Slf4j
-=======
 
->>>>>>> 8499ac8346881c57c5fc24202c518b40c22edc46
+@Slf4j
 @Transactional
 @RequiredArgsConstructor
 @Service
 public class MemberServiceImpl implements MemberService {
 	
 
-
-
-	/**
-	 * 아이디 중복 체크 
-	 */
-
 	private final MemberMapper mapper;
 	
 	private final BCryptPasswordEncoder bcrypt;
-<<<<<<< HEAD
 
-  
-=======
-	
 
 
 	/**
 	 * 아이디 중복 체크 
 	 */
->>>>>>> 8499ac8346881c57c5fc24202c518b40c22edc46
+
 	@Override
 	public int checkId(String memberId) {
 		
 		return mapper.checkId(memberId);
-<<<<<<< HEAD
-=======
-	}
-
-
-
-	/**
-	 * 이메일 중복 체크 
-	 */
-	@Override
-	public int checkEmail(String email) {
-		
-		return mapper.checkEmail(email);
->>>>>>> 8499ac8346881c57c5fc24202c518b40c22edc46
 	}
 
 

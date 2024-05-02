@@ -1,7 +1,7 @@
 /* 회원 가입 유효성 검사 */
 
-
 const checkObj = {
+    "authority" : false,
     "memberId" : false, 
     "memberPw" : false, 
     "memberPwConfirm" : false, 
@@ -20,7 +20,7 @@ const memberId = document.querySelector("#memberId");
 const idMessage = document.querySelector("#idMessage"); 
 
 // 입력하지 않은 경우 
-memberId.addEventListener("input", (e) => {
+memberId.addEventListener( "input", (e) => {
 
     if(memberId.value.length === 0) {
         idMessage.innerText = "아이디를 입력해주세요"
@@ -49,7 +49,21 @@ memberId.addEventListener("input", (e) => {
     fetch("/member/checkId?memberId=" + inputId)
     .then(resp => resp.text())
     .then(result => {
+    const inputId = e.target.value;   
+    console.log(inputId); 
 
+    // 유효한 경우 중복 검사 
+    fetch("/member/checkId?memberId=" + inputId)
+    .then(resp => resp.text())
+    .then(result => {
+
+    if(result == 1) {
+        idMessage.innerText = "이미 사용중인 아이디입니다."; 
+        idMessage.classList.add("error"); 
+        idMessage.classList.remove("confirm"); 
+        checkObj.memberId = false; 
+        return; 
+    }
     if(result == 1) {
         idMessage.innerText = "이미 사용중인 아이디입니다."; 
         idMessage.classList.add("error"); 
@@ -64,6 +78,13 @@ memberId.addEventListener("input", (e) => {
     checkObj.memberId = true; 
 
     }); 
+    idMessage.innerText = "사용 가능한 아이디입니다~!!"; 
+    idMessage.classList.add("confirm"); 
+    idMessage.classList.remove("error"); 
+    checkObj.memberId = true; 
+
+    }); 
+
 
 
 }); 
@@ -338,7 +359,9 @@ let min = initMin;
 let sec = initSec;
 
 // 인증메일 버튼 클릭시 
-sendEmailBtn.addEventListener("click", () => {
+sendEmailBtn.addEventListener("click", e => {
+
+    e.preventDefault(); 
 
     checkObj.authKey = false; 
     authKeyMessage.innerText = ""; 
@@ -355,7 +378,7 @@ sendEmailBtn.addEventListener("click", () => {
     clearInterval(authTimer); 
 
     // 메일 보내기 
-    fetch("email/signup", {
+    fetch("/email/signup", {
         method : "POST", 
         headers : {"Content-Type" : "application/json"},
         body : email.value
@@ -363,9 +386,9 @@ sendEmailBtn.addEventListener("click", () => {
     .then( resp => resp.text() )
     .then( result => {
         if(result == 1) {
-            emailMessage.innerText("인증 번호 발송 성공"); 
+            alert("인증 번호 발송 성공"); 
         } else {
-            emailMessage.innerText("인증 번호 발송 실패"); 
+            alert("인증 번호 발송 실패"); 
         }
     }); 
 
@@ -403,7 +426,10 @@ function addZero(number){
 }
 
 /* 인증번호 확인 버튼 클릭시 */
-checkAuthKeyBtn.addEventListener("click", () => {
+checkAuthKeyBtn.addEventListener("click", e => {
+
+    e.preventDefault(); 
+
     if( min === 0 && sec === 0) { // 타이머가 00:00인 경우
         alert("인증번호 입력 제한시간을 초과하였습니다!");
         return;
@@ -416,7 +442,7 @@ checkAuthKeyBtn.addEventListener("click", () => {
 
     // 입력받은 이메일, 인증번호로 객체 생성
     const obj = {
-        "email" : memberEmail.value,
+        "email" : email.value,
         "authKey" : authKey.value
     };
 
@@ -443,8 +469,84 @@ checkAuthKeyBtn.addEventListener("click", () => {
 });
 
 
+/* 다음 주소 API 활용 */
+function DaumPostcode() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+            // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+            var addr = ''; // 주소 변수
+
+            //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                addr = data.roadAddress;
+            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                addr = data.jibunAddress;
+            }
+
+            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+            document.getElementById('postcode').value = data.zonecode;
+            document.getElementById("mainAddress").value = addr;
+            // 커서를 상세주소 필드로 이동한다.
+            document.getElementById("detailAddress").focus();
+        }
+    }).open();
+}
+
+// 주소 검색 버튼 클릭 시
+document.querySelector("#searchAddress").addEventListener("click", DaumPostcode);
 
 
+
+
+// 회원 가입 버튼 클릭 시 전체 유효성 검사 여부 확인
+
+const signUpBtn = document.querySelector("#signUpBtn");
+
+// 회원 가입 폼 제출 시
+signUpBtn.addEventListener("submit", e => {
+
+
+    e.preventDefault(); 
+    
+    for(let key in checkObj) { // checkObj 요소의 key 값을 순서대로 꺼내옴
+
+        if( !checkObj[key] ) { // false 인 경우 (유효하지 않음)
+
+            let str; // 출력할 메시지를 저장할 변수
+
+            switch(key) {
+                case "memberId" : 
+                    str = "아이디가 유효하지 않습니다"; break; 
+                case "memberPw" : 
+                    str = "비밀번호가 유효하지 않습니다"; break; 
+                case "memberPwConfirm" :
+                    str = "비밀번호가 일치하지 않습니다"; break;
+                case "memberName" : 
+                    str = "이름이 유효하지 않습니다" ; break; 
+                case "memberBirth" : 
+                    str = "생년월일이 유효하지 않습니다"; break; 
+                case "phone" : 
+                    str = "핸드폰번호가 유효하지 않습니다"; break;         
+                case "email" :
+                    str = "이메일이 유효하지 않습니다"; break;               
+                case "authKey" : 
+                    str = "이메일이 인증되지 않았습니다"; break;
+                case "address" : 
+                    str = "주소가 유효하지 않습니다"; break; 
+            }
+
+            alert(str);
+
+            document.getElementById(key).focus(); // 초점 이동
+
+            e.preventDefault(); // form 태그 기본 이벤트(제출) 막기
+            return;
+        }
+    }
+});
 
 
 

@@ -1,7 +1,6 @@
 /* 회원 가입 유효성 검사 */
 
 const checkObj = {
-    "authority" : false,
     "memberId" : false, 
     "memberPw" : false, 
     "memberPwConfirm" : false, 
@@ -12,6 +11,8 @@ const checkObj = {
     "authKey" : false,
     "address" : false
 }; 
+
+
 
 
 /* 아이디 유효성 검사 */

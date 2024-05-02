@@ -38,6 +38,7 @@ public class MemberServiceImpl implements MemberService {
 		return mapper.checkId(memberId);
 
 
+
 	}
 
 
@@ -49,6 +50,7 @@ public class MemberServiceImpl implements MemberService {
 	public int checkEmail(String email) {
 		
 		return mapper.checkEmail(email);
+
 
 	}
 

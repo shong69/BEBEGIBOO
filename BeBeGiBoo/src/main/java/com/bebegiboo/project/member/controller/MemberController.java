@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.bebegiboo.project.member.model.dto.Member;
 import com.bebegiboo.project.member.model.service.MemberService;
 
+import ch.qos.logback.classic.Logger;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -32,9 +34,6 @@ public class MemberController {
 	private MemberService service; 
 	
 
-
-
-
 	/** 회원가입 화면 이동 
 	 * @return
 	 */
@@ -47,6 +46,7 @@ public class MemberController {
 	
 
 	
+
 	/** 아이디 중복 검사 
 	 * @param memberId
 	 * @return
@@ -77,10 +77,18 @@ public class MemberController {
 	}
 	
 
+	@ResponseBody
 	@PostMapping("signup/signupForm")
 	public String signup(	Member inputMember, 
-							@RequestParam("address") String[] memberAddress, 
-							RedirectAttributes ra	) {
+							@RequestParam("address") String[] memberAddress,
+							@RequestParam("authority") int authority,
+							RedirectAttributes ra,
+							Model model ) {
+		
+		
+		
+		inputMember.setAuthority(authority); 
+		
 		
 		int result = service.signup(inputMember, memberAddress); 
 		

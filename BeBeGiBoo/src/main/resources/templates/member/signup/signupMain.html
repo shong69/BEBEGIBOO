@@ -23,19 +23,23 @@
                 <span>회원가입</span>
             </div>
 
-            <form action="member/signup/signupMain" method="POST" name="signupMain" id="signupMain">
+            <form action="member/signup/signupForm" method="POST" name="signupMain" id="signupMain">
 
                 <table class="donatorForm">
 
-                    <tr id="select">
+                    <tr>
                         <td><span>기부자 / 피기부자 선택하기</span></td>
                     </tr>
+                    <tr class="empty"></tr>
+                    <tr class="empty"></tr>
                     <tr>
-                        <td><input type="checkbox" name="donator" id="donator" class="selectOne"><span id="donatorSpan">기부자</span></td>              
+                        <td><input type="checkbox" name="authority" id="donator" class="selectOne"><span id="donatorSpan">기부자</span></td>              
                     </tr>
+                    <tr class="empty"></tr>
                     <tr>
-                        <td><input type="checkbox" name="acceptor" id="acceptor" class="selectOne"><span id="acceptorSpan">피기부자</span></td>
+                        <td><input type="checkbox" name="authority" id="acceptor" class="selectOne"><span id="acceptorSpan">피기부자</span></td>
                     </tr>
+                    <tr class="empty"></tr>
                     <tr>
                         <td><button id="submitBtn">제출하기</button></td>
                     </tr>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/member/signup/signupForm.css">
 </head>
 <body>
-
+    
 <main>
     <th:block th:replace="~{common/header}"></th:block>
 
@@ -18,11 +18,9 @@
             <img src="/images/font-logo.png" alt="font-logo">
         </a>
     </div>
-
-
+    
         <section class="signUp-content">
             
-
             <form action="/member/signup/signupForm" method="POST" name="signUpForm" id="signUpForm">
 
                 <div class="signup"><span>회원가입</span></div>
@@ -117,7 +115,7 @@
                 <table class="signUp-address">
                     <tr>
                         <td id="postcodeSection">우편번호
-                        
+                
                             <input type="text" name="address" placeholder="우편번호" 
                                                                 maxlength="6" id="postcode">
                         </td>
@@ -144,6 +142,10 @@
         </section>
 
     </main>
+
+    <script th:inline="javascript">
+        let authority = /*[[${authority}]]*/ "회원 권한";
+    </script>
 
     <!-- 푸터 -->
     <th:block th:replace="~{common/footer}"></th:block>

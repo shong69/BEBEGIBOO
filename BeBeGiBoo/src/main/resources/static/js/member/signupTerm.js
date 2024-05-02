@@ -27,17 +27,20 @@ checkAll.addEventListener('change', e => {
 
 
 agreeBtn.addEventListener('click', e => {
-
     e.preventDefault(); 
 
     // check1과 check2가 모두 선택되었는지 확인
     if (check1.checked && check2.checked) {
         // 다음 페이지로 넘어감
-        location.href = "/member/signup/signupForm"; 
-        
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const authority = urlParams.get('authority');
+
+        // authority 값을 그대로 유지하면서 signupForm 페이지로 이동
+        location.href = "/member/signup/signupForm?authority=" + authority; 
     } else {
         // 두 체크박스 중 하나라도 선택되지 않았을 경우 경고 메시지 출력
         alert("이용약관 및 개인정보 수집 및 이용에 모두 동의해주세요.");
-
     }
 });
+

@@ -18,7 +18,6 @@
   margin-bottom: 0;
 }
 
-
 .signup{
   display: flex;
   justify-content: center;
@@ -157,7 +156,7 @@
 
 /* 우편번호 input */
 #postcode {
-  margin-left: 96px;
+  margin-left: 85px;
 }
 
 

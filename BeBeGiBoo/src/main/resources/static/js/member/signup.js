@@ -12,8 +12,7 @@ const checkObj = {
     "address" : false
 }; 
 
-
-
+console.log(authority); 
 
 /* 아이디 유효성 검사 */
 
@@ -498,8 +497,6 @@ function DaumPostcode() {
 
 // 주소 검색 버튼 클릭 시
 document.querySelector("#searchAddress").addEventListener("click", DaumPostcode);
-
-
 
 
 // 회원 가입 버튼 클릭 시 전체 유효성 검사 여부 확인

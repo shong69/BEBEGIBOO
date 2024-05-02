@@ -22,9 +22,8 @@
             </a>
         </div>
 
-
-
-        <form action="member/signup/signupTerm" method="POST" name="agreeForm" id="agreeForm">
+ 
+        <form action="/member/signup/signupTerm" method="POST" name="agreeForm" id="agreeForm">
 
             <span class="titleText">회원 가입 약관 동의</span>
 
@@ -359,6 +358,10 @@
 
 
     </main>
+
+    <script th:inline="javascript">
+        let authority = /*[[${authority}]]*/ "회원 권한";
+    </script>
 
     <th:block th:replace="~{common/footer}"></th:block>
 

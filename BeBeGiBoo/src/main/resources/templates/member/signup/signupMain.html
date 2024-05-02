@@ -23,7 +23,7 @@
                 <span>회원가입</span>
             </div>
 
-            <form action="member/signup/signupForm" method="POST" name="signupMain" id="signupMain">
+            <form action="/member/signup/signMain" method="POST" name="signupMain" id="signupMain">
 
                 <table class="donatorForm">
 
@@ -33,11 +33,12 @@
                     <tr class="empty"></tr>
                     <tr class="empty"></tr>
                     <tr>
-                        <td><input type="checkbox" name="authority" id="donator" class="selectOne"><span id="donatorSpan">기부자</span></td>              
+                        <td><input type="checkbox" name="authority" id="donator" class="selectOne" value="1"><span id="donatorSpan">기부자</span></td>  
+                        <input type="hidden" name="authority" id="authorityNo">        
                     </tr>
                     <tr class="empty"></tr>
                     <tr>
-                        <td><input type="checkbox" name="authority" id="acceptor" class="selectOne"><span id="acceptorSpan">피기부자</span></td>
+                        <td><input type="checkbox" name="authority" id="acceptor" class="selectOne" value="2"><span id="acceptorSpan">피기부자</span></td>
                     </tr>
                     <tr class="empty"></tr>
                     <tr>
@@ -54,6 +55,10 @@
 
 
     </main>
+
+    <script th:inline="javascript">
+        let authority = /*[[${authority}]]*/ "회원 권한";
+    </script>
     
     <th:block th:replace="~{common/footer}"></th:block>
 

@@ -1,11 +1,13 @@
 package com.bebegiboo.project.member.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,9 +17,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.bebegiboo.project.member.model.dto.Member;
 import com.bebegiboo.project.member.model.service.MemberService;
 
-import ch.qos.logback.classic.Logger;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -44,7 +46,83 @@ public class MemberController {
 		return "/member/signup/signupMain"; 
 	}
 	
+	/** 회원가입 약관 동의 화면 이동 
+	 * @return
+	 */
+	@GetMapping("signup/signupTerm")
+	public String signupTerm() {
+		return "/member/signup/signupTerm"; 
 
+	}
+	
+	/** 회원가입 폼 화면 이동 
+	 * @return
+	 */
+	@GetMapping("signup/signupForm")
+	public String signupForm() {
+		return "/member/signup/signupForm"; 
+	}
+	
+
+	@ResponseBody
+	@PostMapping("signup/signMain")
+    public String setAuthority(@RequestBody Map<String, Integer> map) {
+        
+		int authority = map.get("authority");
+        
+      
+        System.out.println("Received authority value: " + authority);
+        
+        return "redirect:/member/signup/signupMain";
+    }
+
+
+	
+	@PostMapping("signup/signupTerm")
+	public String authority( @RequestParam("authority") int authority) {
+		
+		System.out.println("authority 값 : " + authority);
+		
+		log.debug("authority{}",authority);
+
+		return "";
+	}
+	
+	
+
+	
+	
+	@PostMapping("signup/signupForm")
+	public String signup(Member inputMember, 
+	                     @RequestParam("address") String[] memberAddress,
+	                     RedirectAttributes ra,
+	                     @RequestParam("authority") int authority,
+	                     Model model) {
+		
+		
+	    log.debug("authority{}",authority);
+		
+	    int result = service.signup(inputMember, memberAddress, authority);
+	    
+	    String path;
+	    String message;
+	    
+	    if (result > 0) {
+	        message = inputMember.getMemberName() + "님의 가입을 환영합니다 :)";
+	        path = "/";
+	    } else {
+	        message = "회원가입 실패..";
+	        path = "signup/signupForm";
+	    }
+	    ra.addFlashAttribute("message", message);
+	    return "redirect:" + path;
+	}
+	
+	
+	
+	
+	
+	
 	
 
 	/** 아이디 중복 검사 
@@ -58,57 +136,6 @@ public class MemberController {
 	}
 
 
-	/** 회원가입 약관 동의 화면 이동 
-	 * @return
-	 */
-	@GetMapping("signup/signupTerm")
-	public String signupTerm() {
-		return "/member/signup/signupTerm"; 
-
-	}
-	
-	
-	/** 회원가입 폼 화면 이동 
-	 * @return
-	 */
-	@GetMapping("signup/signupForm")
-	public String signupForm() {
-		return "/member/signup/signupForm"; 
-	}
-	
-
-	@ResponseBody
-	@PostMapping("signup/signupForm")
-	public String signup(	Member inputMember, 
-							@RequestParam("address") String[] memberAddress,
-							@RequestParam("authority") int authority,
-							RedirectAttributes ra,
-							Model model ) {
-		
-		
-		
-		inputMember.setAuthority(authority); 
-		
-		
-		int result = service.signup(inputMember, memberAddress); 
-		
-		String path = null; 
-		String message = null;
-		
-		if(result > 0) {
-			message = inputMember.getMemberName()+"님의 가입을 환영합니다 :)"; 
-			path = "/"; 
-		} else {
-			message = "회원가입 실패.."; 
-			path = "signup/signupForm"; 
-		}
-		
-		ra.addFlashAttribute("message", message); 
-		
-		return "redirect:" + path; 
-		
-	}
-	
 
 	
 	/** 로그인 화면 이동 

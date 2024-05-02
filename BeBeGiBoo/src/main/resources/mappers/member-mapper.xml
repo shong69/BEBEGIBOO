@@ -41,9 +41,10 @@
 			 #{address},
 			 DEFAULT,
 			 DEFAULT,
-			 DEFAULT
+			 #{authority}
 		)
 	</insert>
+	
 	
 	
 	

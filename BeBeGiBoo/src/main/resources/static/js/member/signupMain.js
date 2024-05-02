@@ -16,21 +16,44 @@ checkboxes.forEach(checkbox => {
 
 
 /* 제출하기 버튼 클릭시 이동 */ 
-const signUpBtn = document.getElementById('signUpBtn');
+const submitBtn = document.getElementById('submitBtn');
 const donatorCheckbox = document.getElementById('donator');
 const acceptorCheckbox = document.getElementById('acceptor');
+
+
 
 document.getElementById('submitBtn').addEventListener('click', e => {
 
     e.preventDefault(); 
 
-    // 기부자/피기부자 선택시 이동 
-    if (donatorCheckbox.checked || acceptorCheckbox.checked) {
+    let authorityValue;
 
-        location.href = "/member/signup/signupTerm";
-    
+    if (donatorCheckbox.checked) {
+        authorityValue = 1;
+    } else if (acceptorCheckbox.checked) {
+        authorityValue = 2;
+    }
+
+    console.log("선택된 authority 값:", authorityValue);
+
+    if (authorityValue) {
+
+        const authority = {
+            authority : authorityValue
+        }; 
+
+        fetch("/member/signup/signupForm",{
+            method : "POST",
+            headers : {"Content-Type" : "application/json"},
+            body : JSON.stringify(authority)
+        })
+        .then(resp => resp.text())
+        .then( result => {
+
+            console.log(result);    
+            location.href = "/member/signup/signupTerm";
+        });
     } else {
         alert('기부자 또는 피기부자 중 최소 한 가지를 선택해야 합니다.');
     }
-   
 });

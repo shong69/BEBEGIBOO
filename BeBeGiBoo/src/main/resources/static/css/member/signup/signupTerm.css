@@ -13,8 +13,7 @@
 /* 로고 */
 #font-logo-area{
 
-    margin-top: 125px;
-    margin-left: 835px;
+    margin: 200px auto;
     margin-bottom: 0px;
 }
 
@@ -66,7 +65,7 @@ textarea{
 /* 동의 버튼 */
 #agreeBtn{
 
-    margin-top: 30px;
+    margin-top: 80px;
     
     width: 200px;
     height: 70px;

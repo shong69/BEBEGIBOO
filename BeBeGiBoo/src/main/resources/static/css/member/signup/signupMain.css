@@ -18,10 +18,10 @@ box-sizing: border-box;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 90px;
-    margin-bottom: 150px;
-    margin-left: 150px;
-    margin-right: 150px;
+
+    margin: 130px auto;
+    margin-top: 80px;
+    
 }
 
 /* 선택하기 폼 내부 */
@@ -41,26 +41,22 @@ box-sizing: border-box;
     
 }
 
-/* 선택하기 글씨 */
-#select{
-    margin-bottom: 50px;
+/* 빈 영역 */
+.empty{
+    height: 15px;
 }
+
+
 
 /* 기부자 체크박스 */
-#donator{
-    margin-top: 50px;
-    margin-bottom: 20px;
-    margin-right: 20px;
-}
-
-/* 피기부자 체크박스 */
-#acceptor{
-    margin-bottom: 50px;
+#authority{
     margin-right: 20px;
 }
 
 /* 제출하기 버튼 */
 #submitBtn{
+
+    margin-top: 30px;
 
     width: 200px;
     height: 70px;
@@ -82,7 +78,6 @@ box-sizing: border-box;
 
 /* 베베기부 로고 */
 #font-logo-area{
-    margin-top: 125px;
-    margin-left: 835px;
-    margin-bottom: 0px;
+    margin: 120px auto; 
+    margin-bottom: 0;
 }

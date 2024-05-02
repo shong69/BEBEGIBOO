@@ -38,7 +38,6 @@ public class MemberServiceImpl implements MemberService {
 		return mapper.checkId(memberId);
 
 
-
 	}
 
 

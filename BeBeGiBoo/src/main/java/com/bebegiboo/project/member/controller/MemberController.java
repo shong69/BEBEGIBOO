@@ -33,6 +33,8 @@ public class MemberController {
 	
 
 
+
+
 	/** 회원가입 화면 이동 
 	 * @return
 	 */
@@ -54,7 +56,6 @@ public class MemberController {
 	public int checkId(@RequestParam("memberId") String memberId) {
 	    return service.checkId(memberId);
 	}
-
 
 
 	/** 회원가입 약관 동의 화면 이동 

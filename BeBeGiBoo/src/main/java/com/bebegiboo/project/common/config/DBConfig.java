@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -83,7 +82,8 @@ public class DBConfig {
 	// SqlSessionTemplate : Connection + DBCP + Mybatis + 트랜잭션 제어 처리
 	@Bean
 	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sessionFactory) {
-	return new SqlSessionTemplate(sessionFactory);
+		
+		return new SqlSessionTemplate(sessionFactory);
 	}
 	
 	

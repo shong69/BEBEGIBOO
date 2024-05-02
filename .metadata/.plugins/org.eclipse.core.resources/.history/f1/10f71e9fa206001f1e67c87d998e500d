@@ -1,0 +1,5 @@
+package com.bebegiboo.project.common.config;
+
+public class DBConfig {
+
+}

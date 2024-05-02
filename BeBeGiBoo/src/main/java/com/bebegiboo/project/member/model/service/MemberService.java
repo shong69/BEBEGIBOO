@@ -24,7 +24,7 @@ public interface MemberService {
 	 */
 	Member login(Member inputMember);
 
-<<<<<<< HEAD
+
 
 	/** 회원가입 
 	 * @param inputMember
@@ -35,6 +35,4 @@ public interface MemberService {
 
 
 }
-=======
-}
->>>>>>> e4086725923af581f7e4934090a7a7d15d3c2807
+

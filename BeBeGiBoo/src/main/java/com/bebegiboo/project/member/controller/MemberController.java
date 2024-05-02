@@ -32,19 +32,7 @@ public class MemberController {
 	private MemberService service; 
 	
 
-<<<<<<< HEAD
-	
-=======
-	/** 회원가입 화면 이동 
-	 * @return
-	 */
-	@GetMapping("signup")
-	public String signup() {
-		
-		return "/member/signup/signup"; 
 
-	}
->>>>>>> e4086725923af581f7e4934090a7a7d15d3c2807
 	/** 회원가입 화면 이동 
 	 * @return
 	 */
@@ -56,8 +44,6 @@ public class MemberController {
 	}
 	
 
-<<<<<<< HEAD
-=======
 	
 	/** 아이디 중복 검사 
 	 * @param memberId
@@ -68,7 +54,8 @@ public class MemberController {
 	public int checkId(@RequestParam("memberId") String memberId) {
 	    return service.checkId(memberId);
 	}
->>>>>>> e4086725923af581f7e4934090a7a7d15d3c2807
+
+
 
 	/** 회원가입 약관 동의 화면 이동 
 	 * @return

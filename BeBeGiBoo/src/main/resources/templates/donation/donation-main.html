@@ -155,6 +155,34 @@
 
 
 
+            <!-- 박스 내용물 입력 -->
+            <div class="donation-box donation-box-up14 donation-box-under14" style="height: 500px; width: 700px; display: none;">
+                <table>
+                    <tr name="content-thing">
+                        <td class="text text2">생활용품</td>
+                        <td><input type="text" placeholder="','로 구분해서 입력하세요'" style="height: 30px;"></td>
+                    </tr>
+                    <tr name="content-thing">
+                        <td class="text text2">의류</td>
+                        <td><input type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px;"></td>
+                    </tr>
+                    <tr name="content-thing">
+                        <td class="text text2">식기</td>
+                        <td><input type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px;"></td>
+                    </tr>
+                    <tr name="content-thing">
+                        <td class="text text2">가전</td>
+                        <td><input type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px;"></td>
+                    </tr>
+                    <tr name="content-thing">
+                        <td class="text text2">장난감</td>
+                        <td><input type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px;"></td>
+                    </tr>
+                </table>
+            </div>
+
+
+
             <!-- 박스 수량 선택 -->
             <div class="donation-box donation-box-up14 donation-box-under14" style="height: 500px; width: 700px; display: none;">
                 <table>
@@ -197,20 +225,34 @@
                 <table>
                     <tr>
                         <td class="text text2">이름</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" id="name"></td>
                     </tr>
                     <tr>
                         <td class="text text2">핸드폰 번호</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" id="phone"></td>
                     </tr>
                     <tr>
                         <td class="text text2">추가 연락처 번호</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" id="phone2"></td>
                     </tr>
                     <tr>
-                        <td class="text text2">우편번호</td>
-                        <td><input type="text"></td>
-                        <td><button class="button">찾기</button></td>
+                        <td id="postcodeSection" class="text text2">우편번호
+                        
+                            <input type="text" name="address" placeholder="우편번호" 
+                                                                maxlength="6" id="postcode">
+                        </td>
+                        <td><button type="button" id="searchAddress">검색</button></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <input type="text" name="address" placeholder="도로명/지번주소" id="mainAddress">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="address" placeholder="상세주소" id="detailAddress">
+                        </td>
                     </tr>
                     <tr>
                         <td></td>
@@ -257,10 +299,11 @@
 
 
             <!-- 이전, 다음버튼 -->
-            <div class="preNext">
-                <button id="previous" class="text text2" style="font-size: 15px; background: none; border: none; cursor: pointer;">← 이전</button>
-                <button id="next" class="text text2" style="font-size: 15px; background: none; border: none; cursor: pointer;">다음 →</button>
-            </div>
+            <button id="previous" class="text text2" style="font-size: 15px; background: none; border: none; cursor: pointer;">← 이전</button>
+            <button id="next" class="text text2" style="font-size: 15px; background: none; border: none; cursor: pointer;">다음 →</button>
+
+            <button id="submit" class="text text2" style="font-size: 15px; background: none; border: none; cursor: pointer; margin-left: 100px; display: none;">제출하기</button>
+
 
         </div>
 
@@ -273,7 +316,7 @@
     </main>
     
  
-
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="/js/donation/donation-main.js"></script>
 
 </body>

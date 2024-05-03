@@ -124,21 +124,27 @@ input {
   display: flex;
 }
 
-.preNext {
-  position: fixed;
+#previous {
   top: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
+  position: fixed;
+  cursor: pointer;
+  margin-right: 80px;
 }
-
-.preNext > button:first-child {
-  margin-right: 20px;
+#next {
+  top: 90%;
+  position: fixed;
+  cursor: pointer;
+  margin-left: 80px;
 }
 
 label {
   margin-right: 30px;
+}
+
+
+#submit {
+  top: 90%;
+  position: fixed;
 }
 
 

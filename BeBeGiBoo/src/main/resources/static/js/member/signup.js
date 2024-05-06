@@ -50,41 +50,25 @@ memberId.addEventListener( "input", (e) => {
     fetch("/member/checkId?memberId=" + inputId)
     .then(resp => resp.text())
     .then(result => {
-    const inputId = e.target.value;   
-    console.log(inputId); 
+			
+	    const inputId = e.target.value;   
+	    console.log(inputId); 
+	
+	    if(result == 1) {
+	        idMessage.innerText = "이미 사용중인 아이디입니다."; 
+	        idMessage.classList.add("error"); 
+	        idMessage.classList.remove("confirm"); 
+	        checkObj.memberId = false; 
+	        return; 
+	    }
+	
+	    idMessage.innerText = "사용 가능한 아이디입니다~!!"; 
+	    idMessage.classList.add("confirm"); 
+	    idMessage.classList.remove("error"); 
+	    checkObj.memberId = true; 
+	
+	    }); 
 
-    // 유효한 경우 중복 검사 
-    fetch("/member/checkId?memberId=" + inputId)
-    .then(resp => resp.text())
-    .then(result => {
-
-    if(result == 1) {
-        idMessage.innerText = "이미 사용중인 아이디입니다."; 
-        idMessage.classList.add("error"); 
-        idMessage.classList.remove("confirm"); 
-        checkObj.memberId = false; 
-        return; 
-    }
-    if(result == 1) {
-        idMessage.innerText = "이미 사용중인 아이디입니다."; 
-        idMessage.classList.add("error"); 
-        idMessage.classList.remove("confirm"); 
-        checkObj.memberId = false; 
-        return; 
-    }
-
-    idMessage.innerText = "사용 가능한 아이디입니다~!!"; 
-    idMessage.classList.add("confirm"); 
-    idMessage.classList.remove("error"); 
-    checkObj.memberId = true; 
-
-    }); 
-    idMessage.innerText = "사용 가능한 아이디입니다~!!"; 
-    idMessage.classList.add("confirm"); 
-    idMessage.classList.remove("error"); 
-    checkObj.memberId = true; 
-
-    }); 
 
 
 

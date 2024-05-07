@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기부완료 화면</title>
-<<<<<<< HEAD
+
 </head>
 <body>
     
-=======
+
 
     <th:block th:replace="~{common/common}"></th:block>
 </head>
@@ -37,11 +37,11 @@
                     <table class="text" style="font-size: 15px;">
                         <tr>
                             <td>결제 내역</td>
-                            <td></td>
+                            <td><div th:text="${session.payment.total}" style="color: rgb(57, 192, 255); margin-left: 30px;"></div></td>
                         </tr>
                         <tr>
                             <td>결제 수단</td>
-                            <td></td>
+                            <td><div th:text="${session.payment.payment}" style="margin-left: 30px;"></div></td>
                         </tr>
                     </table>
                 </div>
@@ -51,13 +51,22 @@
             <div id="donation-thirdBox">
                 <div class="text">신청 정보</div>
                 <div class="donation-container-2 text" style="font-size: 15px;">
-                    <div style="color: gray;">육아용품 종류</div>
-                    <div style="margin-bottom: 20px;"></div>
+                    <div style="color: gray; margin-bottom: 10px;">기부된 용품들</div>
+                    <div style="margin-bottom: 20px;">
+                        <div th:text="${session.things.daily}"></div>
+                        <div th:text="${session.things.cloth}"></div>
+                        <div th:text="${session.things.dish}"></div>
+                        <div th:text="${session.things.electronic}"></div>
+                        <div th:text="${session.things.toy}"></div>
+                    </div>
 
-                    <div style="color: gray;">박스 수량</div>
-                    <div style="margin-bottom: 20px;"></div>
+                    <div style="color: gray; margin-bottom: 10px;">박스 수량</div>
+                    <div style="margin-bottom: 20px;">
+                        <div th:text="${session.boxCount}">
+                        </div>
+                    </div>
 
-                    <div style="color: gray;">배송 정보</div>
+                    <div style="color: gray; margin-bottom: 10px;">배송 정보</div>
                     <div style="margin-bottom: 20px;">
                         <div th:text="${session.delivery.name}"></div>
                         <div th:text="${session.delivery.phone}"></div>
@@ -73,6 +82,6 @@
     </main>
 
     <th:block th:replace="~{common/footer}"></th:block>
->>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
+
 </body>
 </html>

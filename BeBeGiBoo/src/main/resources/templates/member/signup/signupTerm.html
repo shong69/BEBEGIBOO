@@ -13,18 +13,18 @@
    
     
     <main>
-
+        <!-- 헤더 -->
         <th:block th:replace="~{common/header}"></th:block>
 
+        <!-- 로고 -->
         <div id="font-logo-area">
             <a href="/" id="font-logo">
                 <img src="/images/font-logo.png" alt="font-logo">
             </a>
         </div>
 
-
-
-        <form action="member/signup/signupTerm" method="POST" name="agreeForm" id="agreeForm">
+ 
+        <form action="/member/signup/signupForm" method="POST" name="agreeForm" id="agreeForm">
 
             <span class="titleText">회원 가입 약관 동의</span>
 
@@ -352,7 +352,10 @@
                     </td>
                 </tr>
             </table>
+             <!-- authority 값 -->
+            <input type="hidden" name="authority" id="authority" th:value="${authority}">
 
+            <!-- 제출용 버튼 -->
             <button id="agreeBtn">동의</button>
 
         </form>
@@ -360,8 +363,10 @@
 
     </main>
 
+    <!-- 푸터 -->
     <th:block th:replace="~{common/footer}"></th:block>
 
+    <!-- js 파일 -->
     <script src="/js/member/signupTerm.js"></script>
     
 </body>

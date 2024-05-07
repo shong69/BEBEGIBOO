@@ -46,10 +46,39 @@ memberId.addEventListener( "input", (e) => {
         return; 
     }
 
+<<<<<<< HEAD
+    const inputId = e.target.value;   
+    console.log(inputId); 
+
+=======
+>>>>>>> 8521049a864cf0b17fb184c581bbf9ec94e5a375
     // 유효한 경우 중복 검사 
     fetch("/member/checkId?memberId=" + inputId)
     .then(resp => resp.text())
     .then(result => {
+<<<<<<< HEAD
+			
+	    const inputId = e.target.value;   
+	    console.log(inputId); 
+	
+	    if(result == 1) {
+	        idMessage.innerText = "이미 사용중인 아이디입니다."; 
+	        idMessage.classList.add("error"); 
+	        idMessage.classList.remove("confirm"); 
+	        checkObj.memberId = false; 
+	        return; 
+	    }
+	
+	    idMessage.innerText = "사용 가능한 아이디입니다~!!"; 
+	    idMessage.classList.add("confirm"); 
+	    idMessage.classList.remove("error"); 
+	    checkObj.memberId = true; 
+	
+	    }); 
+
+
+
+=======
 
     if(result == 1) {
         idMessage.innerText = "이미 사용중인 아이디입니다."; 
@@ -64,6 +93,7 @@ memberId.addEventListener( "input", (e) => {
     checkObj.memberId = true; 
 
     }); 
+>>>>>>> 8521049a864cf0b17fb184c581bbf9ec94e5a375
 
 }); 
 

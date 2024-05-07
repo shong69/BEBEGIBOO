@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>review</title>
+
+    <th:block th:replace="~{common/common}"></th:block>
+    <link rel="stylesheet" href="/css/page/review.css"></link>
+</head>
+<body>
+    <th:block th:replace="~{common/header}"></th:block>
+    <main>
+        <!--제목 배너-->
+        <div id="titleArea">
+            <span>후기 게시판</span>
+        </div>
+    
+        <!--작성 버튼-->
+        <div id="btnArea">
+            <a><button id="insertBtn">작성</button></a>
+        </div>
+
+        <!--메인 내용-->
+        <section id="tableArea">
+            <table>
+                <thead>
+                    <tr>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--게시글 X-->
+                    <th:block>
+    
+                    </th:block>
+                    <!--게시글 O-->
+                    <!--th:block th:unless="${}">
+                        <th:each th:if="${}" th:object="${}">
+                            <tr>
+                                <a>
+                                    <td th:text="${}">title</td>
+                                </a>
+                                <a>
+                                    <td th:text="${}">writer</td>
+                                </a>
+                                <a>
+                                    <td th:text="${}">date</td>
+                                </a>
+                            </tr>
+                        </th:each>
+                    </th:block-->
+                    <tr>
+                        <a>
+                            <td>title</td>
+                        </a>
+                        <a>
+                            <td>writer</td>
+                        </a>
+                        <a>
+                            <td>date</td>
+                        </a>
+                    </tr>
+                    <tr>
+                        <a>
+                            <td>title</td>
+                        </a>
+                        <a>
+                            <td>writer</td>
+                        </a>
+                        <a>
+                            <td>date</td>
+                        </a>
+                    </tr>
+                </tbody>
+    
+            </table>
+        </section>
+        
+        <!--페이지네이션: 게시글이 있을 때만 보이도록-->
+        <div class="paginationArea">
+    
+            <ul>
+                <li><a>&lt;&lt;</a></li>
+                <li><a>&lt;</a></li>
+    
+                <th:block>
+                    <li><a>현제페이지</a></li>
+                    <li><a>이동할 페이지</a></li>
+                </th:block>
+    
+                <li><a>&lt;&lt;</a></li>
+                <li><a>&lt;</a></li>
+            </ul>
+        </div>    
+    </main>
+
+
+</body>
+<th:block th:replace="~{common/footer}"></th:block>
+<script src=""></script>
+</html>

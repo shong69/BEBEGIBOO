@@ -1,0 +1,32 @@
+*{
+    border: 1px solid black;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width : 1800px;
+    height: 200px;
+}
+#titleArea {
+    margin-top: 150px;
+    border-radius: 30px;
+    background-color: rgb(254, 245, 220);
+
+    border : none;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+#titleArea span{
+    font-size: 40px;
+    padding : 30px;
+}
+#btnArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: ;
+}

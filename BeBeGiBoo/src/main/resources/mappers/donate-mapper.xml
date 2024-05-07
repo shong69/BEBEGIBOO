@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bebegiboo.project.donate.mapper.DonateMapper">
+
+	<select id="findNo">
+		SELECT MEMBER_NO
+		FROM "MEMBER"
+		WHERE MEMBER_ID = #{cookieValue}
+	</select>
+
+
+	<insert id="deliveryInfo">
+		INSERT INTO DELIVERY_INFO
+		VALUES(SEQ_DELIVERY_NO.NEXTVAL,
+				#{name},
+				#{phone},
+				#{phone2},
+				#{address},
+				#{date},
+				#{memo},
+				1)
+	</insert>
+
+</mapper>

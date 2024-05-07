@@ -8781,3 +8781,12 @@ java.util.concurrent.TimeoutException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+!SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2024-05-02 12:48:02.714
+!MESSAGE Cannot determine URI for '/BeBeGiBoo/src/main/java/com/bebegiboo/project/member/model/dto/Member.java'.
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-05-02 12:48:03.003
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\user1'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.

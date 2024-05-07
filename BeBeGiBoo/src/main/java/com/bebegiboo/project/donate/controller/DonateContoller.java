@@ -2,6 +2,7 @@ package com.bebegiboo.project.donate.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.RequiredArgsConstructor;
@@ -14,6 +15,11 @@ public class DonateContoller {
 	@GetMapping("")
 	public String Donation() {
 		return "donation/donation-main";
+	}
+	
+	@PostMapping("complete")
+	public String donationComplere() {
+		return "";
 	}
 	
 }

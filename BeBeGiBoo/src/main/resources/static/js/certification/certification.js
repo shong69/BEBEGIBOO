@@ -125,3 +125,14 @@ closeBtn.addEventListener('click', () => {
 closeBtn2.addEventListener('click', () => {
   modal.classList.add('hidden');
 });
+
+
+
+/* 제출하기 버튼 클릭시 */
+/*
+const certificationForm = document.querySelector("#certificationForm"); 
+
+certificationForm.addEventListener("click", e=> {
+
+
+}); */

@@ -91,6 +91,9 @@ public class MemberServiceImpl implements MemberService {
 
 
 
+	/**
+	 * 회원가입 
+	 */
 	@Override
 	public int signup(Member inputMember, String[] memberAddress, int authority) {
 			

@@ -2,7 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.bebegiboo.project.certification.model.mapper.CertificationMapper">
 
+	<!-- 인증서 폼 제출 -->
+	<insert id="certificationSubmit">
+		INSERT INTO "CERTIFICATION"
+		VALUES(SEQ_C_NO.NEXTVAL,
+			#{memberId},
+			#{memberName},
+			#{certificationId},
+			#{memberBirth},
+			#{phone},
+			#{address}, 
+			#{memberNo}	)
+	</insert>
 
-
+	<insert id="insertUploadList">
+	    INSERT INTO "CERTIFICATION_IMG" 
+	    VALUES
+	    <foreach collection="list" item="img" open="(" close=")" separator=",">
+	        #{img.cImgNo}, 
+	        #{img.cImgPath}, 
+	        #{img.cImgOriginalName}, 
+	        #{img.cImgRename}, 
+	        #{img.cImgOrder}, 
+	        #{img.cNo}
+	    </foreach>
+	</insert>
+	
 
 </mapper>

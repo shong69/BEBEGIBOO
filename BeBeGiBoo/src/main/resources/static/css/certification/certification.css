@@ -104,6 +104,17 @@ table{
     cursor: pointer;
 }
 
+/* 삭제 버튼 */
+.delete-image{
+    position: relative;
+    top: -101px;
+    right: -78px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
 
 /* 주소 letter */
 #addressLetter{
@@ -224,3 +235,5 @@ table{
     height: 400px;
     text-align:left;
 }
+
+

@@ -8,8 +8,8 @@ import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.bebegiboo.project.common.pagination.Pagination;
 import com.bebegiboo.project.faqboard.model.dto.FaqBoard;
-import com.bebegiboo.project.faqboard.model.dto.Pagination;
 import com.bebegiboo.project.faqboard.model.mapper.FaqMapper;
 
 import lombok.RequiredArgsConstructor;

@@ -3,7 +3,10 @@ const donationBoxUp14 = document.querySelectorAll(".donation-box-up14");
 const donationBoxUnder14 = document.querySelectorAll(".donation-box-under14");
 const title = document.querySelector("#donation-title");
 const things = document.getElementsByName("count-thing");
+<<<<<<< HEAD
+=======
 const thingsContent = document.getElementsByName("content-thing");
+>>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
 const thingsType = document.getElementsByName("thing-type");
 const thingsValue = document.getElementsByName("count-thing-value");
 
@@ -13,14 +16,20 @@ const startButton = document.querySelector("button");
 titleObjUnder14 = ["신청자 나이 선택",
             "14세 미만 법정대리인(보호자) 동의",
             "유아용품 종류 선택",
+<<<<<<< HEAD
+=======
             "유아용품 이름 입력",
+>>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
             "박스수량 선택",
             "배송정보 입력",
             "결제수단 선택"];
 
 titleObjUp14 = ["신청자 나이 선택",
             "유아용품 종류 선택",
+<<<<<<< HEAD
+=======
             "유아용품 이름 입력",
+>>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
             "박스수량 선택",
             "배송정보 입력",
             "결제수단 선택"];
@@ -42,11 +51,16 @@ startButton.addEventListener("click", () => {
 
 const previousButton = document.querySelector("#previous");
 const nextButton = document.querySelector("#next");
+<<<<<<< HEAD
+
+previousButton.addEventListener("click", ()=>{
+=======
 const submitButton = document.querySelector("#submit");
 
 previousButton.addEventListener("click", ()=>{
     nextButton.style.display = 'flex';
     submitButton.style.display = 'none';
+>>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
 
     if(document.querySelector("#option1").checked){
         for(let i = 0; i < donationBoxUnder14.length; i++){
@@ -75,14 +89,19 @@ previousButton.addEventListener("click", ()=>{
 
 
 nextButton.addEventListener("click", e=>{
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
     /* 나이선택칸 */
     if(!document.querySelector("#option1").checked && !document.querySelector("#option2").checked) {
         alert("나이 유형을 선택해주세요");
         e.preventDefault();
     }
 
+<<<<<<< HEAD
+=======
     /* 내용입력칸 */
     for(let i = 0; i < thingsType.length; i ++) {
 
@@ -93,6 +112,7 @@ nextButton.addEventListener("click", e=>{
         }
     }
 
+>>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
     /* 타입체크칸 */
     for(let i = 0; i < thingsType.length; i ++) {
 
@@ -110,6 +130,10 @@ nextButton.addEventListener("click", e=>{
         let pay = parseInt(thingsValue[i].value) * 5000;
         countValue += pay;
     }
+<<<<<<< HEAD
+    console.log(countValue);
+=======
+>>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
 
     const total = document.querySelector("#total");
     total.innerText = countValue;
@@ -130,6 +154,8 @@ nextButton.addEventListener("click", e=>{
                 donationBoxUnder14[i].style.display = 'none';
                 donationBoxUnder14[i+1].style.display = 'flex';
                 title.innerText = titleObjUnder14[i+1];
+<<<<<<< HEAD
+=======
 
                 if(i == 5) {
                     nextButton.style.display = 'none';
@@ -138,6 +164,7 @@ nextButton.addEventListener("click", e=>{
                     nextButton.style.display = 'flex';
                     submitButton.style.display = 'none';
                 }
+>>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
                 break;
             }
         }
@@ -148,6 +175,8 @@ nextButton.addEventListener("click", e=>{
                 donationBoxUp14[i].style.display = 'none';
                 donationBoxUp14[i+1].style.display = 'flex';
                 title.innerText = titleObjUp14[i+1];
+<<<<<<< HEAD
+=======
 
                 if(i == 4) {
                     nextButton.style.display = 'none';
@@ -156,10 +185,14 @@ nextButton.addEventListener("click", e=>{
                     nextButton.style.display = 'flex';
                     submitButton.style.display = 'none';
                 }
+>>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
                 break;
             }
         }
     }
+<<<<<<< HEAD
+    
+=======
 
 
 });
@@ -231,4 +264,5 @@ submitButton.addEventListener("click", e => {
             e.preventDefault();
         }
     });
+>>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
 });

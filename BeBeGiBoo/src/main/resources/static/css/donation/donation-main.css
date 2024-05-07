@@ -124,6 +124,7 @@ input {
   display: flex;
 }
 
+<<<<<<< HEAD
 .preNext {
   position: fixed;
   top: 90%;
@@ -135,11 +136,33 @@ input {
 
 .preNext > button:first-child {
   margin-right: 20px;
+=======
+#previous {
+  top: 90%;
+  position: fixed;
+  cursor: pointer;
+  margin-right: 80px;
+}
+#next {
+  top: 90%;
+  position: fixed;
+  cursor: pointer;
+  margin-left: 80px;
+>>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
 }
 
 label {
   margin-right: 30px;
 }
+<<<<<<< HEAD
+=======
+
+
+#submit {
+  top: 90%;
+  position: fixed;
+}
+>>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
 
 
 

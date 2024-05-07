@@ -48,6 +48,258 @@
                     <div>결제수단 선택</div>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+
+
+        </div>
+
+
+
+        <!-- 상단바 -->
+        <div class="donation-container" style="display: none;">
+            <div class="order-container">
+                <div class="main-line"></div>
+
+                <div class="order-line">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <div class="text order-text ">
+                    <div>나이선택</div>
+                    <div>유아용품<br>종류선택</div>
+                    <div>박스수량 선택</div>
+                    <div>배송정보 입력</div>
+                    <div>결제수단 선택</div>
+                </div>
+            </div>
+
+            <!-- 제목 -->
+            <div id="donation-title" class="text text2">신청자 나이 선택</div>
+
+
+            <!-- 입력박스 -->
+
+            <!-- 나이선택칸 -->
+            <div class="donation-box donation-box-up14 donation-box-under14" style="height: 500px; width: 500px;">
+                <div>
+                    <input type="radio" id="option1" name="option-age" value="0">
+                    <label for="option1" class="text text2">14세 미만</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="option2" name="option-age" value="1">
+                    <label for="option2" class="text text2">14세 이상</label>
+                </div>
+            </div>
+
+
+            <!-- 부모님동의 -->
+            <div class="donation-box donation-box-under14" style="height: 500px; width: 900px; display: none;">
+                <div>
+                    <label for="option1" class="text text2">이름</label>
+                    <input type="text" style="height: 30px;">
+                </div>
+
+                <div id="parentsNumber" style="margin-bottom: 50px;">
+                    <label for="option2" class="text text2">휴대전화</label>
+                    <select name="firstNumber" style="margin-right: 5px;">
+                        <option value="010">010</option>
+                        <option value="011">011</option>
+                        <option value="019">019</option>
+                        <option value="012">012</option>
+                    </select>
+                    <p class="text text2" style="margin-right: 5px;">-</p>
+                    <input type="number" style="margin-right: 5px; width: 70px;">
+                    <p class="text text2" style="margin-right: 5px;">-</p>
+                    <input type="number" style="margin-right: 10px; width: 70px;">
+
+                    <button class="kakao"><img src="/images/kakao.png" style="width: 20px;">카카오로 인증하기</button>
+                </div>
+
+                <div>
+                    <input type="checkbox">
+                    <label class="text text2" style="font-size: 10px;">법정대리인 동의 또는 만 14세 이상 확인 절차 없음으로 인해 발생하는 법적 책임과 권한은 이용 기관에 있습니다.</label>
+                </div>
+            </div>
+
+
+            <!-- 유아용품 선택 -->
+            <div class="donation-box donation-box-up14 donation-box-under14" style="height: 300px; width: 900px; margin-bottom: 30px; display: none;">
+                <div>
+                    <input type="checkbox" name="thing-type">
+                    <label for="option1" class="text text2">생활용품</label>
+                    <input type="checkbox" name="thing-type">
+                    <label for="option1" class="text text2">의류</label>
+                    <input type="checkbox" name="thing-type">
+                    <label for="option1" class="text text2">식기</label>
+                    <input type="checkbox" name="thing-type">
+                    <label for="option1" class="text text2">가전</label>
+                    <input type="checkbox" name="thing-type">
+                    <label for="option1" class="text text2">장난감</label>
+                </div>
+
+                <div class="text" style="color: white; font-size: 10px;">※ 다중선택 가능</div>
+
+                <div class="text" style="height: 180px; width: 900px; background-color: lightgray; color: white; font-size: 15px; line-height: 30px;">
+                    생활용품 : 기저귀(새상품), 손소독제, 유모차, 목욕용품, 마스크 ,미용세트, 안전용품, 물티슈, 담요, 보자기 등<br>
+                    의류 : 아우터, 내복, 실내복, 맨투맨, 후드, 셔츠, 하의, 수영복,  스커트, 원피스, 우비, 신발, 양말, 모자 등<br>
+                    식기 : 이유식기, 유아용 수저, 유아용 젓가락, 컵, 반찬통, 조리도구, 프라이팬, 냄비, 내열용 그릇 등<br>
+                    가전 : 공기청정기, 젖병소독기, 살균소독기, 제습기, 체온계, 분유포트, 유아용 전동칫솔 등<br>
+                    장난감 : 유아용 장난감 등
+                </div>
+                
+            </div>
+
+
+
+            <!-- 박스 내용물 입력 -->        
+            <div class="donation-box donation-box-up14 donation-box-under14" style="height: 500px; width: 700px; display: none;">
+                <table>
+                    <tr name="content-thing">
+                        <td class="text text2">생활용품</td>
+                        <td><input type="text" placeholder="','로 구분해서 입력하세요'" style="height: 30px;"></td>
+                    </tr>
+                    <tr name="content-thing">
+                        <td class="text text2">의류</td>
+                        <td><input type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px;"></td>
+                    </tr>
+                    <tr name="content-thing">
+                        <td class="text text2">식기</td>
+                        <td><input type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px;"></td>
+                    </tr>
+                    <tr name="content-thing">
+                        <td class="text text2">가전</td>
+                        <td><input type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px;"></td>
+                    </tr>
+                    <tr name="content-thing">
+                        <td class="text text2">장난감</td>
+                        <td><input type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px;"></td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+            <!-- 박스 수량 선택 -->
+            <div class="donation-box donation-box-up14 donation-box-under14" style="height: 500px; width: 700px; display: none;">
+                <table>
+                    <tr name="count-thing">
+                        <td class="text text2">생활용품</td>
+                        <td><input type="number" name="count-thing-value" value="0" min="1"></td>
+                        <td class="text text2">개</td>
+                    </tr>
+                    <tr name="count-thing">
+                        <td class="text text2">의류</td>
+                        <td><input type="number" name="count-thing-value" value="0" min="1"></td>
+                        <td class="text text2">개</td>
+                    </tr>
+                    <tr name="count-thing">
+                        <td class="text text2">식기</td>
+                        <td><input type="number" name="count-thing-value" value="0" min="1"></td>
+                        <td class="text text2">개</td>
+                    </tr>
+                    <tr name="count-thing">
+                        <td class="text text2">가전</td>
+                        <td><input type="number" name="count-thing-value" value="0" min="1"></td>
+                        <td class="text text2">개</td>
+                    </tr>
+                    <tr name="count-thing">
+                        <td class="text text2">장난감</td>
+                        <td><input type="number" name="count-thing-value" value="0" min="1"></td>
+                        <td class="text text2">개</td>
+                    </tr>
+                </table>
+
+                <div class="text" style="color: white; font-size: 10px;">
+                    ※ 박스 하나 당 한 종류의 유아용품만 담을 수 있습니다<br>
+                    ※ 박스 하나 당 15kg을 넘을 수 없습니다
+                </div>
+            </div>
+
+
+            <!-- 배송정보 입력 -->
+            <div class="donation-box donation-box-up14 donation-box-under14" style="height: 500px; width: 700px; display: none;">
+                <table>
+                    <tr>
+                        <td class="text text2">이름</td>
+                        <td><input type="text" id="name"></td>
+                    </tr>
+                    <tr>
+                        <td class="text text2">핸드폰 번호</td>
+                        <td><input type="text" id="phone"></td>
+                    </tr>
+                    <tr>
+                        <td class="text text2">추가 연락처 번호</td>
+                        <td><input type="text" id="phone2"></td>
+                    </tr>
+                    <tr>
+                        <td id="postcodeSection" class="text text2">우편번호
+                        
+                            <input type="text" name="address" placeholder="우편번호" 
+                                                                maxlength="6" id="postcode">
+                        </td>
+                        <td><button type="button" id="searchAddress">검색</button></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <input type="text" name="address" placeholder="도로명/지번주소" id="mainAddress">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="address" placeholder="상세주소" id="detailAddress">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="text text2">방문 희망일</td>
+                        <td><input type="date" id="date"></td>
+                    </tr>
+                    <tr>
+                        <td class="text text2">메모</td>
+                        <td><textarea id="memo"></textarea></td>
+                    </tr>
+                </table>
+
+            </div>
+
+
+            <!-- 결제정보 -->
+            <div class="donation-box donation-box-up14 donation-box-under14" style="height: 400px; width: 700px; display: none;">
+                <div class="text text2">
+                    총 배송비 : <span id="total"></span>원
+                </div>
+
+                <div>
+                    <label for="option2" class="text text2">결제수단</label>
+                    <select id="payment">
+                        <option value="신용카드">신용카드</option>
+                        <option value="휴대전화결제">휴대전화결제</option>
+                        <option value="무통장입금">무통장입금</option>
+                    </select>
+
+                    <button type="button" class="button">결제하기</button>
+                </div>
+
+                <div>
+                    <input type="checkbox">
+                    <label class="text text2" style="font-size: 10px;">이용약관과 개인정보취급방침에 동의합니다.</label>
+                </div>
+            </div>
+
+
+            <!-- 이전, 다음버튼 -->
+            <button type="button" id="previous" class="text text2" style="font-size: 15px; background: none; border: none; cursor: pointer;">← 이전</button>
+            <button type="button" id="next" class="text text2" style="font-size: 15px; background: none; border: none; cursor: pointer;">다음 →</button>
+
+            <button id="submit" class="text text2" style="font-size: 15px; background: none; border: none; cursor: pointer; margin-left: 100px; display: none;">제출하기</button>
+>>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
 
 
         </div>
@@ -270,10 +522,13 @@
 
 
 
+
+
+
     </main>
     
  
-
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="/js/donation/donation-main.js"></script>
 
 </body>

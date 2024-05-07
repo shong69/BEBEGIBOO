@@ -82,7 +82,7 @@
 		AND MEMBER_NAME = #{memberName}
 	</select>
 	
-<<<<<<< HEAD
+
 	<select id="getId">
 		SELECT MEMBER_ID
 		FROM "MEMBER"

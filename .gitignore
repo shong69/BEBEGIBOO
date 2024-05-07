@@ -3,7 +3,7 @@ MANIFEST.MF
 settings.json
 *.log
 config.properties
-
+workbench.xmi
 
 driver.xml
 HELP.md

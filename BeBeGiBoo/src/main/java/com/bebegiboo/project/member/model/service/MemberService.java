@@ -28,9 +28,15 @@ public interface MemberService {
 	/** 회원가입 
 	 * @param inputMember
 	 * @param memberAddress
-	 * @return 
+	 * @param authority
+	 * @return
 	 */
-	int signup(Member inputMember, String[] memberAddress);
+	int signup(Member inputMember, String[] memberAddress, int authority);
+
+
+
+
+
 
 
 

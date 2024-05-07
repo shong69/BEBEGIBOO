@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const options = {
       root: null,
@@ -105,7 +108,6 @@ const showTit = x => {
 window.addEventListener("scroll", () => {
     for (let x of showBox) showTit(x);
 });
-
 
 
 

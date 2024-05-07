@@ -102,8 +102,7 @@ out/
 ### VS Code ###
 .vscode/
 src/main/resources/application.properties
-Shoesing/src/main/resources/application.properties
-Shoesing/src/main/resources/config.properties
+
 .metadata/**
 .metadata
 /.metadata

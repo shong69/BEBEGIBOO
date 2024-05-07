@@ -200,12 +200,35 @@ document.querySelector("#searchAddress").addEventListener("click", DaumPostcode)
 
 
 
-submitButton.addEventListener("click", () => {
-    const donationType = 
+submitButton.addEventListener("click", e => {
+    var payment = document.querySelector("#payment");
+    
+    const obj = {
+        "name" : document.querySelector("#name").value,
+        "phone" : document.querySelector("#phone").value,
+        "phone2" : document.querySelector("#phone2").value,
+        "address" : document.querySelector("#postcode").value + " " + document.querySelector("#mainAddress").value + " " + document.querySelector("#detailAddress").value,
+        "date" : document.querySelector("#date").value,
+        "memo" : document.querySelector("#memo").value,
+        "total" : document.querySelector("#total").innerText,
+        "payment" :  payment.options[payment.selectedIndex].value
+    }
+
+    console.log(obj);
     
     fetch("/donation/complete", {
         method: "PUT",
         headers : {"Content-Type" : "application/json"},
         body : JSON.stringify(obj)
     })
+    .then(resp => resp.text())
+    .then(temp => {
+        if(temp > 0) {
+            alert("기부 신청이 완료되었습니다");
+            
+        } else {
+            alert("기부 신청이 완료되지 않았습니다");
+            e.preventDefault();
+        }
+    });
 });

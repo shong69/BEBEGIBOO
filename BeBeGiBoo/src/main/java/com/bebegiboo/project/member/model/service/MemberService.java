@@ -30,9 +30,15 @@ public interface MemberService {
 	/** 회원가입 
 	 * @param inputMember
 	 * @param memberAddress
-	 * @return 
+	 * @param authority
+	 * @return
 	 */
-	int signup(Member inputMember, String[] memberAddress);
+	int signup(Member inputMember, String[] memberAddress, int authority);
+
+
+
+
+
 
 
 	/** 휴대폰 번호 중복 검사

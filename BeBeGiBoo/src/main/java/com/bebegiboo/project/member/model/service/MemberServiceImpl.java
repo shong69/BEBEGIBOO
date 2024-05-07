@@ -90,25 +90,25 @@ public class MemberServiceImpl implements MemberService {
 
 
 
-	/**
-	 * 회원 가입 
-	 */
+
 	@Override
-	public int signup(Member inputMember, String[] memberAddress) {
-		
+	public int signup(Member inputMember, String[] memberAddress, int authority) {
+			
 		// 주소 입력된 경우 
-		if( !inputMember.getAddress().equals(",,") ) {
-			String address = String.join("^^^", memberAddress);
-			inputMember.setAddress(address);
-		} else {
-			inputMember.setAddress(null);
-		}
-		
-		// 비밀번호 암호화한 걸 inputMember에 세팅 
-		String encPw = bcrypt.encode(inputMember.getMemberPw()); 
-		inputMember.setMemberPw(encPw);
-		
-		return mapper.signup(inputMember);
+				if( !inputMember.getAddress().equals(",,") ) {
+					String address = String.join("^^^", memberAddress);
+					inputMember.setAddress(address);
+				} else {
+					inputMember.setAddress(null);
+				}
+				
+				// 비밀번호 암호화한 걸 inputMember에 세팅 
+				String encPw = bcrypt.encode(inputMember.getMemberPw()); 
+				inputMember.setMemberPw(encPw);
+				
+				inputMember.setAuthority(authority);
+				
+				return mapper.signup(inputMember);
 	}
 
 
@@ -243,7 +243,6 @@ public class MemberServiceImpl implements MemberService {
 	
 		return mapper.checkEmailWithId(map);
 	}
-
 
 
 

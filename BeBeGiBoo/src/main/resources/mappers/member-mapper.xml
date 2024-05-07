@@ -70,6 +70,7 @@
 		AND EMAIL = #{email}
 	</select>
 	
+<<<<<<< HEAD
 	<select id="getId">
 		SELECT MEMBER_ID
 		FROM "MEMBER"
@@ -89,4 +90,6 @@
 		AND MEMBER_ID = #{memberId}
 		AND EMAIL = #{email}
 	</select>
+=======
+>>>>>>> 8521049a864cf0b17fb184c581bbf9ec94e5a375
 </mapper>

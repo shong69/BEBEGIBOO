@@ -1,5 +1,6 @@
 /* 회원 가입 유효성 검사 */
 
+/* 필수 요소 체크용 */
 const checkObj = {
     "memberId" : false, 
     "memberPw" : false, 
@@ -12,7 +13,9 @@ const checkObj = {
     "address" : false
 }; 
 
-
+/* 권한 깂 확인 용도 */
+const authority = document.querySelector("#authority"); 
+console.log(authority.value); 
 
 
 /* 아이디 유효성 검사 */
@@ -43,13 +46,17 @@ memberId.addEventListener( "input", (e) => {
         return; 
     }
 
+<<<<<<< HEAD
     const inputId = e.target.value;   
     console.log(inputId); 
 
+=======
+>>>>>>> 8521049a864cf0b17fb184c581bbf9ec94e5a375
     // 유효한 경우 중복 검사 
     fetch("/member/checkId?memberId=" + inputId)
     .then(resp => resp.text())
     .then(result => {
+<<<<<<< HEAD
 			
 	    const inputId = e.target.value;   
 	    console.log(inputId); 
@@ -71,8 +78,27 @@ memberId.addEventListener( "input", (e) => {
 
 
 
+=======
+
+    if(result == 1) {
+        idMessage.innerText = "이미 사용중인 아이디입니다."; 
+        idMessage.classList.add("error"); 
+        idMessage.classList.remove("confirm"); 
+        checkObj.memberId = false; 
+        return; 
+    }
+    idMessage.innerText = "사용 가능한 아이디입니다~!!"; 
+    idMessage.classList.add("confirm"); 
+    idMessage.classList.remove("error"); 
+    checkObj.memberId = true; 
+
+    }); 
+>>>>>>> 8521049a864cf0b17fb184c581bbf9ec94e5a375
 
 }); 
+
+
+
 
 
 
@@ -152,7 +178,14 @@ memberPwConfirm.addEventListener("input", () => {
 }); 
 
 
+
+
+
+
+
+
 /* 이름 유효성 검사 */
+
 const memberName = document.querySelector("#memberName"); 
 const nameMessage = document.querySelector("#nameMessage"); 
 
@@ -190,7 +223,12 @@ memberName.addEventListener("input", e => {
 }); 
 
 
+
+
+
+
 /* 생년월일 유효성 검사 */
+
 const memberBirth = document.querySelector("#memberBirth"); 
 const birthMessage = document.querySelector("#birthMessage"); 
 
@@ -229,7 +267,12 @@ memberBirth.addEventListener("input", e => {
 }); 
 
 
+
+
+
+
 /* 핸드폰 번호 유효성 검사 */
+
 const phone = document.querySelector("#phone"); 
 const phoneMessage = document.querySelector("#phoneMessage"); 
 
@@ -267,7 +310,13 @@ phone.addEventListener("input", e => {
 }); 
 
 
+
+
+
+
+
 /* 이메일 인증 유효성 검사 */
+
 const email = document.querySelector("#email");
 const emailMessage = document.querySelector("#emailMessage");
 
@@ -328,7 +377,9 @@ email.addEventListener("input", e => {
 }); 
 
 
+
 /* 이메일 인증 보내기 */
+
 const sendEmailBtn = document.querySelector("#sendEmailBtn"); 
 const authKey = document.querySelector("#authKey"); 
 const checkAuthKeyBtn = document.querySelector("#checkAuthKeyBtn");
@@ -411,6 +462,7 @@ function addZero(number){
 }
 
 /* 인증번호 확인 버튼 클릭시 */
+
 checkAuthKeyBtn.addEventListener("click", e => {
 
     e.preventDefault(); 
@@ -454,7 +506,13 @@ checkAuthKeyBtn.addEventListener("click", e => {
 });
 
 
+
+
+
+
+
 /* 다음 주소 API 활용 */
+
 function DaumPostcode() {
     new daum.Postcode({
         oncomplete: function(data) {
@@ -486,7 +544,11 @@ document.querySelector("#searchAddress").addEventListener("click", DaumPostcode)
 
 
 
-// 회원 가입 버튼 클릭 시 전체 유효성 검사 여부 확인
+
+
+
+
+/* 회원 가입 버튼 클릭 시 전체 유효성 검사 여부 확인 */
 
 const signUpBtn = document.querySelector("#signUpBtn");
 

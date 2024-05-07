@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 81a800ae83c17f9002303e7b41de66374c245c9d
 .springBeans
 MANIFEST.MF
 settings.json
@@ -106,13 +102,7 @@ out/
 ### VS Code ###
 .vscode/
 src/main/resources/application.properties
-<<<<<<< HEAD
-BEBEGIBOO/src/main/resources/application.properties
-BEBEGIBOO/src/main/resources/config.properties
-=======
-Shoesing/src/main/resources/application.properties
-Shoesing/src/main/resources/config.properties
->>>>>>> 81a800ae83c17f9002303e7b41de66374c245c9d
+
 .metadata/**
 .metadata
 /.metadata

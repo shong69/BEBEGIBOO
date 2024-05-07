@@ -45,4 +45,6 @@
     <fullyQualifiedTypeName name="com.bebegiboo.project.member.model.dto.Member"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
 </qualifiedTypeNameHistroy>

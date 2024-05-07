@@ -19,7 +19,9 @@ import com.bebegiboo.project.certification.model.service.CertificationService;
 import com.bebegiboo.project.member.model.dto.Member;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RequiredArgsConstructor
 @RequestMapping("certification")
 @Controller
@@ -45,9 +47,14 @@ public class CertificationController {
 										RedirectAttributes ra, 
 										@RequestParam("images") List<MultipartFile> images ) throws IllegalStateException, IOException {
 		
+		log.debug("images : ", images);
+		
 		inputCertification.setMemberNo(loginMember.getMemberNo());
 		
 		int result = service.certificationSubmit(inputCertification, memberAddress, images); 
+		
+		
+		
 		
 		String path; 
 		String message; 

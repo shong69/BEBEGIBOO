@@ -1,5 +1,7 @@
 package com.bebegiboo.project.certification.model.dto;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -27,5 +29,6 @@ public class Certification {
 	private int memberNo;
 	
 	//image 
+	private List<CertificationImg> imageList; 
 
 }

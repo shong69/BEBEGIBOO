@@ -52,7 +52,10 @@
 		WHERE MEMBER_DEL_FL ='N'
 		AND PHONE = #{phoneNum}
 	</select>
-<<<<<<< HEAD
+
+		
+
+
 	
 		
 	<!-- 회원 이름 존재 유무 검사 -->
@@ -61,42 +64,6 @@
 		FROM "MEMBER"
 		WHERE MEMBER_DEL_FL ='N'
 		AND MEMBER_NAME = #{memberName}
-	</select>
-	
-	<select id="checkEmailWithName">
-		SELECT COUNT(*)
-		FROM "MEMBER"
-		WHERE MEMBER_DEL_FL='N'
-		AND MEMBER_NAME = #{memberName}
-		AND EMAIL = #{email}
-	</select>
-=======
->>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
-	
-		
-	<!-- 회원 이름 존재 유무 검사 -->
-	<select id="checkName" resultType="_int">
-		SELECT COUNT(*)
-		FROM "MEMBER"
-		WHERE MEMBER_DEL_FL ='N'
-		AND MEMBER_NAME = #{memberName}
-	</select>
-	
-<<<<<<< HEAD
-	<select id="getId">
-		SELECT MEMBER_ID
-		FROM "MEMBER"
-		WHERE MEMBER_DEL_FL = 'N'
-		AND EMAIL= #{email}
-	</select>
-	
-=======
-	<select id="checkEmailWithName">
-		SELECT COUNT(*)
-		FROM "MEMBER"
-		WHERE MEMBER_DEL_FL='N'
-		AND MEMBER_NAME = #{memberName}
-		AND EMAIL = #{email}
 	</select>
 	
 
@@ -107,7 +74,17 @@
 		AND EMAIL= #{email}
 	</select>
 	
->>>>>>> 476f1c7252246cfde7d02570699778e6ffc1df6f
+
+	<select id="checkEmailWithName">
+		SELECT COUNT(*)
+		FROM "MEMBER"
+		WHERE MEMBER_DEL_FL='N'
+		AND MEMBER_NAME = #{memberName}
+		AND EMAIL = #{email}
+	</select>
+	
+
+
 	<update id="updateNewPw">
 		UPDATE "MEMBER" SET MEMBER_PW = #{encNewPw}
 		WHERE EMAIL = #{email}

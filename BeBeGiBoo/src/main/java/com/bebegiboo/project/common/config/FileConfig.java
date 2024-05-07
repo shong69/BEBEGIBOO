@@ -62,8 +62,8 @@ public class FileConfig implements WebMvcConfigurer {
 		
 			// 봉사 인증 신청폼 요청 
 			registry
-			.addResourceHandler("/certification/file/**")
-			.addResourceLocations("file:///C:/uplodFiles/certification/");
+			.addResourceHandler(certificationResourceHandler)
+			.addResourceLocations(certificationResourceLocation);
 			
 		}
 		

@@ -37,7 +37,7 @@ public class FaqController {
 	 * @param cp
 	 * @return
 	 */
-	@GetMapping("/faqBoard")
+	@GetMapping("faqBoard")
 	public String faqMain(Model model, 
 					@RequestParam(value="cp", required=false, defaultValue="1") int cp  ) {
 		
@@ -53,7 +53,7 @@ public class FaqController {
 	}
 	
 	@ResponseBody
-	@GetMapping("/getFaqByCategory")
+	@GetMapping("getFaqByCategory")
 	public List<FaqBoard> getFaqByCategory(@RequestParam("categoryNo") int categoryNo) {
 	   
 		log.debug("categoryNo : " + categoryNo);  
@@ -68,7 +68,7 @@ public class FaqController {
 	/** faq 삽입 화면 
 	 * @return
 	 */
-	@GetMapping("/insertFaq")
+	@GetMapping("insertFaq")
 	public String insertFaqPage() {
 		
 		return "/faqBoard/insertFaq"; 
@@ -81,7 +81,7 @@ public class FaqController {
 	 * @param ra
 	 * @return
 	 */
-	@PostMapping("/insertFaq")
+	@PostMapping("insertFaq")
 	public String insertFaq(@ModelAttribute FaqBoard inputFaq,
 							@SessionAttribute("loginMember") Member loginMember, 
 							RedirectAttributes ra
@@ -120,7 +120,7 @@ public class FaqController {
 	 * @param ra
 	 * @return
 	 */
-	@GetMapping("/editFaq")
+	@GetMapping("editFaq")
 	public String editFaqPage( FaqBoard faqBoard,
 						@SessionAttribute("loginMember") Member loginMember,
 						Model model,
@@ -151,7 +151,7 @@ public class FaqController {
 	 * @param ra
 	 * @return
 	 */
-	@PostMapping("/editFaq")
+	@PostMapping("editFaq")
 	public String updateFaq(
 							FaqBoard inputFaq,
 							@SessionAttribute("loginMember") Member loginMember,
@@ -189,7 +189,7 @@ public class FaqController {
 	 * @param ra
 	 * @return
 	 */
-	@PostMapping("/deleteFaq/{qNo}")
+	@PostMapping("deleteFaq/{qNo}")
 	public String faqDelete(@PathVariable("qNo") int qNo,
 							@SessionAttribute("loginMember") Member loginMember,
 							RedirectAttributes ra) {

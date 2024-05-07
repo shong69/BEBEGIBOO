@@ -4,15 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 @RequestMapping("certification")
 @Controller
 public class CertificationController {
-	
-	@GetMapping("/certification")
-	public String certificationPage() {
+
+	@GetMapping("certification")
+	public String certificationMain() {
 		
-		return "/certification/certification";
+		return "/certification/certification"; 
 		
 	}
 	

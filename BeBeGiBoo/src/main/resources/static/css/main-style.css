@@ -409,8 +409,7 @@ a {
     position: absolute;
     position: fixed;
     z-index: 100;
-    visibility: hidden;
-    
+    visibility: hidden;   
 }
 
 .act-down {
@@ -426,20 +425,16 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 75px;
+    width: 100px;
     height: 65px;
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(254, 245, 220);
 }
 
 #nav-container > div > a:hover {
     color: rgb(44, 178, 255);
     text-decoration: underline;
+    transition-duration: 0.5s;
 }
-
-
-
-
-
 
 /************************푸터부분*****************/
 
@@ -501,4 +496,16 @@ a {
     font-family: "Noto Sans KR", sans-serif;
     font-size: 12px;
     line-height: 25px;
+}
+
+/**************심플 푸터*************/
+#simpleFooter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+#simpleLogo img{
+    width : 30px;
 }

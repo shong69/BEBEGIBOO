@@ -146,6 +146,14 @@ details > summary {
     transition: background 0.5s;
 }
 
+#qTitle{
+    margin-left: 10px;
+}
+
+#cateNo{
+    color: #00a2ff;
+}
+
 /* 답변 */
 details > figure {
 

@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const options = {
       root: null,
@@ -52,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
       fadeupObserver.observe(fadeup);
     });
   });
+  
 
 
 

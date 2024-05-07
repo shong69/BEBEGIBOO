@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 81a800ae83c17f9002303e7b41de66374c245c9d
 .springBeans
 MANIFEST.MF
 settings.json
@@ -154,5 +157,8 @@ Shoesing/src/main/resources/config.properties
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 81a800ae83c17f9002303e7b41de66374c245c9d

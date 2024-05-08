@@ -29,6 +29,12 @@ public class CertificationBoard {
 	//목록 조회 시 상관 서브 쿼리 결과
 	private int commentCount;
 
+	//게시글 목록 썸네일 이미지
+	private String thumbnail;
+	
+	//특정 게시글 이미지 목록
+	private List<BoardImg> imageList;
+	
 	//특정 게시글 댓글 목록
 	private List<Comment> commentList;
 	

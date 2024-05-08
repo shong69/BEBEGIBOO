@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+
+main{ 
+    font-family: "Noto Sans KR", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#titleArea {
+    border: 1px solid #1F7CFF;
+    background-color:none;
+    margin-top: 200px;
+    width: 80%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#titleArea span{
+    padding : 30px;
+    font-size: 40px;
+
+}
+
+#btnArea{
+    display: flex;
+    flex-direction: column;
+    margin-top : 100px;
+    width : 80%;
+    align-items: flex-end;
+}
+
+#insertBtn {
+    width : 150px;
+    height: 40px;
+    font-size: 20px;
+    background-color: transparent;
+    border-radius: 50px;
+    transition: all 0.1s ease-in-out;
+    font-size: 20x;
+    box-shadow: -1px -3px 2px rgba(228, 226, 226, 0.8), 3px 3px 5px rgba(0, 0, 0, 0.2);
+    border : none;
+}
+
+.active{
+    box-shadow: inset -3px -3px 2px rgba(225, 225, 225, 0), inset 4px 0px 16px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    background-color: #DEECFF;
+}
+#tableArea {
+    width : 80%;
+    margin-top: 30px;
+    margin-bottom : 60px;
+}
+table{
+    width: 100%;
+}
+
+thead{
+    background-color: #FFF6D6;
+}
+
+table td:first-child {
+    width : 70%;
+}
+
+tr {
+    font-size: 20px;
+    height: 80px;
+    border-bottom: 1px solid #dddd;
+
+}
+
+td {
+    padding : 20px;
+}
+
+
+
+.pagination{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 60px;
+}
+
+.pagination li{
+    width: 20px;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.pagination a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}

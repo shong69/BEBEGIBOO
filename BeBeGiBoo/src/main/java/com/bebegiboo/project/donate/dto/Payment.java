@@ -13,13 +13,8 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class DeliveryInfo {
+public class Payment {
 
-	private String name;
-	private String phone;
-	private String phone2;
-	private String address;
-	private String date;
-	private String memo;
-	private int memberNo;
+	private int total;
+	private String payment;
 }

@@ -8,8 +8,13 @@ import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+<<<<<<< HEAD
+import com.bebegiboo.project.certification.model.dto.Certification;
+import com.bebegiboo.project.faqboard.pagination.Pagination;
+=======
 import com.bebegiboo.project.review.model.dto.CertificationBoard;
 import com.bebegiboo.project.review.model.dto.ReviewPagination;
+>>>>>>> 2032a30b3093473876bfe91e951449ff12112800
 import com.bebegiboo.project.review.model.mapper.ReviewMapper;
 
 import lombok.RequiredArgsConstructor;

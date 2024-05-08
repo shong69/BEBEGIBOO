@@ -142,7 +142,7 @@ memberPw.addEventListener("input", e => {
 
     // 유효하지 않은 경우 
     if( !regExp.test(inputPw) ) {
-        pwMessage.innerText = "비밀번호가 유효하지 않습니다"; 
+        pwMessage.innerText = "영어, 숫자, 특수문자(-,_)8~12글자 이내로 입력해주세요."; 
         pwMessage.classList.add('error'); 
         pwMessage.classList.remove('confirm'); 
         checkObj.memberPw = false; 
@@ -150,7 +150,7 @@ memberPw.addEventListener("input", e => {
     }
 
     // 유효한 경우 
-    pwMessage.innerText = "유효한 비밀번호입니다"; 
+    pwMessage.innerText = "사용 가능합니다"; 
     pwMessage.classList.add('confirm'); 
     pwMessage.classList.remove('error'); 
     checkObj.memberPw = true; 
@@ -204,7 +204,7 @@ memberName.addEventListener("input", e => {
     
     // 유효하지 않은 경우 
     if( !regExp.test(inputName) ) {
-        nameMessage.innerText = "이름이 유효하지 않습니다"; 
+        nameMessage.innerText = "한글, 영어로만 입력해주세요"; 
         nameMessage.classList.add('error'); 
         nameMessage.classList.remove('confirm'); 
         checkObj.memberName = false; 
@@ -400,7 +400,7 @@ sendEmailBtn.addEventListener("click", e => {
     authKeyMessage.innerText = ""; 
 
     if(!checkObj.email) {
-        emailMessage.innerText = "유효한 이메일이 아닙니다"; 
+        emailMessage.innerText = "메일을 보낼 수 없습니다"; 
         return; 
     }
 
@@ -556,23 +556,23 @@ signUpBtn.addEventListener("submit", e => {
 
             switch(key) {
                 case "memberId" : 
-                    str = "아이디가 유효하지 않습니다"; break; 
+                    str = "아이디를 확인해주세요"; break; 
                 case "memberPw" : 
-                    str = "비밀번호가 유효하지 않습니다"; break; 
+                    str = "비밀번호를 확인해주세요"; break; 
                 case "memberPwConfirm" :
                     str = "비밀번호가 일치하지 않습니다"; break;
                 case "memberName" : 
-                    str = "이름이 유효하지 않습니다" ; break; 
+                    str = "이름을 확인해주세요" ; break; 
                 case "memberBirth" : 
-                    str = "생년월일이 유효하지 않습니다"; break; 
+                    str = "생년월일을 확인해주세요"; break; 
                 case "phone" : 
-                    str = "핸드폰번호가 유효하지 않습니다"; break;         
+                    str = "핸드폰번호를 확인해주세요"; break;         
                 case "email" :
-                    str = "이메일이 유효하지 않습니다"; break;               
+                    str = "이메일을 확인해주세요"; break;               
                 case "authKey" : 
                     str = "이메일이 인증되지 않았습니다"; break;
                 case "address" : 
-                    str = "주소가 유효하지 않습니다"; break; 
+                    str = "주소를 확인해주세요"; break; 
             }
 
             alert(str);

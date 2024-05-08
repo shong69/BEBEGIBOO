@@ -27,14 +27,6 @@ public interface MemberMapper {
 	 */
 	Member login(String memberId);
 
-
-	/** 회원 가입 
-	 * @param inputMember
-	 * @param authority
-	 * @return
-	 */
-	int signup(Member inputMember);
-
 	/** 핸드폰 번호 중복 검사
 	 * @param phoneNum
 	 * @return result
@@ -71,7 +63,12 @@ public interface MemberMapper {
 	 */
 	int checkEmailWithId(Map<String, String> map);
 
-
+	/** 회원 가입 
+	 * @param inputMember
+	 * @param authority
+	 * @return
+	 */
+	int signup(Member inputMember);
 
 
 }

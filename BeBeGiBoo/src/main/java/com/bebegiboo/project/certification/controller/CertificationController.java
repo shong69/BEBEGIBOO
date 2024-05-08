@@ -31,6 +31,9 @@ public class CertificationController {
 	
 	
 
+	/** 인증신청 폼 화면 이동 
+	 * @return
+	 */
 	@GetMapping("certification")
 	public String certificationMain() {
 		
@@ -39,6 +42,17 @@ public class CertificationController {
 	}
 	
 
+	/** 인증 신청 폼 제출 
+	 * @param memberAddress
+	 * @param inputCertification
+	 * @param loginMember
+	 * @param model
+	 * @param ra
+	 * @param images
+	 * @return
+	 * @throws IllegalStateException
+	 * @throws IOException
+	 */
 	@PostMapping("certification")
 	public String certificationSubmit(@RequestParam("address") String[] memberAddress,
 										Certification inputCertification,

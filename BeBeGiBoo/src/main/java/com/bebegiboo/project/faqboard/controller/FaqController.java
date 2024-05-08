@@ -51,6 +51,10 @@ public class FaqController {
 		
 	}
 	
+	/** 카테고리 선택시 목록 변경 
+	 * @param categoryNo
+	 * @return
+	 */
 	@ResponseBody
 	@GetMapping("getFaqByCategory")
 	public List<FaqBoard> getFaqByCategory(@RequestParam("categoryNo") int categoryNo) {

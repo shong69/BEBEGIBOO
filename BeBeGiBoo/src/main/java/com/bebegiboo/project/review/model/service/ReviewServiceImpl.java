@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bebegiboo.project.certification.model.dto.Certification;
-import com.bebegiboo.project.common.pagination.Pagination;
+import com.bebegiboo.project.faqboard.pagination.Pagination;
 import com.bebegiboo.project.review.model.mapper.ReviewMapper;
 
 import lombok.RequiredArgsConstructor;

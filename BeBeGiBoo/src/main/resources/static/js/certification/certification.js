@@ -122,13 +122,79 @@ closeBtn2.addEventListener('click', () => {
 });
 
 
+/* 이미지 미리보기 */
+const previewList = document.querySelectorAll(".preview");
+const inputImageList = document.querySelectorAll(".inputImage");
+const deleteImageList = document.querySelectorAll(".delete-image");
 
-/* 제출하기 버튼 클릭시 */
-/*
-const certificationForm = document.querySelector("#certificationForm"); 
+const backupInputList = new Array(inputImageList.length); 
 
-certificationForm.addEventListener("click", e=> {
+const changeImageFn = (inputImage, order) => {
+    const maxSize = 1024 * 1024 * 10; 
+    const file = inputImage.files[0]; 
+
+    if(file == undefined){
+        const temp = backupInputList[order].cloneNode(true); 
+
+        inputImage.after(temp);
+        inputImage.remove(); 
+        inputImage = temp; 
+        
+        inputImage.addEventListener('change', e => {
+            changeImageFn(e.target, order); 
+        })
+
+        return;
+    }
+
+    // 선택된 파일 크기가 최대크기 초과시 
+    if(file.size > maxSize){
+        alert("10MB 이하 이미지를 선택해주세요"); 
+
+        if(backupInputList[order] == undefined || backupInputList[order].value == '') {
+            inputImage.value = ""; 
+            return; 
+        }
+
+        const temp = backupInputList[order].cloneNode(true); 
+
+        inputImage.after(temp); 
+        inputImage.remove(); 
+        inputImage = temp; 
+
+        inputImage.addEventListener("change", e => {
+            changeImageFn(e.target, order); 
+        })
+
+        return; 
+    }
+
+    // 선택된 이미지 미리보기 
+    const reader = new FileReader(); 
+
+    reader.readAsDataURL(file); 
+
+    reader.addEventListener("load", e=> {
+        const url = e.target.result; 
+
+        previewList[order].src = url; 
+
+        backupInputList[order] = inputImage.cloneNode(true); 
+    }); 
+}
+
+for(let i=0; i<inputImageList.length; i++){
+    inputImageList[i].addEventListener("change", e => {
+        changeImageFn(e.target, i); 
+    })
+
+    deleteImageList[i].addEventListener("click", ()=> {
+        previewList[i].src = "";
+        inputImageList[i].value = ""; 
+        backupInputList[i].value = ""; 
+    });
+}
 
 
-}); */
+
 

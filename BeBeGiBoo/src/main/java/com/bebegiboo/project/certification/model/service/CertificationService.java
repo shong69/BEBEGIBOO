@@ -9,6 +9,14 @@ import com.bebegiboo.project.certification.model.dto.Certification;
 
 public interface CertificationService  {
 
+	/** 인증신청 폼 제출 
+	 * @param inputCertification
+	 * @param memberAddress
+	 * @param images
+	 * @return
+	 * @throws IllegalStateException
+	 * @throws IOException
+	 */
 	int certificationSubmit(Certification inputCertification, String[] memberAddress, List<MultipartFile> images) throws IllegalStateException, IOException;
 
 }

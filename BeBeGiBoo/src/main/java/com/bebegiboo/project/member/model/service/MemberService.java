@@ -26,21 +26,6 @@ public interface MemberService {
 	 */
 	Member login(Member inputMember);
 
-
-	/** 회원가입 
-	 * @param inputMember
-	 * @param memberAddress
-	 * @param authority
-	 * @return
-	 */
-	int signup(Member inputMember, String[] memberAddress, int authority);
-
-
-
-
-
-
-
 	/** 휴대폰 번호 중복 검사
 	 * @param phoneNum
 	 * @return
@@ -83,7 +68,13 @@ public interface MemberService {
 
 
 	
-
+	/** 회원가입 
+	 * @param inputMember
+	 * @param memberAddress
+	 * @param authority
+	 * @return
+	 */
+	int signup(Member inputMember, String[] memberAddress, int authority);
 
 
 

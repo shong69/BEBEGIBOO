@@ -4,8 +4,13 @@
 
 	<!-- 인증서 폼 제출 -->
 	<insert id="certificationSubmit">
+	
+	<selectKey order="BEFORE" resultType="_int" keyProperty="cNo">
+		SELECT SEQ_C_NO.NEXTVAL FROM DUAL
+	</selectKey>
 		INSERT INTO "CERTIFICATION"
-		VALUES(SEQ_C_NO.NEXTVAL,
+		VALUES(
+			#{cNo},
 			#{memberId},
 			#{memberName},
 			#{certificationId},
@@ -14,18 +19,23 @@
 			#{address}, 
 			#{memberNo}	)
 	</insert>
+	
+	
+	
 
-	<insert id="insertUploadList">
-	    INSERT INTO "CERTIFICATION_IMG" 
-	    VALUES
-	    <foreach collection="list" item="img" open="(" close=")" separator=",">
-	        #{img.cImgNo}, 
-	        #{img.cImgPath}, 
-	        #{img.cImgOriginalName}, 
-	        #{img.cImgRename}, 
-	        #{img.cImgOrder}, 
-	        #{img.cNo}
-	    </foreach>
+	<!-- 이미지  -->
+	<insert id="insertUploadList" parameterType="list">
+	    INSERT INTO "CERTIFICATION_IMG"
+	    <foreach collection="list" item="img" open="(" close=")"
+		 		 separator=" UNION ">
+		 SELECT NEXT_IMG_NO(), 
+		 		#{img.cImgPath}, 
+		 		#{img.cImgOriginalName}, 
+		 		#{img.cImgRename}, 
+		 		#{img.cImgOrder}, 
+		 		#{img.cNo} 
+		  FROM DUAL
+		</foreach>			
 	</insert>
 	
 

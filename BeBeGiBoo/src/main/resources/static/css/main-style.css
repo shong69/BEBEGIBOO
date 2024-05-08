@@ -63,19 +63,7 @@ a {
     color: #1a292c;
     text-transform: lowercase;
   }
-  
-  .container:nth-child(2) {
-    background: rgb(208, 227, 241);
-  }
-  .container:nth-child(1) {
-    background: #b69187;
-  }
-  .container:nth-child(4) {
-    background: #bcb8ad;
-  }
-  .container:nth-child(3) {
-    background: #b6916d;
-  }
+
   
 .image-wrap  img {
     height: 100%;
@@ -267,7 +255,7 @@ a {
     height: 150px;
     margin: 35px;
     background-color: #fff4e4;
-    box-shadow: 10px 10px 5px rgb(121, 121, 121);
+    box-shadow: 10px 10px45px rgb(121, 121, 121);
     transition-duration: 0.3s;
     display: flex;
     flex-direction: column;
@@ -341,7 +329,7 @@ a {
     height: 35px;
     width: 35px;
     background-color: white;
-    box-shadow: 5px 5px 5px gray;
+    box-shadow:45px 5px 5px gray;
     cursor: pointer;
     border-radius: 50%;
 }
@@ -360,6 +348,8 @@ a {
     top: 0;
     width: 100%;
     z-index: 90;
+    backdrop-filter: blur(10px);
+    box-shadow : 0 0 4px 0 rgba(0,0,0,0.3);
 }
 
 #logo {

@@ -1,5 +1,7 @@
 package com.bebegiboo.project.donate.mapper;
 
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.bebegiboo.project.donate.dto.DeliveryInfo;
@@ -25,31 +27,37 @@ public interface DonateMapper {
 	 * @param arr
 	 * @return
 	 */
-	int dailyInsert(String dailyARR);
+	int dailyInsert(Map<String, Object> dailyMap);
 
 	/** cloth
 	 * @param arr
 	 * @return
 	 */
-	int clothInsert(String clothARR);
+	int clothInsert(Map<String, Object> clothMap);
 
 	/** dish
 	 * @param arr
 	 * @return
 	 */
-	int dishInsert(String dishARR);
+	int dishInsert(Map<String, Object> dishMap);
 
 	/** electronic
 	 * @param arr
 	 * @return
 	 */
-	int electronicInsert(String electronicARR);
+	int electronicInsert(Map<String, Object> electronicMap);
 
 	/** toy
 	 * @param arr
 	 * @return
 	 */
-	int toyInsert(String toyARR);
+	int toyInsert(Map<String, Object> toyMap);
+
+	/** 기부기록정보 삽입
+	 * @param memberNo
+	 * @return
+	 */
+	int recordInfo(int memberNo);
 
 
 }

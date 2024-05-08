@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.RowBounds;
 
 import com.bebegiboo.project.certification.model.dto.Certification;
+import com.bebegiboo.project.review.model.dto.CertificationBoard;
 @Mapper
 public interface ReviewMapper {
 
@@ -19,7 +20,7 @@ public interface ReviewMapper {
 	 * @param rowBounds
 	 * @return
 	 */
-	List<Certification> SelectReivewList(RowBounds rowBounds);
+	List<CertificationBoard> SelectReivewList(RowBounds rowBounds);
 
 	/** 검색된 게시물 개수 
 	 * @param paramMap
@@ -32,6 +33,18 @@ public interface ReviewMapper {
 	 * @param rowBounds
 	 * @return
 	 */
-	List<Certification> selectSearchList(Map<String, Object> paramMap, RowBounds rowBounds);
+	List<CertificationBoard> selectSearchList(Map<String, Object> paramMap, RowBounds rowBounds);
+
+	/** 게시물 상세 조회
+	 * @param map
+	 * @return
+	 */
+	CertificationBoard selectOne(Map<String, Integer> map);
+
+	/** 조회수 증가
+	 * @param boardNo
+	 * @return
+	 */
+	int upadateReadCount(int boardNo);
 
 }

@@ -71,6 +71,7 @@
 	</select>
 
 
+
 	<select id="getId">
 		SELECT MEMBER_ID
 		FROM "MEMBER"

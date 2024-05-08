@@ -231,7 +231,7 @@ public class MemberServiceImpl implements MemberService {
 			if(rd.nextBoolean()) { //nextBoolean()으로 T/F 랜덤추출->숫자 혹은 영문 랜덤 처리
 				sb.append(rd.nextInt(10));
 			}else {
-				sb.append((rd.nextInt(26)+65));
+				sb.append((char)(rd.nextInt(26)+65));
 			}
 		}
 		

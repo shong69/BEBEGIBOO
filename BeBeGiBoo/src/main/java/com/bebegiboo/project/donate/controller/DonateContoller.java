@@ -75,6 +75,8 @@ public class DonateContoller {
 		
 		log.info("계산" + payment);
 		
+		
+		
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		
 		map.put("생활용품", Integer.valueOf((String)obj.get("dailyBox")));
@@ -95,6 +97,7 @@ public class DonateContoller {
         int deliveryNo = service.deliveryInfo(delivery);
         int recordNo = service.recordInfo(memberNo);
 
+        
 		return thingsNo + deliveryNo + recordNo;
 		
 	}

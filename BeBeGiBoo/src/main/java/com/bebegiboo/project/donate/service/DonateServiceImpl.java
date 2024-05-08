@@ -66,7 +66,7 @@ public class DonateServiceImpl implements DonateService{
 				dailymap.put("memberNo", memberNo);
 
 				
-				dailyNo = mapper.dailyInsert(dailymap);
+				dailyNo = mapper.clothInsert(dailymap);
 			}
 		}
 		
@@ -79,7 +79,7 @@ public class DonateServiceImpl implements DonateService{
 				dishMap.put("memberNo", memberNo);
 
 				
-				dishNo = mapper.dailyInsert(dishMap);
+				dishNo = mapper.dishInsert(dishMap);
 			}
 		}
 		
@@ -92,7 +92,7 @@ public class DonateServiceImpl implements DonateService{
 				electronicMap.put("memberNo", memberNo);
 
 				
-				electronicNo = mapper.dailyInsert(electronicMap);
+				electronicNo = mapper.electronicInsert(electronicMap);
 			}
 		}
 		
@@ -105,7 +105,7 @@ public class DonateServiceImpl implements DonateService{
 				toyMap.put("memberNo", memberNo);
 
 				
-				toyNo = mapper.dailyInsert(toyMap);
+				toyNo = mapper.toyInsert(toyMap);
 			}
 		}
 	

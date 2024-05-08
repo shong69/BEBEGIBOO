@@ -100,6 +100,10 @@
 		WHERE MEMBER_DEL_FL ='N'
 		AND PHONE = #{phoneNum}
 	</select>
+<<<<<<< HEAD
+
+=======
+>>>>>>> df3265c7b20f90ecf76bcde42f61434efe223995
 	
 		
 	<!-- 회원 이름 존재 유무 검사 -->
@@ -117,8 +121,12 @@
 		AND MEMBER_NAME = #{memberName}
 		AND EMAIL = #{email}
 	</select>
+<<<<<<< HEAD
+	
+=======
 
 
+>>>>>>> df3265c7b20f90ecf76bcde42f61434efe223995
 
 	<select id="getId">
 		SELECT MEMBER_ID
@@ -127,9 +135,12 @@
 		AND EMAIL= #{email}
 	</select>
 	
+<<<<<<< HEAD
+=======
 
 
 	
+>>>>>>> df3265c7b20f90ecf76bcde42f61434efe223995
 	<update id="updateNewPw">
 		UPDATE "MEMBER" SET MEMBER_PW = #{encNewPw}
 		WHERE EMAIL = #{email}

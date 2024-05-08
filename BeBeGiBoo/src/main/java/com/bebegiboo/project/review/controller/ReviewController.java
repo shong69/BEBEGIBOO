@@ -34,8 +34,11 @@ public class ReviewController {
 		log.debug("map : "+paramMap); //map : {key=t, query=}
 		
 		Map<String, Object> map = null;
+
+
 		
 		if(paramMap.get("key") == null) { //검색 X(그냥 목록 조회)
+
 			map = service.selectReviewList(cp);
 			
 		}else { //검색 O
@@ -47,7 +50,7 @@ public class ReviewController {
 			
 			
 		}
-		
+
 		model.addAttribute("reviewList", map.get("reviewList"));
 		model.addAttribute("pagination", map.get("pagination"));
 		

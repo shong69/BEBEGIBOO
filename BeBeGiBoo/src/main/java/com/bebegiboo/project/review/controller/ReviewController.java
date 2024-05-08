@@ -31,14 +31,14 @@ public class ReviewController {
 			) {
 		
 		Map<String, Object> map = null;
-		
+		/*
 		if(paramMap.get("key") == null) { //검색 X
 			map = service.selectReviewList(cp);
 		} else { //검색 O
 			
 			map = service.searchList(paramMap, cp);
 		}
-		
+		*/
 		model.addAttribute("reviewList", map.get("reviewList"));
 		model.addAttribute("pagination", map.get("pagination"));
 		

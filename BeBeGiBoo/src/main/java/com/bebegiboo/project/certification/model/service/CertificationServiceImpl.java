@@ -19,7 +19,9 @@ import com.bebegiboo.project.certification.model.mapper.CertificationMapper;
 import com.bebegiboo.project.common.util.Utility;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Transactional(rollbackFor=Exception.class)
 @PropertySource("classpath:/config.properties")
 @RequiredArgsConstructor
@@ -56,13 +58,15 @@ public class CertificationServiceImpl implements CertificationService{
 		if(result == 0) return 0; 
 		
 		int cNo = inputCertification.getCNo(); 
-		
+	
 		List<CertificationImg> uploadImgs = new ArrayList<>(); 
-		
+				
 		for(int i=0; i<images.size(); i++) {
 			
 			if( !images.get(i).isEmpty() ) {
 				String originalName = images.get(i).getOriginalFilename(); 
+				
+				
 				
 				String rename = Utility.fileRename(originalName); 
 				
@@ -74,6 +78,9 @@ public class CertificationServiceImpl implements CertificationService{
 									.cImgOrder(i)
 									.uploadFile(images.get(i))
 									.build(); 
+				
+				uploadImgs.add(img);
+				
 			}
 			
 		}
@@ -87,9 +94,10 @@ public class CertificationServiceImpl implements CertificationService{
 		} else {
 			throw new InsertException("이미지가 정상 삽입되지 않음"); 
 		}
-	
-		
+
 		return cNo;
+		
+		
 	} 
 	
 	

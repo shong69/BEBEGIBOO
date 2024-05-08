@@ -63,19 +63,7 @@ a {
     color: #1a292c;
     text-transform: lowercase;
   }
-  
-  .container:nth-child(2) {
-    background: rgb(208, 227, 241);
-  }
-  .container:nth-child(1) {
-    background: #b69187;
-  }
-  .container:nth-child(4) {
-    background: #bcb8ad;
-  }
-  .container:nth-child(3) {
-    background: #b6916d;
-  }
+
   
 .image-wrap  img {
     height: 100%;

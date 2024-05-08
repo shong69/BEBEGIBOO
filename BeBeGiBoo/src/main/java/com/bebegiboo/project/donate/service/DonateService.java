@@ -25,7 +25,12 @@ public interface DonateService {
 	 * @param things
 	 * @return
 	 */
-	int thingsInfo(DonationThings things);
+	int thingsInfo(DonationThings things, int memberNo);
+
+	/** 기부기록정보 삽입
+	 * @return
+	 */
+	int recordInfo(int memberNo);
 
 
 }

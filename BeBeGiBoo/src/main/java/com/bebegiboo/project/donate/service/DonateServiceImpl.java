@@ -1,5 +1,9 @@
 package com.bebegiboo.project.donate.service;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.stereotype.Service;
 
 import com.bebegiboo.project.donate.dto.DeliveryInfo;
@@ -31,57 +35,89 @@ public class DonateServiceImpl implements DonateService{
 
 	// 기부물건 삽입
 	@Override
-	public int thingsInfo(DonationThings things) {
+	public int thingsInfo(DonationThings things, int memberNo) {
 
 		String[] dailyArr = things.getDaily().split(",");
 		String[] clothArr = things.getCloth().split(",");
 		String[] dishArr = things.getDish().split(",");
 		String[] electronicArr = things.getElectronic().split(",");
 		String[] toyArr = things.getToy().split(",");
-		log.info("비어있냐:" + dailyArr);
+
 		
 		int dailyNo = 0;
-		if(dailyArr != null) {
+		if(!Arrays.toString(dailyArr).equals("[]")) {
 			for(String dailyARR : dailyArr) {
+				
+				Map<String, Object> dailymap = new HashMap<String, Object>();
+				dailymap.put("dailyARR", dailyARR);
+				dailymap.put("memberNo", memberNo);
 
-				dailyNo = mapper.dailyInsert(dailyARR);
+				
+				dailyNo = mapper.dailyInsert(dailymap);
 			}
 		}
 		
 		int clothNo = 0;
-		if(clothArr != null) {
+		if(!Arrays.toString(clothArr).equals("[]")) {
 			for(String clothARR : clothArr) {
 
-				clothNo = mapper.clothInsert(clothARR);
+				Map<String, Object> dailymap = new HashMap<String, Object>();
+				dailymap.put("clothARR", clothARR);
+				dailymap.put("memberNo", memberNo);
+
+				
+				dailyNo = mapper.dailyInsert(dailymap);
 			}
 		}
 		
 		int dishNo = 0;
-		if(dishArr != null) {
+		if(!Arrays.toString(dishArr).equals("[]")) {
 			for(String dishARR : dishArr) {
 
-				dishNo = mapper.dishInsert(dishARR);
+				Map<String, Object> dishMap = new HashMap<String, Object>();
+				dishMap.put("dishARR", dishARR);
+				dishMap.put("memberNo", memberNo);
+
+				
+				dishNo = mapper.dailyInsert(dishMap);
 			}
 		}
 		
 		int electronicNo = 0;
-		if(electronicArr != null) {
+		if(!Arrays.toString(electronicArr).equals("[]")) {
 			for(String electronicARR : electronicArr) {
 
-				electronicNo = mapper.electronicInsert(electronicARR);
+				Map<String, Object> electronicMap = new HashMap<String, Object>();
+				electronicMap.put("electronicARR", electronicARR);
+				electronicMap.put("memberNo", memberNo);
+
+				
+				electronicNo = mapper.dailyInsert(electronicMap);
 			}
 		}
 		
 		int toyNo = 0;
-		if(toyArr != null) {
+		if(!Arrays.toString(toyArr).equals("[]")) {
 			for(String toyARR : toyArr) {
 
-				toyNo = mapper.toyInsert(toyARR);
+				Map<String, Object> toyMap = new HashMap<String, Object>();
+				toyMap.put("toyARR", toyARR);
+				toyMap.put("memberNo", memberNo);
+
+				
+				toyNo = mapper.dailyInsert(toyMap);
 			}
 		}
 	
 		
 		return dailyNo+clothNo+dishNo+electronicNo+toyNo;
+	}
+
+	// 기부기록정보 삽입
+	@Override
+	public int recordInfo(int memberNo) {
+		
+		return mapper.recordInfo(memberNo);
 	}
 
 }

@@ -100,7 +100,7 @@
             <div class="donation-box donation-box-under14" style="height: 500px; width: 900px; display: none;">
                 <div>
                     <label for="option1" class="text text2">이름</label>
-                    <input type="text" style="height: 30px;">
+                    <input id="parentsName" type="text" style="height: 30px;">
                 </div>
 
                 <div id="parentsNumber" style="margin-bottom: 50px;">
@@ -112,15 +112,15 @@
                         <option value="012">012</option>
                     </select>
                     <p class="text text2" style="margin-right: 5px;">-</p>
-                    <input type="number" style="margin-right: 5px; width: 70px;">
+                    <input id="parentsMiddleNo" type="number" maxlength="4" style="margin-right: 5px; width: 70px;">
                     <p class="text text2" style="margin-right: 5px;">-</p>
-                    <input type="number" style="margin-right: 10px; width: 70px;">
+                    <input id="parentsLastNo" type="number" maxlength="4" style="margin-right: 10px; width: 70px;">
 
                     <button class="kakao"><img src="/images/kakao.png" style="width: 20px;">카카오로 인증하기</button>
                 </div>
 
                 <div>
-                    <input type="checkbox">
+                    <input id="parentsAgree" type="checkbox">
                     <label class="text text2" style="font-size: 10px;">법정대리인 동의 또는 만 14세 이상 확인 절차 없음으로 인해 발생하는 법적 책임과 권한은 이용 기관에 있습니다.</label>
                 </div>
             </div>
@@ -158,25 +158,25 @@
             <!-- 박스 내용물 입력 -->        
             <div class="donation-box donation-box-up14 donation-box-under14" style="height: 500px; width: 700px; display: none;">
                 <table>
-                    <tr name="content-thing">
-                        <td class="text text2">생활용품</td>
-                        <td><input id="daily" type="text" placeholder="','로 구분해서 입력하세요'" style="height: 30px;"></td>
+                    <tr name="content-thing" style="margin-bottom: 10px;">
+                        <td class="text text2" style="width: 150px;">생활용품</td>
+                        <td><input name="content-thing-input" id="daily" type="text" placeholder="','로 구분해서 입력하세요'" style="height: 30px; padding: 3px;"></td>
                     </tr>
-                    <tr name="content-thing">
-                        <td class="text text2">의류</td>
-                        <td><input id="cloth" type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px;"></td>
+                    <tr name="content-thing" style="margin-bottom: 10px;">
+                        <td class="text text2" style="width: 150px;">의류</td>
+                        <td><input name="content-thing-input" id="cloth" type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px; padding: 3px;"></td>
                     </tr>
-                    <tr name="content-thing">
-                        <td class="text text2">식기</td>
-                        <td><input id="dish" type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px;"></td>
+                    <tr name="content-thing" style="margin-bottom: 10px;">
+                        <td class="text text2" style="width: 150px;">식기</td>
+                        <td><input name="content-thing-input" id="dish" type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px; padding: 3px;"></td>
                     </tr>
-                    <tr name="content-thing">
-                        <td class="text text2">가전</td>
-                        <td><input id="electronic" type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px;"></td>
+                    <tr name="content-thing" style="margin-bottom: 10px;">
+                        <td class="text text2" style="width: 150px;">가전</td>
+                        <td><input name="content-thing-input" id="electronic" type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px; padding: 3px;"></td>
                     </tr>
-                    <tr name="content-thing">
-                        <td class="text text2">장난감</td>
-                        <td><input id="toy" type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px;"></td>
+                    <tr name="content-thing" style="margin-bottom: 10px;">
+                        <td class="text text2" style="width: 150px;">장난감</td>
+                        <td><input name="content-thing-input" id="toy" type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px; padding: 3px;"></td>
                     </tr>
                 </table>
             </div>
@@ -186,28 +186,28 @@
             <!-- 박스 수량 선택 -->
             <div class="donation-box donation-box-up14 donation-box-under14" style="height: 500px; width: 700px; display: none;">
                 <table>
-                    <tr name="count-thing">
-                        <td class="text text2">생활용품</td>
+                    <tr name="count-thing" style="margin-bottom: 10px;">
+                        <td class="text text2" style="width: 150px;">생활용품</td>
                         <td><input id="dailyBox" type="number" name="count-thing-value" value="1" min="1"></td>
                         <td class="text text2">개</td>
                     </tr>
-                    <tr name="count-thing">
-                        <td class="text text2">의류</td>
+                    <tr name="count-thing" style="margin-bottom: 10px;">
+                        <td class="text text2" style="width: 150px;">의류</td>
                         <td><input id="clothBox" type="number" name="count-thing-value" value="0" min="1"></td>
                         <td class="text text2">개</td>
                     </tr>
-                    <tr name="count-thing">
-                        <td class="text text2">식기</td>
+                    <tr name="count-thing" style="margin-bottom: 10px;">
+                        <td class="text text2" style="width: 150px;">식기</td>
                         <td><input id="dishBox" type="number" name="count-thing-value" value="0" min="1"></td>
                         <td class="text text2">개</td>
                     </tr>
-                    <tr name="count-thing">
-                        <td class="text text2">가전</td>
+                    <tr name="count-thing" style="margin-bottom: 10px;">
+                        <td class="text text2" style="width: 150px;">가전</td>
                         <td><input id="electronicBox" type="number" name="count-thing-value" value="0" min="1"></td>
                         <td class="text text2">개</td>
                     </tr>
-                    <tr name="count-thing">
-                        <td class="text text2">장난감</td>
+                    <tr name="count-thing" style="margin-bottom: 10px;">
+                        <td class="text text2" style="width: 150px;">장난감</td>
                         <td><input id="toyBox" type="number" name="count-thing-value" value="0" min="1"></td>
                         <td class="text text2">개</td>
                     </tr>
@@ -223,45 +223,47 @@
             <!-- 배송정보 입력 -->
             <div class="donation-box donation-box-up14 donation-box-under14" style="height: 500px; width: 700px; display: none;">
                 <table>
-                    <tr>
-                        <td class="text text2">이름</td>
-                        <td><input type="text" id="name"></td>
+                    <tr style="margin-bottom: 20px;">
+                        <td class="text text2" style="width: 200px;">이름</td>
+                        <td><input type="text" id="name" style="height: 20px; width: 190px;"></td>
                     </tr>
-                    <tr>
-                        <td class="text text2">핸드폰 번호</td>
-                        <td><input type="text" id="phone"></td>
+                    <tr style="margin-bottom: 20px;">
+                        <td class="text text2" style="width: 200px;">핸드폰 번호</td>
+                        <td><input type="text" id="phone" style="height: 20px; width: 190px;"></td>
                     </tr>
-                    <tr>
-                        <td class="text text2">추가 연락처 번호</td>
-                        <td><input type="text" id="phone2"></td>
+                    <tr style="margin-bottom: 20px;">
+                        <td class="text text2" style="width: 200px;">추가 연락처 번호</td>
+                        <td><input type="text" id="phone2" style="height: 20px; width: 190px;"></td>
                     </tr>
-                    <tr>
-                        <td id="postcodeSection" class="text text2">우편번호
-                        
+                    <tr style="margin-bottom: 20px;">
+                        <td id="postcodeSection" class="text text2" style="width: 200px;">우편번호</td>
+                        <td>
                             <input type="text" name="address" placeholder="우편번호" 
-                                                                maxlength="6" id="postcode">
+                                                                maxlength="6" id="postcode" style="height: 20px; width: 190px;" disabled>
                         </td>
-                        <td><button type="button" id="searchAddress">검색</button></td>
+                        <td><button type="button" id="searchAddress" class="button">검색</button></td>
                     </tr>
                     
                     <tr>
+                        <td style="width: 200px;"></td>
                         <td>
-                            <input type="text" name="address" placeholder="도로명/지번주소" id="mainAddress">
+                            <input type="text" name="address" placeholder="도로명/지번주소" id="mainAddress" style="height: 20px; width: 190px;" disabled>
                         </td>
                     </tr>
                     <tr>
+                        <td style="width: 200px;"></td>
                         <td>
-                            <input type="text" name="address" placeholder="상세주소" id="detailAddress">
+                            <input type="text" name="address" placeholder="상세주소" style="height: 20px; width: 190px;" id="detailAddress">
                         </td>
                     </tr>
 
-                    <tr>
-                        <td class="text text2">방문 희망일</td>
+                    <tr style="margin-bottom: 20px;">
+                        <td class="text text2" style="width: 200px;">방문 희망일</td>
                         <td><input type="date" id="date"></td>
                     </tr>
-                    <tr>
-                        <td class="text text2">메모</td>
-                        <td><textarea id="memo"></textarea></td>
+                    <tr style="margin-bottom: 10px;">
+                        <td class="text text2" style="width: 200px;">요구사항</td>
+                        <td><textarea id="memo" placeholder="요구사항이 없는경우 '.'을 입력해주세요." style="height: 70px; width: 200px;"></textarea></td>
                     </tr>
                 </table>
 
@@ -286,7 +288,7 @@
                 </div>
 
                 <div>
-                    <input type="checkbox">
+                    <input id="paymentAgree" type="checkbox">
                     <label class="text text2" style="font-size: 10px;">이용약관과 개인정보취급방침에 동의합니다.</label>
                 </div>
             </div>

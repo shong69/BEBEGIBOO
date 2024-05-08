@@ -164,6 +164,11 @@ label {
 }
 
 
+input:disabled {
+  background-color: white;
+}
+
+
 
 
 

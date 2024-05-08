@@ -12,7 +12,10 @@
 <body>
     <main>
         <th:block th:replace="~{common/header}"></th:block>
-        
+
+        <th:block th:if="${session.loginMember != null} and ${session.loginMember.authority == 3}">
+          <th:block th:replace="~{common/manager-bar}"></th:block>
+        </th:block>
 
         <!-- 메인 배너 -->
         <!--<div class='container'>
@@ -39,7 +42,7 @@
               </div>
             </div>
           </div>-->
-          <div class='container'>
+          <div class='container' style="background-color: rgb(208, 227, 241);">
             <h2 class="fadeup" id="donate-color">DONATE YOUR THINGS</h2>
             <div class='reveal'>
               <div class="image-wrap">
@@ -54,9 +57,7 @@
 
 
 
-        <div id="line-container">
-            <div id="line"></div>
-        </div>
+
 
         <div id="who-container" class="showBox">
 

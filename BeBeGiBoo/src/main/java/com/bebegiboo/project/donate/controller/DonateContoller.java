@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.bebegiboo.project.donate.dto.DeliveryInfo;
 import com.bebegiboo.project.donate.dto.DonationThings;
 import com.bebegiboo.project.donate.dto.Payment;
 import com.bebegiboo.project.donate.service.DonateService;
+import com.bebegiboo.project.member.model.dto.Member;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -42,7 +44,11 @@ public class DonateContoller {
 	public int donationComplete(@RequestBody Map<String, Object> obj,
 									HttpServletRequest req,
 									HttpServletResponse resp,
+									@SessionAttribute("loginMember") Member loginMember,
 									Model model) {
+		
+		int memberNo = loginMember.getMemberNo();
+		log.info("회원넘버" + memberNo);
 		
 		log.info("정보" + obj);
 		
@@ -60,7 +66,7 @@ public class DonateContoller {
 												(String)obj.get("address"),
 												(String)obj.get("date"),
 												(String)obj.get("memo"),
-												1);
+												memberNo);
 		
 		log.info("배송정보들" + delivery);
 		
@@ -70,21 +76,13 @@ public class DonateContoller {
 		log.info("계산" + payment);
 		
 		Map<String, Integer> map = new HashMap<String, Integer>();
-		if(Integer.valueOf((String)obj.get("dailyBox")) != 0) {
-			map.put("생활용품", Integer.valueOf((String)obj.get("dailyBox")));
-		}
-		if(Integer.valueOf((String)obj.get("clothBox")) != 0) {
-			map.put("의류", Integer.valueOf((String)obj.get("clothBox")));
-		}
-		if(Integer.valueOf((String)obj.get("dishBox")) != 0) {
-			map.put("식기", Integer.valueOf((String)obj.get("dishBox")));
-		}
-		if(Integer.valueOf((String)obj.get("electronicBox")) != 0) {
-			map.put("가전", Integer.valueOf((String)obj.get("electronicBox")));
-		}
-		if(Integer.valueOf((String)obj.get("toyBox")) != 0) {
-			map.put("장난감", Integer.valueOf((String)obj.get("toyBox")));
-		}
+		
+		map.put("생활용품", Integer.valueOf((String)obj.get("dailyBox")));
+		map.put("의류", Integer.valueOf((String)obj.get("clothBox")));
+		map.put("식기", Integer.valueOf((String)obj.get("dishBox")));
+		map.put("가전", Integer.valueOf((String)obj.get("electronicBox")));
+		map.put("장난감", Integer.valueOf((String)obj.get("toyBox")));
+
         
         HttpSession session = req.getSession();
         
@@ -93,10 +91,11 @@ public class DonateContoller {
         session.setAttribute("payment", payment);
         session.setAttribute("boxCount", map);
         
-        int thingsNo = service.thingsInfo(things);
+        int thingsNo = service.thingsInfo(things, memberNo);
         int deliveryNo = service.deliveryInfo(delivery);
+        int recordNo = service.recordInfo(memberNo);
 
-		return thingsNo + deliveryNo;
+		return thingsNo + deliveryNo + recordNo;
 		
 	}
 	

@@ -10,6 +10,8 @@ const thingsValue = document.getElementsByName("count-thing-value");
 const startButton = document.querySelector("button");
 
 
+
+
 titleObjUnder14 = ["신청자 나이 선택",
             "14세 미만 법정대리인(보호자) 동의",
             "유아용품 종류 선택",
@@ -34,7 +36,7 @@ const parentsAgree = document.querySelector("#parentsAgree");
 
 
 
-
+/* 기부하기 버튼 눌렀을 때 */
 startButton.addEventListener("click", () => {
     slides[0].style.display = 'none';
     slides[1].style.display = 'flex';
@@ -44,29 +46,46 @@ const previousButton = document.querySelector("#previous");
 const nextButton = document.querySelector("#next");
 const submitButton = document.querySelector("#submit");
 
-previousButton.addEventListener("click", ()=>{
+
+
+
+
+/* 이전버튼 눌렀을 때 */
+previousButton.addEventListener("click", e=>{
     nextButton.style.display = 'flex';
     submitButton.style.display = 'none';
 
     if(document.querySelector("#option1").checked){
         for(let i = 0; i < donationBoxUnder14.length; i++){
-            
-            if(donationBoxUnder14[i].style.display != 'none'){
-                donationBoxUnder14[i].style.display = 'none';
-                donationBoxUnder14[i-1].style.display = 'flex';
-                title.innerText = titleObjUnder14[i-1];
-                break;
+
+            if(i == 0) {
+                e.preventDefault();
+            } else {
+
+                if(donationBoxUnder14[i].style.display != 'none'){
+                    donationBoxUnder14[i].style.display = 'none';
+                    donationBoxUnder14[i-1].style.display = 'flex';
+                    title.innerText = titleObjUnder14[i-1];
+                    break;
+                }
+
             }
         }
     } else if(document.querySelector("#option2").checked){
         for(let i = 0; i < donationBoxUp14.length; i++){
-            
-            if(donationBoxUp14[i].style.display != 'none'){
-                donationBoxUp14[i].style.display = 'none';
-                donationBoxUp14[i-1].style.display = 'flex';
-                title.innerText = titleObjUp14[i-1];
-                break;
+
+            if(i == 0) {
+                e.preventDefault();
+            } else {
+                if(donationBoxUp14[i].style.display != 'none'){
+                    donationBoxUp14[i].style.display = 'none';
+                    donationBoxUp14[i-1].style.display = 'flex';
+                    title.innerText = titleObjUp14[i-1];
+                    break;
+                }
+
             }
+            
         }
     }
 });
@@ -75,7 +94,27 @@ previousButton.addEventListener("click", ()=>{
 document.querySelector("#oneCheck").checked = true;
 
 
+/* 다음버튼 눌렀을 때 */
 nextButton.addEventListener("click", e=>{
+    const parentsName = document.querySelector("#parentsName");
+    const parentsMiddleNo = document.querySelector("#parentsMiddleNo");
+    const parentsLastNo = document.querySelector("#parentsLastNo");
+    const thingInput = document.getElementsByName("content-thing-input");
+
+
+
+
+    /* 배송정보 */
+    const donatorName = document.querySelector("#name").value;
+    const donatorPhone = document.querySelector("#phone").value;
+    const donatorPhone2 = document.querySelector("#phone2").value;
+    const postcode = document.querySelector("#postcode").value;
+    const mainAddress = document.querySelector("#mainAddress").value;
+    const detailAddress = document.querySelector("#detailAddress").value;
+    const date = document.querySelector("#date").value;
+    const memo = document.querySelector("#memo").value;
+
+
 
 
     /* 나이선택칸 */
@@ -98,7 +137,7 @@ nextButton.addEventListener("click", e=>{
 
         if(!thingsType[i].checked) {
             thingsContent[i].style.display = 'none';
-            thingsContent[i].value = 0;
+            thingInput[i].value = "";
         } else {
             thingsContent[i].style.display = 'block';
         }
@@ -106,14 +145,14 @@ nextButton.addEventListener("click", e=>{
 
     /* 박스수량 체크칸 */
     for(let i = 0; i < thingsType.length; i ++) {
-
+        
         if(!thingsType[i].checked) {
             things[i].style.display = 'none';
             things[i].value = undefined;
-            thingsValue[i].value = 1;
-        } else {
+            thingsValue[i].value = 0;
+        } else if(thingsType[i].checked) {
             things[i].style.display = 'block';
-            thingsValue[i].values = 0;
+            thingsValue[i].value = 1;
         }
     }
 
@@ -131,9 +170,6 @@ nextButton.addEventListener("click", e=>{
 
 
 
-
-
-
     /* 페이지 넘어가기 */
 
 
@@ -141,12 +177,13 @@ nextButton.addEventListener("click", e=>{
         if(checkAll == true) {
             
             for(let i = 0; i < donationBoxUnder14.length; i++){
-                
-                if(donationBoxUnder14[i].style.display != 'none'){
+
+
+                function pagenation() {
                     donationBoxUnder14[i].style.display = 'none';
                     donationBoxUnder14[i+1].style.display = 'flex';
                     title.innerText = titleObjUnder14[i+1];
-    
+                                        
                     if(i == 5) {
                         nextButton.style.display = 'none';
                         submitButton.style.display = 'flex';
@@ -154,7 +191,57 @@ nextButton.addEventListener("click", e=>{
                         nextButton.style.display = 'flex';
                         submitButton.style.display = 'none';
                     }
-                    break;
+                }
+                
+
+
+                if(donationBoxUnder14[i].style.display != 'none'){
+
+                    if(i == 1){
+                        if(parentsName.value.trim().length == 0 || parentsMiddleNo.value.trim().length == 0 || parentsLastNo.value.trim().length == 0){
+                            alert("입력을 모두 완료해주세요");
+                        } else if(document.querySelector("#parentsAgree").checked == false) {
+                            alert("동의사항에 체크해주세요");
+                        } else {
+                            pagenation();
+                            break;
+                        }
+                    } else if(i == 3) {
+                        let modal = true;
+                        for(let j = 0; j < thingsType.length; j ++) {
+
+                            if(thingsType[j].checked) {
+
+                                if(thingInput[j].value.trim().length == 0) {
+                                    modal = false;
+                                    alert("입력을 모두 완료해주세요");
+                                    break;
+                                }
+                            }
+                        }
+
+                        if(modal == true) {
+                            pagenation();
+                            break;
+                        }
+
+
+                    } else if(i == 5) {
+
+                        if(donatorName.trim().length == 0 || donatorPhone.trim().length == 0 || donatorPhone2.trim().length == 0 || postcode.trim().length == 0 || mainAddress.trim().length == 0 || detailAddress.trim().length == 0 || date.trim().length == 0 || memo.length == 0){
+                            alert("입력을 모두 완료해주세요");
+                        } else {
+                            pagenation();
+                            break;
+                        }
+
+                    
+                    } else {
+                        pagenation();
+                        break;
+
+                    }
+
                 }
             }
         } else {
@@ -163,21 +250,65 @@ nextButton.addEventListener("click", e=>{
     } else if(document.querySelector("#option2").checked){
         if(checkAll == true) {
             for(let i = 0; i < donationBoxUp14.length; i++){
-                
-                if(donationBoxUp14[i].style.display != 'none'){
-                    donationBoxUp14[i].style.display = 'none';
-                    donationBoxUp14[i+1].style.display = 'flex';
-                    title.innerText = titleObjUp14[i+1];
-    
-                    if(i == 4) {
-                        nextButton.style.display = 'none';
-                        submitButton.style.display = 'flex';
-                    }else {
-                        nextButton.style.display = 'flex';
-                        submitButton.style.display = 'none';
+
+                function pagenation() {
+                    if(donationBoxUp14[i].style.display != 'none'){
+                        donationBoxUp14[i].style.display = 'none';
+                        donationBoxUp14[i+1].style.display = 'flex';
+                        title.innerText = titleObjUp14[i+1];
+        
+                        if(i == 4) {
+                            nextButton.style.display = 'none';
+                            submitButton.style.display = 'flex';
+                        }else {
+                            nextButton.style.display = 'flex';
+                            submitButton.style.display = 'none';
+                        }
                     }
-                    break;
                 }
+
+
+                if(donationBoxUp14[i].style.display != 'none'){
+
+                    if(i == 2) {
+                        let modal = true;
+                        for(let j = 0; j < thingsType.length; j ++) {
+
+                            if(thingsType[j].checked) {
+
+                                if(thingInput[j].value.trim().length == 0) {
+                                    modal = false;
+                                    alert("입력을 모두 완료해주세요");
+                                    break;
+                                }
+                            }
+                        }
+
+                        if(modal == true) {
+                            pagenation();
+                            break;
+                        }
+
+
+                    } else if(i == 4) {
+
+                        if(donatorName.trim().length == 0 || donatorPhone.trim().length == 0 || donatorPhone2.trim().length == 0 || postcode.trim().length == 0 || mainAddress.trim().length == 0 || detailAddress.trim().length == 0 || date.trim().length == 0 || memo.length == 0){
+                            alert("입력을 모두 완료해주세요");
+                        } else {
+                            pagenation();
+                            break;
+                        }
+
+                    
+                    } else {
+                        pagenation();
+                        break;
+
+                    }
+
+                }
+                
+                
             }
         } else {
             alert("적어도 하나의 타입을 선택해 주세요")
@@ -221,44 +352,52 @@ document.querySelector("#searchAddress").addEventListener("click", DaumPostcode)
 
 
 submitButton.addEventListener("click", e => {
-    var payment = document.querySelector("#payment");
+
+    if(document.querySelector("#paymentAgree").checked == false) {
+        alert("동의사항에 체크해주세요");
+    } else {
+        var payment = document.querySelector("#payment");
+        
+        const obj = {
+            "daily" : document.querySelector("#daily").value,
+            "cloth" : document.querySelector("#cloth").value,
+            "dish" : document.querySelector("#dish").value,
+            "electronic" : document.querySelector("#electronic").value,
+            "toy" : document.querySelector("#toy").value,
+            "name" : document.querySelector("#name").value,
+            "phone" : document.querySelector("#phone").value,
+            "phone2" : document.querySelector("#phone2").value,
+            "address" : document.querySelector("#postcode").value + " " + document.querySelector("#mainAddress").value + " " + document.querySelector("#detailAddress").value,
+            "date" : document.querySelector("#date").value,
+            "memo" : document.querySelector("#memo").value,
+            "total" : document.querySelector("#total").innerText,
+            "payment" :  payment.options[payment.selectedIndex].value,
+            "dailyBox" : document.querySelector("#dailyBox").value,
+            "clothBox" : document.querySelector("#clothBox").value,
+            "dishBox" : document.querySelector("#dishBox").value,
+            "electronicBox" : document.querySelector("#electronicBox").value,
+            "toyBox" : document.querySelector("#toyBox").value
+        }
     
-    const obj = {
-        "daily" : document.querySelector("#daily").value,
-        "cloth" : document.querySelector("#cloth").value,
-        "dish" : document.querySelector("#dish").value,
-        "electronic" : document.querySelector("#electronic").value,
-        "toy" : document.querySelector("#toy").value,
-        "name" : document.querySelector("#name").value,
-        "phone" : document.querySelector("#phone").value,
-        "phone2" : document.querySelector("#phone2").value,
-        "address" : document.querySelector("#postcode").value + " " + document.querySelector("#mainAddress").value + " " + document.querySelector("#detailAddress").value,
-        "date" : document.querySelector("#date").value,
-        "memo" : document.querySelector("#memo").value,
-        "total" : document.querySelector("#total").innerText,
-        "payment" :  payment.options[payment.selectedIndex].value,
-        "dailyBox" : document.querySelector("#dailyBox").value,
-        "clothBox" : document.querySelector("#clothBox").value,
-        "dishBox" : document.querySelector("#dishBox").value,
-        "electronicBox" : document.querySelector("#electronicBox").value,
-        "toyBox" : document.querySelector("#toyBox").value
+        console.log(obj);
+        
+        fetch("/donation/complete", {
+            method: "PUT",
+            headers : {"Content-Type" : "application/json"},
+            body : JSON.stringify(obj)
+        })
+        .then(resp => resp.text())
+        .then(temp => {
+            if(temp > 0) {
+                alert("기부 신청이 완료되었습니다");
+                location.href = "/donation/completePage";
+            } else {
+                alert("기부 신청이 완료되지 않았습니다");
+                e.preventDefault();
+            }
+        });
+
     }
 
-    console.log(obj);
-    
-    fetch("/donation/complete", {
-        method: "PUT",
-        headers : {"Content-Type" : "application/json"},
-        body : JSON.stringify(obj)
-    })
-    .then(resp => resp.text())
-    .then(temp => {
-        if(temp > 0) {
-            alert("기부 신청이 완료되었습니다");
-            location.href = "/donation/completePage";
-        } else {
-            alert("기부 신청이 완료되지 않았습니다");
-            e.preventDefault();
-        }
-    });
+
 });

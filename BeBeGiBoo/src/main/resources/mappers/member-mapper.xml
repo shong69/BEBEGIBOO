@@ -90,5 +90,58 @@
 			 #{authority}
 		)
 	</insert>
+<<<<<<< HEAD
+=======
+	
+	<!-- 휴대폰 중복 검사 -->
+	<select id="checkPhone" resultType="_int">
+		SELECT COUNT(*)
+		FROM "MEMBER"
+		WHERE MEMBER_DEL_FL ='N'
+		AND PHONE = #{phoneNum}
+	</select>
+	
+		
+	<!-- 회원 이름 존재 유무 검사 -->
+	<select id="checkName" resultType="_int">
+		SELECT COUNT(*)
+		FROM "MEMBER"
+		WHERE MEMBER_DEL_FL ='N'
+		AND MEMBER_NAME = #{memberName}
+	</select>
+	
+	<select id="checkEmailWithName">
+		SELECT COUNT(*)
+		FROM "MEMBER"
+		WHERE MEMBER_DEL_FL='N'
+		AND MEMBER_NAME = #{memberName}
+		AND EMAIL = #{email}
+	</select>
+
+
+
+	<select id="getId">
+		SELECT MEMBER_ID
+		FROM "MEMBER"
+		WHERE MEMBER_DEL_FL = 'N'
+		AND EMAIL= #{email}
+	</select>
+	
+
+
+	
+	<update id="updateNewPw">
+		UPDATE "MEMBER" SET MEMBER_PW = #{encNewPw}
+		WHERE EMAIL = #{email}
+	</update>
+	
+	<select id="checkEmailWithId">
+		SELECT COUNT(*)
+		FROM "MEMBER"
+		WHERE MEMBER_DEL_FL = 'N'
+		AND MEMBER_ID = #{memberId}
+		AND EMAIL = #{email}
+	</select>
+>>>>>>> 694f3391b4599a5a4c5a7f5e3253c8d6d1915892
 
 </mapper>

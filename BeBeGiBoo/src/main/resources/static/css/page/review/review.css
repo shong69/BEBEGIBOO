@@ -2,7 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
-
 main{ 
     font-family: "Noto Sans KR", sans-serif;
     display: flex;
@@ -11,10 +10,8 @@ main{
 }
 
 #titleArea {
-    border: 1px solid #FFF6D6;
-    background-color:#FFF6D6;
-    margin-top: 200px;
-    width: 80%;
+    margin-top: 150px;
+    width: 60%;
     height: 180px;
     display: flex;
     flex-direction: column;
@@ -31,30 +28,24 @@ main{
     display: flex;
     flex-direction: column;
     margin-top : 100px;
-    width : 80%;
-    align-items: flex-end;
+    margin-left: 20px;
+    width : 60%;
+    align-items: flex-start;
+}
+#btnArea_{
+    display : flex;
+    justify-content: center;
+    flex-direction: row;
 }
 
-#insertBtn {
-    width : 150px;
-    height: 40px;
-    font-size: 20px;
-    background-color: transparent;
-    border-radius: 50px;
-    transition: all 0.1s ease-in-out;
-    font-size: 20x;
-    box-shadow: -1px -3px 2px rgba(228, 226, 226, 0.8), 3px 3px 5px rgba(0, 0, 0, 0.2);
-    border : none;
+#insertBtn{
+    width : 30px;
+    margin-right: 5px;
 }
 
-.active{
-    box-shadow: inset -3px -3px 2px rgba(225, 225, 225, 0), inset 4px 0px 16px rgba(0, 0, 0, 0.1);
-    color: #ffffff;
-    background-color: #DEECFF;
-}
 #tableArea {
-    width : 80%;
-    margin-top: 30px;
+    width : 60%;
+    margin-top: 20px;
     margin-bottom : 60px;
 }
 table{
@@ -65,19 +56,24 @@ thead{
     background-color: #FFF6D6;
 }
 
-table td:first-child {
-    width : 70%;
+table td:first-child,
+table td:last-child {
+    width : 5%;
 }
-
+table td:nth-child(3),
+table td:nth-child(4){
+    width : 15%;
+}
 tr {
-    font-size: 20px;
-    height: 80px;
+    font-size: 16px;
+    height: 60px;
     border-bottom: 1px solid #dddd;
 
 }
 
 td {
-    padding : 20px;
+    padding : 15px;
+    text-align: center;
 }
 
 
@@ -109,7 +105,7 @@ td {
 }
 #searchKey {
     width: 120px;
-    height: 30px;
+    height: 35px;
     border-radius: 5px;
     text-align: center;
     border : 1px solid #dddd;
@@ -127,14 +123,19 @@ td {
 
 #boardSearch button {
     width : 35px;
-    height: 30px;
+    height: 35px;
     border: none;
     background-color: transparent;
     border-radius: 5px;
 }
 #serchArea{
-    height: 30px;
+    height: 35px;
     border : 1px solid #dddd;
     margin-bottom: 60px;
     margin-left: 20px;
+}
+.current{
+    font-weight: bold;
+    color: rgb(0, 149, 255) !important;
+    text-decoration: underline;
 }

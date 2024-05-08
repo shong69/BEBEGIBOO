@@ -255,7 +255,7 @@ a {
     height: 150px;
     margin: 35px;
     background-color: #fff4e4;
-    box-shadow: 10px 10px45px rgb(121, 121, 121);
+    box-shadow: 10px 10px 5px rgb(121, 121, 121);
     transition-duration: 0.3s;
     display: flex;
     flex-direction: column;
@@ -329,7 +329,7 @@ a {
     height: 35px;
     width: 35px;
     background-color: white;
-    box-shadow:45px 5px 5px gray;
+    box-shadow:5px 5px 5px gray;
     cursor: pointer;
     border-radius: 50%;
 }
@@ -349,7 +349,7 @@ a {
     width: 100%;
     z-index: 90;
     backdrop-filter: blur(10px);
-    box-shadow : 0 0 4px 0 rgba(0,0,0,0.3);
+    box-shadow : 0 0 10px 0 rgba(0,0,0,0.3);
 }
 
 #logo {
@@ -383,10 +383,6 @@ a {
     align-items: center;
 }
 
-#hamburger {
-    cursor: pointer;
-}
-
 @keyframes fadeInDown {
     0% {
         opacity: 0;
@@ -398,8 +394,17 @@ a {
     }
 }
 
-#nav-container {
+#nav-container-null {
     margin-left: 93%;
+    position: absolute;
+    position: fixed;
+    z-index: 100;
+    visibility: hidden;   
+}
+
+#nav-container {
+    display: flex;
+    margin-left: 89%;
     position: absolute;
     position: fixed;
     z-index: 100;
@@ -410,11 +415,11 @@ a {
     animation: fadeInDown 0.5s;
 }
 
-#nav-container > div:first-child{
+#nav-container-null > div:first-child{
     margin-top: 55px;
 }
 
-#nav-container > div {
+#nav-container-null > div {
     font-size: 13px;
     display: flex;
     justify-content: center;
@@ -424,11 +429,51 @@ a {
     background-color: rgb(254, 245, 220);
 }
 
-#nav-container > div > a:hover {
+#nav-container-null > div > a:hover {
     color: rgb(44, 178, 255);
     text-decoration: underline;
     transition-duration: 0.5s;
 }
+
+#nav-container-null > div > div:first-child{
+    margin-top: 55px;
+}
+
+#nav-container > div:nth-child(2) > div {
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 65px;
+    background-color: rgb(254, 245, 220);
+}
+
+#nav-container > div > div > a:hover {
+    color: rgb(44, 178, 255);
+    text-decoration: underline;
+    transition-duration: 0.5s;
+}
+
+.nav-child {
+    font-size: 13px;
+    height: 33px;
+    width: 110px;
+    background-color: rgb(254, 245, 220);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-child > div:first-child {
+    margin-top: 5px;
+}
+
+#hamburger {
+    cursor: pointer;
+}
+
+
 
 /************************푸터부분*****************/
 

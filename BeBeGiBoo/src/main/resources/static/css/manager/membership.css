@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
 body {
     background-color: lightgray;
 }
@@ -72,6 +75,10 @@ body {
 }
 
 
+.shadow {
+    box-shadow: 5px 5px 5px gray;
+}
+
 
 
 
@@ -83,10 +90,25 @@ body {
     position: sticky;
     height: 600px;
     width: 400px;
+
     background-color: white;
     box-shadow: 10px 10px 10px gray;
     flex-direction: column;
     justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 10px 10px 10px gray;
+    flex-direction: column;
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+}
+
+.popup-layer tr > td:first-child{
+    font-size: 18px;
+}
+
+.popup-layer tr {
+    height: 50px;
 }
 
 .popup-close {
@@ -102,6 +124,29 @@ body {
     color: red;
 }
 
+input {
+    font-family: "Noto Sans KR", sans-serif;
+    height: 30px;
+    width: 220px;
+    font-size: 15px;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#updateButton {
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    border: 2px rgb(0,149,250) solid;
+    font-size: 20px;
+    color: rgb(0,149,250);
+    border-radius: 10px;
+    cursor: pointer;
+}
 
 
 

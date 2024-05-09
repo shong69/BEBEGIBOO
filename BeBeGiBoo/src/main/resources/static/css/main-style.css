@@ -403,6 +403,7 @@ a {
 }
 
 #nav-container {
+    margin-top: 55px;
     display: flex;
     margin-left: 89%;
     position: absolute;

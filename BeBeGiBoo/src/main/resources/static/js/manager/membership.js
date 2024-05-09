@@ -20,7 +20,9 @@ function selectMember() {
                             member.memberName,
                             member.enrollDate];
 
-                const tr = document.createElement("tr");
+
+                tr.classList.add("shadow");
+
                 for(let key of arr){
                     const td = document.createElement("td");
                     td.innerText = key;
@@ -37,15 +39,18 @@ function selectMember() {
 
                 button.addEventListener("click", () => {
 
-                    const name = document.querySelector("#name");
-                    const email = document.querySelector("#email");
-                    const phone = document.querySelector("#phone");
-                    const address = document.querySelector("#address");
-                    const del = document.querySelector("#del");
-                    const authority = document.querySelector("#authority");
+                    popup.style.display = 'flex';
+                    var memberNo = document.querySelector("#memberNo");
+                    var name = document.querySelector("#name");
+                    var email = document.querySelector("#email");
+                    var phone = document.querySelector("#phone");
+                    var address = document.querySelector("#address");
+                    var del = document.querySelector("#del");
+                    var authority = document.querySelector("#authority");
 
                     popup.style.display = 'flex';
 
+                    memberNo.value = member.memberNo;
                     name.value = member.memberName;
                     email.value = member.email;
                     phone.value = member.phone;
@@ -84,3 +89,53 @@ updateButton.addEventListener("click", () => {
 
 
 
+updateButton.addEventListener("click", () => {
+    var memberNo = document.querySelector("#memberNo");
+    var name = document.querySelector("#name");
+    var email = document.querySelector("#email");
+    var phone = document.querySelector("#phone");
+    var address = document.querySelector("#address");
+    var del = document.querySelector("#del");
+    var authority = document.querySelector("#authority");
+
+
+    if(name.value.trim().length == 0 ||
+    email.value.trim().length == 0 ||
+    phone.value.trim().length == 0 ||
+    address.value.trim().length == 0 ||
+    del.value.trim().length == 0 ||
+    authority.value.trim().length == 0) {
+        alert("모든 칸을 작성해주세요");
+    } else {
+        obj = {
+            "memberNo" : memberNo.value,
+            "memberName" : name.value,
+            "email" : email.value,
+            "phone" : phone.value,
+            "address" : address.value,
+            "memberDelFl" : del.value,
+            "authority" : authority.value
+    
+        }
+    
+        fetch("/manager/update", {
+            method : "PUT",
+            headers : {"Content-Type" : "application/json"},
+            body : JSON.stringify(obj)
+        })
+        .then(resp => resp.text())
+        .then(result => {
+    
+            if(result > 0) {
+                alert("수정 성공!");
+                popup.style.display = 'none';
+                selectMember();
+            } else {
+                alert("수정 실패");
+            }
+    
+        })
+
+    }
+
+});

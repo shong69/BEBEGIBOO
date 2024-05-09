@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.bebegiboo.project.donate.dto.DeliveryInfo;
 import com.bebegiboo.project.donate.dto.DonationThings;
-import com.bebegiboo.project.donate.dto.Payment;
+import com.bebegiboo.project.donateInfo.dto.PaymentInfo;
 
 @Mapper
 public interface DonateMapper {
@@ -58,6 +58,14 @@ public interface DonateMapper {
 	 * @return
 	 */
 	int recordInfo(int memberNo);
+
+	/** 결제 정보 삽입 
+	 * @param memberNo
+	 * @return
+	 */
+	int paymentInfo(PaymentInfo payment);
+
+	//int paymentInfo(PaymentInfo payment);
 
 
 }

@@ -1,6 +1,8 @@
 package com.bebegiboo.project.donateInfo.dto;
 
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,5 +26,7 @@ public class DeliveryInfoList {
 	private String pickupDate; 
 	private String memo; 
 	private int memberNo;
+	
+	private List<DeliveryInfoList> deliveryList;
 
 }

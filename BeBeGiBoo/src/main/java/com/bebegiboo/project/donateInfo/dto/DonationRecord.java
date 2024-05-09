@@ -1,5 +1,7 @@
 package com.bebegiboo.project.donateInfo.dto;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -16,8 +18,10 @@ import lombok.ToString;
 public class DonationRecord {
 	
 	private int recordNo; 
-	private String date; 
+	private String recordDate; 
 	private int donatorNo; 
 	private int acceptorNo; 
+	
+	private List<DonationRecord> recordList;
 
 }

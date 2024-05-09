@@ -29,7 +29,7 @@ hamburger.addEventListener("click", () => {
 });
 
 
-/*
+
 document.querySelector("#myPage").addEventListener("mouseover", () => {
     document.querySelector("#hover1").style.visibility = 'visible';
     document.querySelector("#hover2").style.visibility = 'visible';
@@ -39,6 +39,4 @@ document.querySelector(".noHover").addEventListener("mouseover", () => {
     document.querySelector("#hover1").style.visibility = 'hidden';
     document.querySelector("#hover2").style.visibility = 'hidden';
 });
-
-*/
 

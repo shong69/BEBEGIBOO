@@ -10,20 +10,24 @@
 </head>
 <body>
     <main>
+        <!-- 헤더 -->
         <th:block th:replace="~{common/header}"></th:block>
 
+        <!-- 로고 -->
         <div id="font-logo-area">
             <a href="/" id="font-logo">
                 <img src="/images/font-logo.png" alt="font-logo">
             </a>
         </div>
+
+        <!-- 선택하기 폼 영역 -->
         <section class="donatorCheck">
 
             <div id="signUp">
                 <span>회원가입</span>
             </div>
 
-            <form action="member/signup/signupForm" method="POST" name="signupMain" id="signupMain">
+            <form action="/member/signup/signupTerm" method="POST" name="signupMain" id="signupMain">
 
                 <table class="donatorForm">
 
@@ -33,15 +37,19 @@
                     <tr class="empty"></tr>
                     <tr class="empty"></tr>
                     <tr>
-                        <td><input type="checkbox" name="authority" id="donator" class="selectOne"><span id="donatorSpan">기부자</span></td>              
+                        <td><input type="checkbox" name="authority" id="donator" class="selectOne" 
+                                    value="1"><span id="donatorSpan">기부자</span></td>        
                     </tr>
                     <tr class="empty"></tr>
                     <tr>
-                        <td><input type="checkbox" name="authority" id="acceptor" class="selectOne"><span id="acceptorSpan">피기부자</span></td>
+                        <td><input type="checkbox" name="authority" id="acceptor" class="selectOne" 
+                                    value="2"><span id="acceptorSpan">피기부자</span></td>
                     </tr>
                     <tr class="empty"></tr>
                     <tr>
-                        <td><button id="submitBtn">제출하기</button></td>
+                        <td>
+                            <button id="submitBtn">선택 완료</button>
+                        </td>
                     </tr>
                     
                 </table>   

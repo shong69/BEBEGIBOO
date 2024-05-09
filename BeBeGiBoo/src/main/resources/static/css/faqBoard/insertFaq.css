@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+*{
+    font-family: 'NEXON Lv1 Gothic OTF';
+    line-height: 1.5;
+}
+
+body{
+    background-color: rgb(250, 250, 250);
+}
+
+/* main 영역 */
+.insertFaq{
+    margin: 120px auto;
+    width: 900px;
+    min-height: 670px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* faq 게시판 이름 영역 */
+.faqLogo {
+    margin: 60px auto;
+    margin-bottom: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 300px;
+    height: 60px;
+    background-color: rgb(208, 227, 241);
+
+    box-shadow :rgba(0, 0, 0, 0.07) 0px 1px 2px,
+                rgba(0, 0, 0, 0.07) 0px 2px 4px,
+                rgba(0, 0, 0, 0.07) 0px 4px 8px;
+
+}
+
+/* 작성하기 */
+#write{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* 작성 폼 영역 */
+.insertFaqForm{
+    border: 1px solid rgb(180, 180, 180);
+    padding: 30px;
+    width: 700px;
+    height: 780px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+
+/* 질문제목 / 카테고리 */
+.qTitleNo{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 제목 input */
+#question{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 580px;
+    height: 30px;
+    padding: 10px;
+}
+
+/* 선택 */
+select{
+    padding: 3px;
+}
+
+/* 답변 textarea */
+.answer{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 580px;
+    height: 420px;
+    padding: 50px;
+}
+
+
+/* 버튼 */
+.buttons{
+    align-self: flex-end;
+    margin-right: 30px;
+}
+
+#insertBtn, #cancelBtn{
+    background-color: rgb(208, 227, 241);
+    border: 0px;
+    border-radius: 15px;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#insertBtn:hover, #cancelBtn:hover {
+    background-color: white;
+    border: 2px solid rgb(208, 227, 241);
+    color: #1c3359;
+}
+
+#insertBtn{
+    margin-right: 10px;
+}
+
+input, textarea, select {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(180, 180, 180);
+}
+

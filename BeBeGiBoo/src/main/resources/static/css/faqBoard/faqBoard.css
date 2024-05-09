@@ -1,0 +1,274 @@
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+/* 전반적 */
+
+*{
+    font-family: 'NEXON Lv1 Gothic OTF';
+    line-height: 1.5;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.faqList{
+    margin: 100px auto;
+    margin-top: 120px;
+    width: 1000px;
+}
+
+/* ------------------------------------------- */
+
+/* faq 게시판 이름 영역 */
+.faqLogo {
+    margin: 60px auto;
+    margin-bottom: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 300px;
+    height: 60px;
+    background-color: rgb(208, 227, 241);
+
+    box-shadow :rgba(0, 0, 0, 0.07) 0px 1px 2px,
+                rgba(0, 0, 0, 0.07) 0px 2px 4px,
+                rgba(0, 0, 0, 0.07) 0px 4px 8px;
+
+}
+
+
+/* 목록 영역 */
+
+.list-area{
+
+    width: 100%;
+    min-height: 660px;
+    
+}
+
+.list-table{
+    width: 100%;
+    padding: 20px;
+    border-collapse: collapse;
+}
+
+
+/* 전체 ~ 기타  카테고리 영역 */
+.faqHeader {
+    width: 100%;
+    height: 44px;
+
+    background-color: rgb(208, 227, 241);
+    padding: 12px;
+
+    box-shadow :rgba(0, 0, 0, 0.07) 0px 1px 2px,
+    rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px;
+}
+
+.faqHeader > tbody > tr > td:nth-of-type(1) {
+       width: 5%;
+}
+.faqHeader > tbody > tr > td:nth-of-type(2) {
+       width: 2%;
+}
+.faqHeader > tbody > tr > td:nth-of-type(3) {
+       width: 7%;
+}
+.faqHeader > tbody > tr > td:nth-of-type(4) {
+       width: 10%;
+}
+.faqHeader > tbody > tr > td:nth-of-type(5) {
+       width: 13%;
+}
+.faqHeader > tbody > tr > td:nth-of-type(6) {
+       width: 10%;
+}
+.faqHeader > tbody > tr > td:nth-of-type(7) {
+       width: 5%;
+}
+.faqHeader > tbody > tr > td:nth-of-type(7) {
+       width: auto;
+}
+
+
+/* 질문 리스트 영역 */
+.faq-list {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.faq-list > tbody > tr {
+
+    width: 100%;
+    height: 60px;
+    border: 1px solid rgb(157, 157, 157);
+
+}
+
+
+/* 질문 제목 */
+details > summary {
+    cursor: pointer;
+    text-decoration: none;
+
+    border: 2px solid rgb(208, 227, 241);
+
+    height: fit-content;
+    padding: 13px;
+    outline: 0;
+
+    transition: background 0.5s;
+}
+
+#qTitle{
+    margin-left: 10px;
+}
+
+#cateNo{
+    color: #447794;
+}
+
+/* 답변 */
+details > figure {
+
+    cursor: pointer;
+    border: 2px solid rgb(208, 227, 241);
+    border-top: 0;
+    font-size: 14px;
+    color: black;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+details{
+    margin-bottom: 20px;
+}
+
+
+/* 질문 + 답변 영역 +애니메이션 */
+summary::-webkit-details-marker { /* Safari 브라우저용 사용자 정의 스타일 */
+    display: none;
+}
+summary {
+    list-style-type: none; /* 그 외의 브라우저용 사용자 정의 스타일 */
+}
+
+
+details[open] > summary ~ * {
+    animation: reveal 0.5s;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -10px, 0);
+    }
+ 
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+
+/* Pagination */
+
+
+.pagination-area{
+    margin-top: 80px;
+}
+
+.pagination{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    color: #447794;
+    font-weight: bold;
+
+}
+
+.pagination li{
+    width: 20px;
+    margin: 0 7px;
+    text-align: center;
+}
+
+.pagination a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.current{
+    color: rgb(0, 149, 250);
+    text-decoration: underline;   
+}
+
+
+
+
+/* 관리자 모드인 경우 */
+
+body.authority3 {
+    background-color: rgb(250, 250, 250);
+}
+
+/* 글쓰기 버튼 */
+.btn-area{
+    display: flex;
+    justify-content: end;
+}
+
+#insertBtn{
+    margin-bottom: 20px;
+    border: 3px solid rgb(208, 227, 241);
+    background-color: white;
+    border-radius: 20px;
+    width: 90px;
+    height: 40px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#insertBtn:hover{
+    background-color: rgb(208, 227, 241);
+    color: black;
+}
+
+#buttons{
+    border: 2px solid rgb(208, 227, 241);
+    border-top: 0px;
+    border-bottom: 0px;
+    display: flex;
+    justify-content: end;
+    padding: 15px;
+}
+
+#editBtn, #deleteBtn {
+    cursor: pointer;
+    font-size: 14px;
+    border: 2px solid rgb(208, 227, 241);
+    border-radius: 12px;
+    padding: 7px;
+}
+
+#editBtn{
+    margin-right: 10px;
+}
+
+#editBtn:hover, #deleteBtn:hover {
+    background-color: rgb(208, 227, 241);
+}
+

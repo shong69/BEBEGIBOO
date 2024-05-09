@@ -1,0 +1,47 @@
+<div id="commentArea">
+    <div class="commentWriteArea">
+        <div>
+            <span th:text="${loginMember?.memberId}">아이디</span>
+            <button id="addComment">등록</button>
+        </div>
+        <textarea id="commentContent"></textarea>
+        
+    </div>
+<!--
+    <div class="commentListArea">
+        <ul id="commentList">
+            <li th:each="comment : ${board.commentList}"
+                th:classappend="${comment.parentCommentNo} != 0 ?childComment"
+                th:object="${comment}">
+    
+                <th:block th:if="*{commentDelFl}=='Y'">
+                    삭제된 댓글입니다.
+                </th:block>
+                    
+                <th:block th:="*{commentDelFl}=='N'">
+                    <P class = "commentWrite">
+                        <span th:text="*{memberId}">아이디</span>
+                        <span th:text="*{commentWriteDate}">작성일</span>
+
+                        <img src="/images/addMore.png" id="editBtn">
+                        <div id="editArea">
+                            <button th:onclick="|showInsertComment(*{commentNo}, this)|">답글</button>
+                            
+                            <th:block th:if="${session.loginMember != null and session.loginMember.memberNo == comment.memberNo}">
+                                <button th:onclick="|showUpdateComment(*{commentNo}, this)|">수정</button>
+                                <button th:onclick="|deleteComment(*{commentNo})|">삭제</button>
+                            </th:block>
+                        </div>
+                    </P>
+    
+                    <p class="commentContent" th:text="*{commentContent}">댓글 내용</p>
+    
+    
+                </th:block>
+            </li>
+        </ul>
+    </div>
+-->
+</div>
+
+

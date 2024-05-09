@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Edit</title>
+
+    <th:block th:replace="~{common/common}"></th:block>
+    <link rel="stylesheet" href="/css/faqBoard/editFaq.css">
+</head>
+<body>
+    <main>
+        <!-- HEADER -->
+        <th:block th:replace="~{common/header}"></th:block>
+
+        <th:block th:if="${session.loginMember != null} and ${session.loginMember.authority == 3}">
+          <th:block th:replace="~{common/manager-bar}"></th:block>
+        </th:block>
+
+        <form th:action="@{editFaq}" th:object="${faqBoard}" method="POST" class="editFaq" id="editFaq">
+
+            <input type="hidden" name="qNo" th:value="${faqBoard.qNo}">
+           
+            <div class="faqLogo"><a href="/faqBoard/faqBoard">FAQ</a></div>
+           
+            <div id="update"><span>수정하기</span></div>
+
+            <section class="editFaqForm">
+                <table>
+                    <tr class="qTitleNo">
+                        <td id="qTitle"><span>질문제목</span></td>
+                        <td id="category">
+                            <select name="categoryNo" id="categoryNo">
+                                <option value="1">1.기부</option>
+                                <option value="2">2.택배관련</option>
+                                <option value="3">3.봉사활동 인증</option>
+                                <option value="4">4.홈페이지</option>
+                                <option value="5">5.기타</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="question" id="question" th:value="${faqBoard.question}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span>내용</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea name="answer" class="answer" th:text="${faqBoard.answer}" id="answer"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            
+                <div class="buttons">
+                    <button id="updateBtn">수정</button>
+                    <button id="cancelBtn">취소</button>
+                </div>
+            </section>
+
+        </form>
+
+
+
+
+
+
+
+    </main>
+    
+        <!-- FOOTER -->
+        <th:block th:replace="~{common/footer}"></th:block>
+
+        <script src="/js/faqBoard/editFaq.js"></script>  
+</body>
+</html>

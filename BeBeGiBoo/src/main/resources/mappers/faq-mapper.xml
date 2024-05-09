@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bebegiboo.project.faqboard.model.mapper.FaqMapper">
+
+	<!-- 글 수 조회 -->
+	<select id="getListCount">
+		SELECT COUNT(*)
+		FROM "FAQ"
+		WHERE FAQ_DEL_FL = 'N'
+	</select>
+	
+	<!-- 목록 조회 -->
+	<select id="selectFaqBoardList">
+		SELECT Q_NO, QUESTION, ANSWER, CATEGORY_NO
+		FROM FAQ
+		WHERE FAQ_DEL_FL = 'N'
+		ORDER BY Q_NO
+	</select>
+	
+	<!-- faq 작성 -->
+	<insert id="insertFaq">
+		INSERT INTO FAQ
+		VALUES(SEQ_FAQ_NO.NEXTVAL, #{question}, 
+		#{answer}, #{categoryNo}, #{memberNo}, DEFAULT)
+	</insert>
+	
+	<!-- faq 조회 -->
+	<select id="selectOne">
+		SELECT Q_NO, QUESTION, ANSWER, CATEGORY_NO 
+		FROM FAQ
+		WHERE Q_NO = #{qNo}
+		AND FAQ_DEL_FL = 'N'
+	</select>
+	
+	<!-- faq 수정 -->
+	<update id="updateFaq">
+		UPDATE FAQ SET 
+		QUESTION = #{question},
+		ANSWER = #{answer},
+		CATEGORY_NO = #{categoryNo}
+		WHERE Q_NO = #{qNo}
+	</update>
+	
+	<!-- faq 삭제 -->
+	<update id="faqDelete">
+		UPDATE FAQ SET
+		FAQ_DEL_FL = 'Y'
+		WHERE Q_NO = #{qNo}
+	</update>
+	
+	<!-- 카테고리 별 목록 조회 -->
+    <select id="getFaqByCategory">
+        SELECT Q_NO, QUESTION, ANSWER, CATEGORY_NO
+        FROM FAQ
+        WHERE CATEGORY_NO = #{categoryNo} 
+        AND FAQ_DEL_FL = 'N'
+        ORDER BY Q_NO
+    </select>
+	
+</mapper>

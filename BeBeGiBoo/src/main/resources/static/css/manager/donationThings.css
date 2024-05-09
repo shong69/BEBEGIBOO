@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+body {
+    background-color: lightgray;
+}
+
+.donationThingsContainer {
+    height: 1500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#donationThingsTitle {
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    width: 300px;
+    height: 60px;
+    background-color: rgb(208, 227, 241);
+
+    box-shadow :rgba(0, 0, 0, 0.07) 0px 1px 2px,
+                rgba(0, 0, 0, 0.07) 0px 2px 4px,
+                rgba(0, 0, 0, 0.07) 0px 4px 8px;
+
+}
+
+
+
+#donationThingsBoard tr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 60px;
+    background-color: white;
+    margin-bottom: 40px;
+    transition-duration: 0.3s;
+}
+
+#donationThingsBoard tr > td:first-child {
+    flex-basis: 10%;
+    color: rgb(0,149,250);
+    text-align: center;
+}
+#donationThingsBoard tr > td:nth-child(2) {
+    flex-basis: 70%;
+}
+#donationThingsBoard tr > td:nth-child(3) {
+    flex-basis: 20%;
+}
+
+.managerButton {
+    font-family: "Noto Sans KR", sans-serif;
+    height: 30px;
+    width: 150px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(0,149,250);
+    border: none;
+    cursor: pointer;
+}
+
+.shadow {
+    box-shadow: 5px 5px 5px gray;
+}
+
+
+
+
+.viewLayer {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+#donationThingsBoard {
+    height: 10px;
+    transition-duration: 0.5s;
+    width: 830px;
+}
+
+#donationThings {
+    visibility: hidden;
+    width: 500px;
+    height: 700px;
+    background-color: white;
+    transition-duration: 0.5s;
+    box-shadow: 5px 5px 5px gray;
+    overflow-y: scroll;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#membershipPagenation {
+    height: 300px;
+}
+
+
+.pagination{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 60px;
+}
+
+.pagination li{
+    width: 20px;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.pagination a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#boardSearch {
+    display : flex;
+    flex-direction: row;
+}
+#searchKey {
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    text-align: center;
+    border : 1px solid #dddd;
+}
+
+#searchQuery {
+    width: 400px;
+    height: 20px;
+    text-align: center;
+    border:none;
+}
+#searchQuery:focus{
+    outline: none;
+}
+
+#boardSearch button {
+    width : 35px;
+    height: 35px;
+    border: none;
+    background-color: transparent;
+    border-radius: 5px;
+}
+#serchArea{
+    height: 35px;
+    border : 1px solid #dddd;
+    margin-bottom: 60px;
+    margin-left: 20px;
+}
+.current{
+    font-weight: bold;
+    color: rgb(0, 149, 255) !important;
+    text-decoration: underline;
+}

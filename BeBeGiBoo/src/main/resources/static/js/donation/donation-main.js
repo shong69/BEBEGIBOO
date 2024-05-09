@@ -202,6 +202,8 @@ nextButton.addEventListener("click", e=>{
                             alert("입력을 모두 완료해주세요");
                         } else if(document.querySelector("#parentsAgree").checked == false) {
                             alert("동의사항에 체크해주세요");
+                        } else if(kakaoClick == 0) {
+                            alert("카카오 인증하기를 완료해주세요");
                         } else {
                             pagenation();
                             break;
@@ -355,6 +357,8 @@ submitButton.addEventListener("click", e => {
 
     if(document.querySelector("#paymentAgree").checked == false) {
         alert("동의사항에 체크해주세요");
+    } else if(paymentClick == 0) {
+        alert("결제하기 버튼을 눌러주세요");
     } else {
         var payment = document.querySelector("#payment");
         
@@ -400,4 +404,54 @@ submitButton.addEventListener("click", e => {
     }
 
 
+});
+
+
+
+
+
+
+/* 카카오 인증하기 버튼 눌렀을 때 */
+
+const kakao = document.querySelector("#kakao");
+let kakaoClick = 0;
+
+kakao.addEventListener("click", () => {
+
+    if(document.querySelector("#parentsName").value.trim().length == 0 || document.querySelector("#parentsMiddleNo").value.trim().length == 0 || document.querySelector("#parentsLastNo").value.trim().length == 0){
+        alert("입력을 모두 완료해주세요");
+    } else if(document.querySelector("#parentsAgree").checked == false) {
+        alert("동의사항에 체크해주세요");
+    } else {
+        kakao.style.backgroundColor = "#dbd02e";
+        setTimeout(function () {
+              alert("인증되었습니다");
+            }, 3000);
+        kakaoClick += 1;
+        setTimeout(function () {
+            kakao.style.backgroundColor = "#F7E600";
+            }, 3000);
+
+    }
+
+
+});
+
+
+
+
+/* 결제하기 버튼 눌렀을 때 */
+
+const paymentButton = document.querySelector("#paymentButton");
+let paymentClick = 0;
+
+paymentButton.addEventListener("click", () => {
+    if(document.querySelector("#paymentAgree").checked == false) {
+        alert("동의사항에 체크해주세요");
+    } else {
+        setTimeout(function () {
+              alert("결제가 완료되었습니다");
+            }, 1500);
+        paymentClick += 1;
+    }
 });

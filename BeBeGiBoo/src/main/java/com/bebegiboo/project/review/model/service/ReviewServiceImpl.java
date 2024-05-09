@@ -7,6 +7,11 @@ import java.util.Map;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 98f1115c36231ccfd14ef82c121e273d3d552087
 import com.bebegiboo.project.certification.model.dto.Certification;
 import com.bebegiboo.project.faqboard.pagination.Pagination;
 import com.bebegiboo.project.review.model.dto.CertificationBoard;

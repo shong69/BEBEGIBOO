@@ -120,7 +120,7 @@
                     <p class="text text2" style="margin-right: 5px;">-</p>
                     <input id="parentsLastNo" type="number" maxlength="4" style="margin-right: 10px; width: 70px;">
 
-                    <button class="kakao"><img src="/images/kakao.png" style="width: 20px;">카카오로 인증하기</button>
+                    <button id="kakao" class="kakao" style="cursor: pointer;"><img src="/images/kakao.png" style="width: 20px;">카카오로 인증하기</button>
                 </div>
 
                 <div>
@@ -145,9 +145,9 @@
                     <label for="option1" class="text text2">장난감</label>
                 </div>
 
-                <div class="text" style="color: white; font-size: 10px;">※ 다중선택 가능</div>
+                <div class="text" style="color: white; font-size: 15px;">※ 다중선택 가능</div>
 
-                <div class="text" style="height: 180px; width: 900px; background-color: lightgray; color: white; font-size: 15px; line-height: 30px;">
+                <div class="text" style="height: 180px; width: 850px; background-color: rgba(83, 83, 83, 0.5); color: white; font-size: 15px; line-height: 30px;">
                     생활용품 : 기저귀(새상품), 손소독제, 유모차, 목욕용품, 마스크 ,미용세트, 안전용품, 물티슈, 담요, 보자기 등<br>
                     의류 : 아우터, 내복, 실내복, 맨투맨, 후드, 셔츠, 하의, 수영복,  스커트, 원피스, 우비, 신발, 양말, 모자 등<br>
                     식기 : 이유식기, 유아용 수저, 유아용 젓가락, 컵, 반찬통, 조리도구, 프라이팬, 냄비, 내열용 그릇 등<br>
@@ -164,25 +164,26 @@
                 <table>
                     <tr name="content-thing" style="margin-bottom: 10px;">
                         <td class="text text2" style="width: 150px;">생활용품</td>
-                        <td><input name="content-thing-input" id="daily" type="text" placeholder="','로 구분해서 입력하세요'" style="height: 30px; padding: 3px;"></td>
+                        <td><input name="content-thing-input" id="daily" type="text" style="height: 30px; padding: 3px;"></td>
                     </tr>
                     <tr name="content-thing" style="margin-bottom: 10px;">
                         <td class="text text2" style="width: 150px;">의류</td>
-                        <td><input name="content-thing-input" id="cloth" type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px; padding: 3px;"></td>
+                        <td><input name="content-thing-input" id="cloth" type="text" style="height: 30px; padding: 3px;"></td>
                     </tr>
                     <tr name="content-thing" style="margin-bottom: 10px;">
                         <td class="text text2" style="width: 150px;">식기</td>
-                        <td><input name="content-thing-input" id="dish" type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px; padding: 3px;"></td>
+                        <td><input name="content-thing-input" id="dish" type="text" style="height: 30px; padding: 3px;"></td>
                     </tr>
                     <tr name="content-thing" style="margin-bottom: 10px;">
                         <td class="text text2" style="width: 150px;">가전</td>
-                        <td><input name="content-thing-input" id="electronic" type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px; padding: 3px;"></td>
+                        <td><input name="content-thing-input" id="electronic" type="text" style="height: 30px; padding: 3px;"></td>
                     </tr>
                     <tr name="content-thing" style="margin-bottom: 10px;">
                         <td class="text text2" style="width: 150px;">장난감</td>
-                        <td><input name="content-thing-input" id="toy" type="text" placeholder="','로 구분해서 입력하세요" style="height: 30px; padding: 3px;"></td>
+                        <td><input name="content-thing-input" id="toy" type="text" style="height: 30px; padding: 3px;"></td>
                     </tr>
                 </table>
+                <div class="text text2" style="font-size: 15px;">※유아용품을 작성하실 때에는 ','(콤마)로 구분해서 띄어쓰기 없이 작성해주세요</div>
             </div>
 
 
@@ -217,7 +218,7 @@
                     </tr>
                 </table>
 
-                <div class="text" style="color: white; font-size: 10px;">
+                <div class="text" style="color: white; font-size: 15px;">
                     ※ 박스 하나 당 한 종류의 유아용품만 담을 수 있습니다<br>
                     ※ 박스 하나 당 15kg을 넘을 수 없습니다
                 </div>
@@ -288,7 +289,7 @@
                         <option value="무통장입금">무통장입금</option>
                     </select>
 
-                    <button type="button" class="button">결제하기</button>
+                    <button id="paymentButton" type="button" class="button">결제하기</button>
                 </div>
 
                 <div>

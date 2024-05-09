@@ -1,20 +1,17 @@
-<<<<<<< HEAD
-=======
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
->>>>>>> b0e1dfea78fcac5a7c2002b05087b270d1f19dfb
 body {
     background-color: lightgray;
 }
 
-.membershipContainer {
+.donationThingsContainer {
     height: 1500px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#membershipTitle {
+#donationThingsTitle {
     display: flex;
     margin-top: 100px;
     justify-content: center;
@@ -30,133 +27,77 @@ body {
 
 }
 
-#membershipBoard {
-    height: 10px;
-}
 
 
-#membershipBoard tr {
+#donationThingsBoard tr {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1000px;
+    width: 600px;
     height: 60px;
     background-color: white;
     margin-bottom: 40px;
+    transition-duration: 0.3s;
 }
 
-#membershipBoard td {
-    text-align: center;
-}
-
-#membershipBoard tr > td:first-child {
+#donationThingsBoard tr > td:first-child {
     flex-basis: 10%;
     color: rgb(0,149,250);
+    text-align: center;
 }
-#membershipBoard tr > td:nth-child(2) {
+#donationThingsBoard tr > td:nth-child(2) {
+    flex-basis: 70%;
+}
+#donationThingsBoard tr > td:nth-child(3) {
     flex-basis: 20%;
-}
-#membershipBoard tr > td:nth-child(3) {
-    flex-basis: 20%;
-}
-#membershipBoard tr > td:nth-child(4) {
-    flex-basis: 40%;
-}
-#membershipBoard tr > td:nth-child(5) {
-    flex-basis: 10%;
 }
 
 .managerButton {
+    font-family: "Noto Sans KR", sans-serif;
     height: 30px;
-    width: 60px;
+    width: 150px;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(0,149,250);
-    border: 1px rgb(0,149,250) solid;
-    border-radius: 10px;
+    border: none;
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-=======
 .shadow {
     box-shadow: 5px 5px 5px gray;
 }
 
->>>>>>> b0e1dfea78fcac5a7c2002b05087b270d1f19dfb
 
 
 
-
-
-/* 수정 모달창 */
-.popup-layer {
-    display: none;
-    top: 100px;
-    position: sticky;
-    height: 600px;
-    width: 400px;
-<<<<<<< HEAD
-    background-color: white;
-    box-shadow: 10px 10px 10px gray;
-    flex-direction: column;
-    justify-content: center;
-=======
-    background-color: rgba(0, 0, 0, 0);
-    box-shadow: 10px 10px 10px gray;
-    flex-direction: column;
-    backdrop-filter: blur(20px);
-    border-radius: 30px;
-}
-
-.popup-layer tr > td:first-child{
-    font-size: 18px;
-}
-
-.popup-layer tr {
-    height: 50px;
->>>>>>> b0e1dfea78fcac5a7c2002b05087b270d1f19dfb
-}
-
-.popup-close {
+.viewLayer {
     display: flex;
     justify-content: end;
-    transition-duration: 0.2s;
-    margin-right: 10px;
-    font-size: 20px;
-    cursor: pointer;
+    width: 100%;
 }
 
-.popup-close:hover {
-    color: red;
+#donationThingsBoard {
+    height: 10px;
+    transition-duration: 0.5s;
+    width: 830px;
 }
 
-<<<<<<< HEAD
-=======
-input {
-    font-family: "Noto Sans KR", sans-serif;
-    height: 30px;
-    width: 220px;
-    font-size: 15px;
-}
-
-#button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#updateButton {
-    width: 100px;
-    height: 50px;
+#donationThings {
+    visibility: hidden;
+    width: 500px;
+    height: 700px;
     background-color: white;
-    border: 2px rgb(0,149,250) solid;
-    font-size: 20px;
-    color: rgb(0,149,250);
-    border-radius: 10px;
-    cursor: pointer;
+    transition-duration: 0.5s;
+    box-shadow: 5px 5px 5px gray;
+    overflow-y: scroll;
 }
 
->>>>>>> b0e1dfea78fcac5a7c2002b05087b270d1f19dfb
+
+
+
+
+
+
+
 
 
 

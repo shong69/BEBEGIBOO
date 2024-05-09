@@ -86,9 +86,9 @@ public class DonateContoller {
         session.setAttribute("delivery", delivery);
         session.setAttribute("boxCount", map);
         
+        int recordNo = service.recordInfo(memberNo);
         int thingsNo = service.thingsInfo(things, memberNo);
         int deliveryNo = service.deliveryInfo(delivery);
-        int recordNo = service.recordInfo(memberNo);
         
         PaymentInfo payment = new PaymentInfo();
 		payment.setMemberNo(memberNo);

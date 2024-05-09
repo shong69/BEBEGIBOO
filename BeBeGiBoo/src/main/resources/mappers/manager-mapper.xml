@@ -8,6 +8,17 @@
 		FROM "MEMBER"
 	</select>
 
+	<update id="update">
+		UPDATE "MEMBER" SET
+		MEMBER_NAME = #{memberName},
+		EMAIL = #{email},
+		PHONE = #{phone},
+		ADDRESS = #{address},
+		MEMBER_DEL_FL = #{memberDelFl},
+		AUTHORITY = #{authority}
+		WHERE MEMBER_NO = #{memberNo}
+	</update>
+
 	
 
 </mapper>

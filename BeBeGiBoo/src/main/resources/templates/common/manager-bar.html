@@ -122,10 +122,10 @@ nav .nav-links .link:hover {
     </div>
   
     <div class="nav-links">
-      <a href="" class="link">관리자A</a>
-      <a href="" class="link">회원관리</a>
-      <a href="" class="link">기부내역 확인</a>
-      <a href="" class="link">FAQ 관리</a>
+      <a class="link" th:text="|관리자 ${session.loginMember.memberName}|"></a>
+      <a href="/manager/membership" class="link">회원관리</a>
+      <a href="/manager/donationThings" class="link">기부내역 확인</a>
+      <a href="/faqBoard/faqBoard" class="link">FAQ 관리</a>
     </div>
 </nav>
 

@@ -20,11 +20,9 @@ function selectMember() {
                             member.memberName,
                             member.enrollDate];
 
-                const tr = document.createElement("tr");
-<<<<<<< HEAD
-=======
+
                 tr.classList.add("shadow");
->>>>>>> b0e1dfea78fcac5a7c2002b05087b270d1f19dfb
+
                 for(let key of arr){
                     const td = document.createElement("td");
                     td.innerText = key;
@@ -41,17 +39,7 @@ function selectMember() {
 
                 button.addEventListener("click", () => {
 
-<<<<<<< HEAD
-                    const name = document.querySelector("#name");
-                    const email = document.querySelector("#email");
-                    const phone = document.querySelector("#phone");
-                    const address = document.querySelector("#address");
-                    const del = document.querySelector("#del");
-                    const authority = document.querySelector("#authority");
-
                     popup.style.display = 'flex';
-
-=======
                     var memberNo = document.querySelector("#memberNo");
                     var name = document.querySelector("#name");
                     var email = document.querySelector("#email");
@@ -63,7 +51,6 @@ function selectMember() {
                     popup.style.display = 'flex';
 
                     memberNo.value = member.memberNo;
->>>>>>> b0e1dfea78fcac5a7c2002b05087b270d1f19dfb
                     name.value = member.memberName;
                     email.value = member.email;
                     phone.value = member.phone;
@@ -71,10 +58,6 @@ function selectMember() {
                     del.value = member.memberDelFl;
                     authority.value = member.authority;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> b0e1dfea78fcac5a7c2002b05087b270d1f19dfb
                 });
             });
         }
@@ -98,16 +81,12 @@ popupClose.addEventListener("click", () => {
 
 const updateButton = document.querySelector("#updateButton");
 
-<<<<<<< HEAD
 updateButton.addEventListener("click", () => {
 
 
 
 });
 
-
-
-=======
 
 
 updateButton.addEventListener("click", () => {
@@ -160,4 +139,3 @@ updateButton.addEventListener("click", () => {
     }
 
 });
->>>>>>> b0e1dfea78fcac5a7c2002b05087b270d1f19dfb

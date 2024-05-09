@@ -40,6 +40,3 @@ document.querySelector(".noHover").addEventListener("mouseover", () => {
     document.querySelector("#hover2").style.visibility = 'hidden';
 });
 
-
-
-

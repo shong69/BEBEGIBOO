@@ -27,27 +27,27 @@
 	
 	<insert id="dailyInsert">
 		INSERT INTO DONATION_PRODUCT
-		VALUES(SEQ_DONATION_PRODUCT_NO.NEXTVAL, #{dailyARR}, #{memberNo}, 1, 1)
+		VALUES(SEQ_DONATION_PRODUCT_NO.NEXTVAL, #{dailyARR}, #{memberNo}, 1, SEQ_DONATION_RECORD_NO.CURRVAL)
 	</insert>
 	
 	<insert id="clothInsert">
 		INSERT INTO DONATION_PRODUCT
-		VALUES(SEQ_DONATION_PRODUCT_NO.NEXTVAL, #{clothARR}, #{memberNo}, 2, 1)
+		VALUES(SEQ_DONATION_PRODUCT_NO.NEXTVAL, #{clothARR}, #{memberNo}, 2, SEQ_DONATION_RECORD_NO.CURRVAL)
 	</insert>
 	
 	<insert id="dishInsert">
 		INSERT INTO DONATION_PRODUCT
-		VALUES(SEQ_DONATION_PRODUCT_NO.NEXTVAL, #{dishARR}, #{memberNo}, 3, 1)
+		VALUES(SEQ_DONATION_PRODUCT_NO.NEXTVAL, #{dishARR}, #{memberNo}, 3, SEQ_DONATION_RECORD_NO.CURRVAL)
 	</insert>
 	
 	<insert id="electronicInsert">
 		INSERT INTO DONATION_PRODUCT
-		VALUES(SEQ_DONATION_PRODUCT_NO.NEXTVAL, #{electronicARR}, #{memberNo}, 4, 1)
+		VALUES(SEQ_DONATION_PRODUCT_NO.NEXTVAL, #{electronicARR}, #{memberNo}, 4, SEQ_DONATION_RECORD_NO.CURRVAL)
 	</insert>
 	
 	<insert id="toyInsert">
 		INSERT INTO DONATION_PRODUCT
-		VALUES(SEQ_DONATION_PRODUCT_NO.NEXTVAL, #{toyARR}, #{memberNo}, 5, 1)
+		VALUES(SEQ_DONATION_PRODUCT_NO.NEXTVAL, #{toyARR}, #{memberNo}, 5, SEQ_DONATION_RECORD_NO.CURRVAL)
 	</insert>
 	
 	<insert id="recordInfo">

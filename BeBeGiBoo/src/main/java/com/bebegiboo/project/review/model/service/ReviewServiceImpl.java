@@ -8,10 +8,7 @@ import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 15192c6908de7bfa18486f1f83184c98363cca77
 import com.bebegiboo.project.certification.model.dto.Certification;
 import com.bebegiboo.project.faqboard.pagination.Pagination;
 import com.bebegiboo.project.review.model.dto.CertificationBoard;

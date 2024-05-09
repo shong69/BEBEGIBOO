@@ -232,7 +232,7 @@
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_mV0bEA0IEe-rSeikEWVF1Q" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="DonationInfoController.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;DonationInfoController.java&quot; partName=&quot;DonationInfoController.java&quot; title=&quot;DonationInfoController.java&quot; tooltip=&quot;BeBeGiBoo/src/main/java/com/bebegiboo/project/donationinfo/controller/DonationInfoController.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/BeBeGiBoo/src/main/java/com/bebegiboo/project/donationinfo/controller/DonationInfoController.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1615&quot; selectionTopPixel=&quot;178&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;DonationInfoController.java&quot; partName=&quot;DonationInfoController.java&quot; title=&quot;DonationInfoController.java&quot; tooltip=&quot;BeBeGiBoo/src/main/java/com/bebegiboo/project/donationinfo/controller/DonationInfoController.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/BeBeGiBoo/src/main/java/com/bebegiboo/project/donationinfo/controller/DonationInfoController.java&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
@@ -458,7 +458,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_dhWikAxJEe-sAsdz-qbeWg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_2bREIA2WEe-W47Fmt6BPLA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_daSRhAxJEe-sAsdz-qbeWg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_FZxjcA2aEe-nh_HteobL_Q" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_daSRhAxJEe-sAsdz-qbeWg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_dhXJoAxJEe-sAsdz-qbeWg" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -466,8 +466,8 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_dhXJogxJEe-sAsdz-qbeWg" elementId="org.eclipse.ui.workbench.edit">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_2bSSQA2WEe-W47Fmt6BPLA" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" command="_daQcmQxJEe-sAsdz-qbeWg"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_2bSSQQ2WEe-W47Fmt6BPLA" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_daRDiwxJEe-sAsdz-qbeWg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_FZyxkQ2aEe-nh_HteobL_Q" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_daQcmQxJEe-sAsdz-qbeWg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_FZzYoA2aEe-nh_HteobL_Q" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_daRDiwxJEe-sAsdz-qbeWg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_dhXJowxJEe-sAsdz-qbeWg" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -491,7 +491,10 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_dhXJpwxJEe-sAsdz-qbeWg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_2bS5Ug2WEe-W47Fmt6BPLA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_daRq9gxJEe-sAsdz-qbeWg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_FZzYpg2aEe-nh_HteobL_Q" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_daRq9gxJEe-sAsdz-qbeWg"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="__nZVIA2ZEe-V08xu80RIUg" elementId="org.eclipse.jdt.ui.CompilationUnitEditor" visible="false">
+        <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_dhXJqAxJEe-sAsdz-qbeWg" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -518,7 +521,7 @@
       <children xsi:type="menu:ToolControl" xmi:id="_dZ8TBAxJEe-sAsdz-qbeWg" elementId="org.eclipse.ui.StatusLine" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">
         <tags>stretch</tags>
       </children>
-      <children xsi:type="menu:ToolControl" xmi:id="_dZ8TBQxJEe-sAsdz-qbeWg" elementId="org.eclipse.ui.HeapStatus" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">
+      <children xsi:type="menu:ToolControl" xmi:id="_dZ8TBQxJEe-sAsdz-qbeWg" elementId="org.eclipse.ui.HeapStatus" contributorURI="platform:/plugin/org.eclipse.platform" toBeRendered="false" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">
         <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_dZ8TBgxJEe-sAsdz-qbeWg" elementId="org.eclipse.ui.ProgressBar" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">

@@ -110,17 +110,31 @@ textarea::placeholder{
 #commentList {
     list-style: none;
 }
+#commentList li:first-child{
+    font-weight: 600;
+
+}
 .commentWrite {
     display : flex;
     justify-content: space-between;
+    margin-top: 10px;
 }
 .commentWrite div:first-of-type {
     display : flex;
     flex-direction: column;
     font-size: 12px;
 }
+.commentWrite div span:nth-child(2){
+    font-size: 10px;
+}
 
 .editBtn {
     width : 20px;
     height: 20px;
+}
+
+.commentContent{
+    border-bottom: 1px solid #ececec;
+    padding : 7px 12px;
+    font-size: 12px;
 }

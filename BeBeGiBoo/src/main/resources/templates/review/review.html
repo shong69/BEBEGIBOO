@@ -12,6 +12,10 @@
 <body>
     <th:block th:replace="~{common/header}"></th:block>
 
+    <th:block th:if="${session.loginMember != null} and ${session.loginMember.authority == 3}">
+          <th:block th:replace="~{common/manager-bar}"></th:block>
+        </th:block>
+
     <main>
         <!--제목 배너-->
         <!--div id="titleArea">

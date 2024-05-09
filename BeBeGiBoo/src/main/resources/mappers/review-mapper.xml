@@ -117,7 +117,7 @@
 		ORDER BY BOARD_NO DESC
 	</select>
 	
-	<select id = "selectOne" resultMap="boardrm">
+	<select id = "selectOne" resultMap="board_rm">
 		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT, READ_COUNT,
 		MEMBER_NO, MEMBER_ID,
 		TO_CHAR(BOARD_WRITE_DATE, 'YYYY"년" MM"월" DD"일" HH24:MI:SS') BOARD_WRITE_DATE, 
@@ -128,7 +128,7 @@
 		WHERE BOARD_DEL_FL = 'N'
 		AND BOARD_NO = #{boardNo}
 	</select>
-	<resultMap type ="CertificationBoard" id = "boardrm">
+	<resultMap type ="CertificationBoard" id = "board_rm">
 		
 		<id property = "boardNo" column="BOARD_NO"/>
 		
@@ -147,13 +147,13 @@
 		ofType="Comment"/>
 	</resultMap>
 	
-	<select id="selectImagelist" resultType="BoardImg">
+	<select id="selectImageList" resultType="BoardImg">
 		SELECT * 
 		FROM "BOARD_IMG"
 		WHERE BOARD_NO = #{boardNo}
 		ORDER BY IMG_NO
 	</select>
-	<select id="commentList" resultType="Comment">
+	<select id="selectCommentlist" resultType="Comment">
 		SELECT LEVEL, C.* FROM 
 			(SELECT COMMENT_NO, COMMENT_CONTENT,
 			    TO_CHAR(COMMENT_WRITE_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"') COMMENT_WRITE_DATE,

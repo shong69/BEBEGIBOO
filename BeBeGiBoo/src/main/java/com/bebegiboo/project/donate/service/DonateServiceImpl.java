@@ -42,6 +42,8 @@ public class DonateServiceImpl implements DonateService{
 		String[] dishArr = things.getDish().split(",");
 		String[] electronicArr = things.getElectronic().split(",");
 		String[] toyArr = things.getToy().split(",");
+		
+
 
 		
 		int dailyNo = 0;

@@ -10,12 +10,10 @@ import com.bebegiboo.project.member.model.dto.Member;
 public interface ManagerMapper {
 
 
-
 	/** 회원 목록 조회
 	 * @return
 	 */
 	List<Member> selectMemberList();
-
 
 	/** 회원 정보 수정
 	 * @param member

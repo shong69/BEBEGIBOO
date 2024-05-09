@@ -27,10 +27,14 @@
                                         <span id="arrow">+</span>
                                     </summary>  
                                     <figure>
-                                        <table>
-                                            <tr th:each="product : ${record.productList}">
-                                                <td>기부물품</td>
-                                                <td th:text="${product.productName}">기부물품 이름</td>
+                                        <table class="content">
+                                            <tr>
+                                                <td>기부 물품</td>
+                                                <td>
+                                                    <span th:each="product : ${donationInfo.productList}" th:text="|${product.productName} |"></span>
+                                                    <br>
+                                                    <span th:text="|총 ${donationInfo.productList.size}박스|"></span>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>전화번호</td>

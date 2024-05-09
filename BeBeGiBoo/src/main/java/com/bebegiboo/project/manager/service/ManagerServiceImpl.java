@@ -37,4 +37,5 @@ public class ManagerServiceImpl implements ManagerService{
 
 		return mapper.selectDonationThingsList();
 	}
+
 }

@@ -73,6 +73,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public Member login(Member inputMember) {
 		log.debug("pw : "+bcrypt.encode("1q2w3e4r"));
+		
 		Member loginMember = mapper.login(inputMember.getMemberId());
 		
 		if(loginMember == null) {

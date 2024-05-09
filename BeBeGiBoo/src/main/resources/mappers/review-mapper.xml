@@ -117,6 +117,7 @@
 		ORDER BY BOARD_NO DESC
 	</select>
 	
+	<!-- 게시글 상세 조회 -->
 	<select id = "selectOne" resultMap="board_rm">
 		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT, READ_COUNT,
 		MEMBER_NO, MEMBER_ID,
@@ -170,7 +171,7 @@
 	<select id="selectCommentlist" resultType="Comment">
 		SELECT LEVEL, C.* FROM 
 			(SELECT COMMENT_NO, COMMENT_CONTENT,
-			    TO_CHAR(COMMENT_WRITE_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"') COMMENT_WRITE_DATE,
+			    TO_CHAR(COMMENT_WRITE_DATE, 'YYYY"년" MM"월" DD"일" HH24:MI:SS') COMMENT_WRITE_DATE,
 			    BOARD_NO, MEMBER_NO, MEMBER_ID, PARENT_COMMENT_NO, COMMENT_DEL_FL
 			FROM "COMMENT"
 			JOIN MEMBER USING(MEMBER_NO)

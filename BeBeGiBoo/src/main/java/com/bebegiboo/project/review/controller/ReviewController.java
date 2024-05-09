@@ -70,6 +70,8 @@ public class ReviewController {
 		return "/review/review"; 
 	}
 	
+	
+	
 	@GetMapping("{boardNo:[0-9]+}")
 	public String selectBoardDetail(
 			@PathVariable("boardNo") int boardNo,

@@ -44,11 +44,11 @@
 	<th:block th:unless="${session.loginMember==null}">
 		<div id="nav-container">
 			<div class="nav-container-child">
-				<div class="text nav-child" style="visibility: hidden;" id="hover1"><a href="#">회원정보 수정</a></div>
-				<div class="text nav-child" style="visibility: hidden;" id="hover2"><a href="#">기부내역 조회</a></div>
+				<div class="text nav-child" style="visibility: hidden;" id="hover1"><a href="/member/mypage/checkPw">회원정보 수정</a></div>
+				<div class="text nav-child" style="visibility: hidden;" id="hover2"><a href="/member/mypage/donationInfo">기부내역 조회</a></div>
 			</div>
 			<div class="nav-container-child">
-				<div class="text"><a href="/mypage" id="myPage">마이페이지</a></div>
+				<div class="text"><a href="#" id="myPage">마이페이지</a></div>
 				<div class="text"><a href="/donation" class="noHover">기부하기</a></div>
 				<div class="text"><a href="/page/info" class="noHover">페이지 소개</a></div>
 				<div class="text"><a href="/page/approach" class="noHover">이용방법</a></div> 

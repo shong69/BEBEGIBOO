@@ -28,9 +28,9 @@
                                     </summary>  
                                     <figure>
                                         <table>
-                                            <tr>
-                                                <td>기부물품</td> 
-                                                <td th:text="${donationInfo.productList[recordIndex.index].productName}">기부물품</td>
+                                            <tr th:each="product : ${record.productList}">
+                                                <td>기부물품</td>
+                                                <td th:text="${product.productName}">기부물품 이름</td>
                                             </tr>
                                             <tr>
                                                 <td>전화번호</td>

@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.bebegiboo.project.donate.dto.DeliveryInfo;
 import com.bebegiboo.project.donate.dto.DonationThings;
-import com.bebegiboo.project.donate.dto.Payment;
 import com.bebegiboo.project.donate.service.DonateService;
+import com.bebegiboo.project.donateInfo.dto.PaymentInfo;
 import com.bebegiboo.project.member.model.dto.Member;
 
 import jakarta.servlet.http.Cookie;
@@ -70,12 +70,6 @@ public class DonateContoller {
 		
 		log.info("배송정보들" + delivery);
 		
-		Payment payment = new Payment(Integer.parseInt(String.valueOf(obj.get("total"))),
-										(String) obj.get("payment"));
-		
-		log.info("계산" + payment);
-		
-		
 		
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		
@@ -90,13 +84,21 @@ public class DonateContoller {
         
         session.setAttribute("things", things);
         session.setAttribute("delivery", delivery);
-        session.setAttribute("payment", payment);
         session.setAttribute("boxCount", map);
         
         int thingsNo = service.thingsInfo(things, memberNo);
         int deliveryNo = service.deliveryInfo(delivery);
         int recordNo = service.recordInfo(memberNo);
-
+        
+        PaymentInfo payment = new PaymentInfo();
+		payment.setMemberNo(memberNo);
+		payment.setMethod((String)obj.get("payment"));
+		payment.setPrice(Integer.parseInt((String)obj.get("total")));
+		
+		int result = service.paymentInfo(payment);
+		
+		log.info("result {} ", result);
+		log.info("계산" + payment);
         
 		return thingsNo + deliveryNo + recordNo;
 		

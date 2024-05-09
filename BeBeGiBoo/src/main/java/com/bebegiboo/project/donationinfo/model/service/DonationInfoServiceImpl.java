@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.bebegiboo.project.donateInfo.dto.DeliveryInfoList;
 import com.bebegiboo.project.donateInfo.dto.DonationProduct;
 import com.bebegiboo.project.donateInfo.dto.DonationRecord;
+import com.bebegiboo.project.donateInfo.dto.PaymentInfo;
 import com.bebegiboo.project.donationinfo.model.mapper.DonationInfoMapper;
 
 import lombok.RequiredArgsConstructor;
@@ -36,6 +37,12 @@ public class DonationInfoServiceImpl implements DonationInfoService{
 	public List<DonationProduct> getProductInfo(int memberNo) {
 		
 		return mapper.getProductInfo(memberNo);
+	}
+
+	@Override
+	public List<PaymentInfo> getPaymentInfo(int memberNo) {
+		
+		return mapper.getPaymentInfo(memberNo);
 	} 
 	
 	

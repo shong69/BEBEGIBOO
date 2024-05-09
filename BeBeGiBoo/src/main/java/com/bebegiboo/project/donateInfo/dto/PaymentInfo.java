@@ -1,6 +1,5 @@
 package com.bebegiboo.project.donateInfo.dto;
 
-
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -16,17 +15,17 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class DeliveryInfoList {
+public class PaymentInfo {
 	
-	private int deliNo; 
-	private String donatorName; 
-	private String phone; 
-	private String phone2; 
-	private String address; 
-	private String pickupDate; 
-	private String memo; 
-	private int memberNo;
+	private int payNo; 
+	private int price; 
+	private String method; 
+	private int memberNo; 
+	private int recordNo; 
 	
-	private List<DeliveryInfoList> deliveryList;
+	private int total; 
+	private String payment;
+	
+	private List<PaymentInfo> paymentList;
 
 }

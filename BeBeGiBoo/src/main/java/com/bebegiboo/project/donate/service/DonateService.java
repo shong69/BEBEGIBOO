@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.bebegiboo.project.donate.dto.DeliveryInfo;
 import com.bebegiboo.project.donate.dto.DonationThings;
-import com.bebegiboo.project.donate.dto.Payment;
+import com.bebegiboo.project.donateInfo.dto.PaymentInfo;
 
 @Service
 public interface DonateService {
@@ -31,6 +31,14 @@ public interface DonateService {
 	 * @return
 	 */
 	int recordInfo(int memberNo);
+
+	/** 결제 정보 삽입 
+	 * @param memberNo
+	 * @return
+	 */
+	//PaymentInfo paymentInfo(int memberNo);
+
+	int paymentInfo(PaymentInfo payment);
 
 
 }

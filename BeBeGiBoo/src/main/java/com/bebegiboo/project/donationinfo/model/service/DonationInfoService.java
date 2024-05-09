@@ -5,6 +5,7 @@ import java.util.List;
 import com.bebegiboo.project.donateInfo.dto.DeliveryInfoList;
 import com.bebegiboo.project.donateInfo.dto.DonationProduct;
 import com.bebegiboo.project.donateInfo.dto.DonationRecord;
+import com.bebegiboo.project.donateInfo.dto.PaymentInfo;
 
 
 
@@ -27,6 +28,12 @@ public interface DonationInfoService {
 	 * @return
 	 */
 	List<DonationProduct> getProductInfo(int memberNo);
+
+	/** 결제 내역 조회 
+	 * @param memberNo
+	 * @return
+	 */
+	List<PaymentInfo> getPaymentInfo(int memberNo);
 
 
 }

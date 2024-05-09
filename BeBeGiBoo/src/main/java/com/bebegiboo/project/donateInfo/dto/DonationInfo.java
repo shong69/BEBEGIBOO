@@ -9,19 +9,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Setter
-@Getter
-@Builder
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class DonationRecord {
-	
-	private int recordNo; 
-	private String recordDate; 
-	private int donatorNo; 
-	private int acceptorNo; 
+@ToString
+@Builder
+@Setter
+@Getter
+public class DonationInfo {
+
 	
 	private List<DonationRecord> recordList;
-
+    private List<DeliveryInfoList> deliveryList;
+    private List<DonationProduct> productList;
+    private List<PaymentInfo> paymentList;
+	
+	
 }

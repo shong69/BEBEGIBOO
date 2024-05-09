@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.bebegiboo.project.donate.dto.DeliveryInfo;
 import com.bebegiboo.project.donate.dto.DonationThings;
-import com.bebegiboo.project.donate.dto.Payment;
 import com.bebegiboo.project.donate.mapper.DonateMapper;
+import com.bebegiboo.project.donateInfo.dto.PaymentInfo;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -121,5 +121,19 @@ public class DonateServiceImpl implements DonateService{
 		
 		return mapper.recordInfo(memberNo);
 	}
+
+	@Override
+	public int paymentInfo(PaymentInfo payment) {
+
+		return mapper.paymentInfo(payment);
+	}
+
+//	@Override
+//	public int paymentInfo(PaymentInfo payment) {
+//		// TODO Auto-generated method stub
+//		return mapper.paymentInfo(payment);
+//	}
+//	
+	
 
 }

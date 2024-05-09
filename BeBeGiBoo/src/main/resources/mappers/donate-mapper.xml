@@ -55,4 +55,9 @@
 		VALUES(SEQ_DONATION_RECORD_NO.NEXTVAL, SYSDATE, #{memberNo}, NULL)
 	</insert>
 
+	<insert id="paymentInfo">
+		INSERT INTO PAYMENT
+		VALUES(SEQ_PAY_NO.NEXTVAL, #{price}, #{method}, #{memberNo}, SEQ_DONATION_RECORD_NO.CURRVAL)
+	</insert>
+
 </mapper>

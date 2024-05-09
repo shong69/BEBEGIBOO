@@ -2,7 +2,7 @@
 
     <th:block th:if="${session.loginMember}">
         <div id="id-addCommentArea">
-            <span th:text="${session.loginMember?.memberId}">아이디</span>
+            <span th:text="|@${session.loginMember?.memberId}|">아이디</span>
             <button id="addComment" >등록</button>
         </div>
         <textarea rows="10" placeholder="다른 사람에게 불쾌감을 주는 욕설, 혐오, 비하의 표현이나 타인의 권리를 침해하는 내용은 주의해주세요."></textarea>
@@ -27,7 +27,7 @@
                     
                     <div class = "commentWrite">
                         <div>
-                            <span th:text="*{memberId}">아이디</span>
+                            <span th:text="|@*{memberId}|">아이디</span>
                             <span th:text="*{commentWriteDate}">작성일</span>
                         </div>
                          

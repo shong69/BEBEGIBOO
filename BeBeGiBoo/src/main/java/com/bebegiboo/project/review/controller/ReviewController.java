@@ -98,10 +98,12 @@ public class ReviewController {
 		if(board == null) {
 			path = "redirect:/review";
 			ra.addFlashAttribute("message", "게시글이 존재하지 않습니다");
+			
 		}else {
 			//쿠키를 이용한 조회수 증가하기
-			//1. 비회원 or 글쓴X 가 본 경우
+			//1. 비회원 or 글쓴X 가 본 경우(조회수가 증가하는 경우)
 			if(loginMember == null || loginMember.getMemberNo() != board.getMemberNo()) {
+				
 				Cookie[] cookies = req.getCookies();
 				Cookie c = null;
 				
@@ -117,34 +119,43 @@ public class ReviewController {
 				if(c == null) {
 					c = new Cookie("readBoardNo", "["+boardNo+"]");
 					result = service.updateReadCount(boardNo); //조회수 업데이트
+					log.debug("setCookie and update ReadCount");
+					
 				}else {
 					if(c.getValue().indexOf("["+boardNo+"]")== -1) { //쿠키에 boardNo에 해당하는 번호 없는 경우
+						
+						log.debug("NO boardNO");
+						
 						c.setValue(c.getValue() + "["+boardNo+"]");
 						
 						result = service.updateReadCount(boardNo);
+						
 						log.debug("result : "+result);
-						
-						c.setPath("/");
-						
-						LocalDateTime now = LocalDateTime.now();
-						
-						LocalDateTime nextDayMidnight = now.plusDays(1).withHour(0).withMinute(0).withNano(0);
-						
-						//다음날 자정까지 남은 시간 계산(초)
-						long secondsUntilNextDay = Duration.between(now, nextDayMidnight).getSeconds();
-						
-						c.setMaxAge((int)secondsUntilNextDay);
-						
-						resp.addCookie(c);
 					}
+				}				
+				
+				if(result > 0) {
+					
+					board.setReadCount(result);
+					
+					c.setPath("/");
+					
+					LocalDateTime now = LocalDateTime.now();
+					
+					LocalDateTime nextDayMidnight = now.plusDays(1).withHour(0).withMinute(0).withNano(0);
+					
+					//다음날 자정까지 남은 시간 계산(초)
+					long secondsUntilNextDay = Duration.between(now, nextDayMidnight).getSeconds();
+					
+					c.setMaxAge((int)secondsUntilNextDay);
+					
+					resp.addCookie(c);
 				}
-				
-				path = "review/reviewDetail";
-				
-				model.addAttribute("board", board);
-				
 			} 
-
+			
+			path = "review/reviewDetail";
+			
+			model.addAttribute("board", board);
 		}
 		return path;
 	}

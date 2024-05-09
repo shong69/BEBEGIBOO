@@ -39,6 +39,9 @@ public class CertificationServiceImpl implements CertificationService{
 
 	
 
+	/**
+	 * 인증 신청 폼 제출 
+	 */
 	@Override
 	public int certificationSubmit(Certification inputCertification, String[] memberAddress,
 															List<MultipartFile> images) throws IllegalStateException, IOException {

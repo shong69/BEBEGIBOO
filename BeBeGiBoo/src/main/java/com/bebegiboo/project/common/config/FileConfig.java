@@ -43,17 +43,8 @@ public class FileConfig implements WebMvcConfigurer {
 		
 		@Value("${certification.resource-location}")
 		private String certificationResourceLocation;
-		
-		
-		
-		
+			
 		//-----------------------------------------------------------
-		
-		
-		
-		
-		
-		
 		
 		
 		
@@ -66,10 +57,7 @@ public class FileConfig implements WebMvcConfigurer {
 			.addResourceLocations(certificationResourceLocation);
 			
 		}
-		
 	
-	
-		
 		
 
 		/* MultipartResolver 설정 */

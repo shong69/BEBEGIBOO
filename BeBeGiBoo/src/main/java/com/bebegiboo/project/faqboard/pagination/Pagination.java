@@ -1,4 +1,4 @@
-package com.bebegiboo.project.common.pagination;
+package com.bebegiboo.project.faqboard.pagination;
 
 public class Pagination {
 	

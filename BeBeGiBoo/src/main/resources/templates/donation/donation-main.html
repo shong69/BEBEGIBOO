@@ -12,6 +12,10 @@
     <main class="main">
 
         <th:block th:replace="~{common/header}"></th:block>
+
+        <th:block th:if="${session.loginMember != null} and ${session.loginMember.authority == 3}">
+          <th:block th:replace="~{common/manager-bar}"></th:block>
+        </th:block>
     
 
         <div class="donation-container">

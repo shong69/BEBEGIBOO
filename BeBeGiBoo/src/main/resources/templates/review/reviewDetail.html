@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="/css/page/review/reviewDetail.css"></link>
 </head>
 <body>
-
-    <th:block th:replace="~{common/header}"></th:block>
-
     <main>
         <th:block th:replace="~{common/header}"></th:block>
+
+
+        <th:block th:if="${session.loginMember != null} and ${session.loginMember.authority == 3}">
+          <th:block th:replace="~{common/manager-bar}"></th:block>
+        </th:block>
+    
+
 
         <section class="board-detail" th:object="${board}">  
 

@@ -3,86 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원 관리 페이지</title>
+    <title>기부내역 관리 페이지</title>
 
     <th:block th:replace="~{common/common}"></th:block>
 
-    <link rel="stylesheet" href="/css/manager/membership.css">
+    <link rel="stylesheet" href="/css/manager/donationThings.css">
 </head>
 <body>
     <main>
         <th:block th:replace="~{common/header}"></th:block>
         <th:block th:replace="~{common/manager-bar}"></th:block>
 
-        <div class="membershipContainer">
+        <div class="donationThingsContainer">
 
-            <div id="membershipTitle" class="text" style="color: black;">
-                회원목록
+            <div id="donationThingsTitle" class="text" style="color: black;">
+                기부내역 관리
             </div>
 
 
 
 
-            <div id="membershipBoard">
-                
+            <div class="viewLayer">
+                <div id="donationThingsBoard"></div>
+
+
+                <div id="donationThings"></div>
             </div>
 
 
-            <!-- 수정 모달창 -->
-            <div class="popup-layer">
-                <div class="popup-close">x</div>
-
-                <div style="text-align: center; margin-bottom: 70px; margin-top: 50px;" class="text">회원정보 수정</div>
-
-                <table class="text" style="margin-left: 20px;">
-                    <tr>
-                        <td>이름</td>
-                        <td>
-                            <input id="name">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>이메일</td>
-                        <td>
-                            <input id="email">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>전화번호</td>
-                        <td>
-                            <input id="phone">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>주소</td>
-                        <td>
-                            <input id="address">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>탈퇴 여부</td>
-                        <td>
-                            <input id="del">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>권한</td>
-                        <td>
-                            <input id="authority">
-                        </td>
-                    </tr>
-
-                </table>
-
-                <input id="memberNo" type="hidden">
-
-                <div id="button-container">
-                    <button id="updateButton" style="margin-top: 30px; width: 100px;">수정하기</button>
-
-                </div>
-
-
-            </div>
 
 
 
@@ -167,7 +115,7 @@
 
     <th:block th:replace="~{common/footer}"></th:block>
 
-    <script src="/js/manager/membership.js"></script>
+    <script src="/js/manager/donationThings.js"></script>
     
 </body>
 </html>

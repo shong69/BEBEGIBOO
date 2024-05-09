@@ -44,6 +44,7 @@ public class DonationInfoController {
 									DonationProduct product,
 									@SessionAttribute("payment") Payment payment,
 									HttpSession session) {
+	
 		
 		int memberNo = loginMember.getMemberNo(); 
 		

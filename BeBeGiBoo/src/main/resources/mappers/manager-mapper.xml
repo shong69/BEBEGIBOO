@@ -8,6 +8,7 @@
 		FROM "MEMBER"
 	</select>
 
+
 	<update id="update">
 		UPDATE "MEMBER" SET
 		MEMBER_NAME = #{memberName},
@@ -18,7 +19,13 @@
 		AUTHORITY = #{authority}
 		WHERE MEMBER_NO = #{memberNo}
 	</update>
-
+	
+	<select id="selectDonationThingsList">
+		SELECT RECORD_NO, TO_CHAR(RECORD_DATE, 'YYYY-MM-DD') RECORD_DATE, ACCEPTOR_NO
+		FROM DONATION_RECORD
+		WHERE DONATOR_NO = #{memberNo}
+		ORDER BY RECORD_NO
+	</select>
 	
 
 </mapper>

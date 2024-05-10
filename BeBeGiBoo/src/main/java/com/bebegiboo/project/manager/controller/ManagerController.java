@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bebegiboo.project.donateInfo.dto.DonationProduct;
+import com.bebegiboo.project.donateInfo.dto.DonationRecord;
 import com.bebegiboo.project.manager.service.ManagerService;
 import com.bebegiboo.project.member.model.dto.Member;
 
@@ -74,9 +76,9 @@ public class ManagerController {
 	 * @return
 	 */
 	@ResponseBody
-	@GetMapping("selectDonationThings")
-	public List<DonationProduct> selectDonationThingsList() {
-		List<DonationProduct> donationThingsList = service.selectDonationThingsList();
+	@PostMapping("selectDonationThings")
+	public List<DonationRecord> selectDonationThingsList(@RequestBody int memberNo) {
+		List<DonationRecord> donationThingsList = service.selectDonationThingsList(memberNo);
 		
 		return donationThingsList;
 	}

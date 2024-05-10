@@ -20,9 +20,8 @@ function selectMember() {
                             member.memberName,
                             member.enrollDate];
 
-
+                const tr = document.createElement("tr");
                 tr.classList.add("shadow");
-
                 for(let key of arr){
                     const td = document.createElement("td");
                     td.innerText = key;
@@ -81,12 +80,6 @@ popupClose.addEventListener("click", () => {
 
 const updateButton = document.querySelector("#updateButton");
 
-updateButton.addEventListener("click", () => {
-
-
-
-});
-
 
 
 updateButton.addEventListener("click", () => {
@@ -139,3 +132,4 @@ updateButton.addEventListener("click", () => {
     }
 
 });
+

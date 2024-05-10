@@ -9,5 +9,23 @@
 		WHERE MEMBER_DEL_FL = 'N'
 		AND MEMBER_NO = #{memberNo}
 	</select>
-
+	
+	<!-- 정보 수정 -->
+	<update id="updateInfo">
+		UPDATE "MEMBER" SET 
+		EMAIL = #{email}, 
+		PHONE = #{phone}, 
+		MEMBER_PW = #{encPw},
+		ADDRESS = #{address}
+		WHERE MEMBER_NO = #{memberNo}
+	</update>
+	
+	<!-- 비밀번호 null일 때 정보 수정 -->
+	<update id="updateNoPw">
+		UPDATE "MEMBER" SET 
+		EMAIL = #{email}, 
+		PHONE = #{phone}, 
+		ADDRESS = #{address}
+		WHERE MEMBER_NO = #{memberNo}
+	</update>
 </mapper>

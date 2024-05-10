@@ -89,6 +89,26 @@ body {
     transition-duration: 0.5s;
     box-shadow: 5px 5px 5px gray;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+#donationThings tr {
+    display: flex;
+    margin-top: 15px;
+    border: 1px gray solid;
+}
+
+#donationThings tr > td:first-child {
+    flex-basis: 10%;
+    color: rgb(0,149,250);
+    text-align: center;
+}
+#donationThings tr > td:nth-child(2) {
+    flex-basis: 60%;
+}
+#donationThings tr > td:nth-child(3) {
+    flex-basis: 30%;
 }
 
 

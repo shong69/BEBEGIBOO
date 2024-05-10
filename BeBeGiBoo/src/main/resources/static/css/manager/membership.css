@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
->>>>>>> b0e1dfea78fcac5a7c2002b05087b270d1f19dfb
 body {
     background-color: lightgray;
 }
@@ -76,13 +73,10 @@ body {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-=======
 .shadow {
     box-shadow: 5px 5px 5px gray;
 }
 
->>>>>>> b0e1dfea78fcac5a7c2002b05087b270d1f19dfb
 
 
 
@@ -95,12 +89,6 @@ body {
     position: sticky;
     height: 600px;
     width: 400px;
-<<<<<<< HEAD
-    background-color: white;
-    box-shadow: 10px 10px 10px gray;
-    flex-direction: column;
-    justify-content: center;
-=======
     background-color: rgba(0, 0, 0, 0);
     box-shadow: 10px 10px 10px gray;
     flex-direction: column;
@@ -114,7 +102,6 @@ body {
 
 .popup-layer tr {
     height: 50px;
->>>>>>> b0e1dfea78fcac5a7c2002b05087b270d1f19dfb
 }
 
 .popup-close {
@@ -130,8 +117,6 @@ body {
     color: red;
 }
 
-<<<<<<< HEAD
-=======
 input {
     font-family: "Noto Sans KR", sans-serif;
     height: 30px;
@@ -156,7 +141,6 @@ input {
     cursor: pointer;
 }
 
->>>>>>> b0e1dfea78fcac5a7c2002b05087b270d1f19dfb
 
 
 

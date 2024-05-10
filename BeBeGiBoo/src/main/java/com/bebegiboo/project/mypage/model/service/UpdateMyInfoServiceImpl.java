@@ -2,6 +2,7 @@ package com.bebegiboo.project.mypage.model.service;
 
 import java.util.Map;
 
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +29,10 @@ public class UpdateMyInfoServiceImpl implements UpdateMyInfoService{
 	@Override
 	public int checkPw(Member loginMember) {
 		
+
+		String originPw = mapper.checkPw(loginMember.getMemberNo()); 
+		String inputPw = loginMember.getMemberPw();
+
 		String originPw = mapper.checkPw(loginMember.getMemberNo()); // 암호화된 상태잖아 
 		String inputPw = loginMember.getMemberPw(); 
 		
@@ -38,6 +43,7 @@ public class UpdateMyInfoServiceImpl implements UpdateMyInfoService{
 		
 		return 1;
 	}
+
 
 	@Override
 	public int updateInfo(Member inputMember, String[] address, Map<String, Object> paramMap) {
@@ -102,6 +108,5 @@ public class UpdateMyInfoServiceImpl implements UpdateMyInfoService{
 			
 			
 		}
-	
 	
 }

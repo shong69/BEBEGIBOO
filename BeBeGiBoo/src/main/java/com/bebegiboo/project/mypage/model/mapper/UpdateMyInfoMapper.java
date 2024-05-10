@@ -16,6 +16,7 @@ public interface UpdateMyInfoMapper {
 	String checkPw(int memberNo);
 
 
+
 	/** 내정보 수정 
 	 * @param inputMember
 	 * @param paramMap
@@ -29,6 +30,7 @@ public interface UpdateMyInfoMapper {
 	 * @return
 	 */
 	int updateNoPw(Map<String, Object> paramMap);
+
 	
 
 }

@@ -82,7 +82,6 @@ public class ManagerController {
 	@PostMapping("selectDonationThings")
 	public List<DonationRecord> selectDonationThingsList(@RequestBody int memberNo) {
 		List<DonationRecord> donationThingsList = service.selectDonationThingsList(memberNo);
-		log.info("asfaef" + donationThingsList);
 		
 		return donationThingsList;
 	}

@@ -91,8 +91,16 @@ body {
     transition-duration: 0.5s;
     box-shadow: 5px 5px 5px gray;
     overflow-y: auto;
+
     display: flex;
     flex-direction: column;
+}
+
+
+#donationThings tr {
+    display: flex;
+    margin-top: 15px;
+    border: 1px gray solid;
 }
 
 .duration {
@@ -113,7 +121,9 @@ body {
     color: rgb(0,149,250);
     text-align: center;
 }
-#donationThings tr > td:nth-child(2) {
+
+#donationThings tr > td:nth-child(3) {
+   
     width: 150px;
 }
 #donationThings tr > td:nth-child(3) {
@@ -167,6 +177,7 @@ body {
 #acceptorBox > tr > td:nth-child(4) {
     text-align: center;
     width: 140px;
+
 }
 #acceptorBox > tr > td:nth-child(5) {
     width: 390px;

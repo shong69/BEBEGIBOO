@@ -32,10 +32,9 @@ section {
 }
 #imageArea,
 .board-content{
-    background-color: red;
     display: flex;
-    justify-content: center;
     min-height: 300px;
+    margin : 20px;
 }
 
 .board-header {
@@ -46,8 +45,20 @@ section {
 .board-writer {
     display: flex;
 }
+
+.writer{
+    margin-bottom: 3px;
+}
+.readCount{
+    font-size: 12px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .board-btn-area{
     border-top: 1px solid #858585;
+    padding-top: 20px;
 }
 
 
@@ -72,6 +83,7 @@ section {
 
 #commentArea{
     width : 60%;
+    margin-bottom: 100px;
     border-top: 1px solid #858585;
 }
 
@@ -110,7 +122,7 @@ textarea::placeholder{
 #commentList {
     list-style: none;
 }
-#commentList li:first-child{
+.commentCount{
     font-weight: 600;
 
 }
@@ -119,22 +131,50 @@ textarea::placeholder{
     justify-content: space-between;
     margin-top: 10px;
 }
-.commentWrite div:first-of-type {
+.infoArea {
     display : flex;
     flex-direction: column;
     font-size: 12px;
+    margin-bottom : 10px;
 }
-.commentWrite div span:nth-child(2){
+.commentWriteDate{
     font-size: 10px;
 }
 
 .editBtn {
     width : 20px;
     height: 20px;
+    position: relative;
+    top:4px;
 }
 
-.commentContent{
-    border-bottom: 1px solid #ececec;
-    padding : 7px 12px;
+.editArea{
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 0;
+}
+.addChildBtn,
+.updateBtn,
+.deleteBtn,
+.insertBtn,
+.cancelBtn,
+.updateBtn {
+    border : 1px solid rgba(185, 185, 185, .5);
+    border-radius: 16px;
+    background-color: white;
     font-size: 12px;
+    padding:3px;
+    height: 25px;
+}
+
+.comment-btn-area {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+}
+.comment-content{
+    border-bottom: 1px solid #ececec;
+    padding : 0 12px 7px 12px;
+    font-size: 12px;
+    white-space : pre-wrap;
+
 }

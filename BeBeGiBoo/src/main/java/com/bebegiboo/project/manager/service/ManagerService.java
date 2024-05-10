@@ -27,6 +27,7 @@ public interface ManagerService {
 	 */
 	List<DonationRecord> selectDonationThingsList(int memberNo);
 
+
 	/** 기부물품 상세내역 조회
 	 * @param recordNo
 	 * @return

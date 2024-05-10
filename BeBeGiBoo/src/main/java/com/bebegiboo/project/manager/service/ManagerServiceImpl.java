@@ -43,6 +43,12 @@ public class ManagerServiceImpl implements ManagerService{
 	@Override
 	public List<DonationRecord> selectDonationThingsList(int memberNo) {
 
+
+		return mapper.selectDonationThingsList(memberNo);
+	}
+
+
+
 		return mapper.selectDonationThingsList(memberNo);
 	}
 

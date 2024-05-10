@@ -9,6 +9,7 @@
 		WHERE MEMBER_DEL_FL = 'N'
 		AND MEMBER_NO = #{memberNo}
 	</select>
+
 	
 	<!-- 정보 수정 -->
 	<update id="updateInfo">

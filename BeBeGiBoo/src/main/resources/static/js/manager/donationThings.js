@@ -67,7 +67,9 @@ function selectMember() {
 
                         donationThingsList.forEach( (product) => {
                             if(product.acceptorNo == 0) {
+
                                 product.acceptorName = "피기부자 없음";
+
                             }
 
                             let arr = [product.recordNo,
@@ -78,6 +80,7 @@ function selectMember() {
 
                             const div = document.createElement("div");
                             div.classList.add("duration");
+
                             const tr = document.createElement("tr");
                             tr.classList.add("shadow");
                             for(let key of arr){
@@ -86,6 +89,9 @@ function selectMember() {
                                 tr.append(td);
                                 tr.classList.add("text");
                             }
+
+                            donationThings.append(tr);
+
                             div.append(tr);
                             tr.style.cursor = "pointer";
                             donationThings.append(div);
@@ -225,6 +231,7 @@ function selectMember() {
                                     });
                                 });
                             });
+
                         });
                     });
 

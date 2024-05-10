@@ -21,11 +21,43 @@
 	</update>
 	
 	<select id="selectDonationThingsList">
+
 		SELECT RECORD_NO, TO_CHAR(RECORD_DATE, 'YYYY-MM-DD') RECORD_DATE, ACCEPTOR_NO
 		FROM DONATION_RECORD
 		WHERE DONATOR_NO = #{memberNo}
 		ORDER BY RECORD_NO
 	</select>
+
+		SELECT RECORD_NO, TO_CHAR(RECORD_DATE, 'YYYY-MM-DD') RECORD_DATE, ACCEPTOR_NO, MEMBER_NAME "ACCEPTOR_NAME"
+		FROM DONATION_RECORD
+		LEFT JOIN "MEMBER" ON(MEMBER_NO = ACCEPTOR_NO)
+		WHERE DONATOR_NO = #{memberNo}
+		ORDER BY RECORD_NO
+	</select>
+	
+	<select id="selectDonationDetailThingsList">
+		SELECT DONATOR_NAME, PHONE, PHONE2, ADDRESS, TO_CHAR(PICKUP_DATE, 'YYYY-MM-DD') PICKUP_DATE, MEMO, ACCEPTOR_NO
+		FROM DELIVERY_INFO LEFT JOIN DONATION_RECORD USING(RECORD_NO)
+		WHERE RECORD_NO = #{recordNo}
+	</select>
+	
+	<select id="selectProductNames">
+		SELECT PRODUCT_NAME FROM DONATION_PRODUCT WHERE RECORD_NO = #{recordNo}
+	</select>
+	
+	<select id="selectAcceptorNo">
+		SELECT ACCEPTOR_NO FROM DONATION_RECORD WHERE RECORD_NO = #{recordNo}
+	</select>
+	
+	<select id="selectAcceptorList">
+		SELECT MEMBER_NO, MEMBER_ID, MEMBER_NAME, EMAIL, PHONE, ADDRESS FROM "MEMBER" WHERE AUTHORITY = 2
+	</select>
+	
+	<update id="connectDonate">
+		UPDATE DONATION_RECORD SET
+		ACCEPTOR_NO = #{acceptorNo}
+		WHERE RECORD_NO = #{recordNo}
+	</update>
 	
 
 </mapper>

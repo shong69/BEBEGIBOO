@@ -20,7 +20,8 @@ public class DonationRecord {
 	private int recordNo; 
 	private String recordDate; 
 	private int donatorNo; 
-	private int acceptorNo; 
+	private int acceptorNo;
+	private String acceptorName;
 	
 	private List<DonationRecord> recordList;
 

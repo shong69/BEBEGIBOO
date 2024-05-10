@@ -212,7 +212,54 @@ function selectMember() {
                                                                 if(result > 0) {
                                                                     alert("기부연결 성공!");
                                                                     popup.style.display = 'none';
-                                                                    selectMember();
+                                                                    
+                                                                    
+                                                                    viewTitle.innerText = member.memberId;
+
+                                                                    donationThings.innerHTML = "";
+
+                                                                    tbody.style.transform = "translateX(-350px)";
+                                                                    donationThingsBox.style.transform = "translateX(-350px)";
+                                                                    donationThingsBox.style.visibility = 'visible';
+
+                                                                    fetch("/manager/selectDonationThings", {
+                                                                        method : "POST",
+                                                                        headers : {"Content-Type" : "application/json"},
+                                                                        body : JSON.stringify(member.memberNo)
+                                                                    })
+                                                                    .then(resp => resp.text())
+                                                                    .then(result => {
+                                                                        const donationThingsList = JSON.parse(result);
+
+                                                                        console.log(donationThingsList);
+
+                                                                        donationThingsList.forEach( (product) => {
+                                                                            if(product.acceptorNo == 0) {
+                                                                                product.acceptorName = "피기부자 없음";
+                                                                            }
+
+                                                                            let arr = [product.recordNo,
+                                                                                product.recordDate,
+                                                                                product.acceptorName];
+
+                                                                            console.log(product.recordNo, product.recordDate, product.acceptorName);
+
+                                                                            const div = document.createElement("div");
+                                                                            div.classList.add("duration");
+                                                                            const tr = document.createElement("tr");
+                                                                            tr.classList.add("shadow");
+                                                                            for(let key of arr){
+                                                                                const td = document.createElement("td");
+                                                                                td.innerText = key;
+                                                                                tr.append(td);
+                                                                                tr.classList.add("text");
+                                                                            }
+                                                                            div.append(tr);
+                                                                            tr.style.cursor = "pointer";
+                                                                            donationThings.append(div);
+
+                                                                        });
+                                                                    });
                                                                 } else {
                                                                     alert("기부연결 실패");
                                                                 }

@@ -58,7 +58,7 @@ public class UpdateMyInfoServiceImpl implements UpdateMyInfoService{
 		log.info("originPw : " + originPw);	
 		log.info("newPw : " + newPw);	
 		
-		if(newPw == null ) {
+		if(newPw.equals("")) {
 			
 			// 주소 // 
 			if(inputMember.getAddress().equals(",,")) {
@@ -103,9 +103,10 @@ public class UpdateMyInfoServiceImpl implements UpdateMyInfoService{
 				result =  mapper.updateInfo(paramMap); 
 					
 			} 
-			return result;
-		}	
 			
+		}	
+		
+		return result;
 			
 		}
 	

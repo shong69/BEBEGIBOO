@@ -49,8 +49,6 @@ public class ManagerServiceImpl implements ManagerService{
 
 
 
-		return mapper.selectDonationThingsList(memberNo);
-	}
 
 
 	// 기부물품 상세내역 조회

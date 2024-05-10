@@ -11,7 +11,6 @@ import com.bebegiboo.project.member.model.dto.Member;
 @Mapper
 public interface ManagerMapper {
 
-	/** 회원 목록 출력
 	/** 회원 목록 조회
 	 * @return
 	 */

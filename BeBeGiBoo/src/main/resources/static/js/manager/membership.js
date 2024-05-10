@@ -81,6 +81,7 @@ popupClose.addEventListener("click", () => {
 const updateButton = document.querySelector("#updateButton");
 
 
+
 updateButton.addEventListener("click", () => {
     var memberNo = document.querySelector("#memberNo");
     var name = document.querySelector("#name");

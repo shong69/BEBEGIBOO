@@ -8,7 +8,7 @@ import com.bebegiboo.project.member.model.dto.Member;
 
 public interface ManagerService {
 
-	/** 회원 목록 출력
+
 	/** 회원 목록 조회
 	 * @return
 	 */

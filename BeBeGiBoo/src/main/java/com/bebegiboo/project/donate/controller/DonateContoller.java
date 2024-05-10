@@ -78,13 +78,9 @@ public class DonateContoller {
 		map.put("식기", Integer.valueOf((String)obj.get("dishBox")));
 		map.put("가전", Integer.valueOf((String)obj.get("electronicBox")));
 		map.put("장난감", Integer.valueOf((String)obj.get("toyBox")));
-
         
         HttpSession session = req.getSession();
         
-        session.setAttribute("things", things);
-        session.setAttribute("delivery", delivery);
-        session.setAttribute("boxCount", map);
         
         int recordNo = service.recordInfo(memberNo);
         int thingsNo = service.thingsInfo(things, memberNo);
@@ -99,6 +95,11 @@ public class DonateContoller {
 		
 		log.info("result {} ", result);
 		log.info("계산" + payment);
+		
+		session.setAttribute("things", things);
+		session.setAttribute("delivery", delivery);
+		session.setAttribute("boxCount", map);
+		session.setAttribute("payment", payment);
         
 		return thingsNo + deliveryNo + recordNo;
 		

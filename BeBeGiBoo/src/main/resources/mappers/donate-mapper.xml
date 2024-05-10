@@ -18,7 +18,8 @@
 				#{address},
 				#{date},
 				#{memo},
-				#{memberNo})
+				#{memberNo},
+				SEQ_DONATION_RECORD_NO.CURRVAL)
 	</insert>
 	
 	

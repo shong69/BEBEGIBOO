@@ -1,5 +1,8 @@
 package com.bebegiboo.project.review.model.service;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,12 +17,13 @@ import lombok.RequiredArgsConstructor;
 public class CommentServiceImpl implements CommentService{
 
 	private final CommentMapper mapper;
-	//답글 달기
+	
+	//댓글 목록 불러오기
 	@Override
-	public int insert(Comment comment) {
-		
-		return mapper.insert(comment);
+	public List<Comment> select(int boardNo) {
+		return mapper.select(boardNo);
 	}
+	
 	
 	//댓글 삭제
 	@Override
@@ -35,4 +39,17 @@ public class CommentServiceImpl implements CommentService{
 		return mapper.update(comment);
 	}
 
+	@Override
+	public int insert(Comment comment) {
+
+		return mapper.insert(comment);
+	}
+
+
+
+
+
 }
+
+
+

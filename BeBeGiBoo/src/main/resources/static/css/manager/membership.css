@@ -90,12 +90,6 @@ body {
     position: sticky;
     height: 600px;
     width: 400px;
-
-    background-color: white;
-    box-shadow: 10px 10px 10px gray;
-    flex-direction: column;
-    justify-content: center;
-
     background-color: rgba(0, 0, 0, 0);
     box-shadow: 10px 10px 10px gray;
     flex-direction: column;

@@ -1,12 +1,21 @@
+/* ***** 댓글 목록 조회(ajax) ***** */
 const selectCommentList=()=>{
-    fetch("/comment?boardNo?"+boardNo)
+  console.log(boardNo);
+    fetch("/comment?boardNo="+boardNo)
     .then(resp => resp.json())
-    .then(result => {
+    .then(commentList => {
         console.log(commentList);
 
         const ul = document.querySelector("#commentList");
 
         ul.innerHTML="";
+
+        const commentCount = document.createElement("li");
+        commentCount.classList.add("commentCount");
+        commentCount.innerText = "전체 댓글 " +commentList.length+"개";
+
+        ul.append(commentCount);
+
 
         for(let comment of commentList){
             //댓글 행 만들기
@@ -21,30 +30,30 @@ const selectCommentList=()=>{
             //삭제되지 않은 경우
             else{ 
                 
-                const commentWriter = document.createElement("div");
-                commentWriter.classList.add("commentWriter");
+                const commentWrite = document.createElement("div");
+                commentWrite.classList.add("commentWrite");
 
                 //아이디, 작성일
                 const infoArea = document.createElement("div");
                 infoArea.classList.add("infoArea");
 
                 const memberId = document.createElement("span");
-                memberId.innerText = comment.memberId;
+                memberId.innerText = "@"+comment.memberId;
 
                 const commentDate = document.createElement("span");
-                commentDate.classList.add("commentDate");
+                commentDate.classList.add("commentWriteDate");
                 commentDate.innerText = comment.commentWriteDate;
 
                 infoArea.append(memberId, commentDate);
-                commentWriter.append(infoArea);
-                commentRow.append(commentWriter);
+                commentWrite.append(infoArea);
+                commentRow.append(commentWrite);
 
                 //--------------------------------------
                 //에딧 버튼 
                 const editBtn = document.createElement("img");
                 editBtn.setAttribute("src", "/images/addMore.png");
                 editBtn.classList.add("editBtn");
-                commentWriter.append(editBtn);
+                commentWrite.append(editBtn);
 
 
                 const editArea=document.createElement("div");
@@ -52,18 +61,21 @@ const selectCommentList=()=>{
                 editArea.style.display ='none';
 
                 const childCommentBtn = document.createElement("button");
+                childCommentBtn.classList.add("addChildBtn");
                 childCommentBtn.innerText = "답글";
 
                 editArea.append(childCommentBtn);
-                commentWriter.append(editArea);
+                commentWrite.append(editArea);
 
-                if(loginMember != null && loginMemberNo == comment.memberNo){
+                if(loginMemberNo != null && loginMemberNo == comment.memberNo){
                     const updateBtn = document.createElement("button");
+                    updateBtn.classList.add("updateBtn");
                     updateBtn.innerText="수정";
 
                     updateBtn.setAttribute("onclick", `showUpdateComment(${comment.commentNo},this)`);
 
                     const deleteBtn = document.createElement("button");
+                    deleteBtn.classList.add("deleteBtn");
                     deleteBtn.innderText = "삭제";
 
                     deleteBtn.setAttribute("onclick", `deleteComment(${comment.commentNo})`);
@@ -74,6 +86,7 @@ const selectCommentList=()=>{
                 //-------------------------------
                 const content = document.createElement("div");
                 content.classList.add("comment-content");
+
                 content.innerText = comment.commentContent;
 
                  commentRow.append(content);
@@ -84,16 +97,22 @@ const selectCommentList=()=>{
 }
 
 /***********editBtn 클릭 시 답글, 수정, 삭제 버튼 보이도록************ */
-const editBtn = document.querySelector(".editBtn");
-const editArea = document.querySelector(".editArea");
+const editBtnArray = document.getElementsByClassName("editBtn");
 
-editBtn.addEventListener("click", ()=>{
-    if(editArea.style.display == "none"){
-        editArea.style.display = "block";
-    }else{
-        editArea.style.display="none";
-    }
+
+Array.from(editBtnArray).forEach(e => {
+
+  e.addEventListener("click", ()=>{
+    const editArea = e.previousElementSibling;
+      if(editArea.style.display == "none"){
+          editArea.style.display = "block";
+      }else{
+          editArea.style.display="none";
+      }
+  });
 });
+
+
 /* ***** 댓글 등록(ajax) ***** */
 
 const addContent = document.querySelector("#addComment"); // button
@@ -101,17 +120,15 @@ const commentContent = document.querySelector("#commentContent"); // textarea
 
 addContent.addEventListener("click", e => {
 
-    // 로그인이 되어있지 않은 경우
-    if(loginMemberNo == null){
-        alert("로그인 후 이용해 주세요");
-        return; 
-    }
     // 댓글 내용이 작성되지 않은 경우
     if(commentContent.value.trim().length == 0){
         alert("내용 작성 후 등록 버튼을 클릭해 주세요");
         commentContent.focus();
         return;
     }
+
+
+
     // ajax를 이용해 댓글 등록하기
     const data = {
         "commentContent" : commentContent.value,
@@ -144,16 +161,17 @@ addContent.addEventListener("click", e => {
  * @param {*} btn 
  */
 const showInsertComment = (parentCommentNo, btn) => {
-
+  
   // ** 답글 작성 textarea가 한 개만 열릴 수 있도록 만들기 **
   const temp = document.getElementsByClassName("commentInsertContent");
-
+  
   if(temp.length > 0){ // 답글 작성 textara가 이미 화면에 존재하는 경우
-
+    
     if(confirm("답글을 작성 중입니다. 현재 댓글에 답글을 작성 하시겠습니까?")){
       temp[0].nextElementSibling.remove(); // 버튼 영역부터 삭제
+      const editArea = temp[0].previousElementSibling.previousElementSibling.children[1];
+      editArea.style.display = "none";
       temp[0].remove(); // textara 삭제 (기준점은 마지막에 삭제해야 된다!)
-    
     } else{
       return; // 함수를 종료시켜 답글이 생성되지 않게함.
     }
@@ -175,10 +193,12 @@ const showInsertComment = (parentCommentNo, btn) => {
 
   const insertBtn = document.createElement("button");
   insertBtn.innerText = "등록";
+  insertBtn.classList.add("insertBtn");
   insertBtn.setAttribute("onclick", "insertChildComment("+parentCommentNo+", this)");
 
   const cancelBtn = document.createElement("button");
   cancelBtn.innerText = "취소";
+  cancelBtn.classList.add("cancelBtn");
   cancelBtn.setAttribute("onclick", "insertCancel(this)");
 
 
@@ -279,6 +299,7 @@ const deleteComment = commentNo => {
     
     } else {
       alert("삭제 실패");
+      
     }
 
   })
@@ -325,7 +346,7 @@ const showUpdateComment = (commentNo, btn) => {
   // 요소.cloneNode(true) : 요소 복제, 
   //           매개변수 true == 하위 요소도 복제
   beforeCommentRow = commentRow.cloneNode(true);
-  // console.log(beforeCommentRow);
+  console.log("beforeCommentRow",beforeCommentRow);
 
   // 3. 기존 댓글에 작성되어 있던 내용만 얻어오기
   let beforeContent = commentRow.children[1].innerText;
@@ -333,13 +354,27 @@ const showUpdateComment = (commentNo, btn) => {
   // 4. 댓글 행 내부를 모두 삭제
   commentRow.innerHTML = "";
 
-  // 5. textarea 생성 + 클래스 추가 + 내용 추가
+  // 5. 아이디와 등록일 영역 추가
+  const infoArea = document.createElement("div");
+  infoArea.classList.add("infoArea");
+
+  const memberId = document.createElement("span");
+  memberId.classList.add("memberId");
+  memberId.innerText = beforeCommentRow.querySelector(".memberId").innerText;
+
+  const commentWriteDate = document.createElement("span");
+  commentWriteDate.classList.add("commentWriteDate");
+  commentWriteDate.innerText= beforeCommentRow.querySelector(".commentWriteDate").innerText;
+
+  infoArea.append(memberId, commentWriteDate);
+
+  // 5-1. textarea 생성 + 클래스 추가 + 내용 추가
   const textarea = document.createElement("textarea");
   textarea.classList.add("update-textarea");
   textarea.value = beforeContent;
 
   // 6. 댓글 행에 textarea 추가
-  commentRow.append(textarea);
+  commentRow.append(infoArea,textarea);
 
   // 7. 버튼 영역 생성
   const commentBtnArea = document.createElement("div");
@@ -348,11 +383,13 @@ const showUpdateComment = (commentNo, btn) => {
   // 8. 수정 버튼 생성
   const updateBtn = document.createElement("button");
   updateBtn.innerText = "수정";
+  updateBtn.classList.add("updateBtn");
   updateBtn.setAttribute("onclick", `updateComment(${commentNo}, this)`);
 
   // 9. 취소 버튼 생성
   const cancelBtn = document.createElement("button");
   cancelBtn.innerText = "취소";
+  cancelBtn.classList.add("cancelBtn");
   cancelBtn.setAttribute("onclick", "updateCancel(this)");
 
   // 10. 버튼 영역에 수정/취소 버튼 추가 후
@@ -387,7 +424,7 @@ const updateCancel = (btn) => {
 const updateComment = (commentNo, btn) => {
 
   // 수정된 내용이 작성된 textarea 얻어오기
-  const textarea = btn.parentElement.previousElementSibling;
+  const textarea = btn.parentElement.parentElement.nextElementSibling;
 
   // 유효성 검사
   if(textarea.value.trim().length == 0){

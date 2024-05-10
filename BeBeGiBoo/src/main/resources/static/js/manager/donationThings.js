@@ -43,12 +43,38 @@ function selectMember() {
                     donationThings.style.visibility = 'visible';
                     tr.style.backgroundColor = "rgb(208, 227, 241)";
 
-                    fetch("/manager/selectDonationThings")
+                    fetch("/manager/selectDonationThings", {
+                        method : "POST",
+                        headers : {"Content-Type" : "application/json"},
+                        body : JSON.stringify(member.memberNo)
+                    })
                     .then(resp => resp.text())
                     .then(result => {
                         const donationThingsList = JSON.parse(result);
 
                         console.log(donationThingsList);
+
+                        donationThingsList.forEach( (product) => {
+                            if(product.acceptorNo == 0) {
+                                product.acceptorNo = "피기부자 없음";
+                            }
+
+                            let arr = [product.recordNo,
+                                product.recordDate,
+                                product.acceptorNo];
+
+                            console.log(product.recordNo, product.recordDate, product.acceptorNo);
+
+                            const tr = document.createElement("tr");
+                            tr.classList.add("shadow");
+                            for(let key of arr){
+                                const td = document.createElement("td");
+                                td.innerText = key;
+                                tr.append(td);
+                                tr.classList.add("text");
+                            }
+                            donationThings.append(tr);
+                        });
                     });
 
                 });

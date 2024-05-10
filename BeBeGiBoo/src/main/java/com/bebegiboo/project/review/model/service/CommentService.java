@@ -1,5 +1,8 @@
 package com.bebegiboo.project.review.model.service;
 
+import java.util.List;
+import java.util.Map;
+
 import com.bebegiboo.project.review.model.dto.Comment;
 
 public interface CommentService {
@@ -21,5 +24,11 @@ public interface CommentService {
 	 * @return
 	 */
 	int udpate(Comment comment);
+
+	/**댓글 목록 불러오기
+	 * @return
+	 */
+	List<Comment> select(int boardNo);
+
 
 }

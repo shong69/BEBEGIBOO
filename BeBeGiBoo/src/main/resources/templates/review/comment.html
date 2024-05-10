@@ -13,7 +13,7 @@
 
     <div class="commentListArea">
         <ul id="commentList">
-            <li th:text="|전체 댓글 ${board.commentList.size}개|"></li>
+            <li class="commentCount"th:text="|전체 댓글 ${board.commentList.size}개|"></li>
 
             <li th:each="comment : ${board.commentList}"
                 th:classappend="${comment.parentCommentNo} != 0 ?childComment"
@@ -27,23 +27,23 @@
                     
                     <div class = "commentWrite">
                         <div class="infoArea">
-                            <span th:text="|@*{memberId}|">아이디</span>
-                            <span th:text="*{commentWriteDate}">작성일</span>
+                            <span class="memberId" th:text="|@*{memberId}|">아이디</span>
+                            <span class="commentWriteDate"th:text="*{commentWriteDate}">작성일</span>
                         </div>
                          
-                        <img th:if="${session.loginMember!=null}" src="/images/addMore.png" class="editBtn">
                         <div class="editArea" style="display: none;">
-                            <button th:onclick="|showInsertComment(*{commentNo}, this)|">답글</button>
+                            <button class="addChildBtn" th:onclick="|showInsertComment(*{commentNo}, this)|">답글</button>
                             
                             <th:block th:if="${session.loginMember != null and session.loginMember?.memberNo == comment.memberNo}">
-                                <button th:onclick="|showUpdateComment(*{commentNo}, this)|">수정</button>
-                                <button th:onclick="|deleteComment(*{commentNo})|">삭제</button>
+                                <button class="updateBtn" th:onclick="|showUpdateComment(*{commentNo}, this)|">수정</button>
+                                <button class="deleteBtn" th:onclick="|deleteComment(*{commentNo})|">삭제</button>
                             </th:block>
                         </div>
-                        
+                        <img th:if="${session.loginMember!=null}" src="/images/addMore.png" class="editBtn" style="cursor:pointer;">
+
                     </div>
                     
-                    <div class="comment-content" th:text="*{commentContent}">댓글 내용</div>
+                    <div class="comment-content" th:utext="*{commentContent}">댓글 내용</div>
                     
                 
                 </th:block>

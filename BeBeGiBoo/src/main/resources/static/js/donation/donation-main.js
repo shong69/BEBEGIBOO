@@ -152,7 +152,6 @@ nextButton.addEventListener("click", e=>{
             thingsValue[i].value = 0;
         } else if(thingsType[i].checked) {
             things[i].style.display = 'block';
-            thingsValue[i].value = 1;
         }
     }
 
@@ -228,6 +227,23 @@ nextButton.addEventListener("click", e=>{
                         }
 
 
+                    }else if(i == 4) {
+                        let modal = true;
+                        for(let i = 0; i < thingsType.length; i ++) {
+        
+                            if(thingsType[i].checked) {
+                                if(thingsValue[i].value == 0) {
+                                    modal = false;
+                                    alert("박스수량은 최소 1개 이상이어야 합니다");
+                                    break;
+                                }
+                            }
+                        }
+
+                        if(modal == true) {
+                            pagenation();
+                            break;
+                        }
                     } else if(i == 5) {
 
                         if(donatorName.trim().length == 0 || donatorPhone.trim().length == 0 || donatorPhone2.trim().length == 0 || postcode.trim().length == 0 || mainAddress.trim().length == 0 || detailAddress.trim().length == 0 || date.trim().length == 0 || memo.length == 0){
@@ -292,6 +308,23 @@ nextButton.addEventListener("click", e=>{
                         }
 
 
+                    }else if(i == 3) {
+                        let modal = true;
+                        for(let i = 0; i < thingsType.length; i ++) {
+        
+                            if(thingsType[i].checked) {
+                                if(thingsValue[i].value == 0) {
+                                    modal = false;
+                                    alert("박스수량은 최소 1개 이상이어야 합니다");
+                                    break;
+                                }
+                            }
+                        }
+
+                        if(modal == true) {
+                            pagenation();
+                            break;
+                        }
                     } else if(i == 4) {
 
                         if(donatorName.trim().length == 0 || donatorPhone.trim().length == 0 || donatorPhone2.trim().length == 0 || postcode.trim().length == 0 || mainAddress.trim().length == 0 || detailAddress.trim().length == 0 || date.trim().length == 0 || memo.length == 0){

@@ -117,43 +117,46 @@ Array.from(editBtnArray).forEach(e => {
 
 const addContent = document.querySelector("#addComment"); // button
 const commentContent = document.querySelector("#commentContent"); // textarea
+if(addContent != null){
+  
+    addContent.addEventListener("click", e => {
 
-addContent.addEventListener("click", e => {
-
-    // 댓글 내용이 작성되지 않은 경우
-    if(commentContent.value.trim().length == 0){
-        alert("내용 작성 후 등록 버튼을 클릭해 주세요");
-        commentContent.focus();
-        return;
-    }
+      // 댓글 내용이 작성되지 않은 경우
+      if(commentContent.value.trim().length == 0){
+          alert("내용 작성 후 등록 버튼을 클릭해 주세요");
+          commentContent.focus();
+          return;
+      }
 
 
 
-    // ajax를 이용해 댓글 등록하기
-    const data = {
-        "commentContent" : commentContent.value,
-        "boardNo"        : boardNo,
-        "memberNo"       : loginMemberNo  // 또는 Session 회원 번호 이용도 가능
-    };
+      // ajax를 이용해 댓글 등록하기
+      const data = {
+          "commentContent" : commentContent.value,
+          "boardNo"        : boardNo,
+          "memberNo"       : loginMemberNo  // 또는 Session 회원 번호 이용도 가능
+      };
 
-    fetch("/comment", {
-        method : "POST",
-        headers : {"Content-Type" : "application/json"},
-        body : JSON.stringify(data)
-    })
-    .then(response => response.text())
-    .then(result => {
-        if(result > 0){
-        alert("댓글이 등록 되었습니다");
-        commentContent.value = ""; // 작성한 댓글 내용 지우기
-        selectCommentList(); // 댓글 목록을 다시 조회해서 화면에 출력
-        } else{
-        alert("댓글 등록 실패");
-        }
+      fetch("/comment", {
+          method : "POST",
+          headers : {"Content-Type" : "application/json"},
+          body : JSON.stringify(data)
+      })
+      .then(response => response.text())
+      .then(result => {
+          if(result > 0){
+          alert("댓글이 등록 되었습니다");
+          commentContent.value = ""; // 작성한 댓글 내용 지우기
+          selectCommentList(); // 댓글 목록을 다시 조회해서 화면에 출력
+          } else{
+          alert("댓글 등록 실패");
+          }
 
-    })
-    .catch(err => console.log(err));
+      })
+      .catch(err => console.log(err));
 })
+
+}
 
 
 /** 답글 작성 화면 추가

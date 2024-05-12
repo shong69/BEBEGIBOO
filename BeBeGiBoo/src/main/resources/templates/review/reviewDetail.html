@@ -23,8 +23,8 @@
 
             <div class="board-header">
                 <div class="board-writer">
+                    <span class="readCount"> 조회수[[*{readCount}]]</span>  
                     <span class ="writer" th:text="*{memberId}">작성자 닉네임</span>
-                    <p class="readCount"> 조회수[[*{readCount}]]</p>  
                 </div>
 
                 <div class="board-info">
@@ -45,22 +45,19 @@
             <!-- ====================== 이미지가 있을 경우 출력하는 구문  ====================== -->
            
             <th:block th:if="${#lists.size(board.imageList)>0}" id="imageArea">
-                <th:block th:if="${ #lists.size(board.imageList)>start}"><!--썸네일만 이미지리스트에 있으면 출력 X-->
-                    <h5>업로드 이미지</h5>    <!--숫자 배열 만들어줌--><!--imageList 크기까지-->
-                    <th:block th:each="i : ${#numbers.sequence(start, #lists.size(board.imageList) - 1)}">
-                        <div class="img-box">
-                            <div class="boardImg">
-    
-                                <img th:src="|${board.imageList[i].imgPath}${board.imageList[i].imgRename}|"
-                                    >  
-    
-                                <a th:href="|${board.imageList[i].imgPath}${board.imageList[i].imgRename}|"
-                                th:download="${board.imageList[i].imgOriginalName}"
-                                >다운로드</a>                
-                            </div>
+
+                                            <!--숫자 배열 만들어줌--><!--imageList 크기까지-->
+                    <th:block th:each="i : ${#numbers.sequence(0, #lists.size(board.imageList) - 1)}">
+                        <div class="boardImg">
+
+                            <img th:src="|${board.imageList[i].imgPath}${board.imageList[i].imgRename}|"
+                            >  
+
+                            <a th:href="|${board.imageList[i].imgPath}${board.imageList[i].imgRename}|"
+                            th:download="${board.imageList[i].imgOriginalName}"
+                            >다운로드</a>                
                         </div>
-                    </th:block>                                      
-                </th:block>  
+                    </th:block>
             </th:block>
 
                 
@@ -76,12 +73,11 @@
             <div class="board-btn-area">
                 <!--로그인 한 사람(게시글 작성한 회원의 번호와 같아야함) 버튼을 볼 수 있도록-->
                 <th:block th:if="${board.memberNo==session.loginMember?.memberNo}"><!--안전 탐색 연산자:null아닌경우 뒤에 접근가능-->
-                    <button id="updateBtn">수정</button>
-                    <button id="deleteBtn">삭제(GET)</button>
-                    <button id="deleteBtn2">삭제(POST)</button>                
+                    <button id="updateBtn" style="cursor:pointer;">수정</button>
+                    <button id="deleteBtn" style="cursor:pointer;">삭제</button>                
                 </th:block>
 
-                <button id="goToListBtn">목록으로</button>
+                <button id="goToListBtn" style="cursor:pointer;"><a>목록으로</a></button>
 				
             </div>
 
@@ -100,6 +96,6 @@
         const boardNo = /*[[${board.boardNo}]]*/ "게시글 번호";
     </script>
     <script src="/js/page/review/comment.js"></script>
-
+    <script src="/js/page/review/reviewDetail.js"></script>
 </body>
 </html>

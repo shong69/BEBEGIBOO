@@ -14,7 +14,7 @@
 
     <th:block th:if="${session.loginMember != null} and ${session.loginMember.authority == 3}">
           <th:block th:replace="~{common/manager-bar}"></th:block>
-        </th:block>
+    </th:block>
 
     <main>
         <!--제목 배너-->
@@ -23,12 +23,15 @@
         </div>
     
         <!--작성 버튼-->
-        <div id="btnArea">
-            <a id = "btnArea_" th:if="${session.loginMember}">
-                <img id = "insertBtn" src="/images/insertBtn.png">
-                <span>작성하기</span>
-            </a>
-        </div>
+        <th:block th:if="${session.loginMember != null} and ${session.loginMember.authority == 2}">
+            <div id="btnArea">
+                <a id = "btnArea_" href="editReview/insert">
+                    <img id = "insertBtn" src="/images/insertBtn.png">
+                    <span>작성하기</span>
+                </a>
+            </div>
+        </th:block>
+
 
         <!--메인 내용-->
         <section id="tableArea">

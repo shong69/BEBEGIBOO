@@ -50,9 +50,10 @@ function selectMember() {
 
                     donationThings.innerHTML = "";
 
-                    tbody.style.transform = "translateX(-350px)";
-                    donationThingsBox.style.transform = "translateX(-350px)";
+                    tbody.style.transform = "translateX(-300px)";
+                    donationThingsBox.style.transform = "translateX(-300px)";
                     donationThingsBox.style.visibility = 'visible';
+                    donationThingsBox.style.position = "sticky";
 
                     fetch("/manager/selectDonationThings", {
                         method : "POST",
@@ -83,6 +84,7 @@ function selectMember() {
 
                             const tr = document.createElement("tr");
                             tr.classList.add("shadow");
+                            tr.style.border = "1px gray solid";
                             for(let key of arr){
                                 const td = document.createElement("td");
                                 td.innerText = key;
@@ -124,7 +126,7 @@ function selectMember() {
                                         extr.classList.add("text");
                                         extr.style.fontSize = "12px";
                                         extr.style.color = "rgb(0,149,250)";
-                                        extr.style.margin = "15px 0";
+                                        extr.style.marginTop = "10px";
                                         const nametd = document.createElement("td");
                                         const phonetd = document.createElement("td");
                                         const addresstd = document.createElement("td");
@@ -140,6 +142,7 @@ function selectMember() {
                                         extr.append(addresstd);
                                         extr.append(producttd);
                                         detailDiv.append(extr);
+                                        detailDiv.style.border = "1px gray solid";
 
                                         const tr = document.createElement("tr");
                                         for(let key of arr){
@@ -148,8 +151,7 @@ function selectMember() {
                                             tr.append(td);
                                             tr.classList.add("text");
                                         }
-                                        tr.style.marginBottom = "20px";
-                                        detailDiv.append(tr);
+                                        tr.style.marginBottom = "10px";                                        detailDiv.append(tr);
                                         if(detailProduct.acceptorNo == 0) {
                                             const acceptorButton = document.createElement("button");
                                             acceptorButton.innerText = "피기부자 연결하기";

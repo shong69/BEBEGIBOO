@@ -124,6 +124,12 @@ input {
   display: flex;
 }
 
+#memo::placeholder {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 12px;
+  margin: 10px;
+}
+
 
 .preNext {
   position: fixed;
@@ -168,6 +174,21 @@ input:disabled {
   background-color: white;
 }
 
+#searchKey {
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+  text-align: center;
+  border : 1px solid #dddd;
+}
+
+#payment {
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+  text-align: center;
+  border : 1px solid #dddd;
+}
 
 
 
@@ -257,4 +278,12 @@ figure.snip1425.hover:after {
   -webkit-transform: rotate3d(0, 0, 0, 0deg);
   transform: rotate3d(0, 0, 0, 0deg);
   opacity: 0.9;
+}
+
+#hover {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  color: rgb(82, 82, 82);
+  width: 200px;
 }

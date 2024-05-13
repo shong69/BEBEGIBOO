@@ -38,7 +38,6 @@ public class UpdateMyInfoController {
 		
 	}
 	
-
 	/** 비밀번호 체크 
 	 * @param loginMember
 	 * @param model
@@ -184,7 +183,6 @@ public class UpdateMyInfoController {
 		return "redirect:/";
 	}
 	
-
 
 
 }

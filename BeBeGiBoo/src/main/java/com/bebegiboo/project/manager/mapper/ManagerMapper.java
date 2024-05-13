@@ -52,7 +52,7 @@ public interface ManagerMapper {
 	/** 피기부자 목록 조회
 	 * @return
 	 */
-	List<Member> selectAcceptorList();
+	List<Member> selectAcceptorList(int recordNo);
 
 	/** 피기부자 등록
 	 * @param connectObj

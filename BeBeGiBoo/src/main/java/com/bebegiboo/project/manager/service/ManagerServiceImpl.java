@@ -60,9 +60,9 @@ public class ManagerServiceImpl implements ManagerService{
 
 	// 피기부자 목록 조회
 	@Override
-	public List<Member> selectAcceptorList() {
+	public List<Member> selectAcceptorList(int recordNo) {
 
-		return mapper.selectAcceptorList();
+		return mapper.selectAcceptorList(recordNo);
 	}
 
 

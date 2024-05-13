@@ -96,6 +96,14 @@ body {
     flex-direction: column;
 }
 
+#donationThings p {
+    font-family: "Noto Sans KR", sans-serif;
+    color: red;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
 
 #donationThings tr {
     display: flex;
@@ -119,12 +127,13 @@ body {
     text-align: center;
 }
 
-#donationThings tr > td:nth-child(3) {
-   
+#donationThings tr > td:nth-child(2) {
+    text-align: center;
     width: 150px;
 }
 #donationThings tr > td:nth-child(3) {
-    width: 350px;
+    width: 370px;
+    text-align: center;
 }
 
 #donationThings tr > td:nth-child(4) {

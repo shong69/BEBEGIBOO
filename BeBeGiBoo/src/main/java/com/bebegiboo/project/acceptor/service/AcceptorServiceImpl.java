@@ -2,6 +2,7 @@ package com.bebegiboo.project.acceptor.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -34,6 +35,13 @@ public class AcceptorServiceImpl implements AcceptorService{
 		
 
 		return productList;
+	}
+
+	// 기부 신청목록 삽입
+	@Override
+	public int insertWish(Map<String, Integer> map) {
+
+		return mapper.insertWish(map);
 	}
 	
 	

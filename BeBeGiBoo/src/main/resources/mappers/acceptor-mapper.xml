@@ -23,4 +23,9 @@
 		FROM DONATION_RECORD
 		WHERE ACCEPTOR_NO IS NULL
 	</select>
+	
+	<insert id="insertWish">
+		INSERT INTO "WISH_LIST"
+		VALUES(SEQ_WISH_LIST_NO.NEXTVAL, #{recordNo}, #{memberNo})
+	</insert>
 </mapper>

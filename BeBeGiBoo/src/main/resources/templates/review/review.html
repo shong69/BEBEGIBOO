@@ -20,6 +20,11 @@
         <!--제목 배너-->
         <div id="titleArea">
             <span>후기 게시판</span>
+            <div>베베기부에서는 기부받은 물품이 피기부자에게 잘 전달되었는지 확인 할 수 있도록 <br>
+                나눔 후기를 후기 게시판에서 볼 수 있습니다. <br>
+                후기 게시글은 오직 피기부자만이 직접 작성할 수 있습니다. <br>
+                
+            </div>
         </div>
     
         <!--작성 버튼-->
@@ -63,7 +68,7 @@
                                 <a th:if="${param.key}" th:href="@{/review/{boardNo} (boardNo=*{boardNo},cp=${pagination.currentPage})}",
                                 key="${param.key}" query="${param.query}" th:text="*{boardTitle}">게시글 제목</a>
 
-                                <th:block th:text="|[*{commentCount}]|" id="commentCount">댓글 수</th:block>
+                                <th:block th:text="|[*{commentCount}]|">댓글 수</th:block>
                             </td>
                             <td>
                                 <a th:text="*{memberId}">작성자 아이디</a>

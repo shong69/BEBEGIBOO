@@ -55,6 +55,8 @@ const selectCommentList=()=>{
                 const childCommentBtn = document.createElement("button");
                 childCommentBtn.classList.add("addChildBtn");
                 childCommentBtn.innerText = "답글";
+                childCommentBtn.setAttribute("onclick",
+                          `showInsertComment(${comment.commentNo}, this)`);
 
                 editArea.append(childCommentBtn);
                 commentWrite.append(editArea);
@@ -364,10 +366,8 @@ const showUpdateComment = (commentNo, btn) => {
   // 요소.cloneNode(true) : 요소 복제, 
   //           매개변수 true == 하위 요소도 복제
   beforeCommentRow = commentRow.cloneNode(true);
-
   // 3. 기존 댓글에 작성되어 있던 내용만 얻어오기
   let beforeContent = commentRow.children[1].innerText;
-
   // 4. 댓글 행 내부를 모두 삭제
   commentRow.innerHTML = "";
 
@@ -377,7 +377,7 @@ const showUpdateComment = (commentNo, btn) => {
 
   const memberId = document.createElement("span");
   memberId.classList.add("memberId");
-  memberId.innerText = beforeCommentRow.querySelector(".memberId").innerText;
+  //memberId.innerText = beforeCommentRow.querySelector(".memberId").innerText;
 
   const commentWriteDate = document.createElement("span");
   commentWriteDate.classList.add("commentWriteDate");

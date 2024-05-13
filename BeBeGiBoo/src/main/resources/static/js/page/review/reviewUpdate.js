@@ -131,7 +131,7 @@ for(let i=0 ; i<inputImageList.length ; i++){
       }
     }
 
-    previewList[i].src       = "/images/gallery.png"; // 미리보기 이미지 제거
+    previewList[i].src       = ""; // 미리보기 이미지 제거
     inputImageList[i].value  = ""; // input에 선택된 파일 제거
     backupInputList[i]       = undefined; // 백업본 제거
 

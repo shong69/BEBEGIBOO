@@ -115,7 +115,7 @@ window.addEventListener("scroll", () => {
 
 /* 인증 신청 폼 이동 */
 document.getElementById('confirm-button').addEventListener('click', ()=> {
-    location.href = '/certification/certification';
+    location.href = '/certification/certification-main';
 }); 
 
 /* FAQ 게시판 이동 */

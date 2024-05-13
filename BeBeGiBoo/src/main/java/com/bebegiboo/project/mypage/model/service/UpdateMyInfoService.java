@@ -24,4 +24,12 @@ public interface UpdateMyInfoService {
 	 */
 	int updateInfo(Member inputMember, String[] address, Map<String, Object> paramMap);
 
+
+	/** 회원 탈퇴 
+	 * @param memberPw
+	 * @param memberNo
+	 * @return
+	 */
+	int resign(String memberPw, int memberNo);
+
 }

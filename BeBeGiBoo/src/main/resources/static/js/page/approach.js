@@ -19,3 +19,7 @@ button3.addEventListener("click", () => {
 button4.addEventListener("click", () => {
     window.scrollTo({top:3000, behavior: 'smooth'});
 });
+
+button5.addEventListener("click", () => {
+    window.scrollTo({top:3800, behavior: 'smooth'});
+});

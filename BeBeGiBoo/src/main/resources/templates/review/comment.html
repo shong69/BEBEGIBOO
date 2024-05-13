@@ -35,8 +35,8 @@
                             <button class="addChildBtn" th:onclick="|showInsertComment(*{commentNo}, this)|">답글</button>
                             
                             <th:block th:if="${session.loginMember != null and session.loginMember?.memberNo == comment.memberNo}">
-                                <button class="updateBtn" th:onclick="|showUpdateComment(*{commentNo}, this)|">수정</button>
-                                <button class="deleteBtn" th:onclick="|deleteComment(*{commentNo})|">삭제</button>
+                                <button class="updateBtn-c" th:onclick="|showUpdateComment(*{commentNo}, this)|">수정</button>
+                                <button class="deleteBtn-c" th:onclick="|deleteComment(*{commentNo})|">삭제</button>
                             </th:block>
                         </div>
                         <img th:if="${session.loginMember!=null}" src="/images/addMore.png" class="editBtn" style="cursor:pointer;">

@@ -83,7 +83,6 @@ section {
 
 #updateBtn,
 #deleteBtn,
-#deleteBtn2,
 #goToListBtn,
 #addComment{
     border : 1px solid rgba(185, 185, 185, .5);
@@ -93,6 +92,7 @@ section {
     line-height: 30px;
     background-color: white;
     margin-bottom: 5px;
+    cursor:pointer;
 }
 
 
@@ -173,8 +173,8 @@ textarea::placeholder{
     margin-top: 0;
 }
 .addChildBtn,
-.updateBtn,
-.deleteBtn,
+.updateBtn-c,
+.deleteBtn-c,
 .insertBtn,
 .cancelBtn,
 .updateBtn {
@@ -183,7 +183,9 @@ textarea::placeholder{
     background-color: white;
     font-size: 12px;
     padding:3px;
+    width:32px;
     height: 25px;
+    cursor:pointer;
 }
 
 .comment-btn-area {

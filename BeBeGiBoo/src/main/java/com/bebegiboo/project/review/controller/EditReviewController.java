@@ -57,7 +57,7 @@ public class EditReviewController {
 		
 		//1. 게시글 내용 insert하기
 		inputBoard.setMemberNo(loginMember.getMemberNo());
-		
+
 		//2. insert하기
 		int boardNo = service.boardInsert(inputBoard, images);
 

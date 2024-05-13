@@ -176,7 +176,7 @@ public class MemberController {
 			
 			log.debug("test" + loginMember.getMemberId());
 			model.addAttribute("loginMember", loginMember);
-			
+
 			//쿠키 만들기
 			Cookie cookie = new Cookie("saveId", loginMember.getMemberId());
 			

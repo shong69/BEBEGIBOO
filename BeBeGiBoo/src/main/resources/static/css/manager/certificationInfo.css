@@ -1,9 +1,41 @@
+main{
+    margin: 120px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-tr{
+    border: 1px solid rgb(150, 150, 150) !important;
+}
+
+.list > tbody > tr > td:nth-of-type(2) {
+    width: 220px;
+
+}
+
+.select{
+    border: 0;
+    background-color: transparent;
+    color: #6987C9;
+    cursor: pointer;
+}
+
 
 /* 모달 */
   
 #modal {
-    width: 700px;
-    height: 500px;
+    width: 500px;
+    height: 420px;
     position:fixed;
     top: 50%;
     left: 50%;
@@ -20,3 +52,42 @@
 #modal.hidden {
     display: none;
 }
+
+
+.popup-close{
+    position: relative;
+    left: 225px;
+    top: -12px;
+    border: none;
+    background-color: transparent;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.text{
+    font-size: 15px;
+}
+
+input{
+    border: 1px solid rgb(208, 208, 208);
+    height: 26px;
+    width: 220px;
+    margin-left: 40px;
+}
+
+table{
+    border-collapse: separate;
+    border-spacing: 8px;
+}
+
+
+#updateButton{
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#updateButton:hover{
+    color: #6987C9;
+}
+

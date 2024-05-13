@@ -41,10 +41,6 @@ public class ManagerServiceImpl implements ManagerService{
 	public List<DonationRecord> selectDonationThingsList(int memberNo) {
 
 
-		return mapper.selectDonationThingsList(memberNo);
-	}
-
-
 
 
 

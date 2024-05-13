@@ -52,7 +52,6 @@ public class EditReviewServiceImpl implements EditReviewService{
 		
 		int boardNo = inputBoard.getBoardNo();
 
-		
 		//2. 업로드된 이미지가 실제로 존재하는 경우 업로드된 이미지만 별도 저장해서 BOARD_IMG 테이블에 INSERT
 		List<BoardImg> uploadList = new ArrayList<>();
 		
@@ -75,6 +74,7 @@ public class EditReviewServiceImpl implements EditReviewService{
 				
 
 				uploadList.add(img);				
+
 
 			}
 		}
@@ -147,7 +147,6 @@ public class EditReviewServiceImpl implements EditReviewService{
 							.build();
 				uploadList.add(img);
 
-				
 
 				//4. img 객체를 리스트 에 추가 + 수정 혹은 삽입 수행하기
 				result = mapper.updateImage(img);

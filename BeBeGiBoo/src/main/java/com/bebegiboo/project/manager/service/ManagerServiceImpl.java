@@ -13,11 +13,9 @@ import com.bebegiboo.project.manager.mapper.ManagerMapper;
 import com.bebegiboo.project.member.model.dto.Member;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
 public class ManagerServiceImpl implements ManagerService{
 	
 	private final ManagerMapper mapper;

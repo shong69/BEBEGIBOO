@@ -16,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bebegiboo.project.certification.model.dto.Certification;
-import com.bebegiboo.project.certification.model.dto.CertificationImg;
 import com.bebegiboo.project.certification.model.service.CertificationService;
 import com.bebegiboo.project.member.model.dto.Member;
 

@@ -37,6 +37,7 @@ public class UpdateMyInfoController {
 		return "/member/mypage/checkPw"; 
 		
 	}
+
 	
 	/** 비밀번호 체크 
 	 * @param loginMember

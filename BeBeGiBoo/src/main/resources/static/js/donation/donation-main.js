@@ -120,7 +120,7 @@ nextButton.addEventListener("click", e=>{
     var month = ("0" + (1 + ddate.getMonth())).slice(-2);
     var day = ("0" + ddate.getDate()).slice(-2);
 
-    date.min = year + "-" + month + "-" + day
+    document.querySelector("#date").min = year + "-" + month + "-" + day;
 
 
 

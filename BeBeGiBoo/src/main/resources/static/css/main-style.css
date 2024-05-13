@@ -353,7 +353,7 @@ a {
 }
 
 #logo {
-    width: 45px;
+    width: 40px;
     margin: 0 15px;
     cursor: pointer;
 }
@@ -458,6 +458,8 @@ a {
 
 .nav-child {
     font-size: 13px;
+    margin-right: 5px;
+    margin-bottom: 2px;
     height: 33px;
     width: 110px;
     background-color: rgb(254, 245, 220);
@@ -480,7 +482,7 @@ a {
 
 
 .footer-main {
-    border-top: 1px rgb(85, 85, 85) solid;
+    border-top: 1px #858585 solid;
     height: 200px;
     display: flex;
 }
@@ -495,7 +497,7 @@ a {
 
 #logo img {
     height: 100px;
-    margin-bottom: 13px;
+
 }
 
 #title {

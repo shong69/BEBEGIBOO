@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bebegiboo.project.member.model.dto.Member;
-import com.bebegiboo.project.review.model.dto.BoardImg;
 import com.bebegiboo.project.review.model.dto.CertificationBoard;
 import com.bebegiboo.project.review.model.service.ReviewService;
 
@@ -67,7 +66,7 @@ public class ReviewController {
 		model.addAttribute("reviewList", map.get("reviewList"));
 		model.addAttribute("pagination", map.get("pagination"));
 		
-		return "/review/review"; 
+		return "review/review"; 
 	}
 	
 	

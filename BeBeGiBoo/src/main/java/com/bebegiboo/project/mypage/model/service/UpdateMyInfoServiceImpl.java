@@ -33,6 +33,7 @@ public class UpdateMyInfoServiceImpl implements UpdateMyInfoService{
 		String originPw = mapper.checkPw(loginMember.getMemberNo()); 
 		String inputPw = loginMember.getMemberPw();
 
+
 		if(!bcrypt.matches(inputPw, originPw)) {
 			
 			return 0; 
@@ -100,11 +101,14 @@ public class UpdateMyInfoServiceImpl implements UpdateMyInfoService{
 				result =  mapper.updateInfo(paramMap); 
 					
 			} 
+
 			
 		}	
+				
 		
 		return result;
 			
+
 		}
 
 

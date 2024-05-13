@@ -6,18 +6,15 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import com.bebegiboo.project.certification.model.dto.Certification;
-import com.bebegiboo.project.donateInfo.dto.DonationProduct;
 import com.bebegiboo.project.donateInfo.dto.DonationRecord;
 import com.bebegiboo.project.manager.dto.DetailProduct;
 import com.bebegiboo.project.manager.mapper.ManagerMapper;
 import com.bebegiboo.project.member.model.dto.Member;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
 public class ManagerServiceImpl implements ManagerService{
 	
 	private final ManagerMapper mapper;
@@ -45,9 +42,6 @@ public class ManagerServiceImpl implements ManagerService{
 
 		return mapper.selectDonationThingsList(memberNo);
 	}
-
-
-
 
 
 

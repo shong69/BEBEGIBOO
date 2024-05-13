@@ -377,7 +377,7 @@ const showUpdateComment = (commentNo, btn) => {
 
   const memberId = document.createElement("span");
   memberId.classList.add("memberId");
-  //memberId.innerText = beforeCommentRow.querySelector(".memberId").innerText;
+  memberId.innerText = beforeCommentRow.querySelector(".memberId").innerText;
 
   const commentWriteDate = document.createElement("span");
   commentWriteDate.classList.add("commentWriteDate");

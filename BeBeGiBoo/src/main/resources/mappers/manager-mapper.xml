@@ -43,7 +43,10 @@
 	</select>
 	
 	<select id="selectAcceptorList">
-		SELECT MEMBER_NO, MEMBER_ID, MEMBER_NAME, EMAIL, PHONE, ADDRESS FROM "MEMBER" WHERE AUTHORITY = 2
+		SELECT M.MEMBER_NO, MEMBER_ID, MEMBER_NAME, EMAIL, PHONE, ADDRESS
+		FROM "MEMBER" m LEFT JOIN "WISH_LIST" w ON(m.MEMBER_NO = w.MEMBER_NO)
+		WHERE AUTHORITY = 2
+		AND RECORD_NO = #{recordNo}
 	</select>
 	
 	<update id="connectDonate">

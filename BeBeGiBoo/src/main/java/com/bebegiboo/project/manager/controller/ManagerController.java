@@ -110,9 +110,9 @@ public class ManagerController {
 	 * @return
 	 */
 	@ResponseBody
-	@GetMapping("selectAcceptor")
-	public List<Member> selectAcceptorList() {
-		List<Member> acceptorList = service.selectAcceptorList();
+	@PostMapping("selectAcceptor")
+	public List<Member> selectAcceptorList(@RequestBody int recordNo) {
+		List<Member> acceptorList = service.selectAcceptorList(recordNo);
 		
 		log.info("왜"+acceptorList);
 		

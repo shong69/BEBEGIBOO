@@ -50,8 +50,8 @@ function selectMember() {
 
                     donationThings.innerHTML = "";
 
-                    tbody.style.transform = "translateX(-300px)";
-                    donationThingsBox.style.transform = "translateX(-300px)";
+                    tbody.style.transform = "translateX(-320px)";
+                    donationThingsBox.style.transform = "translateX(-320px)";
                     donationThingsBox.style.visibility = 'visible';
                     donationThingsBox.style.position = "sticky";
 
@@ -64,7 +64,10 @@ function selectMember() {
                     .then(result => {
                         const donationThingsList = JSON.parse(result);
 
-                        console.log(donationThingsList);
+
+                        if(donationThingsList.length == 0) {
+                            donationThings.innerHTML = "<p>기부한 물품이 존재하지 않습니다.</p>";
+                        }
 
                         donationThingsList.forEach( (product) => {
                             if(product.acceptorNo == 0) {
@@ -110,8 +113,6 @@ function selectMember() {
                                 .then(resp => resp.text())
                                 .then(result => {
                                     const donationDetailThingsList = JSON.parse(result);
-            
-                                    console.log(donationDetailThingsList);
 
                                     donationDetailThingsList.forEach( (detailProduct) => {
             
@@ -154,7 +155,7 @@ function selectMember() {
                                         tr.style.marginBottom = "10px";                                        detailDiv.append(tr);
                                         if(detailProduct.acceptorNo == 0) {
                                             const acceptorButton = document.createElement("button");
-                                            acceptorButton.innerText = "피기부자 연결하기";
+                                            acceptorButton.innerText = "피기부자 지정";
                                             acceptorButton.classList.add("acceptorButton");
                                             detailDiv.append(acceptorButton);
 
@@ -165,7 +166,11 @@ function selectMember() {
                                                 donatorName.innerText = detailProduct.donatorName;
                                                 donateThings.innerText = detailProduct.productName;
     
-                                                fetch("/manager/selectAcceptor")
+                                                fetch("/manager/selectAcceptor", {
+                                                    method : "POST",
+                                                    headers : {"Content-Type" : "application/json"},
+                                                    body : JSON.stringify(product.recordNo)
+                                                })
                                                 .then(resp => resp.text())
                                                 .then(result => {
                                                     const acceptorList = JSON.parse(result);

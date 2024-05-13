@@ -38,7 +38,7 @@ public interface ManagerService {
 	/** 피기부자 목록 조회
 	 * @return
 	 */
-	List<Member> selectAcceptorList();
+	List<Member> selectAcceptorList(int recordNo);
 
 	/** 피기부자 연결
 	 * @param connectObj

@@ -190,9 +190,6 @@ input:disabled {
   border : 1px solid #dddd;
 }
 
-
-
-
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,600);
 figure.snip1425 {
@@ -282,8 +279,9 @@ figure.snip1425.hover:after {
 
 #hover {
   position: absolute;
-  top: 50%;
-  left: 20%;
-  color: rgb(82, 82, 82);
-  width: 200px;
+  top: 35%;
+  left: 45%;
+  color: white;
+  width: 250px;
+  font-size: 15px;
 }

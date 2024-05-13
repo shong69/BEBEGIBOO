@@ -458,6 +458,8 @@ a {
 
 .nav-child {
     font-size: 13px;
+    margin-right: 5px;
+    margin-bottom: 2px;
     height: 33px;
     width: 110px;
     background-color: rgb(254, 245, 220);

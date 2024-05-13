@@ -89,6 +89,7 @@
     margin-bottom: 10px;
     font-family: "Noto Sans KR", sans-serif;
     color: rgb(0,149,250);
+    margin-top: 80px;
   }
 
   .acceptorButton {
@@ -101,4 +102,9 @@
     width: 100px;
     height: 40px;
     margin-left: 150px;
+  }
+
+  .wish {
+    display: flex;
+    flex-direction: column;
   }

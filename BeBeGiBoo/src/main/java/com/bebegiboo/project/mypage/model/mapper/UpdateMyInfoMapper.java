@@ -29,6 +29,14 @@ public interface UpdateMyInfoMapper {
 	 */
 	int updateNoPw(Map<String, Object> paramMap);
 
+
+
+	/** 회원 탈퇴 
+	 * @param memberNo
+	 * @return
+	 */
+	int resign(int memberNo);
+
 	
 
 }

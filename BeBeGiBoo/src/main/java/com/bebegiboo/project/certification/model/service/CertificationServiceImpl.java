@@ -93,6 +93,7 @@ public class CertificationServiceImpl implements CertificationService{
 				img.getUploadFile().transferTo(new File(folderPath+img.getCImgRename()));
 			}
 		} else {
+			
 			throw new InsertException("이미지가 정상 삽입되지 않음"); 
 		}
 

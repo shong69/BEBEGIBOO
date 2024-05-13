@@ -23,17 +23,17 @@
                             <td>
                                 <details id="donation-detail">
                                     <summary id="donation-date">
-                                        <span th:text="${donationInfo.recordList[recordIndex.index].recordDate}">신청 날짜</span>
-                                        <span id="arrow">+</span>
+                                        <span th:text="${record.recordDate}">신청 날짜</span>
+                                        <span id="plus">+</span>
                                     </summary>  
                                     <figure>
                                         <table class="content">
                                             <tr>
                                                 <td>기부 물품</td>
                                                 <td>
-                                                    <span th:each="product : ${donationInfo.productList}" th:text="|${product.productName} |"></span>
+                                                    <span th:text="|${donationInfo.productList[recordIndex.index].productName} |"></span>                    
                                                     <br>
-                                                    <span th:text="|총 ${donationInfo.productList.size}박스|"></span>
+                                                    <span th:text="|총 ${donationInfo.productList[recordIndex.index].boxNo}박스|"></span> 
                                                 </td>
                                             </tr>
                                             <tr>
@@ -59,6 +59,15 @@
                                                         th:text="${donationInfo.deliveryList[recordIndex.index].memo}">배송메모</td>
 
                                             </tr>  
+                                            <tr>
+                                                <td>기부 물품 전달 여부</td>
+                                                <td th:if="${record.acceptorNo}">
+                                                    <span>매칭 성공하여 전달하였습니다.</span>
+                                                </td>
+                                                <td th:unless="${record.acceptorNo}">
+                                                    <span>아직 피기부자가 정해지지 않았습니다.</span>
+                                                </td>
+                                            </tr>
                                         </table>  
                                     </figure>
                                 </details>
@@ -79,6 +88,7 @@
 
 
         </main>
+
 
         <!-- 푸터 -->
         <th:block th:replace="~{common/footer}"></th:block>

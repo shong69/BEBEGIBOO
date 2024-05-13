@@ -10,6 +10,9 @@
     font-size: 15px;
 }
 
+main{
+    background-color: rgb(230, 230, 230);
+}
 
 section{
     margin: 120px auto;
@@ -45,11 +48,15 @@ section{
     padding: 10px;
     padding-left: 20px;
 }
+
 .select{
     border: 0;
     background-color: transparent;
     color: #6987C9;
     cursor: pointer;
+}
+.select:hover{
+    color: #303f5e;
 }
 
 
@@ -68,7 +75,8 @@ section{
     justify-content: center;
     align-items: center;
     background: rgb(255, 255, 255);
-    border: 1px solid rgb(150, 150, 150);
+    border: 1px solid #9faecf;
+    border-radius: 25px;
 }
 
 #modal.hidden {
@@ -98,6 +106,8 @@ input{
     height: 26px;
     width: 220px;
     margin-left: 40px;
+    padding: 10px;
+    font-size: 13px;
 }
 
 .modalTable{
@@ -147,6 +157,7 @@ input{
 
 .current{
     color: #6987C9;
-    text-decoration: underline;   
+    text-decoration: underline;  
+    text-underline-offset: 5px; 
 }
 

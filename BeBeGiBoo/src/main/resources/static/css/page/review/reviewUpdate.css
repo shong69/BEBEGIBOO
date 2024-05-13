@@ -12,7 +12,6 @@
 .board-write{
     width: 1000px;
     min-height: 700px;
-    border:  1px solid #ccc;
     margin: 50px auto;
     padding: 20px;
     margin-top: 100px;
@@ -35,7 +34,7 @@
     border-bottom-color: rgb(0, 149, 255);
 }
 
-#noticeArea {
+#noticeArea { 
     margin : 30px 0;
     padding:0 5px;
     font-size: 16px;
@@ -74,12 +73,9 @@ h5 {
     display: flex;
     justify-content: center;
     align-items: center;
-<<<<<<< HEAD
     border: 6px solid black;
     border-radius: 17px;
-=======
     border: 1px solid #ccc;
->>>>>>> a2533bbade6bdcd3baad042188ccf0720c13c03a
     cursor: pointer;
 }
 
@@ -103,6 +99,8 @@ h5 {
     border-top : 3px solid #ccc;
     border-bottom : 3px solid #ccc;
     font-size: 18px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 [name="boardContent"]{
@@ -119,6 +117,7 @@ h5 {
 /* 버튼 영역 */
 .board-btn-area{
     text-align: right;
+    margin-bottom: 30px;
 }
 
 /* 버튼 */

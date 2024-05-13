@@ -553,6 +553,7 @@ a {
 
 /**************심플 푸터*************/
 #simpleFooter{
+    font-family: "Noto Sans KR", sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;

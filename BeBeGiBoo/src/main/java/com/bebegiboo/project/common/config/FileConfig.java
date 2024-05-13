@@ -1,17 +1,18 @@
 package com.bebegiboo.project.common.config;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
-
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.util.unit.DataSize;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import com.bebegiboo.project.common.filter.LoginFilter;
 
 import jakarta.servlet.MultipartConfigElement;
 
@@ -106,5 +107,7 @@ public class FileConfig implements WebMvcConfigurer {
 			
 			return multipartResolver;
 		}
+		
+
 
 }

@@ -73,8 +73,7 @@ h5 {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 6px solid black;
-    border-radius: 17px;
+    border: 1px solid #ccc;
     cursor: pointer;
 }
 

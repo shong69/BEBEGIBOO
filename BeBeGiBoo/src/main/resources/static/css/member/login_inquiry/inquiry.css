@@ -49,7 +49,10 @@ main {
 	margin-bottom: 40px;
 }
 
-
+#font-logo{
+	width:200px;
+	height : 80px;
+}
 
 main div:nth-child(2) {
 	display : flex;

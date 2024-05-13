@@ -34,7 +34,9 @@ section {
 .board-content{
     display: flex;
     min-height: 300px;
-    margin : 20px;
+    margin : 30px auto;
+    white-space : pre-wrap;
+    max-width: 80%;
 }
 
 .board-header {

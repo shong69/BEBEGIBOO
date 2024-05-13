@@ -6,7 +6,6 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import com.bebegiboo.project.certification.model.dto.Certification;
-import com.bebegiboo.project.donateInfo.dto.DonationProduct;
 import com.bebegiboo.project.donateInfo.dto.DonationRecord;
 import com.bebegiboo.project.manager.dto.DetailProduct;
 import com.bebegiboo.project.manager.mapper.ManagerMapper;
@@ -40,7 +39,7 @@ public class ManagerServiceImpl implements ManagerService{
 	// 기부물품 목록 조회
 	@Override
 	public List<DonationRecord> selectDonationThingsList(int memberNo) {
-		
+
 		return mapper.selectDonationThingsList(memberNo);
 	}
 

@@ -1,4 +1,4 @@
-main{
+section{
     margin: 120px auto;
     display: flex;
     flex-direction: column;
@@ -6,23 +6,30 @@ main{
     align-items: center;
 }
 
-.list{
+.list {
+    border-collapse: collapse;
     width: 800px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
-.list-tr{
-    border: 1px solid rgb(150, 150, 150) !important;
+.listTr {
+    border-bottom : 1px solid rgb(190, 190, 190);
+
 }
 
+.list> tbody > tr > td{
+    padding: 12px;
+}
+.list> tbody > tr > td:nth-of-type(1){
+    padding-left: 35px;
+}
 .list > tbody > tr > td:nth-of-type(2) {
     width: 220px;
 
 }
-
+#certificationInfoTitle{
+    margin-bottom: 40px;
+    padding: 10px;
+}
 .select{
     border: 0;
     background-color: transparent;
@@ -75,7 +82,7 @@ input{
     margin-left: 40px;
 }
 
-table{
+.modalTable{
     border-collapse: separate;
     border-spacing: 8px;
 }

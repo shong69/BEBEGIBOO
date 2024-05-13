@@ -6,7 +6,7 @@
 
 
 /* 전반적 설정 */
-main{
+.main-section {
     margin: 150px auto;
     width: 900px;
     min-height: 700px;
@@ -154,6 +154,7 @@ table{
     padding: 5px;
     font-size: 11px;
     background-color: white;
+    color: rgb(150, 150, 150);
 }
 
 #editBtn{

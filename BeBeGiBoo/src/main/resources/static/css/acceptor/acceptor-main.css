@@ -82,3 +82,23 @@
     height: 600px;
     width: 400px;
   }
+
+  .donateDate {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: "Noto Sans KR", sans-serif;
+    color: rgb(0,149,250);
+  }
+
+  .acceptorButton {
+    cursor: pointer;
+    background-color: white;
+    font-family: "Noto Sans KR", sans-serif;
+    color: rgb(0,149,250);
+    border: 2px rgb(0,149,250) solid;
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+    margin-left: 150px;
+  }

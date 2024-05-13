@@ -26,11 +26,9 @@ public class FilterConfig {
 		
 		filter.setFilter(new LoginFilter());
 		
-
 		String[] filteringURL = {"/acceptor/*","/myPage/*", "/certification/*", 
 				"/donation/*","/member/mypage/*" ,"/manager/*","/faqBoard/editFaq", "/faqBoard/insertFaq",
 				"/editReview/*"}; //실제 주소로 적어야함
-		
 	
 		filter.setUrlPatterns( Arrays.asList(filteringURL));
 		

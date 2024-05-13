@@ -607,7 +607,7 @@ a {
 
 .donation-container-1 {
     border: 1px black solid;
-    width: 60%;
+    width: 1300px;
     height: 150px;
     margin-bottom: 100px;
     display: flex;
@@ -621,9 +621,9 @@ a {
 
 .donation-container-2 {
     border: 1px black solid;
-    width: 60%;
+    width: 1300px;
     height: 600px;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;

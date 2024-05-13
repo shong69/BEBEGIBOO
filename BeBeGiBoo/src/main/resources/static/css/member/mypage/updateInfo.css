@@ -1,7 +1,11 @@
-
-
+@font-face {
+    font-family: 'ONE-Mobile-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 *{
-    font-size: 15px;
+    font-family: 'ONE-Mobile-Regular';
 }
 
 
@@ -46,6 +50,10 @@ table{
     margin-left: 50px;
     margin-bottom: 15px;
     font-size: 15px;
+}
+
+input{
+    height: 30px;
 }
 
 
@@ -97,7 +105,7 @@ table{
     justify-content: center;
     align-items: center;
     width: 800px;
-    height: 150px;
+    height: 300px;
     border: 1px solid rgb(207, 207, 207);
     padding: 40px;
 }
@@ -119,10 +127,9 @@ table{
 }
 
 #agree{
-    width: 14px;
-    height: 14px;
-    margin-left: 10px;
-    margin-right: 225px;
+    width: 15px;
+    height: 15px;
+    margin-right: 232px;
 }
 
 #memberPw{
@@ -155,6 +162,7 @@ table{
     font-size: 11px;
     background-color: white;
     color: rgb(150, 150, 150);
+    margin-left: 7px;
 }
 
 #editBtn{
@@ -202,11 +210,10 @@ table{
 }
 
 #openBtn{
-
     border: none;
-    background-color: white;
-    font-weight: 600;
-    font-size: 18px;
+    border-bottom: 1px solid gray;
+    font-size: 15px;
+    background-color: transparent;
     cursor: pointer;
 }
 

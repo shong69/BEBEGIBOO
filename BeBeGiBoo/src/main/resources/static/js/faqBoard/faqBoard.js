@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             const summary = document.createElement('summary');
                             const figure = document.createElement('figure');
                             //summary.textContent = "[" + faqBoard.categoryNo + "]" + "   " + faqBoard.question;
+                            summary.innerHTML = "<span class='category-no'>[" + faqBoard.categoryNo + "]  </span> " + faqBoard.question;
                             summary.innerHTML = "<div>" + "<span class='category-no'>[" + faqBoard.categoryNo + "]  </span> " 
                                                 + "<span>" + faqBoard.question + "</span>" + "</div>";
                             figure.textContent = faqBoard.answer;
@@ -89,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             if (loginMemberAuthority === 3) {
                                 const buttonsDiv = document.createElement('div');
                                buttonsDiv.innerHTML = `<form><a href="editFaq?qNo=${faqBoard.qno}" id="editBtn">수정</a></form> `;
-                               
+
                                 // 새로운 <form> 요소 생성
                                 var formElement = document.createElement("form");
                                 formElement.method = "post";
@@ -130,8 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             details.appendChild(figure);
                             tr.appendChild(details);
                             faqListTable.appendChild(tr);
-                            summary.classList.add('categoryNo');
-                            figure.classList.add('addFigure');
                            
                             // 엔터 적용 
                             figure.innerHTML = faqBoard.answer.replace(/\n/g, "<br>");

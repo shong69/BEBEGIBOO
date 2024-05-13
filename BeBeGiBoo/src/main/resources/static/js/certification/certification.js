@@ -1,7 +1,8 @@
 /* 생년월일 유효성 검사 */
 
 const memberBirth = document.querySelector("#memberBirth"); 
-const formMessage = document.querySelector("#formMessage"); 
+const birthMessage = document.querySelector("#birthMessage"); 
+const phoneMessage = document.querySelector("#phoneMessage"); 
 
 memberBirth.addEventListener("input", e => {
 
@@ -20,16 +21,16 @@ memberBirth.addEventListener("input", e => {
     
     // 유효하지 않은 경우 
     if( !regExp.test(inputBirth) ) {
-        formMessage.innerText = "생년월일 8자리 '-' 없이 입력해주세요"; 
-        formMessage.classList.add('error'); 
-        formMessage.classList.remove('confirm'); 
+        birthMessage.innerText = "생년월일 8자리 '-' 없이 입력해주세요"; 
+        birthMessage.classList.add('error'); 
+        birthMessage.classList.remove('confirm'); 
         return; 
     }
 
     // 유효한 경우 
-    formMessage.innerText = ""; 
-    formMessage.classList.add('confirm'); 
-    formMessage.classList.remove('error'); 
+    birthMessage.innerText = ""; 
+    birthMessage.classList.add('confirm'); 
+    birthMessage.classList.remove('error'); 
 
 
 }); 
@@ -46,8 +47,8 @@ phone.addEventListener("input", e => {
 
      // 입력되지 않은 경우 
      if(inputPhone.trim().length === 0) {
-        formMessage.innerText = "핸드폰번호 '-'포함해서 입력해주세요"; 
-        formMessage.classList.remove('confirm', 'error'); 
+        phoneMessage.innerText = "핸드폰번호 '-'포함해서 입력해주세요"; 
+        phoneMessage.classList.remove('confirm', 'error'); 
         phone.value = ""; 
         return; 
     }
@@ -57,16 +58,16 @@ phone.addEventListener("input", e => {
     
     // 유효하지 않은 경우 
     if( !regExp.test(inputPhone) ) {
-        formMessage.innerText = "핸드폰번호 '-'포함해서 입력해주세요"; 
-        formMessage.classList.add('error'); 
-        formMessage.classList.remove('confirm'); 
+        phoneMessage.innerText = "핸드폰번호 '-'포함해서 입력해주세요"; 
+        phoneMessage.classList.add('error'); 
+        phoneMessage.classList.remove('confirm'); 
         return; 
     }
 
     // 유효한 경우 
-    formMessage.innerText = ""; 
-    formMessage.classList.add('confirm'); 
-    formMessage.classList.remove('error'); 
+    phoneMessage.innerText = ""; 
+    phoneMessage.classList.add('confirm'); 
+    phoneMessage.classList.remove('error'); 
 
 }); 
 

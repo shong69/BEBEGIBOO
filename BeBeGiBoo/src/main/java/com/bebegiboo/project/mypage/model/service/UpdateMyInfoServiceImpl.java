@@ -32,7 +32,7 @@ public class UpdateMyInfoServiceImpl implements UpdateMyInfoService{
 
 		String originPw = mapper.checkPw(loginMember.getMemberNo()); 
 		String inputPw = loginMember.getMemberPw();
-		
+
 		if(!bcrypt.matches(inputPw, originPw)) {
 			
 			return 0; 
@@ -106,5 +106,21 @@ public class UpdateMyInfoServiceImpl implements UpdateMyInfoService{
 		return result;
 			
 		}
+
+
+	/**
+	 * 회원 탈퇴 
+	 */
+	@Override
+	public int resign(String memberPw, int memberNo) {
+		
+		String originPw = mapper.checkPw(memberNo); 
+		
+		if( !bcrypt.matches(memberPw, originPw)) {
+			return 0; 
+		}
+		
+		return mapper.resign(memberNo);
+	}
 	
 }

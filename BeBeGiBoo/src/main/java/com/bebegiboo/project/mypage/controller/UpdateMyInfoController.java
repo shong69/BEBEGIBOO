@@ -1,5 +1,6 @@
 package com.bebegiboo.project.mypage.controller;
 
+import java.util.Arrays;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -9,11 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.bebegiboo.project.member.model.dto.Member;
 import com.bebegiboo.project.mypage.model.service.UpdateMyInfoService;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -34,9 +37,6 @@ public class UpdateMyInfoController {
 		return "/member/mypage/checkPw"; 
 		
 	}
-	
-
-
 	
 	/** 비밀번호 체크 
 	 * @param loginMember
@@ -62,7 +62,10 @@ public class UpdateMyInfoController {
 		
 		String address = loginMember.getAddress();
 		
+		log.info("address : " + address);
+		
 		if(address != null) {
+			
 			String[] arr = address.split("\\^\\^\\^"); 
 			
 			model.addAttribute("postcode", arr[0]); 
@@ -72,7 +75,6 @@ public class UpdateMyInfoController {
 				
 		if(result > 0) {
 			
-			message = "비밀번호 체크 성공!";
 			path = "/member/mypage/updateMyInfo";
 			
 		}
@@ -86,14 +88,12 @@ public class UpdateMyInfoController {
 		return path;
 	}
 	
-	
-	
-
-	/** 내 정보 수정 
+	/** 회원 정보 수정 
 	 * @param loginMember
 	 * @param inputMember
 	 * @param address
 	 * @param paramMap
+	 * @param model
 	 * @param ra
 	 * @return
 	 */
@@ -102,9 +102,10 @@ public class UpdateMyInfoController {
 								  Member inputMember, 
 								  @RequestParam("address") String[] address,
 								  @RequestParam Map<String, Object> paramMap,
+								  Model model,
 								  RedirectAttributes ra ) {
 		
-		log.info("address : " + address);
+		log.info("address : " + Arrays.toString(address));
 		
 		int memberNo = loginMember.getMemberNo(); 
 		inputMember.setMemberNo(memberNo); 
@@ -124,6 +125,18 @@ public class UpdateMyInfoController {
 			loginMember.setPhone(inputMember.getPhone()); 
 			loginMember.setAddress(inputMember.getAddress());
 			
+			String inputAddress = loginMember.getAddress(); 
+			log.info("inputAddress : " + inputAddress);
+			
+			if(inputAddress != null) {
+				
+				String[] arr = inputAddress.split(","); 
+				
+				model.addAttribute("postcode", arr[0].trim()); 
+				model.addAttribute("mainAddress", arr[1].trim()); 
+				model.addAttribute("detailAddress", arr[2].trim()); 
+			}
+			
 			path = ""; 
 			message = "수정 완료!"; 
 		} else {
@@ -136,7 +149,40 @@ public class UpdateMyInfoController {
 		return "/member/mypage/updateMyInfo"; 
 	}
 	
+	
+	/** 회원 탈퇴 
+	 * @param memberPw
+	 * @param loginMember
+	 * @param session
+	 * @param ra
+	 * @return
+	 */
+	@PostMapping("resign")
+	public String resign( @RequestParam("memberPw") String memberPw,
+						  @SessionAttribute("loginMember") Member loginMember,
+						  HttpSession session,
+						  RedirectAttributes ra) {
+		
+		int memberNo = loginMember.getMemberNo(); 
+		
+		int result = service.resign(memberPw, memberNo); 
+		
+		String message = null; 
+		
+		if(result > 0) {
+			message = "탈퇴되었습니다"; 		
+			session.invalidate();
+		}
+		else {
+			message = "비밀번호가 일치하지 않습니다."; 
 
+		}
+		
+		ra.addFlashAttribute("message", message);
+		
+		return "redirect:/";
+	}
+	
 
 
 }

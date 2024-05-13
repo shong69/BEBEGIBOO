@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certification List</title>
+
+    <th:block th:replace="~{common/common}"></th:block>
+
+    <link rel="stylesheet" href="/css/manager/certificationInfo.css">
+</head>
+<body>
+    <th:block th:replace="~{common/header}"></th:block>
+    <th:block th:replace="~{common/manager-bar}"></th:block>
+    
+    <main>
+        
+
+        <div class="certificationInfoContainer">
+
+            <div id="certificationInfoTitle" class="text" style="color: black;">
+                기부내역 관리
+            </div>
+
+            <div class="viewLayer">
+                <div id="certificationInfoBoard"></div>
+
+                <div id="certificationInfoBox">
+                    <table class="list">
+                        <tr class="list-tr">
+                            <td style="width: 150px;">신청인 ID</td>
+                            <td>신청일</td>
+                            <td></td>
+                        </tr>                    
+                        <tr th:each="certification : ${certification}" class="list-tr">
+                            <td th:text="${certification.memberId}"></td>
+                            <td th:text="${certification.cDate}"></td>
+                            <td>
+                                 <!-- 확인하기 버튼에 모달창 불러오기 -->
+                                <button class="select" 
+                                    th:attr="data-memberName=${certification.memberName}, 
+                                            data-certificationId=${certification.certificationId}, 
+                                            data-memberBirth=${certification.memberBirth}, 
+                                            data-phone=${certification.phone}, 
+                                            data-address=${certification.address},
+                                            data-memberNo=${certification.memberNo}">확인하기</button>
+                            </td>
+                        </tr>                  
+                    </table>
+                </div>
+            </div>
+
+           
+            <!-- 수정 모달창 -->
+            <div id="modal" class="hidden">
+                <button class="popup-close">x</button>
+
+                <div style="text-align: center; margin-bottom: 30px;" class="text">신청 정보 확인</div>
+
+                <table class="text">
+                    <tr>
+                        <td>이름</td>
+                        <td>
+                            <input id="name" name="memberName">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1365 ID</td>
+                        <td>
+                            <input id="certificationId" name="certificationId">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>생년월일</td>
+                        <td>
+                            <input id="birth" name="memberBirth">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>핸드폰번호</td>
+                        <td>
+                            <input id="phone" name="phone">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>주소</td>
+                        <td><input id="postcode" name="address"></td>                           
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input id="mainAddress" name="address"></td>                              
+                    </tr> 
+                    <tr>
+                        <td></td>
+                        <td><input id="detailAddress" name="address"></td>
+                    </tr>
+                </table>
+
+                <input id="memberNo" type="hidden" name="memberNo">
+
+                <div id="button-container">
+                    <button id="updateButton" style="margin-top: 20px; width: 100px;">수정하기</button>
+                </div>
+            </div>
+    </main>    
+
+    <th:block th:replace="~{common/footer}"></th:block>
+
+    <script src="/js/manager/certificationInfo.js"></script>
+                
+</body>
+
+</html>

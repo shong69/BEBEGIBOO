@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-
+import com.bebegiboo.project.certification.model.dto.Certification;
 import com.bebegiboo.project.donateInfo.dto.DonationProduct;
 import com.bebegiboo.project.donateInfo.dto.DonationRecord;
 import com.bebegiboo.project.manager.dto.DetailProduct;
@@ -45,8 +45,6 @@ public class ManagerServiceImpl implements ManagerService{
 
 
 
-		return mapper.selectDonationThingsList(memberNo);
-	}
 
 
 	// 기부물품 상세내역 조회
@@ -75,6 +73,28 @@ public class ManagerServiceImpl implements ManagerService{
 	public int connectDonate(Map<String, Object> connectObj) {
 
 		return mapper.connectDonate(connectObj);
+	}
+
+
+	/**
+	 * 봉사인증신청서 목록 조회 
+	 */
+	@Override
+	public List<Certification> certificationList() {
+		
+		return mapper.certificationList();
+	}
+
+
+	/**
+	 * 봉사인증신청서 수정 
+	 */
+	@Override
+	public int infoUpdate(Certification inputInfo, int memberNo) {
+		
+		inputInfo.setMemberNo(memberNo);
+		
+		return mapper.infoUpdate(inputInfo);
 	}
 
 }

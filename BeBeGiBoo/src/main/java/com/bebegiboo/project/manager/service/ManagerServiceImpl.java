@@ -45,8 +45,6 @@ public class ManagerServiceImpl implements ManagerService{
 
 
 
-
-
 	// 기부물품 상세내역 조회
 	@Override
 	public DetailProduct selectDonationDetailThingsList(int recordNo) {

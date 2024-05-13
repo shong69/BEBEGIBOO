@@ -16,7 +16,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width : 80%;
+    width : 70%;
     min-height: 700px;
 }
 
@@ -103,7 +103,7 @@ section {
 /*댓글 영역 css*/
 
 #commentArea{
-    width : 80%;
+    width : 70%;
     margin-bottom: 100px;
     border-top: 1px solid #858585;
 }

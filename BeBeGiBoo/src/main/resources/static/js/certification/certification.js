@@ -97,7 +97,11 @@ function DaumPostcode() {
     }).open();
 }
 
-document.querySelector("#searchBtn").addEventListener("click", DaumPostcode);
+// 주소 검색 버튼 클릭 시
+document.querySelector("#searchBtn").addEventListener("click", e => {
+    e.preventDefault(); 
+    DaumPostcode(); 
+});
 
 
 /* 모달 */

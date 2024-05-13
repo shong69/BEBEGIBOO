@@ -123,4 +123,9 @@ document.getElementById('faqBoardBtn').addEventListener('click', ()=> {
   location.href = '/faqBoard/faqBoard';
 }); 
 
+/* 후기 인증 게시판 이동 */
+document.getElementById('reviewBtn').addEventListener('click', ()=> {
+  location.href = '/review';
+}); 
+
 

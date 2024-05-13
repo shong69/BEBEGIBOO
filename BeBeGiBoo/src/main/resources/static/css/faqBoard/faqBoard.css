@@ -237,11 +237,10 @@ details[open] > summary ~ * {
 }
 
 .current{
-    color: rgb(0, 149, 250);
-    text-decoration: underline;   
+    color: #6987C9;
+    text-decoration: underline;  
+    text-underline-offset: 5px;
 }
-
-
 
 
 /* 관리자 모드인 경우 */

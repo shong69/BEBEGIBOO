@@ -36,11 +36,6 @@ public class UpdateMyInfoController {
 	}
 	
 
-	/** 수정 페이지 이동 
-	 * @return
-	 */
-	@GetMapping("updateMyInfo")
-	private String updateInfoPage() {
 
 	
 	/** 비밀번호 체크 

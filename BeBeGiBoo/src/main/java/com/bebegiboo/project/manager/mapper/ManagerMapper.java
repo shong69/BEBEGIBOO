@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.bebegiboo.project.donateInfo.dto.DonationProduct;
 import com.bebegiboo.project.donateInfo.dto.DonationRecord;
 import com.bebegiboo.project.manager.dto.DetailProduct;
 import com.bebegiboo.project.member.model.dto.Member;

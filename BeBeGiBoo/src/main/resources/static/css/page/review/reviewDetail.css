@@ -16,7 +16,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width : 60%;
+    width : 80%;
     min-height: 700px;
 }
 
@@ -41,9 +41,11 @@ section {
     display : flex;
     justify-content: space-between;
     border-bottom: 1px solid #858585;
+    margin-bottom: 20px;
 }
 .board-writer {
     display: flex;
+    flex-direction: column;
 }
 
 .writer{
@@ -51,20 +53,36 @@ section {
 }
 .readCount{
     font-size: 12px;
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
+
+.boardImg{
+    float: left;
+    text-align: center;
+}
+/* 이미지 */
+.boardImg img{
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.boardImg a{
+    display: block;
+    text-align: center;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
 .board-btn-area{
     border-top: 1px solid #858585;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 
 #updateBtn,
 #deleteBtn,
-#deleteBtn2,
 #goToListBtn,
 #addComment{
     border : 1px solid rgba(185, 185, 185, .5);
@@ -74,6 +92,7 @@ section {
     line-height: 30px;
     background-color: white;
     margin-bottom: 5px;
+    cursor:pointer;
 }
 
 
@@ -82,7 +101,7 @@ section {
 /*댓글 영역 css*/
 
 #commentArea{
-    width : 60%;
+    width : 80%;
     margin-bottom: 100px;
     border-top: 1px solid #858585;
 }
@@ -154,8 +173,8 @@ textarea::placeholder{
     margin-top: 0;
 }
 .addChildBtn,
-.updateBtn,
-.deleteBtn,
+.updateBtn-c,
+.deleteBtn-c,
 .insertBtn,
 .cancelBtn,
 .updateBtn {
@@ -164,7 +183,9 @@ textarea::placeholder{
     background-color: white;
     font-size: 12px;
     padding:3px;
+    width:32px;
     height: 25px;
+    cursor:pointer;
 }
 
 .comment-btn-area {
@@ -176,5 +197,17 @@ textarea::placeholder{
     padding : 0 12px 7px 12px;
     font-size: 12px;
     white-space : pre-wrap;
+
+}
+
+.childComment{
+	padding-left : 50px;
+	position: relative;
+}
+
+.deleteCommentArea {
+    margin : 15px auto;
+    width : 150px;
+    font-size: 15px;
 
 }

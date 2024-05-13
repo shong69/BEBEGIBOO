@@ -3,7 +3,6 @@ package com.bebegiboo.project.manager.service;
 import java.util.List;
 import java.util.Map;
 
-import com.bebegiboo.project.donateInfo.dto.DonationProduct;
 import com.bebegiboo.project.donateInfo.dto.DonationRecord;
 import com.bebegiboo.project.manager.dto.DetailProduct;
 import com.bebegiboo.project.member.model.dto.Member;

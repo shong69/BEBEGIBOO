@@ -34,6 +34,7 @@ public class UpdateMyInfoController {
 		return "/member/mypage/checkPw"; 
 		
 	}
+
 	
 	/** 비밀번호 체크 
 	 * @param loginMember
@@ -82,7 +83,6 @@ public class UpdateMyInfoController {
 		
 		return path;
 	}
-	
 	
 	
 
@@ -134,43 +134,6 @@ public class UpdateMyInfoController {
 	}
 	
 
-	/** 비밀번호 체크 
-	 * @param loginMember
-	 * @param model
-	 * @param ra
-	 * @return
-	 */
-	@PostMapping("checkPw")
-	private String checkPw( @SessionAttribute("loginMember") Member loginMember,
-							Model model,
-							RedirectAttributes ra) {
-		
-		int memberNo = loginMember.getMemberNo(); 
-		String memberPw = loginMember.getMemberPw(); 
-		
-		loginMember.setMemberNo(memberNo);
-		loginMember.setMemberPw(memberPw);
-		
-		int result = service.checkPw(loginMember); 
-		
-		String path = null; 
-		String message = null; 
-		
-		if(result > 0) {
-			
-			message = "비밀번호 체크 성공!";
-			path = "/member/mypage/updateMyInfo";
-			
-		}
-		else {
-			path ="redirect:/member/mypage/checkPw"; 
-			message = "비밀번호가 일치하지 않습니다..";
-		}
-		
-		ra.addFlashAttribute("message", message);
-		
-		return path;
-	}
 
 
 }

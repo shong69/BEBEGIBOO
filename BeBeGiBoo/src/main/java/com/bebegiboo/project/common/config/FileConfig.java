@@ -45,7 +45,13 @@ public class FileConfig implements WebMvcConfigurer {
 		private String certificationResourceLocation;
 			
 		//-----------------------------------------------------------
-		
+		//후기 이미지 요청 주소
+		@Value("${my.board.resource-handler}")
+		private String reviewResourceHandler;
+		//후기 이미지 서버 경로
+		@Value("${my.board.resource-location}")
+		private String reviewResourceLocation;
+		//-------------------------------------------
 		
 		
 		@Override
@@ -56,9 +62,13 @@ public class FileConfig implements WebMvcConfigurer {
 			.addResourceHandler(certificationResourceHandler)
 			.addResourceLocations(certificationResourceLocation);
 			
+			//후기 게시글 요청에 따른 경로 설정
+			registry
+			.addResourceHandler(reviewResourceHandler)
+			.addResourceLocations(reviewResourceLocation);
+			
 		}
 	
-		
 
 		/* MultipartResolver 설정 */
 		@Bean

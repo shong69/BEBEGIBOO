@@ -1,12 +1,11 @@
 @font-face {
-    font-family: 'YESGothic-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESGothic-Regular.woff') format('woff');
+    font-family: 'ONE-Mobile-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-
 *{
-    font-family: 'YESGothic-Regular';
+    font-family: 'ONE-Mobile-Regular';
 }
 /* 베베기부 로고 */
 #font-logo-area{
@@ -48,6 +47,11 @@
 
 }
 
+.message{
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
 /* 정보 입력 칸*/
 .info-input > tbody > tr > td > input {
     margin-left: 50px;
@@ -60,6 +64,10 @@
     margin-bottom: 60px;
 }
 
+.message{
+    display: flex;
+    flex-direction: column;
+}
 
 /* 테이블 */
 table{
@@ -158,10 +166,10 @@ table{
   color: #6987C9;
   background-color: white;
   border: 1.5px solid #6987C9;
-  border-radius: 10px;
+  border-radius: 15px;
   cursor: pointer;
 
-  margin-left: 15px;
+  margin-left: 30px;
 }
 
 #searchBtn:hover{
@@ -173,8 +181,8 @@ table{
 
   margin-top: 150px;
 
-  width: 400px;
-  height: 100px;
+  width: 300px;
+  height: 80px;
   
   font-weight: 400;
   font-size: 20px;
@@ -202,6 +210,8 @@ table{
     font-size: 12px;
     font-weight: lighter;
     color: #929292;
+    border-collapse: collapse;
+    border-spacing: 5px;
 }
 
 
@@ -274,4 +284,8 @@ input::placeholder{
 
 textarea{
     padding: 15px;
+}
+
+input{
+    padding: 5px;
 }

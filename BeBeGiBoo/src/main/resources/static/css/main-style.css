@@ -476,6 +476,16 @@ a {
     cursor: pointer;
 }
 
+::-webkit-scrollbar {
+    width: 10px;  /* 스크롤바의 너비 */
+}
+
+::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background: rgb(208, 227, 241); /* 스크롤바의 색상 */
+    
+    border-radius: 10px;
+}
 
 
 /************************푸터부분*****************/
@@ -586,7 +596,7 @@ a {
 
 .donation-container-1 {
     border: 1px black solid;
-    width: 60%;
+    width: 1300px;
     height: 150px;
     margin-bottom: 100px;
     display: flex;
@@ -600,9 +610,9 @@ a {
 
 .donation-container-2 {
     border: 1px black solid;
-    width: 60%;
+    width: 1300px;
     height: 600px;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -51,8 +51,7 @@ public class EditReviewServiceImpl implements EditReviewService{
 		if(result == 0) return 0;
 		
 		int boardNo = inputBoard.getBoardNo();
-		log.debug("보드 번호" + boardNo);
-		
+
 		//2. 업로드된 이미지가 실제로 존재하는 경우 업로드된 이미지만 별도 저장해서 BOARD_IMG 테이블에 INSERT
 		List<BoardImg> uploadList = new ArrayList<>();
 		
@@ -73,8 +72,10 @@ public class EditReviewServiceImpl implements EditReviewService{
 							.uploadFile(images.get(i))
 							.build();
 				
-				uploadList.add(img);	
-				log.debug("이미지 정보 : " +img);
+
+				uploadList.add(img);				
+
+
 			}
 		}
 		
@@ -145,6 +146,7 @@ public class EditReviewServiceImpl implements EditReviewService{
 							.uploadFile(images.get(i))
 							.build();
 				uploadList.add(img);
+
 
 				//4. img 객체를 리스트 에 추가 + 수정 혹은 삽입 수행하기
 				result = mapper.updateImage(img);

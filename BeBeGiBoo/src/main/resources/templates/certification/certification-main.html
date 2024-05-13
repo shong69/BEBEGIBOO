@@ -21,7 +21,7 @@
                    <!-- 로고 -->
                 <div id="font-logo-area">
                     <a href="/" id="font-logo">
-                        <img src="/images/font-logo.png" alt="font-logo">
+                        <img src="/images/font-logo.png" alt="font-logo" style="width: 200px; height: 80px;">
                     </a>
                 </div>
 
@@ -51,22 +51,19 @@
                         </tr>
                         <tr>
                             <td>생년월일</td>
-                            <td>
+                            <td class="message">
                                 <input type="text" name="memberBirth" id="memberBirth" required> 
+                                <span class="form-message" id="birthMessage" style="margin-top: 5px;">생년월일 8자리 '-' 없이 입력해주세요</span>
                             </td>
                         </tr>
+                  
                         <tr>
                             <td>핸드폰 번호</td>
-                            <td>
+                            <td class="message">
                                 <input type="text" name="phone" id="phone" required>
+                                <span class="form-message" id="phoneMessage" style="margin-top: 5px;">핸드폰번호 '-'포함해서 입력해주세요</span>
                             </td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td><span class="form-message" id="formMessage">생년월일 8자리 '-' 없이 입력해주세요</span></td>
-                        </tr>
-                        
-                        <tr></tr>
 
                         <tr>
                             <td id="addressLetter">주소</td>

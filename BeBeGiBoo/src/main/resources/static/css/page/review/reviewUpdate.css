@@ -73,7 +73,12 @@ h5 {
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
+    border: 6px solid black;
+    border-radius: 17px;
+=======
     border: 1px solid #ccc;
+>>>>>>> a2533bbade6bdcd3baad042188ccf0720c13c03a
     cursor: pointer;
 }
 

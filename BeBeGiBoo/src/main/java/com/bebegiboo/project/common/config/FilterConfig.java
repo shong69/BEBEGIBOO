@@ -39,6 +39,7 @@ public class FilterConfig {
 		return filter; 
 	}
 	
+	@Bean
 	public FilterRegistrationBean<AuthorityFilter> AuthorityFilter(){
 		
 		FilterRegistrationBean<AuthorityFilter> filter 
@@ -47,7 +48,7 @@ public class FilterConfig {
 		filter.setFilter(new AuthorityFilter());
 
 		
-		String[] filteringURL = {"/editWrite/*", "/acceptor/*"};
+		String[] filteringURL = {"/editReview/*", "/acceptor/*"};
 		
 		log.info("권한 필터 작동됨");
 		filter.setUrlPatterns( Arrays.asList(filteringURL));

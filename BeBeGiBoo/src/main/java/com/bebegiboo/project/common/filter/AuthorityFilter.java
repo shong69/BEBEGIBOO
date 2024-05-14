@@ -27,7 +27,7 @@ public class AuthorityFilter implements Filter{
 		HttpSession session = req.getSession();
 		Member member = (Member)session.getAttribute("loginMember");
 		
-		log.debug("제발 알려줘 : " + member);
+		log.debug("제발 알려줘 : " + member.getAuthority());
 		
 		if(member != null && member.getAuthority() != 2) {
 			log.debug("권한 번호가 2가 아니다");

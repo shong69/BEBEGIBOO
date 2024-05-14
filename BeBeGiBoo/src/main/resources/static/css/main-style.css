@@ -248,7 +248,39 @@ a {
     font-weight: bold;
 }
 
+#review-board thead {
+    font-weight: bold;
+    font-size: 18px;
+    height: 60px;
+}
 
+#review-board thead td {
+    background-color: rgb(254, 245, 220);
+}
+
+#review-board tbody tr {
+    height: 40px;
+}
+
+#review-board tr > td:nth-child(1) {
+    width: 80px;
+}
+
+#review-board tr > td:nth-child(2) {
+    width: 370px;
+}
+
+#review-board tr > td:nth-child(3) {
+    width: 150px;
+}
+
+#review-board tr > td:nth-child(4) {
+    width: 100px;
+}
+
+#review-board tr > td:nth-child(5) {
+    width: 80px;
+}
 
 
 
@@ -329,6 +361,9 @@ a {
     width: 900px;
 }
 
+#review-board {
+    cursor: pointer;
+}
 
 
 
@@ -337,7 +372,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 200px 0;
+    margin: 100px 0;
     margin-bottom: 150px;
 }
 
@@ -399,27 +434,42 @@ a {
     width :100px;
     margin-left: 20px;
 }
-.header-main span:nth-child(1) {
+.header-main > span:nth-child(1) {
     font-weight: 600;
     font-size: 30px;
 }
 
-.header-main span:nth-child(2) {
+.header-main > span:nth-child(2) {
     flex-basis: 80%;
 }
 
-.header-main span:nth-child(3) {
+.header-main > span:nth-child(3) {
     text-align: end;
     width: 200px;
     margin: 0 10px;
     font-size: 15px;
 }
 
-.header-main span:nth-child(4){                                      
+.header-main > span:nth-child(4){                                      
     width: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#middle-header > span {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 55px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+
+#middle-header > span:hover {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 @keyframes fadeInDown {

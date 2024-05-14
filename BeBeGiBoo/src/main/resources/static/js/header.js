@@ -1,3 +1,5 @@
+
+/*
 const hamburger = document.querySelector("#hamburger");
 const navContainer = document.querySelector("#nav-container");
 const navContainerNull = document.querySelector("#nav-container-null");
@@ -39,3 +41,5 @@ document.querySelector(".noHover").addEventListener("mouseover", () => {
     document.querySelector("#hover1").style.visibility = 'hidden';
     document.querySelector("#hover2").style.visibility = 'hidden';
 });
+
+*/

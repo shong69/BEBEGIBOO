@@ -46,4 +46,9 @@ public interface ReviewMapper {
 	 */
 	int upadateReadCount(int boardNo);
 
+	/** 메인용 보드 조회
+	 * @return
+	 */
+	List<CertificationBoard> selectBoardList();
+
 }

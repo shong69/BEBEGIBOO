@@ -65,31 +65,6 @@ document.querySelector("#top-button").addEventListener("click", () => {
 });
 
 
-const container1 = document.querySelector("#container1");
-const container2 = document.querySelector("#container2");
-const container3 = document.querySelector("#container3");
-const container4 = document.querySelector("#container4");
-
-
-container1.addEventListener("click", () => {
-
-    window.scrollTo({top:3900, behavior: 'smooth'});
-});
-
-container2.addEventListener("click", () => {
-
-    window.scrollTo({top:4400, behavior: 'smooth'});
-});
-
-container3.addEventListener("click", () => {
-
-    window.scrollTo({top:4900, behavior: 'smooth'});
-});
-
-container4.addEventListener("click", () => {
-
-    window.scrollTo({top:5500, behavior: 'smooth'});
-});
 
 
 
@@ -175,67 +150,110 @@ function openPopup(){
 }
 
 
+const boardTbody = document.querySelector("#boardTbody");
+
+function selectBoard() {
+  boardTbody.innerHTML = "";
+
+  fetch("/review/boardList")
+  .then(resp => resp.json())
+  .then(boardList => {
+
+    
+  if(boardList == null) {
+    boardList.innerText = "기부물품이 존재하지 않습니다.";
+  } else {
+    boardList.forEach( (board) => {
+
+          
+          let arr = [ board.boardNo,
+              board.boardTitle,
+              board.boardWriteDate,
+              board.memberId,
+              board.readCount]
+
+              const tr = document.createElement("tr");
+
+              for(let key of arr){
+                const td = document.createElement("td");
+                td.innerText = key;
+                tr.append(td);
+              }
+              boardTbody.append(tr);
+      });
+    }
+
+
+  });
+}
+
+selectBoard();
+
+
 
 
 const donateThings = document.querySelector("#donateThingss");
 let i = 1;
 
-function donateThingsFuntion() {
-  donateThings.innerHTML = "";
+if(donateThings != null) {
+  function donateThingsFuntion() {
+    donateThings.innerHTML = "";
+  
+      fetch("/acceptor/selectproductList")
+      .then(resp => resp.json())
+      .then(productList => {
+  
+        console.log(productList);
+  
+          //const productList = JSON.parse(result);
+          
+  
+          if(productList == null) {
+              productList.innerText = "기부물품이 존재하지 않습니다.";
+          } else {
+              productList.forEach( (product) => {
+  
+                  
+                  let arr = [ product.recordDate,
+                      product.productName];
+  
+                      const infoBox = document.createElement("div");
+                      infoBox.classList.add("img-wrapper");
+  
+  
+                      const productInfo = document.createElement("div");
+                      productInfo.classList.add("productInfo");
+  
+                      const donateDate = document.createElement("div");
+                      donateDate.innerText = "기부날짜";
+                      donateDate.classList.add("donateDate");
+                      productInfo.append(donateDate);
+  
+                      for(let key of arr){
+                      const div = document.createElement("div");
+                      div.style.textAlign = "center";
+                      div.style.fontSize = "20px";
+                      div.style.fontWeight = "bold";
+                      div.style.marginBottom = "80px";
+                      productInfo.style.backgroundImage = `url("/images/layette-${i}.jpg")`;
+                      productInfo.style.backgroundSize = "cover";
+                      productInfo.style.backgroundRepeat = "no-repeat";
+                      if(i == 10) {
+                        i = 1;
+                      }else {
+                        i++;
+                      }
+                      div.innerText = key;
+                      productInfo.append(div);
+                      donateThings.append(productInfo);
+                  };
+                });
+              };
+        });
+  };
+  
+  donateThingsFuntion();
 
-    fetch("/acceptor/selectproductList")
-    .then(resp => resp.json())
-    .then(productList => {
-
-      console.log(productList);
-
-        //const productList = JSON.parse(result);
-        
-
-        if(productList == null) {
-            productList.innerText = "기부물품이 존재하지 않습니다.";
-        } else {
-            productList.forEach( (product) => {
-
-                
-                let arr = [ product.recordDate,
-                    product.productName];
-
-                    const infoBox = document.createElement("div");
-                    infoBox.classList.add("img-wrapper");
-
-
-                    const productInfo = document.createElement("div");
-                    productInfo.classList.add("productInfo");
-
-                    const donateDate = document.createElement("div");
-                    donateDate.innerText = "기부날짜";
-                    donateDate.classList.add("donateDate");
-                    productInfo.append(donateDate);
-
-                    for(let key of arr){
-                    const div = document.createElement("div");
-                    div.style.textAlign = "center";
-                    div.style.fontSize = "20px";
-                    div.style.fontWeight = "bold";
-                    div.style.marginBottom = "80px";
-                    productInfo.style.backgroundImage = `url("/images/layette-${i}.jpg")`;
-                    productInfo.style.backgroundSize = "cover";
-                    productInfo.style.backgroundRepeat = "no-repeat";
-                    if(i == 10) {
-                      i = 1;
-                    }else {
-                      i++;
-                    }
-                    div.innerText = key;
-                    productInfo.append(div);
-                    donateThings.append(productInfo);
-                };
-              });
-            };
-      });
-};
-
-donateThingsFuntion();
+}
 
 

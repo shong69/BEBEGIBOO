@@ -99,4 +99,12 @@ public class ReviewServiceImpl implements ReviewService{
 		return mapper.upadateReadCount(boardNo);
 	}
 
+
+	// 메인용 조회수 증가
+	@Override
+	public List<CertificationBoard> selectBoardList() {
+
+		return mapper.selectBoardList();
+	}
+
 }

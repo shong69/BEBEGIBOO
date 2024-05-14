@@ -178,7 +178,6 @@ function selectMember() {
 
                                                     if(acceptorList.length == 0) {
                                                         acceptorBox.style.textAlign = "center";
-                                                        acceptorBox.style.color = "red";
                                                         acceptorBox.style.fontWeight = "bold";
                                                         acceptorBox.innerText = "신청자 없음";
                                                     }

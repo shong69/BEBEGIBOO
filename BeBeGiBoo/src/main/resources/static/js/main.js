@@ -1,6 +1,5 @@
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const options = {
       root: null,
@@ -119,6 +118,62 @@ document.getElementById('reviewBtn').addEventListener('click', ()=> {
   location.href = '/review';
 });
 
+//*******팝업 쿠키 설정********* */
+const popup= document.querySelector(".popup");
+
+function getCookie(name) {
+  const value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+  return value?value[2]:null;
+}
+
+function closePopup() {
+  const cookieCheckBox = document.querySelector("#cookieCheckBox");
+  if(cookieCheckBox.checked){
+    checkPopup();
+  }else{//그냥 X 누른 경우
+    popup.style.display = "none";
+  }
+}
+
+
+//체크박스 클릭하고 x누른 경우
+function checkPopup() { 
+  var cookieCheck = getCookie("modalClose");
+
+  if (cookieCheck == null){
+    console.log(cookieCheck.checked);
+    //쿠키 설정하기
+    setCookie();
+    popup.style.display = "none";
+  }else{
+    return;
+  }
+
+}
+//하루동안 안보이기 체크하는 경우
+//쿠키 설정하기
+function setCookie() {
+  let date = new Date(Date.now() + 86400e3);
+  date = date.toUTCString();
+
+  document.cookie = `modalClose=T; expires=${date}`;
+
+  console.log(document.cookie);
+}
+
+
+function openPopup(){
+  //쿠키가 있으면 팝업이 안열리고
+  if(getCookie('modalClose')==null){
+    popup.style.display = "none";
+
+  }else{//쿠키가 없으면 팝업이 열리도록
+    popup.style.display = "block";
+  }
+  
+
+}
+
 
 
 
@@ -182,4 +237,5 @@ function donateThingsFuntion() {
 };
 
 donateThingsFuntion();
+
 

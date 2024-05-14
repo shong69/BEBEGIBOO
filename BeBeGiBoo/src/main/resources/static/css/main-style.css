@@ -22,9 +22,28 @@ body {
     box-sizing: border-box;
     /*border: 1px black solid;*/
 }
+.popup{
+    position:absolute;
+    z-index : 85;
+    top : 100px;
+    left: 50px;
+}
 
-
-
+.popup > img {
+    width : 400px;
+    margin : 0;
+}
+.popup-footer{
+    width : 400px;
+    background-color: black;
+    color : white;
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.closeBtn {
+    color: white;
+}
 main {
     display: flex;
     flex-direction: column;
@@ -91,7 +110,7 @@ a {
     left: 5%;
     width: 90%;
     height: 50%;
-    z-index: 99;
+    z-index: 80;
     display: grid;
     place-items: center;
   }

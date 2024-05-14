@@ -116,11 +116,8 @@ for(let i=0 ; i<inputImageList.length ; i++){
 
     // img, input, backup의 인덱스가 모두 일치한다는 특징을 이용
 
-<<<<<<< HEAD
-    previewList[i].src       = "/images/gallery.png"; // 미리보기 이미지 제거
-=======
+
     previewList[i].src       = ""; // 미리보기 이미지 제거
->>>>>>> a2533bbade6bdcd3baad042188ccf0720c13c03a
     inputImageList[i].value  = ""; // input에 선택된 파일 제거
     backupInputList[i].value = ""; // 백업본 제거
   });

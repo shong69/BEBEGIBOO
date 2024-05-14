@@ -151,8 +151,9 @@ function selectMember() {
                                             td.innerText = key;
                                             tr.append(td);
                                             tr.classList.add("text");
+                                            detailDiv.append(tr);
                                         }
-                                        tr.style.marginBottom = "10px";                                        detailDiv.append(tr);
+                                        tr.style.marginBottom = "10px";                                        
                                         if(detailProduct.acceptorNo == 0) {
                                             const acceptorButton = document.createElement("button");
                                             acceptorButton.innerText = "피기부자 지정";
@@ -174,6 +175,13 @@ function selectMember() {
                                                 .then(resp => resp.text())
                                                 .then(result => {
                                                     const acceptorList = JSON.parse(result);
+
+                                                    if(acceptorList.length == 0) {
+                                                        acceptorBox.style.textAlign = "center";
+                                                        acceptorBox.style.color = "red";
+                                                        acceptorBox.style.fontWeight = "bold";
+                                                        acceptorBox.innerText = "신청자 없음";
+                                                    }
                             
                                                     console.log(acceptorList);
                 

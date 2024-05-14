@@ -31,6 +31,11 @@ public class DonationInfoController {
 	
 	
 	
+	/** 기부 목록 확인 페이지 이동 
+	 * @param loginMember
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("mypage/donationInfo")
 	public String donationInfoPage( 
 									@SessionAttribute("loginMember") Member loginMember,
@@ -55,16 +60,12 @@ public class DonationInfoController {
 		model.addAttribute("delivery", deliveryList);
 		model.addAttribute("payment", paymentList);
 		model.addAttribute("donationInfo", donationInfo); 
-		
-		
-		
-		
+	
 		log.info("record : " + recordList); 
 		log.info("delivery : " + deliveryList ); 
 		log.info("product : " + productList );
 		log.info("payment : " + paymentList ); 
 		log.info("donationInfo : " + donationInfo); 
-
 	
 		return "member/mypage/donationInfo";
 	}

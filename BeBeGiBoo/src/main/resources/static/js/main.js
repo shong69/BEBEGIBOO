@@ -74,22 +74,22 @@ const container4 = document.querySelector("#container4");
 
 container1.addEventListener("click", () => {
 
-    window.scrollTo({top:2300, behavior: 'smooth'});
+    window.scrollTo({top:3900, behavior: 'smooth'});
 });
 
 container2.addEventListener("click", () => {
 
-    window.scrollTo({top:2900, behavior: 'smooth'});
+    window.scrollTo({top:4400, behavior: 'smooth'});
 });
 
 container3.addEventListener("click", () => {
 
-    window.scrollTo({top:3600, behavior: 'smooth'});
+    window.scrollTo({top:4900, behavior: 'smooth'});
 });
 
 container4.addEventListener("click", () => {
 
-    window.scrollTo({top:4700, behavior: 'smooth'});
+    window.scrollTo({top:5500, behavior: 'smooth'});
 });
 
 
@@ -122,17 +122,19 @@ document.getElementById('reviewBtn').addEventListener('click', ()=> {
 
 
 
-const donateThings = document.querySelector("#donateThings");
+const donateThings = document.querySelector("#donateThingss");
 let i = 1;
 
 function donateThingsFuntion() {
   donateThings.innerHTML = "";
 
     fetch("/acceptor/selectproductList")
-    .then(resp => resp.text())
-    .then(result => {
+    .then(resp => resp.json())
+    .then(productList => {
 
-        const productList = JSON.parse(result);
+      console.log(productList);
+
+        //const productList = JSON.parse(result);
         
 
         if(productList == null) {
@@ -173,12 +175,11 @@ function donateThingsFuntion() {
                     div.innerText = key;
                     productInfo.append(div);
                     donateThings.append(productInfo);
-                }
+                };
               });
-            }
+            };
       });
 };
 
 donateThingsFuntion();
-
 

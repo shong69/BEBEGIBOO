@@ -227,10 +227,10 @@ a {
     box-shadow: 3px 3px 3px lightgray;
 }
 
-#donateThings {
+#donateThingss {
     width: 1500px;
     display: flex;
-    overflow: auto;
+    overflow: scroll;
     justify-content: center;
 }
 
@@ -241,6 +241,7 @@ a {
     box-shadow: 5px 5px 5px gray;
     transition-duration: 0.4s;
 }
+
 
 .donateDate {
     text-align: center;
@@ -468,7 +469,7 @@ a {
     background-color: rgb(254, 245, 220);
 }
 
-#nav-container-null > div > a:hover {
+#nav-container-null > div > .noHover:hover {
     color: rgb(44, 178, 255);
     text-decoration: underline;
     transition-duration: 0.5s;
@@ -488,7 +489,18 @@ a {
     background-color: rgb(254, 245, 220);
 }
 
-#nav-container > div > div > a:hover {
+#nav-container > div > div > .noHover:hover {
+    color: rgb(44, 178, 255);
+    text-decoration: underline;
+    transition-duration: 0.5s;
+}
+
+#nav-container > div > #hover1 > a:hover {
+    color: rgb(44, 178, 255);
+    text-decoration: underline;
+    transition-duration: 0.5s;
+}
+#nav-container > div > #hover2 > a:hover {
     color: rgb(44, 178, 255);
     text-decoration: underline;
     transition-duration: 0.5s;

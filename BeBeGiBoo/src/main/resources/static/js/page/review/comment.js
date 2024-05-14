@@ -175,7 +175,6 @@ if(addContent != null){
 
 }
 
-
 /** 답글 작성 화면 추가
  * @param {*} parentCommentNo 
  * @param {*} btn 
@@ -196,7 +195,8 @@ const showInsertComment = (parentCommentNo, btn) => {
       return; // 함수를 종료시켜 답글이 생성되지 않게함.
     }
   }
-  
+
+
   // 답글을 작성할 textarea 요소 생성
   const textarea = document.createElement("textarea");
   textarea.classList.add("commentInsertContent");
@@ -240,7 +240,8 @@ const insertCancel = (cancelBtn) => {
 
   // 취소 버튼 부모의 이전 요소(textarea) 삭제
   cancelBtn.parentElement.previousElementSibling.remove();
-
+  //infoArea 영역 닫기
+  cancelBtn.parentElement.previousElementSibling.previousElementSibling.children[1].style.display = "none";
   // 취소 버튼이 존재하는 버튼영역 삭제
   cancelBtn.parentElement.remove();
 }
@@ -424,9 +425,10 @@ const showUpdateComment = (commentNo, btn) => {
 const updateCancel = (btn) => {
 
   if(confirm("취소 하시겠습니까?")){
-    const commentRow = btn.closest("li"); // 기존 댓글 행
-    commentRow.after(beforeCommentRow); // 기존 댓글 다음에 백업 추가
-    commentRow.remove(); // 기존 삭제 -> 백업이 기존 행 위치로 이동
+    //const commentRow = btn.closest("li"); // 기존 댓글 행
+    //commentRow.after(beforeCommentRow); // 기존 댓글 다음에 백업 추가
+    //commentRow.remove(); // 기존 삭제 -> 백업이 기존 행 위치로 이동
+    selectCommentList();
   }
 
 }

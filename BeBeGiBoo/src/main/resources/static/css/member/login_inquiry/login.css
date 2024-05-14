@@ -5,7 +5,6 @@
     font-style: normal;
 }
 *{
-	font-family: 'ONE-Mobile-Regular';
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,16 +13,20 @@
 .l-text{
 	font-size : 20px;
 	font-weight: 400;
+	font-family: 'ONE-Mobile-Regular';
 }
 .text {
-    font-size: 15px;
+    font-size: 17px;
 	margin : 0 10px;
+	font-family: 'ONE-Mobile-Regular';
 }
 .s-text {
-    font-size: 17px;
+	font-family: 'ONE-Mobile-Regular';
+    font-size: 13px;
 	text-decoration: none;
 	color:#858585;
 }
+
 .divider {
 	font-size: 20px;
 	margin: 0 20px;
@@ -102,10 +105,13 @@ tbody tr:nth-child(4) {
 }
 .loginInput{
 	width: 270px;
-	height: 25px;
-
+	height: 30px;
+	padding:10px;
+	font-size: 15px;
 }
-
+#loginId {
+	font-family: 'ONE-Mobile-Regular';
+}
 .error {
 	color : red;
 }

@@ -20,11 +20,8 @@
 		<!--로그인 O-->
 		<th:block th:unless="${session.loginMember == null}">
 			<span th:text="|${session.loginMember.memberName}님 안녕하세요|">회원이름</span>
-<<<<<<< HEAD
 			<span class="text" style="width: 80px;"><a href="/member/logout">로그아웃</a></span>
-=======
-			<span class="text" style="width: 80px;"><a style="font-size: 15px;" href="/member/logout" id="logoutstyle">로그아웃</a></span>
->>>>>>> 3d7e8dfc3e8998ab8fb140e1afeb972189b0f837
+
 
 		</th:block>
 		

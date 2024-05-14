@@ -14,11 +14,9 @@
 }
 .l-text{
 	font-size : 20px;
-
 	font-weight: 400;
 }
 .text {
-
     font-size: 17px;
 	margin : 0 10px;
 }
@@ -109,9 +107,9 @@ li:nth-child(4) {
 input[name="memberName"],
 input[name="memberId"] {
 	margin-left: 12px;
-	width : 350px;
+	width : 300px;
 	height: 30px;
-	font-size: 11px;
+	font-size: 15px;
 	padding:10px;
 	margin-bottom: 20px;
 	border : 1px solid #858585;
@@ -119,7 +117,7 @@ input[name="memberId"] {
 
 input[name="memberName"] {
 	width : 270px;
-	
+	font-size: 15px;
 }
 input {
 	border : none;

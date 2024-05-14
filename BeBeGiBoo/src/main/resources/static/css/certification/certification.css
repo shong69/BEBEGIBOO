@@ -131,6 +131,9 @@ table{
     border: 1px solid rgb(185, 185, 185);
     cursor: pointer;
 }
+.c-img >label:hover{
+    color: #6987C9;
+}
 
 /* 삭제 버튼 */
 .delete-image{
@@ -141,6 +144,9 @@ table{
     cursor: pointer;
 }
 
+.delete-image:hover{
+    color: #6987C9;
+}
 
 
 
@@ -162,7 +168,6 @@ table{
 #searchBtn{
   width: 80px;
   height: 30px;
-  font-weight: bold;
   color: #6987C9;
   background-color: white;
   border: 1.5px solid #6987C9;
@@ -174,7 +179,7 @@ table{
 
 #searchBtn:hover{
     background-color: #6987C9;
-    color: black;
+    color: white;
 }
 
 #submitBtn{
@@ -219,8 +224,8 @@ table{
 /* 모달 */
   
 #modal {
-    width: 700px;
-    height: 500px;
+    width: 600px;
+    height: 400px;
     position:fixed;
     top: 50%;
     left: 50%;
@@ -231,7 +236,8 @@ table{
     justify-content: center;
     align-items: center;
     background: rgb(255, 255, 255);
-    border: 1px solid rgb(150, 150, 150);
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 18px;
 }
 /*  
 #modalContent {
@@ -250,9 +256,12 @@ table{
 
     border: none;
     background-color: white;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px;
     cursor: pointer;
+}
+#openBtn:hover, #openBtn2:hover {
+    color: #6987C9;
 }
 
 #closeBtn, #closeBtn2{
@@ -268,12 +277,17 @@ table{
 
 }
 
+#closeBtn:hover, #closeBtn2:hover{
+    color: #6987C9;
+}
+
 #checkbox1Info, #checkbox2Info{
     border: none;
     background-color: #f3f3f3;
-    width: 620px;
-    height: 400px;
+    width: 520px;
+    height: 300px;
     text-align:left;
+    border-radius: 18px;
 }
 
 
@@ -284,6 +298,7 @@ input::placeholder{
 
 textarea{
     padding: 15px;
+
 }
 
 input{

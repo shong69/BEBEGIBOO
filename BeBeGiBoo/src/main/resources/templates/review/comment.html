@@ -8,8 +8,7 @@
         <textarea id="commentContent" rows="10" placeholder="다른 사람에게 불쾌감을 주는 욕설, 혐오, 비하의 표현이나 타인의 권리를 침해하는 내용은 사용하지 않도록 주의해주세요."></textarea>
     </th:block>
 
-        
-
+    
 
     <div class="commentListArea">
         <ul id="commentList">
@@ -39,7 +38,7 @@
                                 <button class="deleteBtn-c" th:onclick="|deleteComment(*{commentNo})|">삭제</button>
                             </th:block>
                         </div>
-                        <img th:if="${session.loginMember!=null}" src="/images/addMore.png" class="editBtn" style="cursor:pointer;">
+                        <img th:if="${session.loginMember!=null}" src="/images/addMore.png" class="editBtn">
 
                     </div>
                     

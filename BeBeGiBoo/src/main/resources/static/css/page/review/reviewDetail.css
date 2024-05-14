@@ -16,15 +16,33 @@ main{
     font-family: 'ONE-Mobile-Regular';
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
-
+#content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.board-detail {
+    margin-left: 100px;
+    flex-basis: 90%;
+    min-width: 1400px;
+}
+.bannerArea {
+    flex-basis: 10%;
+    margin-right: 50px;
+}
+#banner{
+    width:200px;
+    position:sticky;
+    top:230px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
 section {
     margin-top: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width : 70%;
     min-height: 700px;
 }
@@ -38,13 +56,18 @@ section {
 .board-title{
     height : 70px;
     font-size: 2em;
+    margin-top: 10px;
+}
+
+.board-info>p{
+    margin-bottom: 0;
 }
 #imageArea,
 .board-content{
     font-family: 'Pretendard-Regular';
     display: flex;
     min-height: 300px;
-    margin : 30px auto;
+    margin : 10px auto;
     white-space : pre-wrap;
     max-width: 80%;
     line-height: 30px;
@@ -55,7 +78,7 @@ section {
     display : flex;
     justify-content: space-between;
     border-bottom: 1px solid #858585;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .board-writer {
     display: flex;
@@ -147,7 +170,9 @@ textarea::placeholder{
     color: #858585;
 }
 
-
+.commentInsertContent {
+    margin:7px 0;
+}
 
 .commentListArea {
     min-height: 200px;
@@ -182,7 +207,7 @@ textarea::placeholder{
     height: 20px;
     position: relative;
     top:4px;
-    
+    cursor: pointer;
 }
 
 .editArea{

@@ -43,19 +43,20 @@ public class UpdateMyInfoServiceImpl implements UpdateMyInfoService{
 	}
 
 
+	/**
+	 * 회원 정보 수정 
+	 */
 	@Override
 	public int updateInfo(Member inputMember, String[] address, Map<String, Object> paramMap) {
 		
 		int result = 0; 
+		
 		int memberNo = inputMember.getMemberNo(); 
 		paramMap.put("memberNo", memberNo); 
 		
 		String originPw = mapper.checkPw(inputMember.getMemberNo());  	
 		String newPw = (String)paramMap.get("newPw"); 
-		
-		log.info("originPw : " + originPw);	
-		log.info("newPw : " + newPw);	
-		
+
 		if(newPw.equals("")) {
 			
 			// 주소 // 
@@ -71,6 +72,7 @@ public class UpdateMyInfoServiceImpl implements UpdateMyInfoService{
 			result = mapper.updateNoPw(paramMap); 
 			
 		}
+		
 		else {	
 		
 			if(!bcrypt.matches((String)paramMap.get("newPw") ,originPw)) {
@@ -82,34 +84,29 @@ public class UpdateMyInfoServiceImpl implements UpdateMyInfoService{
 				
 				log.info("encPw : " + encPw);
 				paramMap.put("encPw", encPw);			
-				
-				
-				// 주소 // 
-				if(inputMember.getAddress().equals(",,")) {
-					paramMap.put("address", null); 
-				}
-				
-				else {
-					String newAddress = String.join("^^^", address); 
-					paramMap.put("address", newAddress); 
-				}
-				
-				log.info("paramMap : " + paramMap);
-				log.info("email ::: " + inputMember.getEmail());
-				log.info("phone ::: " + inputMember.getPhone());
-				
-				result =  mapper.updateInfo(paramMap); 
-					
-			} 
-
-			
-		}	
-				
+								
+					// 주소 // 
+					if(inputMember.getAddress().equals(",,")) {
+						
+						paramMap.put("address", null); 
+						
+					}	else {
+							String newAddress = String.join("^^^", address); 
+							paramMap.put("address", newAddress); 
+						}
+						
+						log.info("paramMap : " + paramMap);
+						log.info("email ::: " + inputMember.getEmail());
+						log.info("phone ::: " + inputMember.getPhone());
+						
+						result =  mapper.updateInfo(paramMap); 						
+				} 
 		
+			}	
+						
 		return result;
 			
-
-		}
+	}
 
 
 	/**
@@ -121,6 +118,7 @@ public class UpdateMyInfoServiceImpl implements UpdateMyInfoService{
 		String originPw = mapper.checkPw(memberNo); 
 		
 		if( !bcrypt.matches(memberPw, originPw)) {
+
 			return 0; 
 		}
 		

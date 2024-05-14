@@ -118,7 +118,6 @@ public class UpdateMyInfoController {
 		String path = null; 
 		String message = null; 
 		
-		
 		if(result > 0) {
 			
 			loginMember.setEmail(inputMember.getEmail());
@@ -140,7 +139,9 @@ public class UpdateMyInfoController {
 			
 			path = ""; 
 			message = "수정 완료!"; 
+			
 		} else {
+			
 			path = ""; 
 			message = "수정 실패"; 
 		}
@@ -171,12 +172,13 @@ public class UpdateMyInfoController {
 		String message = null; 
 		
 		if(result > 0) {
+
 			message = "탈퇴되었습니다"; 		
 			session.invalidate();
 		}
-		else {
-			message = "비밀번호가 일치하지 않습니다."; 
-
+			else {
+			
+				message = "비밀번호가 일치하지 않습니다."; 
 		}
 		
 		ra.addFlashAttribute("message", message);

@@ -81,6 +81,7 @@ public class CertificationController {
 					
 					String address = String.join(" ", memberAddress);
 					inputCertification.setAddress(address);
+					
 				} else {
 					
 					inputCertification.setAddress(null);

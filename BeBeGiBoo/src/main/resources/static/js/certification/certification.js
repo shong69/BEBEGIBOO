@@ -112,17 +112,21 @@ const closeBtn = document.getElementById('closeBtn');
 const closeBtn2 = document.getElementById('closeBtn2');
 const modal = document.getElementById('modal');
 
-openBtn.addEventListener('click', () => {
+openBtn.addEventListener('click', e => {
+    e.preventDefault(); 
   modal.classList.remove('hidden');
 });
-openBtn2.addEventListener('click', () => {
+openBtn2.addEventListener('click', e => {
+    e.preventDefault(); 
   modal.classList.remove('hidden');
 });
 
-closeBtn.addEventListener('click', () => {
+closeBtn.addEventListener('click', e => {
+    e.preventDefault(); 
   modal.classList.add('hidden');
 });
-closeBtn2.addEventListener('click', () => {
+closeBtn2.addEventListener('click', e => {
+    e.preventDefault(); 
   modal.classList.add('hidden');
 });
 

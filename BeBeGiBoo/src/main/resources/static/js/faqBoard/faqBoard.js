@@ -51,7 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 var categoryNo = this.getAttribute('data-category');
                 
-                var loginMemberAuthority = parseInt(document.getElementById('loginMemberAuthority').value);
+                //var loginMemberAuthority = parseInt(document.getElementById('loginMemberAuthority').value);
+                var loginMemberAuthorityElement = document.getElementById('loginMemberAuthority');
+                var loginMemberAuthority = 0; 
+                if (loginMemberAuthorityElement && loginMemberAuthorityElement.value) {
+                    loginMemberAuthority = parseInt(loginMemberAuthorityElement.value, 10);
+                }
                 console.log(loginMemberAuthority);
 
                 // 페이지네이션 숨기기

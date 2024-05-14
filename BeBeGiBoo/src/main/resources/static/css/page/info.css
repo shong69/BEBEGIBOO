@@ -1,11 +1,7 @@
-@font-face {
-  font-family: 'ONE-Mobile-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
 * {
+    font-family: "Noto Sans KR", sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;

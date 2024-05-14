@@ -1,4 +1,5 @@
 const horizontal = document.querySelector("#horizontal");
+let i = 1;
 
 function selectProduct() {
     horizontal.innerHTML = "";
@@ -41,6 +42,13 @@ function selectProduct() {
                     div.style.marginBottom = "150px";
                     div.innerText = key;
                     productInfo.append(div);
+                    productInfo.style.backgroundImage = `url("/images/layette-${i}.jpg")`;
+                    productInfo.style.backgroundSize = "cover";
+                    if(i == 10) {
+                        i = 1;
+                    }else {
+                        i ++;
+                    }
                 }
 
                 
@@ -48,6 +56,7 @@ function selectProduct() {
                 const button = document.createElement("button");
                 button.classList.add("acceptorButton");
                 button.innerText = "신청하기";
+                button.style.backgroundColor = "rgba(0,0,0,0)";
 
                 productInfo.append(button);
 
@@ -99,7 +108,6 @@ function selectProduct() {
                                             donateDate.innerText = "기부날짜";
                                             donateDate.classList.add("donateDate");
                                             productInfo.append(donateDate);
-                        
                                             for(let key of arr){
                                             const div = document.createElement("div");
                                             div.style.textAlign = "center";
@@ -108,6 +116,8 @@ function selectProduct() {
                                             div.style.marginBottom = "150px";
                                             div.innerText = key;
                                             productInfo.append(div);
+                                            productInfo.style.backgroundImage = `url("/images/layette-${i}.jpg")`;
+                                            productInfo.style.backgroundSize = "cover";
                                         }
                         
                                         

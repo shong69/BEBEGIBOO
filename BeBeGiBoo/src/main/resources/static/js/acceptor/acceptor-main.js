@@ -38,7 +38,7 @@ function selectProduct() {
                     div.style.textAlign = "center";
                     div.style.fontSize = "20px";
                     div.style.fontWeight = "bold";
-                    div.style.marginBottom = "200px";
+                    div.style.marginBottom = "150px";
                     div.innerText = key;
                     productInfo.append(div);
                 }
@@ -105,7 +105,7 @@ function selectProduct() {
                                             div.style.textAlign = "center";
                                             div.style.fontSize = "20px";
                                             div.style.fontWeight = "bold";
-                                            div.style.marginBottom = "200px";
+                                            div.style.marginBottom = "150px";
                                             div.innerText = key;
                                             productInfo.append(div);
                                         }

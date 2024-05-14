@@ -25,13 +25,16 @@ public class AuthorityFilter implements Filter{
 		HttpServletResponse resp = (HttpServletResponse) response;
 		
 		HttpSession session = req.getSession();
-		Member result = (Member)session.getAttribute("loginMember");
-		log.debug("memenr : "+ result);
-//		if() {
-//			log.info("Test");
-//			resp.sendRedirect("/acceptorError");
-//		}else {
-//			chain.doFilter(request, response);
-//		}
+		Member member = (Member)session.getAttribute("loginMember");
+		
+		log.debug("제발 알려줘 : " + member);
+		
+		if(member != null && member.getAuthority() != 2) {
+			log.debug("권한 번호가 2가 아니다");
+			
+			resp.sendRedirect("/acceptorError");
+		}else {
+			chain.doFilter(request, response);
+		}
 	}
 }

@@ -11,7 +11,7 @@
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
+}
 
 *{
   font-family: 'ONE-Mobile-Regular';
@@ -32,7 +32,7 @@
     -moz-filter: blur(10px); 
     -o-filter: blur(10px); 
     -ms-filter: blur(10px); 
-    filter: blur(10px) brightness(70%);
+    filter: blur(10px) brightness(80%);
     transform: scale(1.02);
     z-index: -1; 
     content: "";

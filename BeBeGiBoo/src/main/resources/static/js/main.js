@@ -109,15 +109,6 @@ window.addEventListener("scroll", () => {
     for (let x of showBox) showTit(x);
 });
 
-
-
-
-
-/* 인증 신청 폼 이동 */
-document.getElementById('confirm-button').addEventListener('click', ()=> {
-    location.href = '/certification/certification-main';
-}); 
-
 /* FAQ 게시판 이동 */
 document.getElementById('faqBoardBtn').addEventListener('click', ()=> {
   location.href = '/faqBoard/faqBoard';
@@ -126,6 +117,68 @@ document.getElementById('faqBoardBtn').addEventListener('click', ()=> {
 /* 후기 인증 게시판 이동 */
 document.getElementById('reviewBtn').addEventListener('click', ()=> {
   location.href = '/review';
-}); 
+});
+
+
+
+
+const donateThings = document.querySelector("#donateThings");
+let i = 1;
+
+function donateThingsFuntion() {
+  donateThings.innerHTML = "";
+
+    fetch("/acceptor/selectproductList")
+    .then(resp => resp.text())
+    .then(result => {
+
+        const productList = JSON.parse(result);
+        
+
+        if(productList == null) {
+            productList.innerText = "기부물품이 존재하지 않습니다.";
+        } else {
+            productList.forEach( (product) => {
+
+                
+                let arr = [ product.recordDate,
+                    product.productName];
+
+                    const infoBox = document.createElement("div");
+                    infoBox.classList.add("img-wrapper");
+
+
+                    const productInfo = document.createElement("div");
+                    productInfo.classList.add("productInfo");
+
+                    const donateDate = document.createElement("div");
+                    donateDate.innerText = "기부날짜";
+                    donateDate.classList.add("donateDate");
+                    productInfo.append(donateDate);
+
+                    for(let key of arr){
+                    const div = document.createElement("div");
+                    div.style.textAlign = "center";
+                    div.style.fontSize = "20px";
+                    div.style.fontWeight = "bold";
+                    div.style.marginBottom = "80px";
+                    productInfo.style.backgroundImage = `url("/images/layette-${i}.jpg")`;
+                    productInfo.style.backgroundSize = "cover";
+                    productInfo.style.backgroundRepeat = "no-repeat";
+                    if(i == 10) {
+                      i = 1;
+                    }else {
+                      i++;
+                    }
+                    div.innerText = key;
+                    productInfo.append(div);
+                    donateThings.append(productInfo);
+                }
+              });
+            }
+      });
+};
+
+donateThingsFuntion();
 
 

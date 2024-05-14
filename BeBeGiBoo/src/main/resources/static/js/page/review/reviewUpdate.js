@@ -151,7 +151,7 @@ for(let i=0 ; i<inputImageList.length ; i++){
 //나가기 버튼 클릭 시 alert로 확인하기
 document.querySelector("#exitBtn")
   .addEventListener("click", e=>{
-    if(!confirm("작성 중 취소 시 내용이 저장되지 않습니다.\n목록으로 나가시겠습니까?")){
+    if(!confirm("작성 중 취소 시 바뀐 내용이 저장되지 않습니다.\n목록으로 나가시겠습니까?")){
       return;
     }else{
       location.href="/review";

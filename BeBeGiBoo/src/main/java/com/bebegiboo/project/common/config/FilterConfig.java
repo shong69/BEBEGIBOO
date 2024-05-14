@@ -45,11 +45,11 @@ public class FilterConfig {
 		= new FilterRegistrationBean<>(); 
 
 		filter.setFilter(new AuthorityFilter());
-		log.info("여기 갔는지 확인 : ");
+
 		
 		String[] filteringURL = {"/editWrite/*", "/acceptor/*"};
 		
-		
+		log.info("권한 필터 작동됨");
 		filter.setUrlPatterns( Arrays.asList(filteringURL));
 		
 		filter.setName("AuthorityFilter");

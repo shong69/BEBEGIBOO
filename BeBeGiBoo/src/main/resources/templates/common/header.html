@@ -1,11 +1,10 @@
 <header>
 
     <div class="header-main">
-        <!-- 로고사진 -->
-        <span><img src="/images/logo-black.PNG" id="logo" onclick="location.href='/';"></span>
     
         <!-- BeBeGiBoo 글씨부분 -->
-        <span onclick="location.href='/';" style="cursor: pointer;">BeBeGiBoo</span>
+        <img onclick="location.href='/';" src="/images/font-logo.png" id="font-logo"style="cursor: pointer;">
+
     
         <!-- 가운데 여백부분 -->
         <span></span>
@@ -21,9 +20,11 @@
 		<!--로그인 O-->
 		<th:block th:unless="${session.loginMember == null}">
 			<span th:text="|${session.loginMember.memberName}님 안녕하세요|">회원이름</span>
+
 			<span class="text" style="width: 80px;"><a style="font-size: 15px;" href="/member/logout" id="logoutstyle">로그아웃</a></span>
 
 		</th:block>
+		
 		
 		<!-- 햄버거 버튼 -->
 		<span><img src="/images/hamburger.png" style="width: 40px;" id="hamburger"></span>
@@ -78,7 +79,6 @@
 			</div>
 		</th:block>
 	</th:block>
-
     <script src="/js/header.js"></script>
 </header>
   

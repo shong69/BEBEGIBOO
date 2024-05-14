@@ -63,7 +63,7 @@ section{
 /* 모달 */
   
 #modal {
-    width: 500px;
+    width: 560px;
     height: 420px;
     position:fixed;
     top: 50%;
@@ -86,8 +86,8 @@ section{
 
 .popup-close{
     position: relative;
-    left: 225px;
-    top: -12px;
+    left: 243px;
+    top: -11px;
     border: none;
     background-color: transparent;
     font-size: 17px;

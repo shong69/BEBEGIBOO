@@ -17,7 +17,8 @@
 			#{memberBirth},
 			#{phone},
 			#{address}, 
-			#{memberNo}	)
+			#{memberNo},
+			DEFAULT	)
 	</insert>
 	
 	

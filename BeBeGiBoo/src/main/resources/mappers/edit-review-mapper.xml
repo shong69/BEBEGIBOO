@@ -22,12 +22,11 @@
 		<foreach collection="list" item="img"
 
 			open ="(" close=")" separator=" UNION ">
-		SELECT NEXT_IMG_NO(),
+		SELECT 
+		NEXT_IMG_NO(),
 		#{img.imgPath},
 		#{img.imgOriginalName},
 		#{img.imgRename},
-		#{img.imgOrder},
-		#{img.boardNo}
 		#{img.boardNo},
 		#{img.imgOrder}
 		FROM DUAL	
@@ -58,7 +57,8 @@
 	
 	<insert id="insertImage"> 
 		INSERT INTO "BOARD_IMG" 
-		VALUES(NEXT_IMG_NO(),
+		VALUES(
+				NEXT_IMG_NO(),
 				#{imgPath},
 				#{imgOriginalName},
 				#{imgRename},

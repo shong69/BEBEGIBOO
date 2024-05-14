@@ -87,8 +87,8 @@ body {
 /* 수정 모달창 */
 .popup-layer {
     display: none;
-    top: 100px;
-    position: sticky;
+    top: 200px;
+    position: fixed;
     height: 600px;
     width: 400px;
     background-color: rgba(0, 0, 0, 0);

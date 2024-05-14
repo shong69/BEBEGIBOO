@@ -81,6 +81,7 @@ public class CertificationController {
 					
 					String address = String.join(" ", memberAddress);
 					inputCertification.setAddress(address);
+					
 				} else {
 					
 					inputCertification.setAddress(null);
@@ -89,7 +90,8 @@ public class CertificationController {
 
 		log.info("memberAddress" + Arrays.toString(memberAddress));
 		
-		model.addAttribute("address", memberAddress); 
+		model.addAttribute("address", memberAddress);
+		session.setAttribute("address", memberAddress);
 		session.setAttribute("certification", inputCertification);
 		session.setAttribute("address", memberAddress);
 		session.setAttribute("images", images);

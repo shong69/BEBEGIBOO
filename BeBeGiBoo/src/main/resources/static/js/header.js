@@ -39,11 +39,3 @@ document.querySelector(".noHover").addEventListener("mouseover", () => {
     document.querySelector("#hover1").style.visibility = 'hidden';
     document.querySelector("#hover2").style.visibility = 'hidden';
 });
-
-
-const messageBox = document.querySelector("message");
-const messageModal = document.querySelector("message-modal");
-
-messageBox.addEventListener("click", () => {
-    console.log(messageModal);
-});

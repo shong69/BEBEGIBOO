@@ -16,6 +16,7 @@ body {
 }
 
 *{
+    font-family: "Noto Sans KR", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -62,7 +63,6 @@ a {
     position: fixed;
     top: 20px;
     right: 20px;
-    font-family: "Noto Sans KR", sans-serif;
     font-weight: 800;
     font-size: 0.7rem;
   }
@@ -81,7 +81,6 @@ a {
   }
   
   h2 {
-    font-family: "Noto Sans KR", sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     -webkit-text-stroke: 2px white;
@@ -141,11 +140,6 @@ a {
     -webkit-text-stroke: 2px rgb(255, 255, 255);
 }
 
-#line-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 #line {
     width: 1500px;
@@ -161,11 +155,13 @@ a {
 }
 
 #who-container {
-    margin-top: 100px;
+    margin-top: 40px;
     display: flex;
-    height: 600px;
+    height: 400px;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 #who-logo {
@@ -181,7 +177,6 @@ a {
 }
 
 #who-title {
-    font-family: "Noto Sans KR", sans-serif;
     font-weight: bold;
     font-weight: 600;
     font-size: 60px;
@@ -199,8 +194,9 @@ a {
 }
 
 .line {
-    width: 600px;
-    border: 1px rgb(134, 134, 134) solid;
+    margin: 0 100px;
+    width: 1700px;
+    border: 1px rgb(185, 185, 185) solid;
 }
 
 #confirm-button {
@@ -217,6 +213,40 @@ a {
     background-color: rgb(14, 20, 78);
     color: white;
 }
+
+.cl-button {
+    background-color: rgb(208, 227, 241);
+    border: none;
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.cl-button:hover {
+    box-shadow: 3px 3px 3px lightgray;
+}
+
+#donateThings {
+    width: 1500px;
+    display: flex;
+    overflow: auto;
+    justify-content: center;
+}
+
+.productInfo {
+    height: 300px;
+    width: 400px;
+    margin-right: 20px;
+    box-shadow: 5px 5px 5px gray;
+    transition-duration: 0.4s;
+}
+
+.donateDate {
+    text-align: center;
+    font-weight: bold;
+}
+
 
 
 
@@ -277,7 +307,6 @@ a {
 }
 
 .title {
-    font-family: "Noto Sans KR", sans-serif;
     font-weight: bold;
     font-size: 40px;
     margin-bottom: 20px;
@@ -370,7 +399,6 @@ a {
     margin-left: 20px;
 }
 .header-main span:nth-child(1) {
-    font-family: "Noto Sans KR", sans-serif;
     font-weight: 600;
     font-size: 30px;
 }
@@ -380,7 +408,6 @@ a {
 }
 
 .header-main span:nth-child(3) {
-    font-family: "Noto Sans KR", sans-serif;
     text-align: end;
     width: 200px;
     margin: 0 10px;
@@ -522,7 +549,6 @@ a {
 }
 
 #title {
-    font-family: "Noto Sans KR", sans-serif;
     font-size: 30px;
     font-weight: 600;
 }
@@ -540,7 +566,6 @@ a {
 }
 
 #text > div:first-child {
-    font-family: "Noto Sans KR", sans-serif;
     font-weight: bold;
     font-size: 17px;
     margin: 20px;
@@ -556,7 +581,6 @@ a {
 
 
 #text > div:last-child {
-    font-family: "Noto Sans KR", sans-serif;
     font-size: 12px;
     line-height: 25px;
 }
@@ -564,7 +588,6 @@ a {
 
 /**************심플 푸터*************/
 #simpleFooter{
-    font-family: "Noto Sans KR", sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;

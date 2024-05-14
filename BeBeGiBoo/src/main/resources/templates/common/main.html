@@ -9,8 +9,17 @@
     <th:block th:replace="~{common/common}"></th:block>
 
 </head>
+<!-- <body onload="javascript:openPopup()"> -->
 <body>
     <main>
+        <div class="popup" style="display: block;">
+          <img src="/images/mainBanner.png">
+          <div class="popup-footer">
+            <span>오늘 하루 열지 않음<input type="checkbox" id="cookieCheckBox"></span>
+            <a onclick="closePopup();" class="closeBtn">닫기 &times;</a>
+          </div>
+        </div>
+
         <th:block th:replace="~{common/header}"></th:block>
 
         <th:block th:if="${session.loginMember != null} and ${session.loginMember.authority == 3}">
@@ -54,7 +63,7 @@
 
         <button class="button" id="main-banner-donate" style="display: none;">기부하러 가기</button>
         
-
+      
 
 
 
@@ -197,8 +206,6 @@
     <th:block th:replace="~{common/footer}"></th:block>
 
     <script src="/js/main.js"></script>
-
-    
 
 </body>
 </html>

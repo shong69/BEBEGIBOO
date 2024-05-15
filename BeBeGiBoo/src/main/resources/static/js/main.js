@@ -137,7 +137,6 @@ function setCookie() {
 
   document.cookie = `modalClose=T; expires=${date}`;
 
-  console.log(document.cookie);
 }
 
 
@@ -153,7 +152,9 @@ function openPopup(){
 
 }
 
-
+document.addEventListener("DOMContentLoaded", () => {
+  openPopup();
+})
 
 
 const donateThings = document.querySelector("#donateThingss");

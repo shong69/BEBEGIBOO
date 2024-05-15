@@ -99,7 +99,6 @@ const popup= document.querySelector(".popup");
 function getCookie(name) {
   const value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
 
-  console.log("value : " ,value);
   return value?value[2]:null;
 }
 
@@ -107,7 +106,6 @@ function closePopup() {
   const cookieCheckBox = document.querySelector("#cookieCheckBox");
   if(cookieCheckBox.checked){
 
-    console.log("test");
     checkPopup();
   }else{//그냥 X 누른 경우
     console.log("그냥 X 누른 경우");
@@ -154,52 +152,6 @@ function openPopup(){
   
 
 }
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  openPopup();
-})
-
-
-
-const boardTbody = document.querySelector("#boardTbody");
-
-function selectBoard() {
-  boardTbody.innerHTML = "";
-
-  fetch("/review/boardList")
-  .then(resp => resp.json())
-  .then(boardList => {
-
-    
-  if(boardList == null) {
-    boardList.innerText = "기부물품이 존재하지 않습니다.";
-  } else {
-    boardList.forEach( (board) => {
-
-          
-          let arr = [ board.boardNo,
-              board.boardTitle,
-              board.boardWriteDate,
-              board.memberId,
-              board.readCount]
-
-              const tr = document.createElement("tr");
-
-              for(let key of arr){
-                const td = document.createElement("td");
-                td.innerText = key;
-                tr.append(td);
-              }
-              boardTbody.append(tr);
-      });
-    }
-
-
-  });
-}
-
-selectBoard();
 
 
 

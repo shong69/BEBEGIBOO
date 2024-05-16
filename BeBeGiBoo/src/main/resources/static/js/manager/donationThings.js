@@ -134,7 +134,7 @@ function selectMember() {
                                         const producttd = document.createElement("td");
 
                                         nametd.innerText = "배송자";
-                                        phonetd.innerText = "배송자 전화번호";
+                                        phonetd.innerText = "전화번호";
                                         addresstd.innerText = "출발지";
                                         producttd.innerText = "기부물품";
 

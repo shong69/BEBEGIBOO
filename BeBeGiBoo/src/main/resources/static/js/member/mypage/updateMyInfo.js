@@ -128,7 +128,7 @@ editBtn.addEventListener('click', ()=> {
        if ( detailAddress.value == "") {
            alert("우편번호, 기본 주소, 상세 주소를 모두 입력해주세요.");
            e.preventDefault(); 
-           return; // 함수 실행 중지
+           return; 
        }
 
 });

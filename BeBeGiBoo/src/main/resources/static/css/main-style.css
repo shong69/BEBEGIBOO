@@ -32,7 +32,7 @@ body {
     position:absolute;
     z-index : 85;
     top : 100px;
-    left: 480px;
+    right: 60px;
 }
 .popup2 >img{
 	width:250px;

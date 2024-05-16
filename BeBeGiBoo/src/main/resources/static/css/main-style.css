@@ -269,7 +269,7 @@ a {
 #donateThingss {
     width: 1500px;
     display: flex;
-    overflow: scroll;
+    overflow-x: scroll; 
     justify-content: center;
 }
 

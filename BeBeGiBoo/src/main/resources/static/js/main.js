@@ -116,7 +116,6 @@ function checkPopup() {
   var cookieCheck = getCookie("modalClose");
 
   if (cookieCheck == null){
-    console.log(cookieCheck.checked);
     //쿠키 설정하기
     setCookie();
     popup.style.display = "none";

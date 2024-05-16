@@ -23,13 +23,13 @@ body {
     /*border: 1px black solid;*/
 }
 .popup1{
-    position:absolute;
+    position:fixed;
     z-index : 85;
     top : 100px;
     left: 50px;
 }
 .popup2{
-    position:absolute;
+    position:fixed;
     z-index : 85;
     top : 100px;
     right: 60px;

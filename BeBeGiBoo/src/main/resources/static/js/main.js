@@ -197,35 +197,17 @@ if(donateThings != null) {
               productList.forEach( (product) => {
   
                   
-                  let arr = [ product.recordDate,
-                      product.productName];
-  
-                      const infoBox = document.createElement("div");
-                      infoBox.classList.add("img-wrapper");
+                  let arr = [ product.productName];
   
   
                       const productInfo = document.createElement("div");
-                      productInfo.classList.add("productInfo");
-  
-                      const donateDate = document.createElement("div");
-                      donateDate.innerText = "기부날짜";
-                      donateDate.classList.add("donateDate");
-                      productInfo.append(donateDate);
+                      productInfo.classList.add("productInfoo");
   
                       for(let key of arr){
                       const div = document.createElement("div");
                       div.style.textAlign = "center";
-                      div.style.fontSize = "20px";
+                      div.style.fontSize = "15px";
                       div.style.fontWeight = "bold";
-                      div.style.marginBottom = "80px";
-                      productInfo.style.backgroundImage = `url("/images/layette-${i}.jpg")`;
-                      productInfo.style.backgroundSize = "cover";
-                      productInfo.style.backgroundRepeat = "no-repeat";
-                      if(i == 10) {
-                        i = 1;
-                      }else {
-                        i++;
-                      }
                       div.innerText = key;
                       productInfo.append(div);
                       donateThings.append(productInfo);
@@ -251,7 +233,7 @@ function selectBoard() {
 
 
   if(boardList == null) {
-    boardList.innerText = "기부물품이 존재하지 않습니다.";
+    boardList.innerText = "게시글이 존재하지 않습니다.";
   } else {
     boardList.forEach( (board) => {
 

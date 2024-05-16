@@ -556,6 +556,9 @@ const signUpBtn = document.querySelector("#signUpBtn");
 // 회원 가입 폼 제출 시
 signUpBtn.addEventListener("click", e => {
 
+    e.preventDefault(); 
+    let checkObjs = true; 
+
     for(let key in checkObj) { // checkObj 요소의 key 값을 순서대로 꺼내옴
 
         if( !checkObj[key] ) { // false 인 경우 (유효하지 않음)
@@ -584,15 +587,18 @@ signUpBtn.addEventListener("click", e => {
             }
 
             alert(str);
-
             document.getElementById(key).focus(); // 초점 이동
-
-            e.preventDefault(); // form 태그 기본 이벤트(제출) 막기
-            return;
+            checkObjs = false; 
+            break;     
+     
         }
+        
     }
+    checkObjs = true; 
     const form = document.querySelector("#signUpForm");
     form.submit();
+        
+
 });
 
 

@@ -151,9 +151,9 @@ function setCookie(num) {
 
 function openPopup(){
   //쿠키가 있으면 팝업이 안열리고
-
+  
   //팝업 개수 만큼 돌면서 확인하기
-  for(let i =0;popupList.length;i++){
+  for(let i =0; i < popupList.length;i++){
 	
 	if(getCookie(i)==null){
 		popupList[i].style.display = "block";
@@ -173,10 +173,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-//************* */
 const donateThings = document.querySelector("#donateThingss");
 let i = 1;
 
+
+/* 기부물품 출력칸 */
 if(donateThings != null) {
   function donateThingsFuntion() {
     donateThings.innerHTML = "";
@@ -235,7 +236,45 @@ if(donateThings != null) {
   };
   
   donateThingsFuntion();
-
+  
 }
 
 
+const boardTbody = document.querySelector("#boardTbody");
+
+function selectBoard() {
+  boardTbody.innerHTML = "";
+
+  fetch("/review/boardList")
+  .then(resp => resp.json())
+  .then(boardList => {
+
+
+  if(boardList == null) {
+    boardList.innerText = "기부물품이 존재하지 않습니다.";
+  } else {
+    boardList.forEach( (board) => {
+
+
+          let arr = [ board.boardNo,
+              board.boardTitle,
+              board.boardWriteDate,
+              board.memberId,
+              board.readCount]
+
+              const tr = document.createElement("tr");
+
+              for(let key of arr){
+                const td = document.createElement("td");
+                td.innerText = key;
+                tr.append(td);
+              }
+              boardTbody.append(tr);
+      });
+    }
+
+
+  });
+}
+
+selectBoard();

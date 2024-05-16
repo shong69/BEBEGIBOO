@@ -557,7 +557,6 @@ const signUpBtn = document.querySelector("#signUpBtn");
 signUpBtn.addEventListener("click", e => {
 
     e.preventDefault(); 
-    let checkObjs = true; 
 
     for(let key in checkObj) { // checkObj 요소의 key 값을 순서대로 꺼내옴
 
@@ -584,20 +583,17 @@ signUpBtn.addEventListener("click", e => {
                     str = "이메일이 인증되지 않았습니다"; break;
                 case "address" :
                     str = "주소를 확인해주세요"; break;
-            }
+            }          
 
             alert(str);
-            document.getElementById(key).focus(); // 초점 이동
-            checkObjs = false; 
-            break;     
-     
-        }
-        
+            e.preventDefault();    
+            document.getElementById(key).focus(); // 초점 이동   
+            return;       
+        } 
     }
-    checkObjs = true; 
+
     const form = document.querySelector("#signUpForm");
     form.submit();
-        
 
 });
 

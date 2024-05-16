@@ -153,13 +153,15 @@ function openPopup(){
   //쿠키가 있으면 팝업이 안열리고
 
   //팝업 개수 만큼 돌면서 확인하기
-  for(let i =0;popupList.length;i++){
-	
+  for(let i =0;i<popupList.length;i++){
+
 	if(getCookie(i)==null){
 		popupList[i].style.display = "block";
 	}else{//쿠키가 없으면 팝업이 열리도록
     	popupList[i].style.display = "none";
     }
+
+
   
   }
 

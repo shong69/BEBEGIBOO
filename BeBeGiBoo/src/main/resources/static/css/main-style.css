@@ -36,11 +36,12 @@ body {
 }
 .popup2 >img{
 	width:250px;
+	display : block;
 }
 
 .popup1 > img {
     width : 400px;
-    margin : 0;
+	display : block;
 }
 .popup1 >div{
     width : 400px;
@@ -49,6 +50,7 @@ body {
     display : flex;
     flex-direction: row;
     justify-content: space-between;
+	margin : 0;
 }
 .popup2 >div{
     width : 250px;
@@ -57,6 +59,7 @@ body {
     display : flex;
     flex-direction: row;
     justify-content: space-between;
+
 }
 .closeBtn {
     color: white;

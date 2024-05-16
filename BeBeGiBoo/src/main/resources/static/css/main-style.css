@@ -22,19 +22,36 @@ body {
     box-sizing: border-box;
     /*border: 1px black solid;*/
 }
-.popup{
+.popup1{
     position:absolute;
     z-index : 85;
     top : 100px;
     left: 50px;
 }
+.popup2{
+    position:absolute;
+    z-index : 85;
+    top : 100px;
+    left: 480px;
+}
+.popup2 >img{
+	width:250px;
+}
 
-.popup > img {
+.popup1 > img {
     width : 400px;
     margin : 0;
 }
-.popup-footer{
+.popup1 >div{
     width : 400px;
+    background-color: black;
+    color : white;
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.popup2 >div{
+    width : 250px;
     background-color: black;
     color : white;
     display : flex;

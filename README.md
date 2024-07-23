@@ -13,6 +13,8 @@
 <img src="https://github.com/user-attachments/assets/8834995e-ea90-49e3-9a7c-c3d8951ca382"><br>
 <h2>이용자(기부자) : 기부하기</h2>
 <img src="https://github.com/user-attachments/assets/a053bd45-1f18-4798-9440-cbb0b440103b"><br>
+<h2>이용자(기부자) : 기부 내역 확인</h2>
+<img src="https://github.com/user-attachments/assets/7857f6ea-bc6c-49ad-a88d-f70a83a100d7"><br>
 <h2>이용자(피기부자) : 기부물품 신청</h2>
 <img src="https://github.com/user-attachments/assets/86a2d84d-6f51-4916-97d8-fecebe42a1b5"><br>
 <h2>관리자 : 기부물품 관리</h2>
@@ -35,6 +37,7 @@
 <!-- 
 <h2></h2>
 <img src="">
+![베베기부-기부내역확인](https://github.com/user-attachments/assets/7857f6ea-bc6c-49ad-a88d-f70a83a100d7)
 ![베베기부-관리자-기부물품관리](https://github.com/user-attachments/assets/c6fcd0de-2815-4566-8f74-a303dddbf730)
 ![베베기부-관리자-봉사인증신청](https://github.com/user-attachments/assets/b674b43a-d08b-4970-b9bc-b5dcee484969)
 ![베베기부-관리자-회원관리](https://github.com/user-attachments/assets/f088cc53-fbb8-4af4-bc88-b308d99a6d20)

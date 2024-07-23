@@ -22,7 +22,9 @@
 <h2>관리자 : 봉사 인증 신청</h2>
 <img src="https://github.com/user-attachments/assets/b674b43a-d08b-4970-b9bc-b5dcee484969"><br>
 <h2>이용자(피기부자) : 후기게시판</h2>
-<img src="https://github.com/user-attachments/assets/e310d516-1f63-4feb-bcb9-144832dbbbe8"><br>
+<img src="https://github.com/user-attachments/assets/e310d516-1f63-4feb-bcb9-144832dbbbe8">
+<img src="https://github.com/user-attachments/assets/cdcf9c6e-2472-4841-a83f-10aa58fa60c4">
+<img src="https://github.com/user-attachments/assets/2dc72bbf-6a31-43ac-b135-87d21c5cca7d"><br>
 <h2>이용자 : faq게시판</h2>
 <img src="https://github.com/user-attachments/assets/9bd4c306-fca6-4435-aa8b-c3469168deb1"><br>
 <h2>관리자 : faq게시판</h2>
@@ -48,4 +50,6 @@
 ![베베기부-후기게시판](https://github.com/user-attachments/assets/e310d516-1f63-4feb-bcb9-144832dbbbe8)
 ![베베기부-erd](https://github.com/user-attachments/assets/a4672d74-94cd-4e56-b552-b43cc4915730)
 ![베베기부-faq](https://github.com/user-attachments/assets/9bd4c306-fca6-4435-aa8b-c3469168deb1)
+![베베기부-후기상세](https://github.com/user-attachments/assets/cdcf9c6e-2472-4841-a83f-10aa58fa60c4)
+![베베기부-후기상세댓글](https://github.com/user-attachments/assets/2dc72bbf-6a31-43ac-b135-87d21c5cca7d)
 -->
